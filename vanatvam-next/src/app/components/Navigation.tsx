@@ -27,10 +27,31 @@ export default function Navigation() {
         boxShadow: scrolled || isDrawerOpen ? '0 4px 20px rgba(0,0,0,0.05)' : 'none',
         transition: 'all 0.3s ease'
       }}>
-        <div className="header-inner">
-          <Link href="/" className="logo-group" onClick={closeDrawer}>
-            <img src="/assets/images/vanatvamlogo.webp" alt="Vanatvam Logo" className="header-logo-img" />
-            <div className="logo-brand" style={{ color: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF' }}>VANATVAM</div>
+        <div className="header-inner" style={{ alignItems: 'center' }}>
+          <Link href="/" className="logo-group" onClick={closeDrawer} style={{ display: 'flex', alignItems: 'center', gap: '14px', textDecoration: 'none', height: '100%' }}>
+            <img 
+              src="/assets/images/vanatvamlogo.webp" 
+              alt="Vanatvam Logo" 
+              className="header-logo-img" 
+              style={{ 
+                height: scrolled ? '46px' : '56px', 
+                width: 'auto', 
+                filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.35))',
+                objectFit: 'contain',
+                display: 'block'
+              }} 
+            />
+            <div className="logo-brand" style={{ 
+              color: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF',
+              fontFamily: "'Cinzel', var(--font-serif), serif",
+              fontSize: '1.45rem',
+              fontWeight: 600,
+              letterSpacing: '0.22em',
+              textTransform: 'uppercase',
+              transition: 'color 0.3s ease'
+            }}>
+              VANATVAM
+            </div>
           </Link>
           <nav className="nav-menu">
             {[
@@ -38,8 +59,7 @@ export default function Navigation() {
               { path: '/about', label: 'Our Story' },
               { path: '/projects', label: 'Projects' },
               { path: '/investment', label: 'Investment' },
-              { path: '/blog', label: 'Journal' },
-              { path: '/contact', label: 'Contact' }
+              { path: '/blog', label: 'Journal' }
             ].map((item) => (
               <Link
                 key={item.path}
@@ -52,7 +72,7 @@ export default function Navigation() {
                   <motion.span
                     layoutId="nav-active-underline"
                     className="nav-underline"
-                    style={{ background: scrolled || isDrawerOpen ? 'var(--accent-gold)' : '#FFFFFF' }}
+                    style={{ background: scrolled || isDrawerOpen ? 'var(--brand-amber-gold)' : '#FFFFFF' }}
                     transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                   />
                 )}
@@ -61,12 +81,25 @@ export default function Navigation() {
           </nav>
           <div className="header-right">
             <Magnetic strength={0.3}>
-              <Link href="/book-a-visit" className="btn-pill btn-pill-outline hide-on-mobile" style={{
-                borderColor: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF',
-                color: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF'
-              }}>Book a Visit</Link>
+              <Link 
+                href="/contact" 
+                className="header-cta-btn"
+                onClick={closeDrawer}
+                style={{
+                  background: 'var(--brand-amber-gold)',
+                  color: '#122217',
+                  boxShadow: '0 4px 16px rgba(255, 194, 41, 0.3)'
+                }}
+              >
+                <span>Contact</span>
+                <i className="fa-solid fa-arrow-right" style={{ fontSize: '0.75rem' }}></i>
+              </Link>
             </Magnetic>
-            <div className={`menu-toggle-btn ${isDrawerOpen ? 'open' : ''}`} onClick={() => setIsDrawerOpen(!isDrawerOpen)}>
+            <div 
+              className={`menu-toggle-btn ${isDrawerOpen ? 'open' : ''}`} 
+              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              aria-label="Toggle navigation menu"
+            >
               <span style={{ backgroundColor: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF' }}></span>
               <span style={{ backgroundColor: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF' }}></span>
               <span style={{ backgroundColor: scrolled || isDrawerOpen ? '#1E352F' : '#FFFFFF' }}></span>

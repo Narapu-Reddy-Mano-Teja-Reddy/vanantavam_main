@@ -76,7 +76,6 @@ export default function Footer() {
             <Link href="/privacy-policy" className="footer-link-small">Privacy Policy</Link>
             <Link href="/terms" className="footer-link-small">Terms & Conditions</Link>
             <span>&copy; {new Date().getFullYear()} Vanatvam Private Limited.</span>
-            <span style={{ marginLeft: '10px' }}>Designed by <a href="#" style={{ color: 'var(--accent-gold)', textDecoration: 'none' }}>Tenspick</a></span>
           </div>
         </div>
       </div>

@@ -3,9 +3,8 @@
  * Luxury Architectural & Eco-Estate Design System
  */
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* Color Tokens */
@@ -26,14 +25,22 @@
   --border-dark: rgba(249, 248, 246, 0.12);
   --border-gold: rgba(198, 162, 101, 0.3);
 
+  /* Brand Colors (Provided Palette) */
+  --brand-earth-brown: #72351C;
+  --brand-amber-gold: #FFC229;
+  --brand-forest-green: #007C40;
+  --brand-river-blue: #365D97;
+  --brand-charcoal: #414042;
+
   /* Typography */
-  --font-serif: 'Cormorant Garamond', serif;
-  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-bold: 'Cormorant Garamond', serif;
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-cinzel: 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-bold: 'Playfair Display', serif;
 
   /* Spacing & Layout */
   --container-max: 1440px;
-  --header-height: 90px;
+  --header-height: 80px;
   --radius-sm: 4px;
   --radius-md: 12px;
   --radius-lg: 20px;
@@ -299,13 +306,13 @@ ul {
   height: var(--header-height);
   z-index: 1000;
   transition: var(--transition-smooth);
-  padding: 0 50px;
+  padding: 0 40px;
 }
 
 .header.scrolled {
-  background: rgba(18, 34, 23, 0.92);
+  background: rgba(18, 34, 23, 0.95);
   backdrop-filter: blur(15px);
-  height: 75px;
+  height: 72px;
   box-shadow: 0 4px 30px rgba(0,0,0,0.2);
 }
 
@@ -324,18 +331,19 @@ ul {
   gap: 12px;
   color: #FFFFFF;
   text-decoration: none;
+  height: 100%;
 }
 
 .header-logo-img {
-  height: 48px;
+  height: 56px;
   width: auto;
   object-fit: contain;
   transition: var(--transition-fast);
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
 }
 
 .header.scrolled .header-logo-img {
-  height: 40px;
+  height: 48px;
 }
 
 .logo-brand {
@@ -345,7 +353,7 @@ ul {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   letter-spacing: 0.22em;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -357,10 +365,10 @@ ul {
 
 .nav-link {
   position: relative;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.88rem;
   letter-spacing: 0.05em;
-  font-weight: 300;
+  font-weight: 400;
   padding-bottom: 6px;
 }
 
@@ -373,7 +381,7 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 1.5px;
+  height: 2px;
   background: var(--accent-gold);
   border-radius: 2px;
 }
@@ -381,7 +389,31 @@ ul {
 .header-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+}
+
+.header-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-amber-gold);
+  color: #122217;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 4px 16px rgba(255, 194, 41, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+}
+
+.header-cta-btn:hover {
+  background: #FFD05B;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 194, 41, 0.5);
 }
 
 .menu-toggle-btn {
@@ -398,11 +430,49 @@ ul {
   }
 }
 
+@media (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+  .header {
+    padding: 0 20px;
+    height: 70px;
+  }
+  .header.scrolled {
+    height: 64px;
+  }
+  .header-logo-img {
+    height: 46px;
+  }
+  .header.scrolled .header-logo-img {
+    height: 42px;
+  }
+  .logo-brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.18em;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-cta-btn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+  .header-logo-img {
+    height: 42px;
+  }
+  .logo-brand {
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+  }
+}
+
 .menu-toggle-btn span {
   width: 24px;
-  height: 1.5px;
+  height: 2px;
   background-color: #FFFFFF;
   transition: var(--transition-fast);
+  border-radius: 2px;
 }
 
 /* HERO SECTION */
@@ -3428,3 +3498,215 @@ body.at-top .kenyt-bot-container {
   transform: translateY(20px) !important;
   transition: opacity 0.3s ease, transform 0.3s ease !important;
 }
+
+/* ==========================================================================
+   WARLI ART DECORATIVE MOTIFS & CULTURAL ACCENTS
+   ========================================================================== */
+.warli-strip {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+}
+
+.warli-divider-light {
+  height: 48px;
+  background: transparent;
+  color: var(--brand-earth-brown);
+  opacity: 0.75;
+}
+
+.warli-divider-dark {
+  height: 48px;
+  background: transparent;
+  color: var(--brand-amber-gold);
+  opacity: 0.85;
+}
+
+.warli-border-top {
+  border-top: 1px dashed rgba(114, 53, 28, 0.25);
+}
+
+.warli-border-bottom {
+  border-bottom: 1px dashed rgba(114, 53, 28, 0.25);
+}
+
+.warli-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(114, 53, 28, 0.08);
+  border: 1px solid rgba(114, 53, 28, 0.18);
+  color: var(--brand-earth-brown);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   HERO FLOATING INTERACTION (Hasiru Farms Inspiration)
+   ========================================================================== */
+.hero-glass-card {
+  background: rgba(18, 34, 23, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 24px 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  transition: all 0.4s ease;
+}
+
+.hero-glass-card:hover {
+  background: rgba(18, 34, 23, 0.8);
+  border-color: rgba(255, 194, 41, 0.4);
+  transform: translateY(-4px);
+}
+
+.hero-feature-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+}
+
+.hero-quick-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.hero-action-icon-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.hero-action-icon-btn:hover {
+  background: var(--brand-amber-gold);
+  color: #122217;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 194, 41, 0.4);
+}
+
+/* ==========================================================================
+   COMPREHENSIVE MOBILE VIEW OPTIMIZATION
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-glass-card {
+    padding: 18px 20px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Global Spacing and Typography Adjustments */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* Prevent any accidental horizontal overflow */
+  body, html {
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  /* Hero Section adjustments */
+  .hero {
+    min-height: calc(100svh - 60px);
+    padding-top: calc(var(--header-height) + 20px);
+    padding-bottom: 60px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2.2rem, 9vw, 3.2rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-content p {
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 24px !important;
+  }
+
+  .hero-carousel-dots {
+    bottom: 20px !important;
+    left: 20px !important;
+  }
+
+  /* Make grid systems single column and uncluttered */
+  .grid, [class*="grid-cols-"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Step by Step Process cards on mobile */
+  .process-step-grid, .values-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  /* Landscape led approach cards */
+  .philosophy-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+
+  .philosophy-card {
+    padding: 28px 20px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Metric cards */
+  .metrics-2x2-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 14px !important;
+  }
+
+  /* Video iframes responsive */
+  iframe {
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 2.1rem !important;
+  }
+
+  .metrics-2x2-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-quick-actions {
+    gap: 8px;
+  }
+}
+

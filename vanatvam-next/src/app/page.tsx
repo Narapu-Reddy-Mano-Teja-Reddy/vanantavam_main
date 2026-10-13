@@ -4,7 +4,7 @@ import { motion, AnimatePresence, Variants } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
-import { TreePine, Leaf, Droplets, RefreshCcw, Users, Target } from 'lucide-react';
+import { TreePine, Leaf, Droplets, RefreshCcw, Users, Target, Award, Sparkles, Compass, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { FeatureCard } from '@/components/ui/grid-feature-cards';
 import RevealText from '@/components/premium/RevealText';
 import Magnetic from '@/components/premium/Magnetic';
@@ -108,20 +108,52 @@ export default function Home() {
                 <span style={{ display: 'block', color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.15em', marginBottom: '16px' }}>
                   0{activeSlide + 1} / 0{heroSlides.length} · {slide.location}
                 </span>
-                <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.75rem, 5.0vw, 5.0rem)', lineHeight: 1.05, color: '#FFFFFF', marginBottom: '20px', letterSpacing: '-0.02em' }}>
+                <h1 style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 700,
+                  fontSize: 'clamp(3rem, 6.0vw, 5.8rem)',
+                  lineHeight: 1.05,
+                  color: '#FFFFFF',
+                  marginBottom: '20px',
+                  letterSpacing: '0.04em',
+                  textShadow: '0 4px 24px rgba(0,0,0,0.65)'
+                }}>
                   {slide.name}
                 </h1>
-                <p style={{ fontSize: '1.25rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: 1.6, maxWidth: '600px', marginBottom: '36px', fontWeight: 300 }}>
+                <p style={{
+                  fontSize: '1.3rem',
+                  color: '#FFFFFF',
+                  textShadow: '0 2px 12px rgba(0,0,0,0.7)',
+                  lineHeight: 1.6,
+                  maxWidth: '640px',
+                  marginBottom: '36px',
+                  fontWeight: 400
+                }}>
                   {slide.tagline}
                 </p>
                 <div style={{ display: 'flex', gap: '28px', alignItems: 'center', flexWrap: 'wrap' }}>
                   <Magnetic strength={0.4}>
-                    <Link href={`/${slide.id}`} className="btn-pill btn-pill-gold" style={{ padding: '16px 32px', fontSize: '1.05rem' }}>
+                    <Link href={`/${slide.id}`} className="btn-pill btn-pill-gold" style={{
+                      padding: '16px 36px',
+                      fontSize: '1.1rem',
+                      fontWeight: 700,
+                      letterSpacing: '0.02em',
+                      boxShadow: '0 8px 30px rgba(198, 162, 101, 0.4)'
+                    }}>
                       Explore {slide.name.charAt(0) + slide.name.slice(1).toLowerCase()}
                     </Link>
                   </Magnetic>
                   <Magnetic strength={0.4}>
-                    <a href="#projects" onClick={scrollToProjects} style={{ color: '#FFFFFF', textDecoration: 'none', fontSize: '1.05rem', fontWeight: 500, borderBottom: '1px solid rgba(255,255,255,0.4)', paddingBottom: '4px', transition: 'border-color 0.3s' }}>
+                    <a href="#projects" onClick={scrollToProjects} style={{
+                      color: '#FFFFFF',
+                      textDecoration: 'none',
+                      fontSize: '1.1rem',
+                      fontWeight: 600,
+                      borderBottom: '2px solid rgba(255,255,255,0.7)',
+                      paddingBottom: '4px',
+                      transition: 'border-color 0.3s',
+                      textShadow: '0 2px 8px rgba(0,0,0,0.5)'
+                    }}>
                       View All Communities
                     </a>
                   </Magnetic>
@@ -167,46 +199,123 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Our Philosophy */}
-      <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: 'var(--bg-cream)', position: 'relative', overflow: 'hidden' }}>
-        {/* Subtle background decoration */}
+      {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
+      <section style={{ padding: 'clamp(90px, 12vh, 130px) 0', background: 'var(--bg-cream)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '10%', right: '-10%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(198,162,101,0.06) 0%, transparent 70%)', zIndex: 0, borderRadius: '50%' }} />
 
         <div className="container relative" style={{ zIndex: 1 }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '100px', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '80px', alignItems: 'center' }}>
 
-            {/* Image column */}
-            <div style={{ flex: '1 1 420px', position: 'relative' }}>
+            {/* Image composition column */}
+            <div style={{ flex: '1 1 440px', position: 'relative', minHeight: '520px' }}>
               <motion.div
-                initial={{ opacity: 0, scale: 0.94 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.9 }}
-                style={{ borderRadius: '28px', overflow: 'hidden', height: '560px', boxShadow: '0 30px 70px rgba(0,0,0,0.12)' }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                style={{ borderRadius: '24px', overflow: 'hidden', height: '460px', width: '82%', boxShadow: '0 25px 60px rgba(0,0,0,0.12)' }}
               >
-                <img src="/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.png" alt="Seedling growing in native soil" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <img
+                  src="/assets/project-images/Ananthavana/ChatGPT%20Image%20Aug%203,%202026,%2001_16_33%20PM%20(2).png"
+                  alt="Ancient tall forest grove canopy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </motion.div>
+
+              {/* Overlapping offset image */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.3 }}
-                style={{ position: 'absolute', bottom: '-36px', right: '-20px', background: 'var(--bg-dark-forest)', color: '#FFF', padding: '34px', borderRadius: '22px', maxWidth: '260px', boxShadow: '0 24px 50px rgba(18,34,23,0.25)' }}
+                initial={{ opacity: 0, scale: 0.9, x: 20 }}
+                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                style={{
+                  position: 'absolute',
+                  bottom: '10px',
+                  right: '0',
+                  width: '58%',
+                  height: '240px',
+                  borderRadius: '20px',
+                  overflow: 'hidden',
+                  boxShadow: '0 20px 50px rgba(0,0,0,0.18)',
+                  border: '5px solid #F9F8F6'
+                }}
               >
-                <span style={{ fontFamily: 'var(--font-handwritten)', fontSize: '1.7rem', color: 'var(--accent-gold)', display: 'block', lineHeight: 1.3 }}>Vana means forest.</span>
-                <span style={{ fontFamily: 'var(--font-handwritten)', fontSize: '1.7rem', color: '#FFF', display: 'block', lineHeight: 1.3 }}>Tvam means you.</span>
+                <img
+                  src="/assets/project-images/Maduvana/Rustic%20Tropical%20Garden%20Gateway.png"
+                  alt="Living landscape gateway"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </motion.div>
+
+              {/* Floating aesthetic caption tag */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-25px',
+                left: '20px',
+                background: '#FFFFFF',
+                padding: '16px 24px',
+                borderRadius: '16px',
+                boxShadow: '0 12px 30px rgba(0,0,0,0.08)',
+                border: '1px solid rgba(0,0,0,0.04)'
+              }}>
+                <span style={{ display: 'block', fontFamily: 'var(--font-serif)', fontSize: '1.05rem', color: 'var(--bg-dark-forest)', fontWeight: 600 }}>A living landscape.</span>
+                <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)' }}>A shared legacy.</span>
+              </div>
             </div>
 
-            {/* Text column */}
-            <div style={{ flex: '1 1 440px', paddingBottom: '20px' }}>
-              <span style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', display: 'block', marginBottom: '24px' }}>
-                Our Philosophy
+            {/* Text content column */}
+            <div style={{ flex: '1 1 480px' }}>
+              <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', display: 'block', marginBottom: '18px' }}>
+                WHO WE ARE
               </span>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.6rem, 4.5vw, 3.8rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.12, marginBottom: '28px', letterSpacing: '-0.02em' }}>
-                <RevealText>A philosophy,</RevealText><br/>
-                <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>not just a plot of land.</RevealText>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 4.5vw, 3.8rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.12, marginBottom: '24px', letterSpacing: '-0.02em', fontWeight: 600 }}>
+                More than land.<br />
+                A way to <span style={{ fontStyle: 'italic', fontWeight: 400 }}>belong.</span>
               </h2>
-              <p style={{ fontSize: '1.25rem', color: 'var(--text-dark)', lineHeight: 1.8, fontWeight: 300, marginBottom: '34px' }}>
-                At Vanatvam, we believe the boundary between people and nature was never meant to exist. Our communities are designed to bring people closer to living ecosystems — not away from them. You don&apos;t just visit nature. <strong style={{ fontWeight: 500, color: 'var(--bg-dark-forest)' }}>You become a part of it.</strong>
+
+              <p style={{ fontSize: '1.15rem', color: '#333D35', lineHeight: 1.8, marginBottom: '16px', fontWeight: 400 }}>
+                Vanatvam creates Natural Sustainable Farm Communities across Karnataka. We thoughtfully develop farmland into greener, nature-led places where people can own land, enjoy time outdoors and become part of a community that values the natural world.
               </p>
+
+              <p style={{ fontSize: '1.05rem', color: '#556358', lineHeight: 1.8, marginBottom: '24px' }}>
+                We start by understanding the land — its soil, water, trees and natural character. We then plan access, shared spaces, tree groves and nature-based experiences around the landscape, rather than treating nature as leftover space.
+              </p>
+
+              {/* Ancient Wisdom Callout Card */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                style={{
+                  background: 'linear-gradient(135deg, rgba(198,162,101,0.12) 0%, rgba(18,34,23,0.04) 100%)',
+                  borderLeft: '4px solid var(--accent-gold)',
+                  padding: '24px 28px',
+                  borderRadius: '0 18px 18px 0',
+                  marginBottom: '28px'
+                }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                  <Sparkles className="size-4" style={{ color: 'var(--accent-gold)' }} />
+                  <span style={{ fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase', fontWeight: 700, color: 'var(--bg-dark-forest)' }}>
+                    Ancient Wisdom · Living Landscapes
+                  </span>
+                </div>
+                <p style={{ margin: 0, fontSize: '0.98rem', color: 'var(--bg-dark-forest)', lineHeight: 1.7, fontStyle: 'italic', fontFamily: 'var(--font-serif)' }}>
+                  &ldquo;Our inspiration draws from India’s long relationship with sacred groves and the ecological ideas described in texts such as Varahamihira’s <em>Brihat Samhita</em>.&rdquo;
+                </p>
+              </motion.div>
+
+              {/* Quote block */}
+              <div style={{ borderLeft: '3px solid #1E352F', paddingLeft: '22px', marginBottom: '32px' }}>
+                <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--bg-dark-forest)', fontStyle: 'italic', margin: 0, lineHeight: 1.5 }}>
+                  &ldquo;Vana means forest. Tvam means you. The forest is not separate from us — we are part of it.&rdquo;
+                </p>
+              </div>
+
               <Magnetic strength={0.2}>
-                <Link href="/about" className="link-underline" style={{ color: 'var(--bg-dark-forest)', fontSize: '1.05rem', fontWeight: 600 }}>
-                  Read Our Full Story <i className="fa-solid fa-arrow-right arrow"></i>
+                <Link href="/about" className="link-underline" style={{ color: 'var(--bg-dark-forest)', fontSize: '1.05rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                  Understand our approach <ArrowRight className="size-4" />
                 </Link>
               </Magnetic>
             </div>
@@ -215,49 +324,79 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Revamped Conservation Section */}
-      <section style={{ position: 'relative', background: '#122217', overflow: 'hidden' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8 }}
-            style={{ flex: '1 1 50%', minWidth: '300px', padding: '120px 8%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}
-          >
-            <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.15em', fontWeight: 600, marginBottom: '20px' }}>ECOLOGICAL PROTECTION</span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3.0vw, 3.0rem)', color: '#FFFFFF', lineHeight: 1.1, marginBottom: '30px' }}>
-              <RevealText>Conservation that invites people in.</RevealText>
+      {/* Section 6: Not just a farmland developer. A landscape-led approach. */}
+      <section style={{ padding: 'clamp(90px, 12vh, 130px) 0', background: '#F5F2EB', position: 'relative' }}>
+        <div className="container">
+          <div style={{ maxWidth: '880px', marginBottom: '60px' }}>
+            <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '20px' }}>
+              A DIFFERENT WAY TO NURTURE THE LAND
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.12, letterSpacing: '-0.02em', fontWeight: 600, marginBottom: '24px' }}>
+              Not just a farmland developer.<br />
+              <span style={{ fontStyle: 'italic', fontWeight: 400 }}>A landscape-led approach.</span>
             </h2>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8, marginBottom: '40px' }}>
-              Traditional conservation often begins by keeping people away from nature. Vanatvam takes a different approach. We bring people into the ecosystem as owners, residents, and custodians — creating a model where human presence directly supports regeneration.
+            <p style={{ fontSize: '1.2rem', color: '#556358', lineHeight: 1.8, maxWidth: '780px', fontWeight: 400 }}>
+              Conventional development often ends at the transaction. At Vanatvam, the work is designed to continue — as the landscape matures, experiences take root and people become stewards of the place.
             </p>
-            <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '36px 32px', position: 'relative' }}>
-              <span style={{ position: 'absolute', top: '10px', left: '24px', fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9250000000000003rem, 3.5vw, 3.5rem)', color: 'var(--accent-gold)', opacity: 0.3, lineHeight: 1 }}>&ldquo;</span>
-              <blockquote style={{ margin: 0, position: 'relative', zIndex: 1 }}>
-                <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.4rem', color: '#FFF', fontStyle: 'italic', marginBottom: '10px', marginTop: '18px' }}>
-                  If you want to save the wildlife, start by saving the trees.
-                </p>
-                <footer style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>— Deepak Kasthuri, Managing Director</footer>
-              </blockquote>
-            </div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            style={{ flex: '1 1 50%', minWidth: '300px', position: 'relative', minHeight: '500px' }}
-          >
-            <img src="/assets/project-images/Maduvana/Tropical%20Garden%20Pond%20Oasis.png" alt="Forest Conservation" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
-            <div style={{ position: 'absolute', bottom: '40px', left: '40px', background: 'rgba(18,34,23,0.6)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '18px', padding: '20px 26px', display: 'flex', alignItems: 'center', gap: '16px' }}>
-              <i className="fa-solid fa-leaf" style={{ color: 'var(--accent-gold)', fontSize: '1.4rem' }}></i>
-              <div>
-                <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: '#FFF', lineHeight: 1 }}>85%+</div>
-                <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: '4px' }}>Native Canopy Restored</div>
-              </div>
-            </div>
-          </motion.div>
+          </div>
+
+          {/* 4 Cards Grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '24px' }}>
+            {[
+              {
+                num: '01 / Nature first',
+                title: 'Start with the land',
+                desc: 'We look for natural character — soil, water, vegetation and ecological potential — before shaping the plan.'
+              },
+              {
+                num: '02 / Biodiversity',
+                title: 'Design for life',
+                desc: 'Native trees, layered planting, water-sensitive spaces and habitat are considered part of the design, not decoration.'
+              },
+              {
+                num: '03 / Experience',
+                title: 'Make nature part of life',
+                desc: 'Trails, ponds, cottages, gardens and gathering spaces give families meaningful reasons to return to the land.'
+              },
+              {
+                num: '04 / Community',
+                title: 'Grow a shared legacy',
+                desc: 'Individual ownership sits within a wider landscape experienced collectively and cared for over time.'
+              }
+            ].map((card, i) => (
+              <motion.div
+                key={card.num}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ y: -6, boxShadow: '0 20px 40px rgba(0,0,0,0.06)' }}
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '20px',
+                  padding: '40px 32px',
+                  border: '1px solid rgba(0,0,0,0.04)',
+                  boxShadow: '0 10px 25px rgba(0,0,0,0.02)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--accent-gold)', letterSpacing: '0.12em', fontWeight: 600, display: 'block', marginBottom: '24px' }}>
+                    {card.num}
+                  </span>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.65rem', color: 'var(--bg-dark-forest)', fontWeight: 600, lineHeight: 1.25, marginBottom: '16px' }}>
+                    {card.title}
+                  </h3>
+                  <p style={{ fontSize: '1.02rem', color: '#687B63', lineHeight: 1.7, margin: 0 }}>
+                    {card.desc}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -306,7 +445,7 @@ export default function Home() {
                 When Nature Takes Over
               </span>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 4.5vw, 3.3rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.15, marginBottom: '22px' }}>
-                <RevealText>We plant the beginning.</RevealText><br/>
+                <RevealText>We plant the beginning.</RevealText><br />
                 <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Nature builds the rest.</RevealText>
               </h2>
               <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', lineHeight: 1.8, marginBottom: '40px' }}>
@@ -342,157 +481,331 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Redesigned Biodiversity by Design - Premium Sticky Layout */}
-      <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: '#F9F8F6' }}>
+      {/* Section 7: How we create value — step by step. */}
+      <section style={{ padding: 'clamp(90px, 12vh, 130px) 0', background: '#FBF9F5', position: 'relative' }}>
         <div className="container">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '80px' }}>
-            
-            {/* Sticky Left Column */}
-            <div style={{ flex: '1 1 400px', position: 'relative' }}>
-              <div style={{ position: 'sticky', top: '160px' }}>
-                <motion.span 
-                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
-                  style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '20px' }}
-                >
-                  Biodiversity by Design
-                </motion.span>
-                <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.09rem, 3.8vw, 3.8rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.1, marginBottom: '30px' }}>
-                  <RevealText>We don&apos;t landscape.</RevealText><br/>
-                  <RevealText delay={0.1}>We create ecosystems.</RevealText>
-                </h2>
-                <motion.p 
-                  initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
-                  style={{ fontSize: '1.2rem', color: 'var(--text-muted)', lineHeight: 1.7, maxWidth: '480px' }}
-                >
-                  Every Vanatvam community begins with the land itself. We study its soil, water, terrain, and existing vegetation to design landscapes where native forests, wildlife habitats, and human spaces work perfectly together.
-                </motion.p>
-              </div>
-            </div>
-
-            {/* Feature Grid */}
-            <div style={{ flex: '1 1 500px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
-              {[
-                { icon: TreePine, title: 'Nakshatra Vana', description: "Forests inspired by India's ancient connection between trees, nature, and the stars. A tranquil space for reflection." },
-                { icon: Leaf, title: 'Navagraha Vana', description: "Thematic plantations rooted in India's traditional ecological knowledge, bringing balance to the environment." },
-                { icon: Droplets, title: 'Soil & Water', description: "Engineered swales, rain catchments, and organic soil enrichment that continuously recharge groundwater levels." },
-                { icon: RefreshCcw, title: 'Self-Sustaining', description: "The ultimate objective is simple yet profound: Create an ecosystem that can naturally sustain and regenerate itself." }
-              ].map((feature, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.7, delay: i * 0.08 }}
-                >
-                  <FeatureCard feature={feature} />
-                </motion.div>
-              ))}
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* 200+ Varieties of Trees, Plants & Habitats */}
-      <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: '#122217' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 70px' }}>
-            <span style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '20px' }}>
-              200+ Varieties of Trees, Plants &amp; Habitats
+          <div style={{ maxWidth: '820px', marginBottom: '64px' }}>
+            <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '18px' }}>
+              FROM LAND TO LIVING EXPERIENCE
             </span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 4.5vw, 3.5rem)', color: '#FFFFFF', lineHeight: 1.15, marginBottom: '24px' }}>
-              <RevealText>Functioning Habitats</RevealText> <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Supporting Life.</RevealText>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.12, letterSpacing: '-0.02em', fontWeight: 600, marginBottom: '20px' }}>
+              How we create value —<br />
+              <span style={{ fontStyle: 'italic', fontWeight: 400 }}>step by step.</span>
             </h2>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8 }}>
-              Across our communities, Vanatvam has introduced and conserved 200+ varieties of trees and plants, including rare and endangered native species. These aren&apos;t ornamental plantations — they are designed as functioning habitats that support an expanding network of life.
+            <p style={{ fontSize: '1.18rem', color: '#556358', lineHeight: 1.8, maxWidth: '720px', fontWeight: 400 }}>
+              Every place has its own character. Our process is designed to respect it, restore what can be nurtured and create a community that can grow with the landscape.
             </p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px' }}>
+          {/* 5 Steps Linear Flow */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '32px' }}>
             {[
-              { icon: 'fa-feather-pointed', name: 'Indian Grey Hornbill', text: 'Feeds on native fig species (Ficus) planted across our multi-layered forest corridors.' },
-              { icon: 'fa-dove', name: 'Woolly-necked Stork', text: 'Thrives around wetlands, seasonal swales, and water-forest ponds across our estates.' },
-              { icon: 'fa-crow', name: 'Asian Green Bee-eater', text: 'Restores natural insect control while nesting along pristine dirt mounds and flower pathways.' },
-              { icon: 'fa-kiwi-bird', name: 'Baya Weaver', text: 'Weaves intricate nests on palm branches in our self-sustaining ecological farm plots.' },
-              { icon: 'fa-water', name: 'Purple Heron', text: 'Frequents the quiet water bodies and riverfront sanctuaries of our Eeshavana community.' },
-            ].map((s, i) => (
+              {
+                num: '01',
+                title: 'Select land with character',
+                desc: 'Understand the water, soil, terrain, vegetation and potential of a place.'
+              },
+              {
+                num: '02',
+                title: 'Restore what exists',
+                desc: 'Strengthen the landscape through native planting, water care and biodiversity spaces.'
+              },
+              {
+                num: '03',
+                title: 'Design around nature',
+                desc: 'Integrate access, shared spaces and amenities with the natural setting.'
+              },
+              {
+                num: '04',
+                title: 'Create reasons to return',
+                desc: 'Build experiences around walking, staying, gathering, learning and exploring.'
+              },
+              {
+                num: '05',
+                title: 'Build a community',
+                desc: 'Invite people to live with the landscape, care for it and pass it forward.'
+              }
+            ].map((step, i) => (
               <motion.div
-                key={s.name}
-                initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.6, delay: i * 0.08 }}
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '20px', padding: '36px 28px' }}
+                key={step.num}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.12 }}
+                style={{
+                  position: 'relative',
+                  borderTop: '2px solid rgba(198,162,101,0.3)',
+                  paddingTop: '28px',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
               >
-                <div style={{ color: 'var(--accent-gold)', fontSize: '1.6rem', marginBottom: '18px' }}><i className={`fa-solid ${s.icon}`}></i></div>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: '#FFF', marginBottom: '10px' }}>{s.name}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>{s.text}</p>
+                <span style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '2.4rem',
+                  color: 'var(--accent-gold)',
+                  lineHeight: 1,
+                  fontWeight: 600,
+                  marginBottom: '18px'
+                }}>
+                  {step.num}
+                </span>
+                <h3 style={{
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '1.45rem',
+                  color: 'var(--bg-dark-forest)',
+                  fontWeight: 600,
+                  lineHeight: 1.3,
+                  marginBottom: '14px'
+                }}>
+                  {step.title}
+                </h3>
+                <p style={{
+                  fontSize: '0.98rem',
+                  color: '#687B63',
+                  lineHeight: 1.7,
+                  margin: 0,
+                  fontWeight: 400
+                }}>
+                  {step.desc}
+                </p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      <motion.section className="projects-section" id="projects" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={staggerContainer} style={{ padding: 'clamp(60px, 8vh, 90px) 0', background: 'var(--bg-cream)', position: 'relative', overflow: 'hidden' }}>
+      {/* Section 8: We create the conditions. Nature does the rest. */}
+      <section style={{ padding: 'clamp(90px, 12vh, 130px) 0', background: '#0F1D14', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '70px', alignItems: 'center' }}>
+
+            {/* Left Content Column */}
+            <div style={{ flex: '1 1 520px' }}>
+              <span style={{ color: 'var(--accent-gold)', fontSize: '0.82rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '20px' }}>
+                BIODIVERSITY BY DESIGN
+              </span>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.6rem, 5vw, 4.4rem)', color: '#FFFFFF', lineHeight: 1.1, letterSpacing: '-0.02em', fontWeight: 600, marginBottom: '28px' }}>
+                We create the conditions.<br />
+                <span style={{ fontStyle: 'italic', fontWeight: 400 }}>Nature does the rest.</span>
+              </h2>
+              <p style={{ fontSize: '1.12rem', color: 'rgba(255,255,255,0.78)', lineHeight: 1.8, marginBottom: '16px', fontWeight: 400 }}>
+                Our landscapes are planned around the relationships that sustain life: trees and soil, water and habitat, birds and pollinators, people and place. Over time, a diverse and thoughtfully nurtured landscape can become richer and more resilient.
+              </p>
+              <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8, marginBottom: '44px' }}>
+                Across Vanatvam communities, more than 200 varieties of trees and plants have been introduced or conserved, including native and ecologically significant species. The intention is habitat — not simply ornamental greenery.
+              </p>
+
+              {/* 2x2 Metric Grid */}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '32px 40px', borderTop: '1px solid rgba(255,255,255,0.12)', paddingTop: '32px', marginBottom: '36px' }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1, marginBottom: '8px' }}>
+                    200+
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
+                    Tree and plant varieties
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1, marginBottom: '8px' }}>
+                    5,000+
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
+                    Trees cited for Madhuvana in brand material
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: '#FFFFFF', fontWeight: 600, lineHeight: 1, marginBottom: '8px' }}>
+                    10,000+
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
+                    Trees planned/cited for Anantavana in brand material
+                  </div>
+                </div>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.2rem', color: 'var(--accent-gold)', fontWeight: 600, lineHeight: 1.1, marginBottom: '8px' }}>
+                    Native-first
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.5 }}>
+                    Planting and habitat thinking
+                  </div>
+                </div>
+              </div>
+
+              {/* Sacred Vana Pill Tags */}
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                {['Nakshatra Vana', 'Navagraha Vana', 'Saraswathi Vana', 'Vinayaka Vana', 'Ashoka Vana'].map((tag) => (
+                  <span
+                    key={tag}
+                    style={{
+                      fontSize: '0.78rem',
+                      padding: '8px 18px',
+                      borderRadius: '30px',
+                      border: '1px solid rgba(255,255,255,0.22)',
+                      color: 'rgba(255,255,255,0.85)',
+                      letterSpacing: '0.04em'
+                    }}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Image Column */}
+            <div style={{ flex: '1 1 420px', position: 'relative' }}>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                style={{
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  height: '560px',
+                  boxShadow: '0 30px 60px rgba(0,0,0,0.4)',
+                  border: '1px solid rgba(255,255,255,0.1)'
+                }}
+              >
+                <img
+                  src="/assets/project-images/Ananthavana/hero_image_2.jpg"
+                  alt="Ancient tall trees sunlit forest grove"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </motion.div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Section 9: Four Unique Expressions of Nature's Abundance */}
+      <motion.section className="projects-section" id="projects" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={staggerContainer} style={{ padding: 'clamp(90px, 12vh, 130px) 0', background: 'var(--bg-cream)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '-10%', left: '-5%', width: '40vw', height: '40vw', background: 'radial-gradient(circle, rgba(198,162,101,0.08) 0%, transparent 70%)', zIndex: 0, borderRadius: '50%' }}></div>
         <div style={{ position: 'absolute', bottom: '-10%', right: '-5%', width: '50vw', height: '50vw', background: 'radial-gradient(circle, rgba(45,106,79,0.05) 0%, transparent 70%)', zIndex: 0, borderRadius: '50%' }}></div>
 
         <div className="container relative-z" style={{ zIndex: 2 }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '80px' }}>
-            <motion.div variants={fadeIn} style={{ flex: '1 1 500px', maxWidth: '600px' }}>
-              <span className="subtitle-tag" style={{ color: 'var(--accent-gold)' }}>LIVING ECOSYSTEMS</span>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.9250000000000003rem, 3.5vw, 3.5rem)', lineHeight: 1.1, color: 'var(--bg-dark-forest)', marginTop: '15px' }}>
-                <RevealText>Four Unique Expressions of</RevealText> <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Nature&apos;s Abundance.</RevealText>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '60px' }}>
+            <motion.div variants={fadeIn} style={{ flex: '1 1 500px', maxWidth: '640px' }}>
+              <span className="subtitle-tag" style={{ color: 'var(--accent-gold)', letterSpacing: '0.22em', fontWeight: 700 }}>LIVING ECOSYSTEMS</span>
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', lineHeight: 1.15, color: 'var(--bg-dark-forest)', marginTop: '14px', fontWeight: 600 }}>
+                Four Unique Expressions<br />
+                of <span style={{ fontStyle: 'italic', fontWeight: 400 }}>Nature&apos;s Abundance.</span>
               </h2>
             </motion.div>
-            <motion.div variants={fadeIn} style={{ flex: '0 0 auto', marginTop: '30px' }}>
+            <motion.div variants={fadeIn} style={{ flex: '0 0 auto', marginTop: '20px' }}>
               <Magnetic strength={0.25}>
-                <Link href="/projects" className="btn-pill btn-pill-dark" style={{ display: 'inline-flex', padding: '14px 28px', fontSize: '1.05rem' }}>
-                  Explore All Projects <i className="fa-solid fa-arrow-right" style={{ marginLeft: '10px' }}></i>
+                <Link href="/projects" className="btn-pill btn-pill-dark" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '14px 28px', fontSize: '1rem', fontWeight: 600, borderRadius: '100px' }}>
+                  Explore All Projects <ArrowRight className="size-4" />
                 </Link>
               </Magnetic>
             </motion.div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '30px', gridAutoFlow: 'dense' }}>
+          {/* Clean 2x2 Architectural Grid matching screenshot 9 */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '32px' }}>
             {[
-              { id: 'brindavana', name: 'BRINDAVANA', loc: 'Pavagada · 30 Acres', img: '/assets/project-images/Ananthavana/hero_image_2.jpg', colSpan: 'span 7', height: '480px', desc: 'A benchmark in ecological restoration, turning barren land into a thriving ecosystem.' },
-              { id: 'madhuvana', name: 'MADHUVANA', loc: 'Maddur · 18 Acres', img: '/assets/project-images/Maduvana/hero.png', colSpan: 'span 5', height: '480px', desc: 'A dense water-forest ecosystem built around 250+ native trees and sustainable farm plots.' },
-              { id: 'anantavana', name: 'ANANTAVANA', loc: 'Near Kabini · 35 Acres', img: '/assets/project-images/Ananthavana/hero_image.jpg', colSpan: 'span 5', height: '400px', desc: 'Nestled in the Bandipur wildlife corridor, designed to support high biodiversity.' },
-              { id: 'eeshavana', name: 'EESHAVANA', loc: 'Kollegala · Cauvery Riverfront', img: '/assets/project-images/Esahavana/EV%20River%20View%201.jpg', colSpan: 'span 7', height: '400px', desc: 'Our premier riverfront community along the banks of the sacred Cauvery river.' }
+              {
+                id: 'brindavana',
+                name: 'BRINDAVANA',
+                badge: 'PAVAGADA · 30 ACRES',
+                img: '/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png',
+                desc: 'A benchmark in ecological regeneration, turning barren land into a thriving Nakshatra Vana forest.'
+              },
+              {
+                id: 'madhuvana',
+                name: 'MADHUVANA',
+                badge: 'MADDUR · 18 ACRES',
+                img: '/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png',
+                desc: 'A dense water-forest ecosystem built around 250+ native trees and tranquil farm courtyards.'
+              },
+              {
+                id: 'anantavana',
+                name: 'ANANTAVANA',
+                badge: 'NEAR KABINI · 35 ACRES',
+                img: '/assets/project-images/Ananthavana/hero_image.jpg',
+                desc: 'Nestled in the Bandipur wildlife corridor, connecting heritage eco-architecture with pristine wilderness.'
+              },
+              {
+                id: 'eeshavana',
+                name: 'EESHAVANA',
+                badge: 'KOLLEGALA · CAUVERY RIVERFRONT',
+                img: '/assets/project-images/Esahavana/Riverside%20view.png',
+                desc: 'A premier riverfront sanctuary on the sacred banks of Cauvery with pristine waterscapes.'
+              }
             ].map((proj, i) => (
-              <motion.div 
-                key={i}
+              <motion.div
+                key={proj.id}
                 variants={fadeIn}
-                whileHover="hover"
-                initial="initial"
-                style={{ 
-                  gridColumn: proj.colSpan, 
-                  height: proj.height, 
-                  borderRadius: '24px', 
-                  overflow: 'hidden', 
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                style={{
+                  height: '380px',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
                   position: 'relative',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.08)'
+                  boxShadow: '0 20px 45px rgba(0,0,0,0.12)',
+                  cursor: 'pointer'
                 }}
               >
                 <Link href={`/${proj.id}`} style={{ display: 'block', width: '100%', height: '100%', textDecoration: 'none' }}>
-                  <TiltCard max={4} style={{ width: '100%', height: '100%', position: 'relative' }}>
-                    <motion.div
-                      variants={{ initial: { scale: 1 }, hover: { scale: 1.05 } }}
-                      transition={{ duration: 0.6, ease: [0.33, 1, 0.68, 1] }}
-                      style={{ width: '100%', height: '100%', position: 'absolute', inset: 0 }}
-                    >
-                      <img src={proj.img} alt={proj.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </motion.div>
+                  <img
+                    src={proj.img}
+                    alt={proj.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.6s ease' }}
+                  />
 
-                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(18,34,23,0.95) 0%, rgba(18,34,23,0.4) 50%, rgba(18,34,23,0) 100%)', zIndex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '40px' }}>
-                      <motion.div variants={{ initial: { y: 20 }, hover: { y: 0 } }} transition={{ duration: 0.4, ease: "easeOut" }} className="bento-card-content">
-                        <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(10px)', color: '#FFF', padding: '6px 16px', borderRadius: '30px', fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '16px' }}>{proj.loc}</span>
-                        <h3 style={{ color: '#FFF', fontFamily: 'var(--font-serif)', fontSize: '2.4rem', margin: '0 0 10px 0' }}>{proj.name}</h3>
-                        <motion.p
-                          variants={{ initial: { opacity: 0, height: 0, marginTop: 0 }, hover: { opacity: 1, height: 'auto', marginTop: 10 } }}
-                          transition={{ duration: 0.3 }}
-                          style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', margin: 0, maxWidth: '80%' }}
-                        >
-                          {proj.desc}
-                        </motion.p>
-                      </motion.div>
+                  {/* Dark subtle gradient overlay */}
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(to top, rgba(14,26,18,0.92) 0%, rgba(14,26,18,0.3) 45%, rgba(0,0,0,0.05) 100%)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-end',
+                    padding: '36px 32px'
+                  }}>
+                    {/* Badge Pill */}
+                    <div style={{ marginBottom: '14px' }}>
+                      <span style={{
+                        display: 'inline-block',
+                        background: 'rgba(0,0,0,0.45)',
+                        backdropFilter: 'blur(8px)',
+                        color: 'rgba(255,255,255,0.9)',
+                        padding: '6px 14px',
+                        borderRadius: '20px',
+                        fontSize: '0.72rem',
+                        letterSpacing: '0.12em',
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        border: '1px solid rgba(255,255,255,0.18)'
+                      }}>
+                        {proj.badge}
+                      </span>
                     </div>
-                  </TiltCard>
+
+                    <h3 style={{
+                      color: '#FFFFFF',
+                      fontFamily: "'Cinzel', var(--font-serif), serif",
+                      fontSize: '2.1rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.06em',
+                      margin: '0 0 8px 0',
+                      textShadow: '0 2px 10px rgba(0,0,0,0.5)'
+                    }}>
+                      {proj.name}
+                    </h3>
+
+                    <p style={{
+                      color: 'rgba(255,255,255,0.8)',
+                      fontSize: '0.95rem',
+                      lineHeight: 1.5,
+                      margin: 0,
+                      fontWeight: 300,
+                      maxWidth: '90%'
+                    }}>
+                      {proj.desc}
+                    </p>
+                  </div>
                 </Link>
               </motion.div>
             ))}
@@ -518,12 +831,11 @@ export default function Home() {
             {[...Array(2)].map((_, loopIndex) => (
               <div key={loopIndex} style={{ display: 'flex' }}>
                 {[
-                  { img: '/assets/project-images/Ananthavana/hero_image_2.jpg', alt: 'Family walking dog on trail' },
-                  { img: '/assets/project-images/Maduvana/hero.png', alt: 'Family petting dog' },
-                  { img: '/assets/project-images/Ananthavana/hero_image.jpg', alt: 'Cow grazing in farm' },
-                  { img: '/assets/project-images/Esahavana/EV%20River%20View%201.jpg', alt: 'Woman picking herbs' },
-                  { img: '/assets/project-images/Maduvana/Tropical%20Garden%20Pond%20Oasis.png', alt: 'Forest path walking' },
-                  { img: '/assets/project-images/Esahavana/Riverside%20view.png', alt: 'Riverfront views' }
+                  { img: '/assets/project-images/Brindavana/Sunny%20Tropical%20Banana%20Orchard.png', alt: 'Lush tropical banana orchard' },
+                  { img: '/assets/project-images/Brindavana/Vibrant%20Tropical%20Garden%20Nursery.png', alt: 'Sapling nursery planting native species' },
+                  { img: '/assets/project-images/Esahavana/20260731_113013.jpg.jpeg', alt: 'Lush tree canopy along serene trail' },
+                  { img: '/assets/project-images/Maduvana/Modern%20Brick%20Courtyard%20with%20Arched%20Canopy.png', alt: 'Sustainable brick pavilion and courtyard' },
+                  { img: '/assets/project-images/Brindavana/Tropical%20Garden%20Pathway%20Tunnel.png', alt: 'Verdant green foliage garden tunnel' }
                 ].map((item, i) => (
                   <div key={i} style={{ width: '400px', height: '280px', margin: '0 12px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 20px rgba(0,0,0,0.05)', flexShrink: 0 }}>
                     <img src={item.img} alt={item.alt} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
@@ -533,7 +845,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes marqueeScroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -597,7 +910,7 @@ export default function Home() {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', marginBottom: '60px' }}>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
               style={{ background: '#FFF', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.05)' }}
             >
@@ -611,8 +924,8 @@ export default function Home() {
                 </p>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
               style={{ background: '#FFF', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.05)' }}
             >
@@ -626,8 +939,8 @@ export default function Home() {
                 </p>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
               style={{ background: '#FFF', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.05)' }}
             >
@@ -666,11 +979,189 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Client Reviews Section */}
+      {/* FKCCI Award Recognition Section */}
+      <section style={{ padding: 'clamp(90px, 12vh, 120px) 0', background: '#F7F5F0', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '35vw', height: '35vw', background: 'radial-gradient(circle, rgba(198,162,101,0.08) 0%, transparent 70%)', zIndex: 0, borderRadius: '50%' }} />
+
+        <div className="container relative" style={{ zIndex: 1 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '60px', alignItems: 'center' }}>
+
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(198,162,101,0.15)', border: '1px solid rgba(198,162,101,0.3)', padding: '6px 16px', borderRadius: '30px', marginBottom: '20px' }}>
+                <Award className="size-4" style={{ color: 'var(--accent-gold)' }} />
+                <span style={{ color: '#1B2B1F', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                  Institutional Recognition
+                </span>
+              </div>
+
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.4rem, 4.5vw, 3.8rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.15, marginBottom: '24px', letterSpacing: '-0.02em', fontWeight: 600 }}>
+                FKCCI Award in<br />
+                <span style={{ fontStyle: 'italic', fontWeight: 400 }}>Tourism &amp; Hospitality.</span>
+              </h2>
+
+              <p style={{ fontSize: '1.15rem', color: '#333D35', lineHeight: 1.8, marginBottom: '20px', fontWeight: 400 }}>
+                Vanatvam&apos;s ecological model has received distinguished recognition through the <strong style={{ color: 'var(--bg-dark-forest)', fontWeight: 600 }}>FKCCI Award in Tourism and Hospitality</strong> presented by the Federation of Karnataka Chambers of Commerce and Industry.
+              </p>
+
+              <p style={{ fontSize: '1.05rem', color: '#556358', lineHeight: 1.8, marginBottom: '32px' }}>
+                This honor reaffirms that nature-led land development, cultural restoration of sacred groves, and commercial viability thrive together — creating long-term generational wealth and living habitats.
+              </p>
+
+              <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <CheckCircle2 className="size-5" style={{ color: 'var(--accent-gold)' }} />
+                  <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--bg-dark-forest)' }}>State-Level Industry Honor</span>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <CheckCircle2 className="size-5" style={{ color: 'var(--accent-gold)' }} />
+                  <span style={{ fontSize: '0.95rem', fontWeight: 600, color: 'var(--bg-dark-forest)' }}>Ecological &amp; Agrarian Excellence</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* FKCCI Citation Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              style={{
+                background: '#FFFFFF',
+                padding: '48px 40px',
+                borderRadius: '28px',
+                boxShadow: '0 25px 60px rgba(0,0,0,0.06)',
+                border: '1px solid rgba(198,162,101,0.25)',
+                position: 'relative',
+                overflow: 'hidden'
+              }}
+            >
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '6px', background: 'linear-gradient(90deg, var(--accent-gold), #E8D3A7, var(--accent-gold))' }}></div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '28px' }}>
+                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: 'var(--bg-cream)', border: '2px solid rgba(198,162,101,0.4)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Award className="size-8" style={{ color: 'var(--accent-gold)' }} />
+                </div>
+                <div>
+                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--bg-dark-forest)', margin: 0, fontWeight: 700 }}>FKCCI Excellence</h3>
+                  <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Federation of Karnataka Chambers of Commerce</span>
+                </div>
+              </div>
+
+              <div style={{ borderTop: '1px solid rgba(0,0,0,0.06)', paddingTop: '24px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--accent-gold)', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '4px' }}>Award Category</span>
+                  <div style={{ fontSize: '1.2rem', color: 'var(--bg-dark-forest)', fontFamily: 'var(--font-serif)', fontWeight: 600 }}>Excellence in Tourism &amp; Nature Hospitality</div>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--accent-gold)', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '4px' }}>Honoring Institution</span>
+                  <div style={{ fontSize: '1.05rem', color: 'var(--bg-dark-forest)', fontWeight: 500 }}>FKCCI (Estd. 1916 by Bharat Ratna Sir M. Visvesvaraya)</div>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--accent-gold)', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '4px' }}>Impact Recognized</span>
+                  <div style={{ fontSize: '0.95rem', color: '#556358', lineHeight: 1.6 }}>Revival of traditional Karnataka tree groves, groundwater aquifers, and natural agrarian living ecosystems.</div>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Leadership Section */}
+      <section style={{ padding: 'clamp(90px, 12vh, 130px) 0', background: '#122217', color: '#FFFFFF', position: 'relative', overflow: 'hidden' }}>
+        <div className="container">
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '80px', alignItems: 'center' }}>
+
+            {/* Founder Visual Frame */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              style={{ flex: '1 1 420px', position: 'relative' }}
+            >
+              <div style={{ borderRadius: '28px', overflow: 'hidden', height: '520px', boxShadow: '0 30px 70px rgba(0,0,0,0.5)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <img
+                  src="/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.png"
+                  alt="Founder leadership and land care"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
+
+              {/* Floating Quote Badge */}
+              <div style={{
+                position: 'absolute',
+                bottom: '-25px',
+                right: '-15px',
+                background: 'rgba(18,34,23,0.92)',
+                backdropFilter: 'blur(16px)',
+                padding: '28px 32px',
+                borderRadius: '20px',
+                border: '1px solid rgba(198,162,101,0.4)',
+                maxWidth: '320px',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+              }}>
+                <span style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: 'var(--accent-gold)', lineHeight: 0.5, display: 'block', marginBottom: '14px' }}>&ldquo;</span>
+                <p style={{ fontFamily: 'var(--font-serif)', fontSize: '1.18rem', fontStyle: 'italic', margin: 0, lineHeight: 1.5, color: '#FFFFFF' }}>
+                  If you want to save the wildlife, start by saving the trees.
+                </p>
+                <div style={{ marginTop: '12px', fontSize: '0.8rem', color: 'var(--accent-gold)', letterSpacing: '0.1em', textTransform: 'uppercase', fontWeight: 600 }}>
+                  — Deepak Kasthuri
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Founder Bio Column */}
+            <div style={{ flex: '1 1 500px' }}>
+              <span style={{ color: 'var(--accent-gold)', fontSize: '0.82rem', letterSpacing: '0.22em', textTransform: 'uppercase', fontWeight: 700, display: 'block', marginBottom: '18px' }}>
+                FOUNDER &amp; MANAGING DIRECTOR
+              </span>
+
+              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.6rem, 5vw, 4rem)', color: '#FFFFFF', lineHeight: 1.12, letterSpacing: '-0.02em', fontWeight: 600, marginBottom: '20px' }}>
+                Deepak Kasthuri
+              </h2>
+
+              <p style={{ fontSize: '1.2rem', color: 'var(--accent-gold)', fontFamily: 'var(--font-serif)', fontStyle: 'italic', marginBottom: '24px' }}>
+                Pioneering Karnataka&apos;s Nature-Led Managed Farmland Movement
+              </p>
+
+              <p style={{ fontSize: '1.12rem', color: 'rgba(255,255,255,0.85)', lineHeight: 1.8, marginBottom: '18px', fontWeight: 400 }}>
+                Driven by a profound reverence for India&apos;s sacred forestry traditions, Deepak Kasthuri founded Vanatvam to dismantle the false boundary between urban families and the natural earth.
+              </p>
+
+              <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.8, marginBottom: '32px' }}>
+                Under his leadership, Vanatvam has transformed over 100 acres of barren and depleted soil across Pavagada, Maddur, Kabini, and Kollegala into biodiverse multi-canopy ecosystems. His pioneering work unites regenerative permaculture, Vedic forestry, and hassle-free managed land ownership.
+              </p>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '24px', borderTop: '1px solid rgba(255,255,255,0.12)', paddingTop: '28px', marginBottom: '36px' }}>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '4px' }}>Registered Entity</span>
+                  <strong style={{ fontSize: '1.05rem', color: '#FFFFFF', fontWeight: 600 }}>Vanatvam Private Limited</strong>
+                </div>
+                <div>
+                  <span style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.1em', display: 'block', marginBottom: '4px' }}>Headquarters</span>
+                  <strong style={{ fontSize: '1.05rem', color: '#FFFFFF', fontWeight: 600 }}>Bengaluru, Karnataka</strong>
+                </div>
+              </div>
+
+              <Magnetic strength={0.25}>
+                <Link href="/about" className="btn-pill btn-pill-gold" style={{ padding: '14px 32px', fontSize: '1rem', fontWeight: 700 }}>
+                  Read Our Full Story <ArrowRight className="size-4" />
+                </Link>
+              </Magnetic>
+            </div>
+
+          </div>
+        </div>
+      </section>
       <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: '#122217', color: '#FFF' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
               style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '20px' }}
             >
@@ -703,14 +1194,14 @@ export default function Home() {
                   ].map((id, i) => (
                     <motion.div
                       key={id + rep}
-                      style={{ 
-                        width: '360px', 
-                        flexShrink: 0, 
-                        borderRadius: '24px', 
-                        overflow: 'hidden', 
-                        boxShadow: '0 20px 40px rgba(0,0,0,0.3)', 
-                        background: '#0A1510', 
-                        border: '1px solid rgba(255,255,255,0.06)' 
+                      style={{
+                        width: '360px',
+                        flexShrink: 0,
+                        borderRadius: '24px',
+                        overflow: 'hidden',
+                        boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+                        background: '#0A1510',
+                        border: '1px solid rgba(255,255,255,0.06)'
                       }}
                     >
                       <div style={{ aspectRatio: '16/9' }}>
@@ -746,7 +1237,7 @@ export default function Home() {
         <div className="container">
           <motion.div className="cta-content" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}>
             <span className="subtitle-tag subtitle-tag-light" style={{ letterSpacing: '0.3em' }}>Discover Vanatvam</span>
-            <h2 className="cta-title">The Future Is Not Built.<br/>It Is Grown.</h2>
+            <h2 className="cta-title">The Future Is Not Built.<br />It Is Grown.</h2>
             <p className="cta-sub">Natural farms. Thriving forests. Meaningful communities. Discover a different relationship with land.</p>
             <Magnetic strength={0.3}>
               <Link href="/contact" className="btn-pill btn-pill-white">
@@ -754,17 +1245,6 @@ export default function Home() {
               </Link>
             </Magnetic>
           </motion.div>
-        </div>
-        <div className="cta-quick-contacts">
-          <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" className="contact-quick-item">
-            <i className="fa-brands fa-whatsapp"></i> WhatsApp Direct
-          </a>
-          <a href="tel:+919999999999" className="contact-quick-item">
-            <i className="fa-solid fa-phone"></i> Call +91 99999 99999
-          </a>
-          <Link href="/contact" className="contact-quick-item">
-            <i className="fa-regular fa-envelope"></i> Send Inquiry
-          </Link>
         </div>
       </section>
 
