@@ -43,8 +43,9 @@ export default function Navigation() {
           boxShadow: scrolled ? "0 10px 30px rgba(18, 34, 23, 0.08)" : "none",
           border: scrolled ? "1px solid rgba(45, 106, 79, 0.08)" : "1px solid transparent",
           overflow: "hidden", // <--- THIS PREVENTS ANY CHILD ELEMENTS / LINES FROM BLEEDING OUT
+          height: scrolled ? "100px" : "120px",
           transition:
-            "background 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+            "background 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.4s cubic-bezier(0.16, 1, 0.3, 1), width 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), margin 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), height 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
           zIndex: 1000,
           position: "fixed",
           top: 0,
@@ -65,11 +66,11 @@ export default function Navigation() {
             }}
           >
             <img
-              src="/assets/images/Project-Logos/vanatvam.png"
+              src="/assets/images/vanatvamlogo.webp"
               alt="Vanatvam Logo"
               className="header-logo-img"
               style={{
-                height: scrolled ? "48px" : "72px",
+                height: scrolled ? "96px" : "112px",
                 width: "auto",
                 filter: scrolled ? "none" : "drop-shadow(0 2px 8px rgba(0,0,0,0.35))",
                 objectFit: "contain",
@@ -115,21 +116,6 @@ export default function Navigation() {
               >
                 {item.label}
 
-                {pathname === item.path && (
-                  <motion.span
-                    layoutId="nav-active-underline"
-                    className="nav-underline"
-                    style={{
-                      position: "absolute",
-                      bottom: "-4px",
-                      left: 0,
-                      right: 0,
-                      height: "2px",
-                      background: "var(--accent-gold)",
-                    }}
-                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
-                  />
-                )}
               </Link>
             ))}
           </nav>

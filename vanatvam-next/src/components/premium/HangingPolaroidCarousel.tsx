@@ -164,7 +164,7 @@ export default function HangingPolaroidCarousel({
       ref={containerRef}
       className={`relative w-full overflow-hidden select-none ${
         isMobile ? 'h-[290px] py-4' : 'h-[380px] sm:h-[410px] py-6'
-      } ${isDark ? 'bg-[#080B09]' : 'bg-[#FAF8F5]'} ${className}`}
+      } ${isDark ? 'bg-[#122217]' : 'bg-[#FAF8F5]'} ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       role="region"

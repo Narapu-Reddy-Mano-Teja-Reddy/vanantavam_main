@@ -25,7 +25,6 @@ import Counter from "@/components/premium/Counter";
 import TiltCard from "@/components/premium/TiltCard";
 import { useLenis } from "@/components/premium/SmoothScroll";
 
-import ApertureRevealCarousel, { ApertureSlide } from "@/components/premium/ApertureRevealCarousel";
 import HangingPolaroidCarousel, { HangingPolaroidItem } from "@/components/premium/HangingPolaroidCarousel";
 
 const lifeAtVanatvamPolaroids: HangingPolaroidItem[] = [
@@ -89,14 +88,20 @@ const lifeAtVanatvamPolaroids: HangingPolaroidItem[] = [
 
 const heroSlides = [
   {
-    id: "brindavana",
-    name: "BRINDAVANA",
-    location: "Pavagada · 30 Acres",
-    tagline:
-      "Our benchmark project — barren land reborn as a thriving forest ecosystem.",
-    img: "/assets/project-images/Ananthavana/hero_image_2.jpg",
+    id: "anantavana",
+    name: "ANANTAVANA",
+    location: "Near Kabini · 35 Acres",
+    tagline: "Living within the Bandipur–Nagarhole wildlife corridor.",
+    img: "/assets/project-images/Ananthavana/hero_image.jpg",
   },
-  {
+   {
+    id: "eeshavana",
+    name: "EESHAVANA",
+    location: "Kollegala · Cauvery Riverfront",
+    tagline: "A premium riverfront community on the sacred Cauvery.",
+    img: "/assets/project-images/Esahavana/EV%20River%20View%201.jpg",
+  },
+   {
     id: "madhuvana",
     name: "MADHUVANA",
     location: "Maddur · 18 Acres",
@@ -104,70 +109,16 @@ const heroSlides = [
     img: "/assets/project-images/Maduvana/hero.png",
   },
   {
-    id: "anantavana",
-    name: "ANANTAVANA",
-    location: "Near Kabini · 35 Acres",
-    tagline: "Living within the Bandipur–Nagarhole wildlife corridor.",
-    img: "/assets/project-images/Ananthavana/hero_image.jpg",
-  },
-  {
-    id: "eeshavana",
-    name: "EESHAVANA",
-    location: "Kollegala · Cauvery Riverfront",
-    tagline: "A premium riverfront community on the sacred Cauvery.",
-    img: "/assets/project-images/Esahavana/EV%20River%20View%201.jpg",
-  },
-];
-
-const livingEcosystemSlides: ApertureSlide[] = [
-  {
     id: "brindavana",
     name: "BRINDAVANA",
-    location: "PAVAGADA · 30 ACRES",
-    badge: "BENCHMARK REGENERATION",
-    category: "Benchmark Ecological Community",
+    location: "Pavagada · 30 Acres",
     tagline:
-      "A benchmark in ecological regeneration, turning barren land into a thriving Nakshatra Vana forest ecosystem.",
-    highlights: ["Nakshatra Vana Groves", "Groundwater Recharged", "Zero Chemical Soil"],
-    img: "/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png",
-    link: "/brindavana",
+      "Our benchmark project — barren land reborn as a thriving forest ecosystem.",
+    img: "/assets/project-images/Ananthavana/hero_image_2.jpg",
   },
-  {
-    id: "madhuvana",
-    name: "MADHUVANA",
-    location: "MADDUR · 18 ACRES",
-    badge: "WATER-FOREST SANCTUARY",
-    category: "Water-Forest Living Estate",
-    tagline:
-      "A dense water-forest ecosystem built around 250+ native trees and tranquil farm courtyards.",
-    highlights: ["250+ Native Trees", "Natural Waterbodies", "Vernacular Architecture"],
-    img: "/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png",
-    link: "/madhuvana",
-  },
-  {
-    id: "anantavana",
-    name: "ANANTAVANA",
-    location: "NEAR KABINI · 35 ACRES",
-    badge: "WILDLIFE CORRIDOR",
-    category: "Wildlife Corridor Sanctuary",
-    tagline:
-      "Nestled in the Bandipur wildlife corridor, connecting heritage eco-architecture with pristine wilderness.",
-    highlights: ["Wildlife Buffer Zone", "Ancient Tree Canopies", "Organic Farm Life"],
-    img: "/assets/project-images/Ananthavana/hero_image.jpg",
-    link: "/anantavana",
-  },
-  {
-    id: "eeshavana",
-    name: "EESHAVANA",
-    location: "KOLLEGALA · CAUVERY RIVERFRONT",
-    badge: "RIVERFRONT COMMUNITY",
-    category: "Riverfront Nature Community",
-    tagline:
-      "A premier riverfront sanctuary on the sacred banks of Cauvery with pristine waterscapes.",
-    highlights: ["Direct Cauvery Riverfront", "Sacred Groves", "Private Green Estates"],
-    img: "/assets/project-images/Esahavana/Riverside%20view.png",
-    link: "/eeshavana",
-  },
+ 
+  
+ 
 ];
 
 export default function Home() {
@@ -1624,16 +1575,10 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8 }}
-                style={{
-                  borderRadius: "24px",
-                  overflow: "hidden",
-                  height: "560px",
-                  boxShadow: "0 30px 60px rgba(0,0,0,0.4)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
+                 
               >
                 <img
-                  src="/assets/project-images/Ananthavana/hero_image_2.jpg"
+                  src="/assets/project-images/Ananthavana/hero.png"
                   alt="Ancient tall trees sunlit forest grove"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -1643,30 +1588,280 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 9: Four Unique Expressions of Nature's Abundance — Aperture Reveal Carousel */}
-      <section
-        className="projects-section relative w-full overflow-hidden"
-        id="projects"
-        style={{
-          background: "#0A1510",
-          padding: 0,
-        }}
+     {/* Section 9: Four Unique Expressions of Nature's Abundance with Sticky Left Header and Overlapping Scrolling Cards */}
+<section
+  className="projects-section projects-sticky-section"
+  id="projects"
+  style={{
+    padding: "clamp(100px, 14vh, 160px) 0",
+    background: "var(--bg-cream)",
+    position: "relative",
+    overflow: "visible",
+  }}
+>
+  {/* Background Glows */}
+  <div
+    style={{
+      position: "absolute",
+      top: "-10%",
+      left: "-5%",
+      width: "40vw",
+      height: "40vw",
+      background:
+        "radial-gradient(circle, rgba(198,162,101,0.08) 0%, transparent 70%)",
+      zIndex: 0,
+      borderRadius: "50%",
+    }}
+  />
+  <div
+    style={{
+      position: "absolute",
+      bottom: "-10%",
+      right: "-5%",
+      width: "50vw",
+      height: "50vw",
+      background:
+        "radial-gradient(circle, rgba(45,106,79,0.05) 0%, transparent 70%)",
+      zIndex: 0,
+      borderRadius: "50%",
+    }}
+  />
+
+  <div
+    className="container relative-z projects-sticky-container"
+    style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", zIndex: 2 }}
+  >
+    {/* Main Grid Layout: Left Sticky Header, Right Scrolling Overlap Stack */}
+    <div
+      className="projects-sticky-layout"
+    >
+      {/* LEFT COLUMN: Sticky Header Content */}
+      <div
+        className="projects-sticky-header"
       >
-        {/* Full-width clean 100vh Aperture Reveal Slider */}
-        <div className="w-full relative overflow-hidden">
-          <ApertureRevealCarousel
-            slides={livingEcosystemSlides}
-            autoPlayInterval={7000}
-            height="h-screen min-h-[640px]"
-          />
-        </div>
-      </section>
+        <motion.span
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="subtitle-tag"
+          style={{
+            color: "var(--accent-gold)",
+            fontSize: "0.8rem",
+            letterSpacing: "0.26em",
+            textTransform: "uppercase",
+            fontWeight: 700,
+            display: "block",
+            marginBottom: "16px",
+          }}
+        >
+          LIVING ECOSYSTEMS
+        </motion.span>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)",
+            lineHeight: 1.15,
+            color: "var(--bg-dark-forest)",
+            letterSpacing: "-0.025em",
+            fontWeight: 600,
+            marginBottom: "24px",
+          }}
+        >
+          Four Unique Expressions
+          <br />
+          of{" "}
+          <span style={{ fontStyle: "italic", fontWeight: 400 }}>
+            Nature&apos;s Abundance.
+          </span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{
+            fontSize: "clamp(1.05rem, 1.2vw, 1.2rem)",
+            color: "#556358",
+            lineHeight: 1.75,
+            fontWeight: 400,
+            marginBottom: "32px",
+          }}
+        >
+          Explore our signature ecosystem developments designed to harmonize
+          luxurious living with pristine ecological regeneration.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <Magnetic strength={0.25}>
+            <Link
+              href="/projects"
+              className="btn-pill btn-pill-dark"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                padding: "14px 28px",
+                fontSize: "1rem",
+                fontWeight: 600,
+                borderRadius: "100px",
+              }}
+            >
+              Explore All Projects <ArrowRight className="size-4" />
+            </Link>
+          </Magnetic>
+        </motion.div>
+      </div>
+
+      {/* RIGHT COLUMN: Overlapping Scrolling Project Cards Stack */}
+      <div className="projects-sticky-cards">
+        {[
+          {
+            id: "brindavana",
+            name: "BRINDAVANA",
+            badge: "PAVAGADA · 30 ACRES",
+            img: "/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png",
+            desc: "A benchmark in ecological regeneration, turning barren land into a thriving Nakshatra Vana forest.",
+          },
+          {
+            id: "madhuvana",
+            name: "MADHUVANA",
+            badge: "MADDUR · 18 ACRES",
+            img: "/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png",
+            desc: "A dense water-forest ecosystem built around 250+ native trees and tranquil farm courtyards.",
+          },
+          {
+            id: "anantavana",
+            name: "ANANTAVANA",
+            badge: "NEAR KABINI · 35 ACRES",
+            img: "/assets/project-images/Ananthavana/hero_image.jpg",
+            desc: "Nestled in the Bandipur wildlife corridor, connecting heritage eco-architecture with pristine wilderness.",
+          },
+          {
+            id: "eeshavana",
+            name: "EESHAVANA",
+            badge: "KOLLEGALA · CAUVERY RIVERFRONT",
+            img: "/assets/project-images/Esahavana/Riverside%20view.png",
+            desc: "A premier riverfront sanctuary on the sacred banks of Cauvery with pristine waterscapes.",
+          },
+        ].map((proj, i) => (
+          <motion.div
+            key={proj.id}
+            initial={{ opacity: 0, y: 40, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 1, 0.5, 1],
+              delay: 0.05 * i,
+            }}
+            whileHover={{ y: -6, transition: { duration: 0.3 } }}
+            className="projects-sticky-card"
+            style={{ top: `${140 + i * 20}px`, zIndex: i + 1 }}
+          >
+            <Link
+              href={`/${proj.id}`}
+              style={{
+                display: "block",
+                width: "100%",
+                height: "100%",
+                textDecoration: "none",
+                position: "relative",
+              }}
+            >
+              <img
+                src={proj.img}
+                alt={proj.name}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  transition: "transform 0.6s ease",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(to top, rgba(14,26,18,0.92) 0%, rgba(14,26,18,0.3) 45%, rgba(0,0,0,0.05) 100%)",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-end",
+                  padding: "36px 32px",
+                }}
+              >
+                <div style={{ marginBottom: "14px" }}>
+                  <span
+                    style={{
+                      display: "inline-block",
+                      background: "rgba(0,0,0,0.45)",
+                      backdropFilter: "blur(8px)",
+                      color: "rgba(255,255,255,0.9)",
+                      padding: "6px 14px",
+                      borderRadius: "20px",
+                      fontSize: "0.72rem",
+                      letterSpacing: "0.12em",
+                      fontWeight: 600,
+                      textTransform: "uppercase",
+                      border: "1px solid rgba(255,255,255,0.18)",
+                    }}
+                  >
+                    {proj.badge}
+                  </span>
+                </div>
+
+                <h3
+                  style={{
+                    color: "#FFFFFF",
+                    fontFamily: "'Cinzel', var(--font-serif), serif",
+                    fontSize: "2.1rem",
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    margin: "0 0 8px 0",
+                    textShadow: "0 2px 10px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  {proj.name}
+                </h3>
+
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.8)",
+                    fontSize: "0.95rem",
+                    lineHeight: 1.5,
+                    margin: 0,
+                    fontWeight: 300,
+                    maxWidth: "90%",
+                  }}
+                >
+                  {proj.desc}
+                </p>
+              </div>
+            </Link>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Section 10: Life at the Farm - Hanging Polaroid Image Carousel */}
       <section
         id="life-at-the-farm"
         style={{
-          background: "#0B0B0B",
+          background: "#122217",
           position: "relative",
           overflow: "hidden",
         }}

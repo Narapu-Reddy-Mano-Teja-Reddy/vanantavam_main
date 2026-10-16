@@ -107,7 +107,7 @@ img {
 }
 
 ::selection {
-  background:    ;
+  background:  var(--accent-gold)  ;
   color: var(--bg-dark-forest);
 }
 
@@ -182,7 +182,7 @@ ul {
 }
 
 .subtitle-tag-light {
-  color:    ;
+  color:   var(--accent-gold) ;
 }
 
 /* Buttons & Links */
@@ -233,7 +233,7 @@ ul {
 }
 
 .btn-pill-gold {
-  background:    ;
+  background:   var(--accent-gold) ;
   color: #122217;
   font-weight: 600;
 }
@@ -255,7 +255,7 @@ ul {
 .blog-content blockquote {
   font-style: italic;
   font-size: 1.4rem;
-  color:    ;
+  color:  var(--accent-gold)  ;
   border-left: 4px solid    ;
   padding-left: 20px;
   margin: 40px 0;
@@ -821,6 +821,36 @@ ul {
   overflow: hidden;
 }
 
+.projects-sticky-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 6vw, 96px);
+  align-items: start;
+  position: relative;
+}
+
+.projects-sticky-header {
+  position: sticky;
+  top: 120px;
+  max-width: 480px;
+}
+
+.projects-sticky-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.projects-sticky-card {
+  position: sticky;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
 .relative-z {
   position: relative;
   z-index: 5;
@@ -1365,7 +1395,7 @@ ul {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.8rem;
-  color:    ;
+  color: var(--accent-gold)   ;
   margin-bottom: 12px;
 }
 
@@ -1423,7 +1453,7 @@ ul {
 }
 
 .experiences-carousel::-webkit-scrollbar-thumb {
-  background:    ;
+  background:  var(--accent-gold)  ;
   border-radius: 4px;
 }
 
@@ -1584,7 +1614,7 @@ ul {
 .quote-icon {
   font-family: var(--font-serif);
   font-size: 3rem;
-  color:    ;
+  color:  var(--accent-gold)  ;
   line-height: 1;
   margin-bottom: 10px;
 }
@@ -1703,7 +1733,7 @@ ul {
   letter-spacing: 0.2em;
   font-weight: 600;
   text-transform: uppercase;
-  color:    ;
+  color:   var(--accent-gold) ;
   margin-bottom: 10px;
   display: block;
 }
@@ -1828,7 +1858,7 @@ ul {
   font-size: 0.65rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color:    ;
+  color:  var(--accent-gold)  ;
   margin-bottom: 25px;
 }
 
@@ -1876,8 +1906,8 @@ ul {
 }
 
 .social-icon:hover {
-  background:    ;
-  border-color:    ;
+  background: var(--accent-gold)   ;
+  border-color:  var(--accent-gold)  ;
   color: var(--bg-dark-forest);
 }
 
@@ -1969,7 +1999,7 @@ ul {
 
 .form-control:focus {
   outline: none;
-  border-color:    ;
+  border-color: var(--accent-gold)   ;
 }
 
 /* RESPONSIVE MEDIA QUERIES */
@@ -2012,6 +2042,24 @@ ul {
   }
 }
 
+@media (max-width: 900px) {
+  .projects-sticky-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+
+  .projects-sticky-header {
+    position: relative;
+    top: auto;
+    max-width: 640px;
+  }
+
+  .projects-sticky-card {
+    position: relative;
+    top: auto !important;
+  }
+}
+
 @media (max-width: 640px) {
   .container {
     padding: 0 20px;
@@ -2019,6 +2067,10 @@ ul {
 
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  .projects-sticky-card {
+    height: 340px;
   }
 
   .philosophy-pillars-grid {
@@ -2137,7 +2189,7 @@ ul {
   right: -20px;
   width: 180px;
   height: 180px;
-  color:    ;
+  color:  var(--accent-gold)  ;
   opacity: 0.25;
   pointer-events: none;
 }
@@ -2245,7 +2297,7 @@ ul {
   align-items: center;
   justify-content: center;
   font-size: 1.05rem;
-  color:    ;
+  color:  var(--accent-gold)  ;
   background: #FFFFFF;
 }
 
@@ -2344,7 +2396,7 @@ ul {
 
 .stat-icon {
   font-size: 1.4rem;
-  color:    ;
+  color:   var(--accent-gold) ;
   margin-bottom: 10px;
 }
 
@@ -2386,7 +2438,7 @@ ul {
 .cta-badge-leaf {
   width: 32px;
   height: 32px;
-  color:    ;
+  color:   var(--accent-gold) ;
   margin-bottom: 8px;
 }
 
@@ -2493,7 +2545,7 @@ ul {
 }
 
 .amenity-pin:hover {
-  background:    ;
+  background:   var(--accent-gold) ;
   color: #122217;
   transform: scale(1.3) translateZ(20px);
   z-index: 12;
@@ -2527,7 +2579,7 @@ ul {
   right: 20px;
   font-family: var(--font-serif);
   font-size: 1.8rem;
-  color:    ;
+  color:  var(--accent-gold)  ;
   opacity: 0.4;
   font-style: italic;
 }
@@ -2570,7 +2622,7 @@ ul {
 .bird-card:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-4px);
-  border-color:    ;
+  border-color:  var(--accent-gold)  ;
 }
 
 .bird-card-img {
@@ -2600,7 +2652,7 @@ ul {
 
 .bird-sub {
   font-size: 0.78rem;
-  color:    ;
+  color: var(--accent-gold)   ;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -2685,7 +2737,7 @@ ul {
   font-size: 0.65rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color:    ;
+  color: var(--accent-gold)   ;
   margin-bottom: 20px;
   font-weight: 500;
 }
@@ -2740,9 +2792,9 @@ ul {
 }
 
 .social-icon:hover {
-  background:    ;
+  background:var(--accent-gold)    ;
   color: #122217;
-  border-color:    ;
+  border-color:  var(--accent-gold)  ;
   transform: translateY(-2px);
 }
 
@@ -2821,7 +2873,7 @@ ul {
 .plot-hotspot-v2:hover {
   background: #1B2920;
   color: #FFFFFF;
-  border-color:    ;
+  border-color:  var(--accent-gold)  ;
   transform: scale(1.25);
   z-index: 15;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.35);
@@ -2834,7 +2886,7 @@ ul {
 }
 
 .plot-hotspot-v2.premium:hover {
-  background:    ;
+  background: var(--accent-gold);
   color: #122217;
 }
 
@@ -2860,7 +2912,7 @@ ul {
 }
 
 .amenity-pin-v2:hover {
-  background:    ;
+  background: var(--accent-gold);
   color: #122217;
   transform: scale(1.35);
   z-index: 18;
@@ -2874,7 +2926,7 @@ ul {
   letter-spacing: 0.25em;
   text-transform: uppercase;
   font-weight: 600;
-  color:    ;
+  color:  var(--accent-gold)  ;
   background: rgba(198, 162, 101, 0.12);
   padding: 6px 18px;
   border-radius: var(--radius-pill);
@@ -2903,7 +2955,7 @@ ul {
 
 .quote-highlight-box {
   background: rgba(255, 255, 255, 0.04);
-  border-left: 3px solid    ;
+  border-left: 3px solid  var(--accent-gold)  ;
   padding: 30px;
   border-radius: 0 var(--radius-md) var(--radius-md) 0;
   position: relative;
@@ -2913,7 +2965,7 @@ ul {
 .quote-symbol {
   font-family: var(--font-serif);
   font-size: 4rem;
-  color:    ;
+  color:  var(--accent-gold)  ;
   line-height: 0.8;
   opacity: 0.5;
   margin-bottom: -15px;
@@ -2930,7 +2982,7 @@ ul {
 
 .quote-author-info strong {
   display: block;
-  color:    ;
+  color:  var(--accent-gold)  ;
   font-size: 0.95rem;
 }
 
@@ -3009,7 +3061,7 @@ ul {
 
 .evolving-box .box-icon {
   font-size: 2rem;
-  color:    ;
+  color:  var(--accent-gold);  ;
   margin-bottom: 15px;
 }
 
@@ -3060,7 +3112,7 @@ ul {
 
 .species-icon {
   font-size: 1.8rem;
-  color:    ;
+  color:   var(--accent-gold) ;
   margin-bottom: 15px;
 }
 
@@ -3133,7 +3185,7 @@ ul {
   font-family: var(--font-serif);
   font-size: 4.8rem;
   font-weight: 300;
-  color:    ;
+  color:   var(--accent-gold) ;
   line-height: 1;
 }
 
@@ -3182,7 +3234,7 @@ ul {
 .triple-num {
   font-family: var(--font-serif);
   font-size: 2.2rem;
-  color:    ;
+  color:   var(--accent-gold) ;
   margin-bottom: 10px;
 }
 
@@ -3220,7 +3272,7 @@ ul {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background:    ;
+  background:  var(--accent-gold)  ;
   color: var(--bg-dark-forest);
   display: flex;
   align-items: center;
@@ -3235,7 +3287,7 @@ ul {
   padding: 10px 20px;
   border-radius: var(--radius-pill);
   font-size: 0.9rem;
-  color:    ;
+  color: var(--accent-gold)   ;
   border: 1px solid var(--border-gold);
 }
 
@@ -3263,7 +3315,7 @@ ul {
 
 .vision-footer-tag {
   font-size: 1rem;
-  color:    ;
+  color:  var(--accent-gold)  ;
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
@@ -3305,7 +3357,7 @@ ul {
 .corp-badge-header {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
-  color:    ;
+  color:  var(--accent-gold)  ;
   font-weight: 600;
   margin-bottom: 20px;
   border-bottom: 1px solid var(--border-light);
@@ -3437,14 +3489,14 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  color:    ;
+  color: var(--accent-gold);
   margin-bottom: 30px;
   transition: all 0.5s ease;
   border: 1px solid rgba(198, 162, 101, 0.2);
 }
 
 .philosophy-card:hover .philosophy-icon-wrap {
-  background:    ;
+  background: var(--accent-gold);   ;
   color: #FFFFFF;
   transform: scale(1.1) rotate(-5deg);
   box-shadow: 0 10px 20px rgba(198, 162, 101, 0.3);
@@ -3705,4 +3757,3 @@ body.at-top .kenyt-bot-container {
     gap: 8px;
   }
 }
-

@@ -331,17 +331,15 @@ export default function About() {
               transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1] }}
               style={{
                 flex: "1 1 400px",
-                borderRadius: "30px",
-                overflow: "hidden",
-                boxShadow: "0 35px 70px rgba(0,0,0,0.35)",
+                 
               }}
             >
               <motion.img
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                src="/assets/project-images/Esahavana/EV Image.png"
+                src="/assets/project-images/Esahavana/EV_Image1.png"
                 alt="Sacred Ecosystems"
-                style={{ width: "100%", height: "500px", objectFit: "cover" }}
+                style={{ width: "100%", height: "500px",   }}
               />
             </motion.div>
 

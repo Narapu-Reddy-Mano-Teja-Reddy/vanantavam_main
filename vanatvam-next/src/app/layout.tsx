@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/premium/SmoothScroll";
-import ScrollProgress from "@/components/premium/ScrollProgress";
 import GrainOverlay from "@/components/premium/GrainOverlay";
 import FloatingController from "@/components/premium/FloatingController";
 
@@ -97,7 +96,6 @@ export default function RootLayout({
       </head>
       <body>
         <FloatingController />
-        <ScrollProgress />
         <GrainOverlay />
         <SmoothScroll>{children}</SmoothScroll>
 
