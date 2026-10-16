@@ -557,7 +557,7 @@ ul {
 }
 
 .hero-carousel-dot.active {
-  background:    ;
+  background: var(--brand-amber-gold);
   width: 26px;
   border-radius: 5px;
 }
