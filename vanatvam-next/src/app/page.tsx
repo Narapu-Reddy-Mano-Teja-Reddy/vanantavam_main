@@ -26,6 +26,66 @@ import TiltCard from "@/components/premium/TiltCard";
 import { useLenis } from "@/components/premium/SmoothScroll";
 
 import ApertureRevealCarousel, { ApertureSlide } from "@/components/premium/ApertureRevealCarousel";
+import HangingPolaroidCarousel, { HangingPolaroidItem } from "@/components/premium/HangingPolaroidCarousel";
+
+const lifeAtVanatvamPolaroids: HangingPolaroidItem[] = [
+  {
+    id: "deepotsava",
+    title: "Deepotsava at Farm",
+    caption: "Deepotsava",
+    subtitle: "Hundreds of earthen lamps lovingly lit across pathways, courtyards, and sacred groves.",
+    img: "/Event%20images/DSC08963.JPG",
+  },
+  {
+    id: "banana-orchard",
+    title: "Tropical Banana Grove",
+    caption: "Banana Grove",
+    subtitle: "Vibrant multi-canopy banana and fruit orchards nurtured through chemical-free living soil.",
+    img: "/assets/project-images/Brindavana/Sunny%20Tropical%20Banana%20Orchard.png",
+  },
+  {
+    id: "vasantotsava",
+    title: "Vasantotsava Gathering",
+    caption: "Vasantotsava",
+    subtitle: "Joyous spring celebration with music, guided forest walks, and organic farm feasts.",
+    img: "/Event%20images/DSC08964%20(1).JPG",
+  },
+  {
+    id: "brick-courtyard",
+    title: "Verdant Courtyard",
+    caption: "Brick Courtyard",
+    subtitle: "Vernacular sustainable architecture embracing terracotta courtyards and open breeze pavilions.",
+    img: "/assets/project-images/Maduvana/Modern%20Brick%20Courtyard%20with%20Arched%20Canopy.png",
+  },
+  {
+    id: "nursery-saplings",
+    title: "Native Sapling Nursery",
+    caption: "Native Nursery",
+    subtitle: "Propagating indigenous forestry saplings to restore ancient biodiversity and sacred groves.",
+    img: "/assets/project-images/Brindavana/Vibrant%20Tropical%20Garden%20Nursery.png",
+  },
+  {
+    id: "bonfire-nights",
+    title: "Twilight Bonfire Evenings",
+    caption: "Bonfire Nights",
+    subtitle: "Stargazing, storytelling, and communal cooking around gentle twilight farm fires.",
+    img: "/Event%20images/DSC09025.JPG",
+  },
+  {
+    id: "green-tunnel",
+    title: "Canopy Trail Pathways",
+    caption: "Canopy Trails",
+    subtitle: "Tranquil walking pathways winding through living bamboo clusters and bird-friendly flora.",
+    img: "/assets/project-images/Brindavana/Tropical%20Garden%20Pathway%20Tunnel.png",
+  },
+  {
+    id: "community-harvest",
+    title: "Community Harvest",
+    caption: "Harvest Days",
+    subtitle: "Families and children reconnecting directly with the earth, gathering fresh seasonal produce.",
+    img: "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.37.57%20PM%20(2)%20(1).jpeg",
+  },
+];
 
 const heroSlides = [
   {
@@ -1602,119 +1662,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* See what your weekends could look like - Landscape Gallery */}
+      {/* Section 10: Life at the Farm - Hanging Polaroid Image Carousel */}
       <section
+        id="life-at-the-farm"
         style={{
-          padding: "clamp(60px, 8vh, 100px) 0",
-          background: "var(--bg-cream)",
+          background: "#0B0B0B",
+          position: "relative",
           overflow: "hidden",
         }}
       >
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "50px" }}>
-            <span
-              className="subtitle-tag"
-              style={{ color: "var(--accent-gold)" }}
-            >
-              LIFE AT THE FARM
-            </span>
-            <h2
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2.2rem, 4vw, 3.2rem)",
-                color: "var(--bg-dark-forest)",
-                marginTop: "16px",
-                letterSpacing: "-0.02em",
-                fontStyle: "italic",
-              }}
-            >
-              See what your weekends could look like.
-            </h2>
-          </div>
-        </div>
-
-        {/* CSS Marquee Track for Landscape Images */}
-        <div
-          className="weekend-marquee"
-          style={{
-            position: "relative",
-            width: "100%",
-            overflow: "hidden",
-            padding: "10px 0",
-          }}
-        >
-          <div
-            className="weekend-marquee-track"
-            style={{
-              display: "flex",
-              width: "calc(400px * 12)",
-              animation: "marqueeScroll 40s linear infinite",
-            }}
-          >
-            {/* We duplicate the images twice to create an infinite scroll loop */}
-            {[...Array(2)].map((_, loopIndex) => (
-              <div key={loopIndex} style={{ display: "flex" }}>
-                {[
-                  {
-                    img: "/assets/project-images/Brindavana/Sunny%20Tropical%20Banana%20Orchard.png",
-                    alt: "Lush tropical banana orchard",
-                  },
-                  {
-                    img: "/assets/project-images/Brindavana/Vibrant%20Tropical%20Garden%20Nursery.png",
-                    alt: "Sapling nursery planting native species",
-                  },
-                  {
-                    img: "/assets/project-images/Esahavana/20260731_113013.jpg.jpeg",
-                    alt: "Lush tree canopy along serene trail",
-                  },
-                  {
-                    img: "/assets/project-images/Maduvana/Modern%20Brick%20Courtyard%20with%20Arched%20Canopy.png",
-                    alt: "Sustainable brick pavilion and courtyard",
-                  },
-                  {
-                    img: "/assets/project-images/Brindavana/Tropical%20Garden%20Pathway%20Tunnel.png",
-                    alt: "Verdant green foliage garden tunnel",
-                  },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      width: "400px",
-                      height: "280px",
-                      margin: "0 12px",
-                      borderRadius: "16px",
-                      overflow: "hidden",
-                      boxShadow: "0 10px 20px rgba(0,0,0,0.05)",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <img
-                      src={item.img}
-                      alt={item.alt}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
-        </div>
-        <style
-          dangerouslySetInnerHTML={{
-            __html: `
-          @keyframes marqueeScroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-          }
-          .weekend-marquee-track:hover {
-            animation-play-state: paused !important;
-          }
-        `,
-          }}
+        <HangingPolaroidCarousel
+          items={lifeAtVanatvamPolaroids}
+          autoPlayInterval={5000}
+          theme="dark"
         />
       </section>
 {/* Nature. Community. Future. */}
@@ -1929,243 +1889,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Community Events */}
-      <section
-        style={{
-          padding: "clamp(80px, 10vh, 120px) 0",
-          background: "var(--bg-cream)",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              textAlign: "center",
-              maxWidth: "800px",
-              margin: "0 auto 60px",
-            }}
-          >
-            <span
-              style={{
-                color: "var(--accent-gold)",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                display: "block",
-                marginBottom: "20px",
-              }}
-            >
-              🌟 Community Events at Vanatvam
-            </span>
-            <h2
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2.4rem, 4.5vw, 3.5rem)",
-                color: "var(--bg-dark-forest)",
-                lineHeight: 1.15,
-                marginBottom: "24px",
-              }}
-            >
-              Celebrating Life, Nature, and Togetherness
-            </h2>
-            <p
-              style={{
-                fontSize: "1.15rem",
-                color: "var(--text-muted)",
-                lineHeight: 1.8,
-              }}
-            >
-              At both Madhuvana and AnantaVana, we host vibrant seasonal
-              festivals that bring our community closer to the land—and to each
-              other. Each event transforms our shared spaces—courtyards,
-              pondside lawns, and open-air plazas—into stages for memorable
-              experiences, nurturing a true sense of belonging and harmony
-              within our farm community.
-            </p>
-          </div>
 
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "40px",
-              marginBottom: "60px",
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              style={{
-                background: "#FFF",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 15px 35px rgba(0,0,0,0.05)",
-              }}
-            >
-              <div style={{ width: "100%", height: "240px" }}>
-                <img
-                  src="/Event%20images/DSC08963.JPG"
-                  alt="Deepotsava celebration"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ padding: "40px" }}>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.8rem",
-                    color: "var(--bg-dark-forest)",
-                    marginBottom: "16px",
-                  }}
-                >
-                  Deepotsava
-                </h3>
-                <p style={{ color: "var(--text-muted)", lineHeight: 1.7 }}>
-                  A magical evening where hundreds of earthen lamps are lovingly
-                  lit across the farm, illuminating pathways, courtyards, and
-                  green spaces—creating a warm, communal glow and a sense of
-                  shared wonder.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              style={{
-                background: "#FFF",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 15px 35px rgba(0,0,0,0.05)",
-              }}
-            >
-              <div style={{ width: "100%", height: "240px" }}>
-                <img
-                  src="/Event%20images/DSC08964%20(1).JPG"
-                  alt="Vasantotsava celebration"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ padding: "40px" }}>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.8rem",
-                    color: "var(--bg-dark-forest)",
-                    marginBottom: "16px",
-                  }}
-                >
-                  Vasantotsava
-                </h3>
-                <p style={{ color: "var(--text-muted)", lineHeight: 1.7 }}>
-                  A joyful celebration of spring, complete with nature-inspired
-                  arts, guided walks, interactive workshops, and farm-to-table
-                  gatherings—designed to awaken the senses and connect us all
-                  with the rhythms of growth and renewal.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              style={{
-                background: "#FFF",
-                borderRadius: "24px",
-                overflow: "hidden",
-                boxShadow: "0 15px 35px rgba(0,0,0,0.05)",
-              }}
-            >
-              <div style={{ width: "100%", height: "240px" }}>
-                <img
-                  src="/Event%20images/DSC09025.JPG"
-                  alt="Seasonal gatherings"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
-              <div style={{ padding: "40px" }}>
-                <h3
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.8rem",
-                    color: "var(--bg-dark-forest)",
-                    marginBottom: "16px",
-                  }}
-                >
-                  Seasonal Gatherings
-                </h3>
-                <p style={{ color: "var(--text-muted)", lineHeight: 1.7 }}>
-                  From planting festivals, to stargazing nights, nature
-                  workshops, communal cooking, and storytelling by the
-                  bonfire—we host events that celebrate biodiversity, culture,
-                  and sustainable living.
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          <div
-            className="weekend-marquee"
-            style={{
-              position: "relative",
-              width: "100%",
-              overflow: "hidden",
-              padding: "10px 0",
-            }}
-          >
-            <div
-              className="weekend-marquee-track"
-              style={{
-                display: "flex",
-                width: "calc(350px * 12)",
-                animation: "vanaMarqueeScroll 40s linear infinite",
-              }}
-            >
-              {[...Array(2)].map((_, loopIndex) => (
-                <div key={loopIndex} style={{ display: "flex" }}>
-                  {[
-                    "/Event%20images/IMG-20240108-WA0006%20(1).jpg",
-                    "/Event%20images/IMG-20240108-WA0013.jpg",
-                    "/Event%20images/IMG-20240108-WA0023.jpg",
-                    "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.37.57%20PM%20(2)%20(1).jpeg",
-                    "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.38.05%20PM.jpeg",
-                    "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.39.30%20PM%20(2).jpeg",
-                  ].map((imgSrc, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        width: "350px",
-                        height: "240px",
-                        margin: "0 12px",
-                        borderRadius: "16px",
-                        overflow: "hidden",
-                        boxShadow: "0 10px 20px rgba(0,0,0,0.05)",
-                        flexShrink: 0,
-                      }}
-                    >
-                      <img
-                        src={imgSrc}
-                        alt={`Vanatvam event highlight ${i + 1}`}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                        }}
-                      />
-                    </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* FKCCI Award Recognition Section */}
       <section
