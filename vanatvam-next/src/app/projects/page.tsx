@@ -170,13 +170,13 @@ export default function Projects() {
                 Immerse in Nature's Rhythm.
               </h2>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-dark)', lineHeight: 1.8, marginBottom: '20px', fontWeight: 300 }}>
-                At VanaTvam, land is just the beginning. Every farm plot is crafted as an enriching experience—an opportunity to reconnect with the earth and immerse in the natural rhythms of nature.
+                AtVanaTvam, land is just the beginning. Every farm plot is crafted as an enriching experience—an opportunity to reconnect with the earth and immerse in the natural rhythms of nature.
               </p>
               <p style={{ fontSize: '1.15rem', color: 'var(--text-dark)', lineHeight: 1.8, marginBottom: '20px', fontWeight: 300 }}>
-                When you own a farm plot in Vanatvam projects, you can enjoy stays in serene eco cottages, walk through verdant trails brimming with biodiversity, plant saplings to honour nature’s legacy, and experience vibrant cultural festivals that celebrate community, heritage, and sustainability.
+                When you own a farm plot inVanaTvam projects, you can enjoy stays in serene eco cottages, walk through verdant trails brimming with biodiversity, plant saplings to honour nature’s legacy, and experience vibrant cultural festivals that celebrate community, heritage, and sustainability.
               </p>
               <p style={{ fontSize: '1.25rem', color: 'var(--bg-dark-forest)', lineHeight: 1.8, fontWeight: 500 }}>
-                Vanatvam's farms aren’t just a place you buy, it's a life you experience.
+               VanaTvam's farms aren’t just a place you buy, it's a life you experience.
               </p>
             </motion.div>
             <motion.div
@@ -202,7 +202,7 @@ export default function Projects() {
               Shared Cottages: Convenience Meets Comfort
             </h2>
             <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8 }}>
-              For plot owners not yet ready to build their homes, Vanatvam offers beautifully designed Shared Cottages, with complimentary stays for a fixed number of days each year. It’s the perfect way to enjoy the land you own—without the pressure of immediate construction. Whether you seek solitude, connection, or celebration, our shared cottages offer a living experience that is rooted in nature, refined in design, and rich in meaning.
+              For plot owners not yet ready to build their homes,VanaTvam offers beautifully designed Shared Cottages, with complimentary stays for a fixed number of days each year. It’s the perfect way to enjoy the land you own—without the pressure of immediate construction. Whether you seek solitude, connection, or celebration, our shared cottages offer a living experience that is rooted in nature, refined in design, and rich in meaning.
             </p>
           </motion.div>
 

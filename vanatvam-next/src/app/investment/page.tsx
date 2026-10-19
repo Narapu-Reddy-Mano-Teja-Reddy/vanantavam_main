@@ -54,7 +54,7 @@ export default function Investment() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px' }}>
             {[
-              { num: '01', title: 'Clear Plot Ownership', desc: '100% individual registered land title deeds with clear boundaries. You hold legal ownership of your agricultural plot while Vanatvam manages the ecosystem.' },
+              { num: '01', title: 'Clear Plot Ownership', desc: '100% individual registered land title deeds with clear boundaries. You hold legal ownership of your agricultural plot whileVanaTvam manages the ecosystem.' },
               { num: '02', title: 'Zero Maintenance Hassle', desc: 'Our expert team handles soil regeneration, native tree planting, water body upkeep, 24/7 perimeter security, and organic farm maintenance.' },
               { num: '03', title: 'High Capital Appreciation', desc: 'Agricultural land located in high-growth corridors historically appreciates at steady, inflation-hedging rates, providing generational wealth.' }
             ].map((pillar, i) => (
@@ -87,13 +87,13 @@ export default function Investment() {
                 Beyond Land, Beyond ROI.
               </h2>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-dark)', lineHeight: 1.8, marginBottom: '25px', fontWeight: 300 }}>
-                Vanatvam is not a land bank or an ROI-driven company. Our mission transcends mere property transactions and profit-centric models. Instead, we carefully curate living, breathing eco-systems that become vibrant cultural communities.
+               VanaTvam is not a land bank or an ROI-driven company. Our mission transcends mere property transactions and profit-centric models. Instead, we carefully curate living, breathing eco-systems that become vibrant cultural communities.
               </p>
               <p style={{ fontSize: '1.2rem', color: 'var(--text-dark)', lineHeight: 1.8, marginBottom: '25px', fontWeight: 300 }}>
                 Our goal is to foster spaces where life thrives in harmony with nature, where every tree planted and every cottage built contributes meaningfully to ecological balance and cultural enrichment.
               </p>
               <p style={{ fontSize: '1.25rem', color: 'var(--bg-dark-forest)', lineHeight: 1.8, fontWeight: 500 }}>
-                VanaTvam is about legacy, connection, and sustainable living—not just land ownership.
+               VanaTvam is about legacy, connection, and sustainable living—not just land ownership.
               </p>
             </motion.div>
 
@@ -115,7 +115,7 @@ export default function Investment() {
             style={{ textAlign: 'center', marginBottom: '80px' }}
           >
             <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 4vw, 3.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: '20px' }}>
-              The Vanatvam Advantage
+              TheVanaTvam Advantage
             </h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto', fontWeight: 300 }}>
               How our managed ecosystem approach completely redefines traditional land ownership.

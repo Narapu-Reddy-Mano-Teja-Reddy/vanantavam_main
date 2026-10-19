@@ -96,7 +96,7 @@ export default function Anantavana() {
               </div>
 
               <div style={{ marginTop: '60px' }}>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: 'var(--bg-dark-forest)', marginBottom: '30px' }}>The Vanatvam Advantage</h3>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: 'var(--bg-dark-forest)', marginBottom: '30px' }}>TheVanaTvam Advantage</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
                     { title: 'Close Comfort', desc: 'Modern amenities seamlessly integrated with natural landscapes.' },

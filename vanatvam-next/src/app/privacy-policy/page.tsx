@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
               
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '15px' }}>1. Introduction</h3>
               <p style={{ marginBottom: '20px' }}>
-                Vanatvam Private Limited ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
+               VanaTvam Private Limited ("we", "our", or "us") respects your privacy and is committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website (regardless of where you visit it from) and tell you about your privacy rights and how the law protects you.
               </p>
 
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '15px' }}>2. The Data We Collect About You</h3>

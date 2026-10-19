@@ -57,7 +57,7 @@ export default function Footer() {
                 color: "rgba(255,255,255,0.6)",
               }}
             >
-              Vanatvam Private Limited is developing sustainable managed
+             VanaTvam Private Limited is developing sustainable managed
               farmlands, native forests, and ecological communities across
               Karnataka.
             </p>
@@ -227,7 +227,7 @@ export default function Footer() {
               Terms & Conditions
             </Link>
             <span>
-              &copy; {new Date().getFullYear()} Vanatvam Private Limited.
+              &copy; {new Date().getFullYear()}VanaTvam Private Limited.
             </span>
           </div>
         </div>

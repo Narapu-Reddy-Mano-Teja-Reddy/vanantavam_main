@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',
-  images: {
-    unoptimized: true,
+  allowedDevOrigins: ["10.170.23.82"],
+  turbopack: {
+    root: process.cwd(),
   },
 };
 

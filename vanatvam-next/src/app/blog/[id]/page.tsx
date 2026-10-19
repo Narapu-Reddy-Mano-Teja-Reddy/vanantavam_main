@@ -11,17 +11,17 @@ export default function BlogPost() {
 
   const blogs: Record<string, any> = {
     'redefining-farmland-ownership': {
-      title: 'How Vanatvam is Redefining Farmland Ownership with a Natural & Sustainable Approach',
+      title: 'HowVanaTvam is Redefining Farmland Ownership with a Natural & Sustainable Approach',
       date: 'January 12, 2026',
       author: 'Vanatvam Ecological Team',
       img: '/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.png',
       category: 'Ecology',
       content: (
         <>
-          <p>For decades, purchasing agricultural land was seen purely as a financial investment—a piece of earth to hold onto until its value increased. However, this traditional model often leads to neglected plots, monoculture farming, or complete ecological degradation. At Vanatvam, we are fundamentally redefining what it means to own farmland.</p>
+          <p>For decades, purchasing agricultural land was seen purely as a financial investment—a piece of earth to hold onto until its value increased. However, this traditional model often leads to neglected plots, monoculture farming, or complete ecological degradation. AtVanaTvam, we are fundamentally redefining what it means to own farmland.</p>
           
           <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>From Ownership to Custodianship</h3>
-          <p>When you purchase a plot in a Vanatvam community, you aren't just buying land; you are becoming a custodian of a living ecosystem. We shift the paradigm from resource extraction to ecological restoration. This means implementing deep water trenching, soil regeneration protocols, and strict guidelines against chemical fertilizers.</p>
+          <p>When you purchase a plot in aVanaTvam community, you aren't just buying land; you are becoming a custodian of a living ecosystem. We shift the paradigm from resource extraction to ecological restoration. This means implementing deep water trenching, soil regeneration protocols, and strict guidelines against chemical fertilizers.</p>
           
           <img src="/assets/project-images/Brindavana/Farmer Tending Lush Seedlings.png" alt="Seedling" style={{ width: '100%', borderRadius: '16px', margin: '40px 0', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
           
@@ -66,7 +66,7 @@ export default function BlogPost() {
           <p>Unlike commercial real estate which is subject to market volatility and high maintenance overheads, agricultural land in strategic corridors (like the Kabini or Nandi Hills belts) has historically appreciated steadily. When combined with a managed model, the asset generates passive agricultural yield while the land value compounds.</p>
           
           <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>Ecological Equity</h3>
-          <p>What sets Vanatvam apart is the concept of 'Ecological Equity'. A barren piece of land has a certain value. But a piece of land that has been scientifically reforested, with active water tables, rich topsoil, and mature fruit-bearing trees, commands a significant premium. We build wealth by building the ecosystem.</p>
+          <p>What setsVanaTvam apart is the concept of 'Ecological Equity'. A barren piece of land has a certain value. But a piece of land that has been scientifically reforested, with active water tables, rich topsoil, and mature fruit-bearing trees, commands a significant premium. We build wealth by building the ecosystem.</p>
         </>
       )
     },
@@ -152,7 +152,7 @@ export default function BlogPost() {
                 <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Written By</span>
                 <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--bg-dark-forest)', margin: '0' }}>{blog.author}</h3>
                 <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
-                  A core part of the Vanatvam team dedicated to ecological restoration, sustainable design, and preserving indigenous knowledge.
+                  A core part of theVanaTvam team dedicated to ecological restoration, sustainable design, and preserving indigenous knowledge.
                 </p>
               </div>
 

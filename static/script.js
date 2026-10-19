@@ -1,5 +1,5 @@
 /**
- * VANATVAM - Natural Farms & Nature Communities
+ *VanaTvam - Natural Farms & Nature Communities
  * Interactive Web Application Script
  */
 

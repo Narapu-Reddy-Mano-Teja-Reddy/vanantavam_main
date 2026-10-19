@@ -8,7 +8,7 @@ export default function Blog() {
   const blogs = [
     {
       id: 'redefining-farmland-ownership',
-      title: 'How Vanatvam is Redefining Farmland Ownership with a Natural & Sustainable Approach',
+      title: 'HowVanaTvam is Redefining Farmland Ownership with a Natural & Sustainable Approach',
       date: 'January 12, 2026',
       author: 'Vanatvam Ecological Team',
       img: '/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.png',

@@ -66,7 +66,7 @@ export default function Brindavana() {
               </h2>
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', color: 'var(--text-dark)', fontSize: '1.1rem', lineHeight: 1.8 }}>
-                <p>Welcome to Brindavana, a 30-acre haven of sustainable, natural farmland nestled amidst the serenity of Krishnapura in the Pavagada Taluk. Here, at Brindavana by Vanatvam, we have woven together the ancient wisdom of our culture with innovative agroforestry and organic farming practices to create a flourishing ecosystem that nourishes both the land and the soul.</p>
+                <p>Welcome to Brindavana, a 30-acre haven of sustainable, natural farmland nestled amidst the serenity of Krishnapura in the Pavagada Taluk. Here, at Brindavana byVanaTvam, we have woven together the ancient wisdom of our culture with innovative agroforestry and organic farming practices to create a flourishing ecosystem that nourishes both the land and the soul.</p>
                 <p>Brindavana is a community of like-minded individuals who share a passion for sustainability, a desire for a simpler way of life, and an emotional connection to our culture. Reconnect with your roots and discover the therapeutic power of immersing yourself in nature.</p>
                 <div>
                   <a href="#" className="btn-pill btn-pill-outline" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', marginTop: '30px' }}><i className="fa-solid fa-download"></i> Download Brochure</a>
@@ -103,7 +103,7 @@ export default function Brindavana() {
               </div>
 
               <div style={{ marginTop: '60px' }}>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: 'var(--bg-dark-forest)', marginBottom: '30px' }}>The Vanatvam Advantage</h3>
+                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem', color: 'var(--bg-dark-forest)', marginBottom: '30px' }}>TheVanaTvam Advantage</h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
                   {[
                     { title: 'Close Comfort', desc: 'Modern amenities seamlessly integrated with natural landscapes.' },

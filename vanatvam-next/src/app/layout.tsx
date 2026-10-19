@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.vanatvam.com"),
   title: {
     default: "Vanatvam | Sustainable Managed Farmland & Nature Communities",
-    template: "%s | Vanatvam"
+    template: "%s |VanaTvam"
   },
   description: "Vanatvam creates sustainable managed farmland, native forest ecosystems, and nature communities across Karnataka & near Bangalore. Discover Brindavana, Madhuvana, Anantavana, and Eeshavana.",
   keywords: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Vanatvam Private Limited" }],
   openGraph: {
     title: "Vanatvam | Sustainable Managed Farmland",
-    description: "Experience living ecosystems with Vanatvam's sustainable managed farmlands in Karnataka.",
+    description: "Experience living ecosystems withVanaTvam's sustainable managed farmlands in Karnataka.",
     url: "https://www.vanatvam.com",
     siteName: "Vanatvam",
     images: [

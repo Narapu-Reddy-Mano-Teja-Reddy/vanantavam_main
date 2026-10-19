@@ -24,7 +24,7 @@ export default function Contact() {
       <Navigation />
       <section className="hero hero-about" style={{ height: '55vh', minHeight: '420px' }}>
         <div className="hero-bg-wrapper">
-          <img src="/assets/project-images/Esahavana/EV River View 1.jpg" alt="Contact Vanatvam" className="hero-bg-img" />
+          <img src="/assets/project-images/Esahavana/EV River View 1.jpg" alt="ContactVanaTvam" className="hero-bg-img" />
         </div>
         <div className="hero-overlay" style={{ background: 'linear-gradient(180deg, rgba(18, 34, 23, 0.5) 0%, rgba(18, 34, 23, 0.85) 100%)' }}></div>
         <div className="container relative z-10">
