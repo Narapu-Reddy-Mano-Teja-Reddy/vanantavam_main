@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Link from "next/link";
 import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
@@ -403,37 +404,83 @@ export default function Home() {
           ))}
         </div>
       </section>
-      {/* Continuous Infinite Ecosystem Marquee */}
-      <div className="vana-marquee">
-        <div className="vana-marquee-track">
-          {Array.from({ length: 2 }, (_, rep) => (
-            <div
-              className="vana-marquee-group"
-              key={rep}
-              aria-hidden={rep === 1}
-            >
-              {["Brindavana", "Madhuvana", "Anantavana", "Eeshavana"].map(
-                (name, index) => (
-                  <span key={`${rep}-${index}`} className="vana-marquee-item">
-                    {name}
-                    <Leaf
-                      className="size-4"
-                      strokeWidth={1.5}
-                      aria-hidden="true"
-                      style={{
-                        display: "inline-block",
-                        flexShrink: 0,
-                        margin: "0 28px",
-                        color: "var(--accent-gold)",
-                      }}
-                    />
-                  </span>
-                ),
-              )}
-            </div>
-          ))}
-        </div>
+     {/* Continuous Infinite Ecosystem Marquee */}
+<div
+  className="vana-marquee"
+  style={{
+    width: "100%",
+    overflow: "hidden",
+    position: "relative",
+    whiteSpace: "nowrap",
+  }}
+>
+  <div
+    className="vana-marquee-track"
+    style={{
+      display: "flex",
+      width: "max-content",
+      willChange: "transform",
+      animationName: "vana-marquee-scroll",
+      animationDuration: "30s",
+      animationTimingFunction: "linear",
+      animationIterationCount: "infinite",
+      animationPlayState: "running",
+    }}
+  >
+    {Array.from({ length: 2 }, (_, rep) => (
+      <div
+        className="vana-marquee-group"
+        key={rep}
+        aria-hidden={rep === 1}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexShrink: 0,
+        }}
+      >
+        {[
+          "Brindavana", "Madhuvana", "Anantavana", "Eeshavana",
+          "Brindavana", "Madhuvana", "Anantavana", "Eeshavana",
+          "Brindavana", "Madhuvana", "Anantavana", "Eeshavana",
+        ].map((name, index) => (
+          <span
+            key={`${rep}-${index}`}
+            className="vana-marquee-item"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              flexShrink: 0,
+            }}
+          >
+            {name}
+            <Leaf
+              className="size-4"
+              strokeWidth={1.5}
+              aria-hidden="true"
+              style={{
+                display: "inline-block",
+                flexShrink: 0,
+                margin: "0 28px",
+                color: "var(--accent-gold)",
+              }}
+            />
+          </span>
+        ))}
       </div>
+    ))}
+  </div>
+</div>
+
+<style jsx global>{`
+  @keyframes vana-marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+`}</style>
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
       <section
         style={{
@@ -617,6 +664,7 @@ export default function Home() {
                 than treating nature as leftover space.
               </p>
 
+              {/* Ancient Wisdom Callout Card */}
               {/* Ancient Wisdom Callout Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -2567,642 +2615,673 @@ export default function Home() {
           </div>
         </div>
       </section>
-{/* Premium Final CTA — Nature-inspired Contact Experience */}
-<section
-  id="contact-cta"
-  style={{
-    position: "relative",
-    isolation: "isolate",
-    overflow: "hidden",
-    padding: "clamp(50px, 8vw, 100px) 80px",
-    width: "100%",
-    boxSizing: "border-box",
-    background: "#FFFFFF",
-    color: "#183023",
-  }}
->
-  {/* Soft ambient background decoration */}
-  <motion.div
-    aria-hidden="true"
-    animate={{
-      scale: [1, 1.12, 1],
-      opacity: [0.06, 0.12, 0.06],
-    }}
-    transition={{
-      duration: 10,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    style={{
-      position: "absolute",
-      zIndex: -1,
-      width: "clamp(250px, 38vw, 520px)",
-      aspectRatio: "1",
-      top: "-180px",
-      left: "-130px",
-      borderRadius: "50%",
-      background:
-        "radial-gradient(circle, rgba(198,162,101,0.35), transparent 70%)",
-      pointerEvents: "none",
-    }}
-  />
-
-  <motion.div
-    aria-hidden="true"
-    animate={{
-      scale: [1.05, 1, 1.05],
-      opacity: [0.05, 0.1, 0.05],
-    }}
-    transition={{
-      duration: 12,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    style={{
-      position: "absolute",
-      zIndex: -1,
-      width: "clamp(300px, 42vw, 600px)",
-      aspectRatio: "1",
-      right: "-220px",
-      bottom: "-300px",
-      borderRadius: "50%",
-      background:
-        "radial-gradient(circle, rgba(72,119,81,0.3), transparent 70%)",
-      pointerEvents: "none",
-    }}
-  />
-
-  {/* Decorative gold divider */}
-  <div
-    aria-hidden="true"
-    style={{
-      position: "absolute",
-      top: 0,
-      left: "2%",
-      right: "2%",
-      height: "1px",
-      background:
-        "linear-gradient(90deg, transparent, rgba(198,162,101,0.45), transparent)",
-    }}
-  />
-
-  <div
-    className="container"
-    style={{
-      position: "relative",
-      zIndex: 1,
-      width: "100%",
-      maxWidth: "100%",
-      margin: "0 auto",
-      display: "grid",
-      gridTemplateColumns:
-        "repeat(auto-fit, minmax(min(100%, 350px), 1fr))",
-      alignItems: "center",
-      gap: "clamp(48px, 6vw, 96px)",
-      boxSizing: "border-box",
-      padding: "0 10px",
-    }}
-  >
-    {/* Left: Editorial content */}
-    <motion.div
-      initial={{ opacity: 0, x: -35 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <div
+      {/* Premium Final CTA — Nature-inspired Contact Experience */}
+      <section
+        id="contact-cta"
         style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "12px",
-          marginBottom: "28px",
-        }}
-      >
-        <span
-          aria-hidden="true"
-          style={{
-            width: "34px",
-            height: "1px",
-            background: "#B38B4D",
-          }}
-        />
-
-        <span
-          style={{
-            color: "#987443",
-            fontSize: "0.76rem",
-            fontWeight: 700,
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-          }}
-        >
-          Your next chapter begins here
-        </span>
-      </div>
-
-      <h2
-        style={{
-          fontFamily: "var(--font-serif)",
-          fontSize: "clamp(2.0rem, 4.5vw, 4rem)",
-          lineHeight: 1.08,
-          letterSpacing: "-0.035em",
-          fontWeight: 500,
-          margin: "0 0 28px",
-          maxWidth: "100%",
+          position: "relative",
+          isolation: "isolate",
+          overflow: "hidden",
+          padding: "clamp(50px, 8vw, 100px) 80px",
+          width: "100%",
+          boxSizing: "border-box",
+          background: "#FFFFFF",
           color: "#183023",
         }}
       >
-        A life closer to{" "}
-        <span
+        {/* Soft ambient background decoration */}
+        <motion.div
+          aria-hidden="true"
+          animate={{
+            scale: [1, 1.12, 1],
+            opacity: [0.06, 0.12, 0.06],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
           style={{
-            display: "inline-block",
-            color: "#B38B4D",
-            fontStyle: "italic",
-            fontWeight: 400,
+            position: "absolute",
+            zIndex: -1,
+            width: "clamp(250px, 38vw, 520px)",
+            aspectRatio: "1",
+            top: "-180px",
+            left: "-130px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(198,162,101,0.35), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <motion.div
+          aria-hidden="true"
+          animate={{
+            scale: [1.05, 1, 1.05],
+            opacity: [0.05, 0.1, 0.05],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            position: "absolute",
+            zIndex: -1,
+            width: "clamp(300px, 42vw, 600px)",
+            aspectRatio: "1",
+            right: "-220px",
+            bottom: "-300px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(72,119,81,0.3), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Decorative gold divider */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: "2%",
+            right: "2%",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(198,162,101,0.45), transparent)",
+          }}
+        />
+
+        <div
+          className="container"
+          style={{
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+            maxWidth: "100%",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 350px), 1fr))",
+            alignItems: "center",
+            gap: "clamp(48px, 6vw, 96px)",
+            boxSizing: "border-box",
+            padding: "0 10px",
           }}
         >
-          nature.
-        </span>
-        <br />A place to belong.
-      </h2>
+          {/* Left: Editorial content */}
+          <motion.div
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "12px",
+                marginBottom: "28px",
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  width: "34px",
+                  height: "1px",
+                  background: "#B38B4D",
+                }}
+              />
 
-      <p
-        style={{
-          maxWidth: "100%",
-          color: "#5A685E",
-          fontSize: "clamp(1rem, 1.2vw, 1.12rem)",
-          lineHeight: 1.95,
-          margin: "0 0 36px",
-        }}
-      >
-        Discover thoughtfully nurtured landscapes, meaningful outdoor
-        experiences, and a community shaped by nature. Tell us what you
-        are looking for, and let&apos;s start a conversation.
-      </p>
+              <span
+                style={{
+                  color: "#987443",
+                  fontSize: "0.76rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Your next chapter begins here
+              </span>
+            </div>
 
-      {/* Decorative signature */}
-      <div
+            <h2
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.0rem, 4.5vw, 4rem)",
+                lineHeight: 1.08,
+                letterSpacing: "-0.035em",
+                fontWeight: 500,
+                margin: "0 0 28px",
+                maxWidth: "100%",
+                color: "#183023",
+              }}
+            >
+              A life closer to{" "}
+              <span
+                style={{
+                  display: "inline-block",
+                  color: "#B38B4D",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
+                nature.
+              </span>
+              <br />A place to belong.
+            </h2>
+
+            <p
+              style={{
+                maxWidth: "100%",
+                color: "#5A685E",
+                fontSize: "clamp(1rem, 1.2vw, 1.12rem)",
+                lineHeight: 1.95,
+                margin: "0 0 36px",
+              }}
+            >
+              Discover thoughtfully nurtured landscapes, meaningful outdoor
+              experiences, and a community shaped by nature. Tell us what you
+              are looking for, and let&apos;s start a conversation.
+            </p>
+
+            {/* Decorative signature */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "15px",
+                paddingTop: "24px",
+                borderTop: "1px solid #E2E8E3",
+                maxWidth: "100%",
+              }}
+            >
+              <div
+                style={{
+                  width: "46px",
+                  height: "46px",
+                  flexShrink: 0,
+                  borderRadius: "50%",
+                  display: "grid",
+                  placeItems: "center",
+                  color: "#B38B4D",
+                  border: "1px solid rgba(179,139,77,0.35)",
+                  background: "rgba(198,162,101,0.06)",
+                }}
+              >
+                <Leaf className="size-5" strokeWidth={1.5} />
+              </div>
+
+              <div>
+                <div
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "1.05rem",
+                    marginBottom: "4px",
+                    color: "#183023",
+                  }}
+                >
+                  Rooted in nature.
+                </div>
+                <div
+                  style={{
+                    color: "#727E74",
+                    fontSize: "0.84rem",
+                    letterSpacing: "0.035em",
+                  }}
+                >
+                  Thoughtfully grown for generations.
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Premium contact form */}
+
+          <motion.form
+            initial={{ opacity: 0, y: 25, scale: 0.99 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.12,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            action="/api/contact"
+            method="POST"
+            style={{
+              position: "relative",
+              background: "linear-gradient(145deg, #F9FBF9 0%, #F3F7F4 100%)",
+              color: "#26352B",
+              padding: "clamp(22px, 2.5vw, 32px)",
+              borderRadius: "18px",
+              border: "1px solid #DCE4DE",
+              boxShadow: "0 18px 45px rgba(0,0,0,0.07)",
+              boxSizing: "border-box",
+              width: "100%",
+              maxWidth: "460px",
+              justifySelf: "center",
+              margin: "0 auto",
+            }}
+          >
+            {/* Gold accent */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: "10%",
+                right: "10%",
+                height: "3px",
+                borderRadius: "0 0 4px 4px",
+                background:
+                  "linear-gradient(90deg, transparent, #C6A265, #E9D6AD, #C6A265, transparent)",
+              }}
+            />
+
+            {/* Form heading */}
+            <div style={{ marginBottom: "22px" }}>
+              <span
+                style={{
+                  display: "block",
+                  color: "#987443",
+                  fontSize: "0.68rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.17em",
+                  textTransform: "uppercase",
+                  marginBottom: "9px",
+                }}
+              >
+                Let&apos;s connect
+              </span>
+
+              <h3
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "1.8rem",
+                  lineHeight: 1.2,
+                  fontWeight: 500,
+                  color: "#183023",
+                  margin: "0 0 8px",
+                }}
+              >
+                Begin your journey.
+              </h3>
+
+              <p
+                style={{
+                  color: "#6B776D",
+                  fontSize: "0.88rem",
+                  lineHeight: 1.65,
+                  margin: 0,
+                }}
+              >
+                Share your details and we&apos;ll be in touch.
+              </p>
+            </div>
+
+            {/* Form fields */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "16px",
+              }}
+            >
+              {[
+                {
+                  id: "cta-name",
+                  label: "Full name",
+                  type: "text",
+                  placeholder: "Enter your full name",
+                  name: "name",
+                  autoComplete: "name",
+                },
+                {
+                  id: "cta-phone",
+                  label: "Phone number",
+                  type: "tel",
+                  placeholder: "Enter your phone number",
+                  name: "phone",
+                  autoComplete: "tel",
+                },
+                {
+                  id: "cta-email",
+                  label: "Email address",
+                  type: "email",
+                  placeholder: "Enter your email address",
+                  name: "email",
+                  autoComplete: "email",
+                },
+              ].map((field, index) => (
+                <motion.div
+                  key={field.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.15 + index * 0.08,
+                  }}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "7px",
+                  }}
+                >
+                  <label
+                    htmlFor={field.id}
+                    style={{
+                      color: "#35483A",
+                      fontSize: "0.82rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {field.label}
+                  </label>
+
+                  <input
+                    id={field.id}
+                    name={field.name}
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    autoComplete={field.autoComplete}
+                    required
+                    style={{
+                      width: "100%",
+                      minHeight: "46px",
+                      boxSizing: "border-box",
+                      padding: "11px 13px",
+                      border: "1px solid #DCE1DA",
+                      borderRadius: "7px",
+                      background: "#FFFFFF",
+                      color: "#26352B",
+                      fontFamily: "inherit",
+                      fontSize: "0.88rem",
+                      outline: "none",
+                      transition:
+                        "border-color 0.25s ease, box-shadow 0.25s ease",
+                    }}
+                    onFocus={(event) => {
+                      event.currentTarget.style.borderColor = "#B38B4D";
+                      event.currentTarget.style.boxShadow =
+                        "0 0 0 3px rgba(198,162,101,0.13)";
+                    }}
+                    onBlur={(event) => {
+                      event.currentTarget.style.borderColor = "#DCE1DA";
+                      event.currentTarget.style.boxShadow = "none";
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Submit button */}
+            <motion.button
+              type="submit"
+              whileHover={{
+                y: -2,
+                boxShadow: "0 10px 22px rgba(116,53,31,0.2)",
+              }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ duration: 0.2 }}
+              style={{
+                width: "100%",
+                minHeight: "48px",
+                marginTop: "22px",
+                padding: "12px 18px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "9px",
+                border: "none",
+                borderRadius: "7px",
+                background: "linear-gradient(135deg, #844329, #67301D)",
+                color: "#FFFFFF",
+                fontFamily: "inherit",
+                fontSize: "0.9rem",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Send an enquiry
+              <ArrowRight className="size-4" />
+            </motion.button>
+
+            <p
+              style={{
+                margin: "12px 0 0",
+                textAlign: "center",
+                color: "#7B857D",
+                fontSize: "0.7rem",
+                lineHeight: 1.6,
+              }}
+            >
+              Your details will be used to respond to your enquiry.
+            </p>
+          </motion.form>
+        </div>
+      </section>
+
+      {/* Premium FAQ Section — Vanatvam */}
+      <section
+        id="faq-section"
         style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "15px",
-          paddingTop: "24px",
-          borderTop: "1px solid #E2E8E3",
-          maxWidth: "100%",
+          position: "relative",
+          isolation: "isolate",
+          overflow: "hidden",
+          padding: "clamp(40px, 5vw, 800px) 10px",
+          width: "100%",
+          boxSizing: "border-box",
+          background: "#FFFFFF",
+          color: "#183023",
         }}
       >
         <div
+          className="container"
           style={{
-            width: "46px",
-            height: "46px",
-            flexShrink: 0,
-            borderRadius: "50%",
-            display: "grid",
-            placeItems: "center",
-            color: "#B38B4D",
-            border: "1px solid rgba(179,139,77,0.35)",
-            background: "rgba(198,162,101,0.06)",
-          }}
-        >
-          <Leaf className="size-5" strokeWidth={1.5} />
-        </div>
-
-        <div>
-          <div
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "1.05rem",
-              marginBottom: "4px",
-              color: "#183023",
-            }}
-          >
-            Rooted in nature.
-          </div>
-          <div
-            style={{
-              color: "#727E74",
-              fontSize: "0.84rem",
-              letterSpacing: "0.035em",
-            }}
-          >
-            Thoughtfully grown for generations.
-          </div>
-        </div>
-      </div>
-    </motion.div>
-
-    {/* Right: Premium contact form */}
-    
-<motion.form
-  initial={{ opacity: 0, y: 25, scale: 0.99 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  viewport={{ once: true, amount: 0.15 }}
-  transition={{
-    duration: 0.8,
-    delay: 0.12,
-    ease: [0.22, 1, 0.36, 1],
-  }}
-  action="/api/contact"
-  method="POST"
-  style={{
-    position: "relative",
-    background: "linear-gradient(145deg, #F9FBF9 0%, #F3F7F4 100%)",
-    color: "#26352B",
-    padding: "clamp(22px, 2.5vw, 32px)",
-    borderRadius: "18px",
-    border: "1px solid #DCE4DE",
-    boxShadow: "0 18px 45px rgba(0,0,0,0.07)",
-    boxSizing: "border-box",
-    width: "100%",
-    maxWidth: "460px",
-    justifySelf: "center",
-    margin: "0 auto",
-  }}
->
-  {/* Gold accent */}
-  <div
-    aria-hidden="true"
-    style={{
-      position: "absolute",
-      top: 0,
-      left: "10%",
-      right: "10%",
-      height: "3px",
-      borderRadius: "0 0 4px 4px",
-      background:
-        "linear-gradient(90deg, transparent, #C6A265, #E9D6AD, #C6A265, transparent)",
-    }}
-  />
-
-  {/* Form heading */}
-  <div style={{ marginBottom: "22px" }}>
-    <span
-      style={{
-        display: "block",
-        color: "#987443",
-        fontSize: "0.68rem",
-        fontWeight: 700,
-        letterSpacing: "0.17em",
-        textTransform: "uppercase",
-        marginBottom: "9px",
-      }}
-    >
-      Let&apos;s connect
-    </span>
-
-    <h3
-      style={{
-        fontFamily: "var(--font-serif)",
-        fontSize: "1.8rem",
-        lineHeight: 1.2,
-        fontWeight: 500,
-        color: "#183023",
-        margin: "0 0 8px",
-      }}
-    >
-      Begin your journey.
-    </h3>
-
-    <p
-      style={{
-        color: "#6B776D",
-        fontSize: "0.88rem",
-        lineHeight: 1.65,
-        margin: 0,
-      }}
-    >
-      Share your details and we&apos;ll be in touch.
-    </p>
-  </div>
-
-  {/* Form fields */}
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      gap: "16px",
-    }}
-  >
-    {[
-      {
-        id: "cta-name",
-        label: "Full name",
-        type: "text",
-        placeholder: "Enter your full name",
-        name: "name",
-        autoComplete: "name",
-      },
-      {
-        id: "cta-phone",
-        label: "Phone number",
-        type: "tel",
-        placeholder: "Enter your phone number",
-        name: "phone",
-        autoComplete: "tel",
-      },
-      {
-        id: "cta-email",
-        label: "Email address",
-        type: "email",
-        placeholder: "Enter your email address",
-        name: "email",
-        autoComplete: "email",
-      },
-    ].map((field, index) => (
-      <motion.div
-        key={field.id}
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          duration: 0.4,
-          delay: 0.15 + index * 0.08,
-        }}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "7px",
-        }}
-      >
-        <label
-          htmlFor={field.id}
-          style={{
-            color: "#35483A",
-            fontSize: "0.82rem",
-            fontWeight: 600,
-          }}
-        >
-          {field.label}
-        </label>
-
-        <input
-          id={field.id}
-          name={field.name}
-          type={field.type}
-          placeholder={field.placeholder}
-          autoComplete={field.autoComplete}
-          required
-          style={{
+            position: "relative",
+            zIndex: 1,
             width: "100%",
-            minHeight: "46px",
+            maxWidth: "1000px",
+            margin: "0 auto",
             boxSizing: "border-box",
-            padding: "11px 13px",
-            border: "1px solid #DCE1DA",
-            borderRadius: "7px",
-            background: "#FFFFFF",
-            color: "#26352B",
-            fontFamily: "inherit",
-            fontSize: "0.88rem",
-            outline: "none",
-            transition:
-              "border-color 0.25s ease, box-shadow 0.25s ease",
-          }}
-          onFocus={(event) => {
-            event.currentTarget.style.borderColor = "#B38B4D";
-            event.currentTarget.style.boxShadow =
-              "0 0 0 3px rgba(198,162,101,0.13)";
-          }}
-          onBlur={(event) => {
-            event.currentTarget.style.borderColor = "#DCE1DA";
-            event.currentTarget.style.boxShadow = "none";
-          }}
-        />
-      </motion.div>
-    ))}
-  </div>
-
-  {/* Submit button */}
-  <motion.button
-    type="submit"
-    whileHover={{
-      y: -2,
-      boxShadow: "0 10px 22px rgba(116,53,31,0.2)",
-    }}
-    whileTap={{ scale: 0.985 }}
-    transition={{ duration: 0.2 }}
-    style={{
-      width: "100%",
-      minHeight: "48px",
-      marginTop: "22px",
-      padding: "12px 18px",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "9px",
-      border: "none",
-      borderRadius: "7px",
-      background: "linear-gradient(135deg, #844329, #67301D)",
-      color: "#FFFFFF",
-      fontFamily: "inherit",
-      fontSize: "0.9rem",
-      fontWeight: 700,
-      cursor: "pointer",
-    }}
-  >
-    Send an enquiry
-    <ArrowRight className="size-4" />
-  </motion.button>
-
-  <p
-    style={{
-      margin: "12px 0 0",
-      textAlign: "center",
-      color: "#7B857D",
-      fontSize: "0.7rem",
-      lineHeight: 1.6,
-    }}
-  >
-    Your details will be used to respond to your enquiry.
-  </p>
-</motion.form>
-
-  </div>
-</section>
-
-{/* Premium FAQ Section — Vanatvam */}
-<section
-  id="faq-section"
-  style={{
-    position: "relative",
-    isolation: "isolate",
-    overflow: "hidden",
-    padding: "clamp(40px, 5vw, 800px) 10px",
-    width: "100%",
-    boxSizing: "border-box",
-    background: "#FFFFFF",
-    color: "#183023",
-  }}
->
-  <div
-    className="container"
-    style={{
-      position: "relative",
-      zIndex: 1,
-      width: "100%",
-      maxWidth: "1000px",
-      margin: "0 auto",
-      boxSizing: "border-box",
-      padding: "0 10px",
-    }}
-  >
-    {/* Header */}
-    <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-      style={{ textAlign: "center", marginBottom: "clamp(40px, 6vw, 70px)" }}
-    >
-      <div
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: "10px",
-          marginBottom: "16px",
-        }}
-      >
-        <span style={{ width: "24px", height: "1px", background: "#B38B4D" }} />
-        <span
-          style={{
-            color: "#987443",
-            fontSize: "0.74rem",
-            fontWeight: 700,
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
+            padding: "0 10px",
           }}
         >
-          Got Questions?
-        </span>
-        <span style={{ width: "24px", height: "1px", background: "#B38B4D" }} />
-      </div>
-
-      <h2
-        style={{
-          fontFamily: "var(--font-serif)",
-          fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)",
-          lineHeight: 1.15,
-          letterSpacing: "-0.03em",
-          fontWeight: 500,
-          color: "#183023",
-          margin: 0,
-        }}
-      >
-        Frequently Asked Questions <br />
-        <span style={{ color: "#B38B4D", fontStyle: "italic", fontWeight: 400 }}>
-          About Vanatvam
-        </span>
-      </h2>
-    </motion.div>
-
-    {/* FAQ Items */}
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-      {[
-        {
-          number: "01",
-          question: "What makes Vanatvam different from other farmland developers?",
-          answer:
-            "Vanatvam creates natural, green spaces where people can enjoy life closer to nature. Our projects focus on native trees, fruit-bearing plants, bird-friendly habitats and sustainable land care. We aim to create thoughtfully planned farm communities that families can enjoy for years to come.",
-        },
-        {
-          number: "02",
-          question: "Where can I buy managed farmland near Bangalore?",
-          answer:
-            "If you are looking to buy farmland near Bangalore, Vanatvam offers nature-focused farm communities in selected locations across Karnataka, including the Mysuru and Cauvery regions. Explore our managed farmland near Bangalore projects to learn about available plots, pricing and site visits. You can also enquire about farmland for sale near Bangalore and farmland for sale near Mysore.",
-        },
-        {
-          number: "03",
-          question: "What is managed farmland, and how does Vanatvam maintain it?",
-          answer:
-            "Managed farmland combines land ownership with organised support for plantation development and ongoing land care, depending on the project. Vanatvam focuses on tree care, soil health and biodiversity. If you are considering farmland near Bangalore with maintenance, we recommend checking the services included, maintenance costs and owner responsibilities before purchasing.",
-        },
-        {
-          number: "04",
-          question: "Can I build a farmhouse on agricultural land in Karnataka?",
-          answer:
-            "Building a farmhouse depends on the property's legal status, applicable land-use rules and local building regulations. If you plan to buy agricultural land in Karnataka or are considering whether agricultural land can be used to build a farmhouse in Karnataka, check the necessary permissions with the relevant authorities and consult a qualified property lawyer. Owning agricultural land does not automatically permit residential construction.",
-        },
-        {
-          number: "05",
-          question: "How does Vanatvam promote biodiversity and natural farming?",
-          answer:
-            "Vanatvam focuses on native trees, fruit-bearing plants and flowering species that support birds, bees, butterflies and other wildlife. Inspired by traditional Indian forest gardens, including Nakshatra Vana and Navagraha Vana, our approach encourages biodiversity and a closer connection with nature. For those interested in farmland for sustainable living in Karnataka, our projects bring together natural surroundings and thoughtfully managed green spaces.",
-        },
-      ].map((faq, index) => (
-        <motion.details
-          key={index}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.08 }}
-          style={{
-            background: "linear-gradient(145deg, #F9FBF9 0%, #F3F7F4 100%)",
-            border: "1px solid #DCE4DE",
-            borderRadius: "16px",
-            overflow: "hidden",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.02)",
-            transition: "border-color 0.25s ease, box-shadow 0.25s ease",
-          }}
-        >
-          <summary
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             style={{
-              padding: "22px 28px",
-              fontSize: "1.05rem",
-              fontWeight: 600,
-              color: "#183023",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "16px",
-              userSelect: "none",
-              fontFamily: "var(--font-serif)",
+              textAlign: "center",
+              marginBottom: "clamp(40px, 6vw, 70px)",
             }}
           >
-            <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-              <span style={{ color: "#987443", fontSize: "0.85rem", fontWeight: 200 }}>
-                {faq.number}
-              </span>
-              <span>{faq.question}</span>
-            </div>
-            {/* Custom arrow toggle indicator */}
-            <span
+            <div
               style={{
-                width: "28px",
-                height: "28px",
-                borderRadius: "50%",
-                background: "rgba(152, 116, 67, 0.1)",
-                color: "#987443",
-                display: "grid",
-                placeItems: "center",
-                flexShrink: 0,
-                fontSize: "0.8rem",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "16px",
               }}
             >
-              ↓
-            </span>
-          </summary>
+              <span
+                style={{ width: "24px", height: "1px", background: "#B38B4D" }}
+              />
+              <span
+                style={{
+                  color: "#987443",
+                  fontSize: "0.74rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Got Questions?
+              </span>
+              <span
+                style={{ width: "24px", height: "1px", background: "#B38B4D" }}
+              />
+            </div>
 
+            <h2
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.03em",
+                fontWeight: 500,
+                color: "#183023",
+                margin: 0,
+              }}
+            >
+              Frequently Asked Questions <br />
+              <span
+                style={{
+                  color: "#B38B4D",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
+                About Vanatvam
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* FAQ Items */}
           <div
-            style={{
-              padding: "0 28px 24px 28px",
-              color: "#5A685E",
-              fontSize: "0.96rem",
-              lineHeight: 1.85,
-              borderTop: "1px solid rgba(220, 228, 222, 0.6)",
-              marginTop: "4px",
-              paddingTop: "16px",
-            }}
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
           >
-            {faq.answer}
+            {[
+              {
+                number: "01",
+                question:
+                  "What makes Vanatvam different from other farmland developers?",
+                answer:
+                  "Vanatvam creates natural, green spaces where people can enjoy life closer to nature. Our projects focus on native trees, fruit-bearing plants, bird-friendly habitats and sustainable land care. We aim to create thoughtfully planned farm communities that families can enjoy for years to come.",
+              },
+              {
+                number: "02",
+                question: "Where can I buy managed farmland near Bangalore?",
+                answer:
+                  "If you are looking to buy farmland near Bangalore, Vanatvam offers nature-focused farm communities in selected locations across Karnataka, including the Mysuru and Cauvery regions. Explore our managed farmland near Bangalore projects to learn about available plots, pricing and site visits. You can also enquire about farmland for sale near Bangalore and farmland for sale near Mysore.",
+              },
+              {
+                number: "03",
+                question:
+                  "What is managed farmland, and how does Vanatvam maintain it?",
+                answer:
+                  "Managed farmland combines land ownership with organised support for plantation development and ongoing land care, depending on the project. Vanatvam focuses on tree care, soil health and biodiversity. If you are considering farmland near Bangalore with maintenance, we recommend checking the services included, maintenance costs and owner responsibilities before purchasing.",
+              },
+              {
+                number: "04",
+                question:
+                  "Can I build a farmhouse on agricultural land in Karnataka?",
+                answer:
+                  "Building a farmhouse depends on the property's legal status, applicable land-use rules and local building regulations. If you plan to buy agricultural land in Karnataka or are considering whether agricultural land can be used to build a farmhouse in Karnataka, check the necessary permissions with the relevant authorities and consult a qualified property lawyer. Owning agricultural land does not automatically permit residential construction.",
+              },
+              {
+                number: "05",
+                question:
+                  "How does Vanatvam promote biodiversity and natural farming?",
+                answer:
+                  "Vanatvam focuses on native trees, fruit-bearing plants and flowering species that support birds, bees, butterflies and other wildlife. Inspired by traditional Indian forest gardens, including Nakshatra Vana and Navagraha Vana, our approach encourages biodiversity and a closer connection with nature. For those interested in farmland for sustainable living in Karnataka, our projects bring together natural surroundings and thoughtfully managed green spaces.",
+              },
+            ].map((faq, index) => (
+              <motion.details
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                style={{
+                  background:
+                    "linear-gradient(145deg, #F9FBF9 0%, #F3F7F4 100%)",
+                  border: "1px solid #DCE4DE",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.02)",
+                  transition: "border-color 0.25s ease, box-shadow 0.25s ease",
+                }}
+              >
+                <summary
+                  style={{
+                    padding: "22px 28px",
+                    fontSize: "1.05rem",
+                    fontWeight: 600,
+                    color: "#183023",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "16px",
+                    userSelect: "none",
+                    fontFamily: "var(--font-serif)",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "16px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#987443",
+                        fontSize: "0.85rem",
+                        fontWeight: 200,
+                      }}
+                    >
+                      {faq.number}
+                    </span>
+                    <span>{faq.question}</span>
+                  </div>
+                  {/* Custom arrow toggle indicator */}
+                  <span
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      background: "rgba(152, 116, 67, 0.1)",
+                      color: "#987443",
+                      display: "grid",
+                      placeItems: "center",
+                      flexShrink: 0,
+                      fontSize: "0.8rem",
+                    }}
+                  >
+                    ↓
+                  </span>
+                </summary>
+
+                <div
+                  style={{
+                    padding: "0 28px 24px 28px",
+                    color: "#5A685E",
+                    fontSize: "0.96rem",
+                    lineHeight: 1.85,
+                    borderTop: "1px solid rgba(220, 228, 222, 0.6)",
+                    marginTop: "4px",
+                    paddingTop: "16px",
+                  }}
+                >
+                  {faq.answer}
+                </div>
+              </motion.details>
+            ))}
           </div>
-        </motion.details>
-      ))}
-    </div>
-  </div>
-</section>
+        </div>
+      </section>
 
       <Footer />
     </>

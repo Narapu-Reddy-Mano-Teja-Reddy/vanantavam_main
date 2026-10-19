@@ -108,6 +108,249 @@ export default function About() {
         </div>
       </section>
 
+      {/* Founder Leadership Section */}
+      <section
+        style={{
+          padding: "clamp(90px, 12vh, 130px) 0",
+          background: "#122217",
+          color: "#FFFFFF",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        <div className="container">
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "80px",
+              alignItems: "center",
+            }}
+          >
+            {/* Founder Visual Frame */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              style={{ flex: "1 1 420px", position: "relative" }}
+            >
+              <div
+                style={{
+                  borderRadius: "28px",
+
+                  boxShadow: "0 30px 70px rgba(0,0,0,0.5)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                }}
+              >
+                <img
+                  src="/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.png"
+                  alt="Founder leadership and land care"
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+
+              {/* Floating Quote Badge */}
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "-25px",
+                  right: "-15px",
+                  background: "rgba(18,34,23,0.92)",
+                  backdropFilter: "blur(16px)",
+                  padding: "28px 32px",
+                  borderRadius: "20px",
+                  border: "1px solid rgba(198,162,101,0.4)",
+                  maxWidth: "320px",
+                  boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "2rem",
+                    color: "var(--accent-gold)",
+                    lineHeight: 0.5,
+                    display: "block",
+                    marginBottom: "14px",
+                  }}
+                >
+                  &ldquo;
+                </span>
+                <p
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "1.18rem",
+                    fontStyle: "italic",
+                    margin: 0,
+                    lineHeight: 1.5,
+                    color: "#FFFFFF",
+                  }}
+                >
+                  If you want to save the wildlife, start by saving the trees.
+                </p>
+                <div
+                  style={{
+                    marginTop: "12px",
+                    fontSize: "0.8rem",
+                    color: "var(--accent-gold)",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    fontWeight: 600,
+                  }}
+                >
+                  — Deepak Kasthuri
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Founder Bio Column */}
+            <div style={{ flex: "1 1 500px" }}>
+              <span
+                style={{
+                  color: "var(--accent-gold)",
+                  fontSize: "0.82rem",
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  display: "block",
+                  marginBottom: "18px",
+                }}
+              >
+                FOUNDER &amp; MANAGING DIRECTOR
+              </span>
+
+              <h2
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.6rem, 5vw, 4rem)",
+                  color: "#FFFFFF",
+                  lineHeight: 1.12,
+                  letterSpacing: "-0.02em",
+                  fontWeight: 600,
+                  marginBottom: "20px",
+                }}
+              >
+                Deepak Kasthuri
+              </h2>
+
+              <p
+                style={{
+                  fontSize: "1.2rem",
+                  color: "var(--accent-gold)",
+                  fontFamily: "var(--font-serif)",
+                  fontStyle: "italic",
+                  marginBottom: "24px",
+                }}
+              >
+                Pioneering Karnataka&apos;s Nature-Led Managed Farmland Movement
+              </p>
+
+              <p
+                style={{
+                  fontSize: "1.12rem",
+                  color: "rgba(255,255,255,0.85)",
+                  lineHeight: 1.8,
+                  marginBottom: "18px",
+                  fontWeight: 400,
+                }}
+              >
+                Driven by a profound reverence for India&apos;s sacred forestry
+                traditions, Deepak Kasthuri foundedVanaTvam to dismantle the
+                false boundary between urban families and the natural earth.
+              </p>
+
+              <p
+                style={{
+                  fontSize: "1.05rem",
+                  color: "rgba(255,255,255,0.7)",
+                  lineHeight: 1.8,
+                  marginBottom: "32px",
+                }}
+              >
+                Under his leadership,VanaTvam has transformed over 100 acres of
+                barren and depleted soil across Pavagada, Maddur, Kabini, and
+                Kollegala into biodiverse multi-canopy ecosystems. His
+                pioneering work unites regenerative permaculture, Vedic
+                forestry, and hassle-free managed land ownership.
+              </p>
+
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(2, 1fr)",
+                  gap: "24px",
+                  borderTop: "1px solid rgba(255,255,255,0.12)",
+                  paddingTop: "28px",
+                  marginBottom: "36px",
+                }}
+              >
+                <div>
+                  <span
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "rgba(255,255,255,0.5)",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      display: "block",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    Registered Entity
+                  </span>
+                  <strong
+                    style={{
+                      fontSize: "1.05rem",
+                      color: "#FFFFFF",
+                      fontWeight: 600,
+                    }}
+                  >
+                    VanaTvam Private Limited
+                  </strong>
+                </div>
+                <div>
+                  <span
+                    style={{
+                      fontSize: "0.78rem",
+                      color: "rgba(255,255,255,0.5)",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      display: "block",
+                      marginBottom: "4px",
+                    }}
+                  >
+                    Headquarters
+                  </span>
+                  <strong
+                    style={{
+                      fontSize: "1.05rem",
+                      color: "#FFFFFF",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Bengaluru, Karnataka
+                  </strong>
+                </div>
+              </div>
+
+              <Magnetic strength={0.25}>
+                <Link
+                  href="/about"
+                  className="btn-pill btn-pill-gold"
+                  style={{
+                    padding: "14px 32px",
+                    fontSize: "1rem",
+                    fontWeight: 700,
+                  }}
+                >
+                  Read Our Full Story <ArrowRight className="size-4" />
+                </Link>
+              </Magnetic>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Story Section */}
       <section
         style={{
@@ -845,248 +1088,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founder Leadership Section */}
-      <section
-        style={{
-          padding: "clamp(90px, 12vh, 130px) 0",
-          background: "#122217",
-          color: "#FFFFFF",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "80px",
-              alignItems: "center",
-            }}
-          >
-            {/* Founder Visual Frame */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              style={{ flex: "1 1 420px", position: "relative" }}
-            >
-              <div
-                style={{
-                  borderRadius: "28px",
-
-                  boxShadow: "0 30px 70px rgba(0,0,0,0.5)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
-              >
-                <img
-                  src="/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.png"
-                  alt="Founder leadership and land care"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
-
-              {/* Floating Quote Badge */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "-25px",
-                  right: "-15px",
-                  background: "rgba(18,34,23,0.92)",
-                  backdropFilter: "blur(16px)",
-                  padding: "28px 32px",
-                  borderRadius: "20px",
-                  border: "1px solid rgba(198,162,101,0.4)",
-                  maxWidth: "320px",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "2rem",
-                    color: "var(--accent-gold)",
-                    lineHeight: 0.5,
-                    display: "block",
-                    marginBottom: "14px",
-                  }}
-                >
-                  &ldquo;
-                </span>
-                <p
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.18rem",
-                    fontStyle: "italic",
-                    margin: 0,
-                    lineHeight: 1.5,
-                    color: "#FFFFFF",
-                  }}
-                >
-                  If you want to save the wildlife, start by saving the trees.
-                </p>
-                <div
-                  style={{
-                    marginTop: "12px",
-                    fontSize: "0.8rem",
-                    color: "var(--accent-gold)",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    fontWeight: 600,
-                  }}
-                >
-                  — Deepak Kasthuri
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Founder Bio Column */}
-            <div style={{ flex: "1 1 500px" }}>
-              <span
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "0.82rem",
-                  letterSpacing: "0.22em",
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  display: "block",
-                  marginBottom: "18px",
-                }}
-              >
-                FOUNDER &amp; MANAGING DIRECTOR
-              </span>
-
-              <h2
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.6rem, 5vw, 4rem)",
-                  color: "#FFFFFF",
-                  lineHeight: 1.12,
-                  letterSpacing: "-0.02em",
-                  fontWeight: 600,
-                  marginBottom: "20px",
-                }}
-              >
-                Deepak Kasthuri
-              </h2>
-
-              <p
-                style={{
-                  fontSize: "1.2rem",
-                  color: "var(--accent-gold)",
-                  fontFamily: "var(--font-serif)",
-                  fontStyle: "italic",
-                  marginBottom: "24px",
-                }}
-              >
-                Pioneering Karnataka&apos;s Nature-Led Managed Farmland Movement
-              </p>
-
-              <p
-                style={{
-                  fontSize: "1.12rem",
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: 1.8,
-                  marginBottom: "18px",
-                  fontWeight: 400,
-                }}
-              >
-                Driven by a profound reverence for India&apos;s sacred forestry
-                traditions, Deepak Kasthuri foundedVanaTvam to dismantle the
-                false boundary between urban families and the natural earth.
-              </p>
-
-              <p
-                style={{
-                  fontSize: "1.05rem",
-                  color: "rgba(255,255,255,0.7)",
-                  lineHeight: 1.8,
-                  marginBottom: "32px",
-                }}
-              >
-                Under his leadership,VanaTvam has transformed over 100 acres of
-                barren and depleted soil across Pavagada, Maddur, Kabini, and
-                Kollegala into biodiverse multi-canopy ecosystems. His
-                pioneering work unites regenerative permaculture, Vedic
-                forestry, and hassle-free managed land ownership.
-              </p>
-
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(2, 1fr)",
-                  gap: "24px",
-                  borderTop: "1px solid rgba(255,255,255,0.12)",
-                  paddingTop: "28px",
-                  marginBottom: "36px",
-                }}
-              >
-                <div>
-                  <span
-                    style={{
-                      fontSize: "0.78rem",
-                      color: "rgba(255,255,255,0.5)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      display: "block",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    Registered Entity
-                  </span>
-                  <strong
-                    style={{
-                      fontSize: "1.05rem",
-                      color: "#FFFFFF",
-                      fontWeight: 600,
-                    }}
-                  >
-                    VanaTvam Private Limited
-                  </strong>
-                </div>
-                <div>
-                  <span
-                    style={{
-                      fontSize: "0.78rem",
-                      color: "rgba(255,255,255,0.5)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      display: "block",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    Headquarters
-                  </span>
-                  <strong
-                    style={{
-                      fontSize: "1.05rem",
-                      color: "#FFFFFF",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Bengaluru, Karnataka
-                  </strong>
-                </div>
-              </div>
-
-              <Magnetic strength={0.25}>
-                <Link
-                  href="/about"
-                  className="btn-pill btn-pill-gold"
-                  style={{
-                    padding: "14px 32px",
-                    fontSize: "1rem",
-                    fontWeight: 700,
-                  }}
-                >
-                  Read Our Full Story <ArrowRight className="size-4" />
-                </Link>
-              </Magnetic>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <Footer />
     </>

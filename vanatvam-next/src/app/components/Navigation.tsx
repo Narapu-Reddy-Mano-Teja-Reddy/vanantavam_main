@@ -76,9 +76,6 @@ export default function Navigation() {
           width: scrolled ? "min(94%, 1320px)" : "100%",
           y: scrolled ? 16 : 0,
           borderRadius: scrolled ? "44px" : "0px",
-          background: scrolled
-            ? "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 243, 235, 0.94) 100%)"
-            : "transparent",
           boxShadow: scrolled
             ? "0 24px 60px rgba(18, 34, 23, 0.14), 0 0 0 1px rgba(198, 162, 101, 0.4)"
             : "none",
@@ -97,17 +94,35 @@ export default function Navigation() {
           willChange: "transform, width, background, border-radius, height",
         }}
       >
+        {/* Animated gradient background */}
+<motion.div
+  initial={false}
+  animate={{ opacity: scrolled ? 1 : 0 }}
+  transition={{ duration: 0.4, ease: "easeInOut" }}
+  aria-hidden="true"
+  style={{
+    position: "absolute",
+    inset: 0,
+    borderRadius: "inherit",
+    background:
+      "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 243, 235, 0.94) 100%)",
+    pointerEvents: "none",
+    zIndex: 0,
+  }}
+/>
         <div
           className="header-inner"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
-            height: "100%",
-            padding: scrolled ? "0 26px 0 20px" : "0 40px",
-            boxSizing: "border-box",
-          }}
+         style={{
+  position: "relative",
+  zIndex: 1,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  width: "100%",
+  height: "100%",
+  padding: scrolled ? "0 26px 0 20px" : "0 40px",
+  boxSizing: "border-box",
+}}
         >
           {/* Logo */}
           <Link
@@ -123,32 +138,32 @@ export default function Navigation() {
             }}
           >
             <AnimatePresence mode="wait" initial={false}>
-  <motion.img
-    key={scrolled ? "scrolled-logo" : "default-logo"}
-    src={
-      scrolled
-        ? "/assets/images/main.png"
-        : "/assets/images/vanatvamlogo.webp"
-    }
-    alt="Vanatvam Logo"
-    className="header-logo-img"
-    initial={{ opacity: 0, scale: 0.92 }}
-    animate={{ opacity: 1, scale: 1 }}
-    exit={{ opacity: 0, scale: 0.92 }}
-    transition={{ duration: 0.25, ease: EASE_PREMIUM }}
-    whileHover={{ scale: 1.04 }}
-    style={{
-      height: scrolled ? "80px" : "96px",
-      width: "auto",
-      maxWidth: scrolled ? "150px" : "220px",
-      filter: scrolled
-        ? "none"
-        : "drop-shadow(0 2px 10px rgba(0,0,0,0.4))",
-      objectFit: "contain",
-      display: "block",
-    }}
-  />
-</AnimatePresence>
+              <motion.img
+                key={scrolled ? "scrolled-logo" : "default-logo"}
+                src={
+                  scrolled
+                    ? "/assets/images/main.png"
+                    : "/assets/images/vanatvamlogo.webp"
+                }
+                alt="Vanatvam Logo"
+                className="header-logo-img"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.92 }}
+                transition={{ duration: 0.25, ease: EASE_PREMIUM }}
+                whileHover={{ scale: 1.04 }}
+                style={{
+                  height: scrolled ? "80px" : "96px",
+                  width: "auto",
+                  maxWidth: scrolled ? "150px" : "220px",
+                  filter: scrolled
+                    ? "none"
+                    : "drop-shadow(0 2px 10px rgba(0,0,0,0.4))",
+                  objectFit: "contain",
+                  display: "block",
+                }}
+              />
+            </AnimatePresence>
           </Link>
 
           {/* Nav Menu */}
@@ -176,8 +191,8 @@ export default function Navigation() {
                   ? "#1E352F"
                   : "#334A42"
                 : lit
-                ? "var(--accent-gold)"
-                : "#FFFFFF";
+                  ? "var(--accent-gold)"
+                  : "#FFFFFF";
 
               return (
                 <Link
@@ -207,7 +222,11 @@ export default function Navigation() {
                     <motion.span
                       layoutId="nav-active-pill"
                       aria-hidden="true"
-                      transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 32,
+                      }}
                       style={{
                         position: "absolute",
                         inset: 0,
@@ -255,7 +274,11 @@ export default function Navigation() {
                   <motion.span
                     animate={{ y: isHovered ? -1.5 : 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                    style={{ position: "relative", zIndex: 1, display: "block" }}
+                    style={{
+                      position: "relative",
+                      zIndex: 1,
+                      display: "block",
+                    }}
                   >
                     {item.label}
                   </motion.span>
@@ -265,7 +288,11 @@ export default function Navigation() {
                     <motion.span
                       layoutId="nav-active-dot"
                       aria-hidden="true"
-                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 380,
+                        damping: 30,
+                      }}
                       style={{
                         position: "absolute",
                         bottom: "-2px",
@@ -302,7 +329,8 @@ export default function Navigation() {
                   style={{
                     position: "relative",
                     overflow: "hidden",
-                    background: "linear-gradient(135deg, #74351F 0%, #542211 100%)",
+                    background:
+                      "linear-gradient(135deg, #74351F 0%, #542211 100%)",
                     color: "#FFFFFF",
                     padding: scrolled ? "11px 22px" : "14px 26px",
                     borderRadius: "34px",
@@ -390,7 +418,8 @@ export default function Navigation() {
                   display: "block",
                   width: "24px",
                   height: "2px",
-                  backgroundColor: scrolled || isDrawerOpen ? "#1E352F" : "#FFFFFF",
+                  backgroundColor:
+                    scrolled || isDrawerOpen ? "#1E352F" : "#FFFFFF",
                   transition: "background-color 0.3s ease",
                 }}
               ></span>
@@ -399,7 +428,8 @@ export default function Navigation() {
                   display: "block",
                   width: "24px",
                   height: "2px",
-                  backgroundColor: scrolled || isDrawerOpen ? "#1E352F" : "#FFFFFF",
+                  backgroundColor:
+                    scrolled || isDrawerOpen ? "#1E352F" : "#FFFFFF",
                   transition: "background-color 0.3s ease",
                 }}
               ></span>
@@ -452,7 +482,10 @@ export default function Navigation() {
                     onClick={closeDrawer}
                     style={{
                       fontSize: "1.7rem",
-                      color: pathname === item.path ? "var(--accent-gold)" : "#1E352F",
+                      color:
+                        pathname === item.path
+                          ? "var(--accent-gold)"
+                          : "#1E352F",
                       textDecoration: "none",
                       fontFamily: "var(--font-serif)",
                       display: "block",
@@ -511,7 +544,10 @@ export default function Navigation() {
                   fontSize: "0.95rem",
                 }}
               >
-                <i className="fa-solid fa-phone" style={{ marginRight: "8px" }}></i>
+                <i
+                  className="fa-solid fa-phone"
+                  style={{ marginRight: "8px" }}
+                ></i>
                 +91 99999 99999
               </a>
               <a
@@ -522,7 +558,10 @@ export default function Navigation() {
                   fontSize: "0.95rem",
                 }}
               >
-                <i className="fa-solid fa-envelope" style={{ marginRight: "8px" }}></i>
+                <i
+                  className="fa-solid fa-envelope"
+                  style={{ marginRight: "8px" }}
+                ></i>
                 hello@vanatvam.com
               </a>
             </motion.div>
