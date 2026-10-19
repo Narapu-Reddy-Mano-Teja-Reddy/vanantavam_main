@@ -335,7 +335,7 @@ export default function About() {
 
               <Magnetic strength={0.25}>
                 <Link
-                  href="/about"
+                  href="/founders-statement"
                   className="btn-pill btn-pill-gold"
                   style={{
                     padding: "14px 32px",
