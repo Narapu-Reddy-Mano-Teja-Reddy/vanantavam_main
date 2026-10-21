@@ -18,7 +18,7 @@ const NAV_ITEMS: NavItem[] = [
 
 const DRAWER_ITEMS: NavItem[] = [
   ...NAV_ITEMS,
-  { path: "/contact", label: "Find Your Vana" },
+  { path: "/contact", label: "Find your project" },
 ];
 
 // Explicit 4-number tuple so framer-motion accepts it as a cubic-bezier "ease"
@@ -382,7 +382,7 @@ export default function Navigation() {
                     transition={ctaTextTransition}
                     style={{ position: "relative", zIndex: 1 }}
                   >
-                    Find Your Vana
+                    Find your project 
                   </motion.span>
 
                   <motion.i

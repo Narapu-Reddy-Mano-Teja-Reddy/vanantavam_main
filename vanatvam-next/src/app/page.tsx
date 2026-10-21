@@ -244,7 +244,7 @@ export default function Home() {
                 border: "1px solid rgba(255,255,255,0.4)",
                 padding: "6px 16px",
                 borderRadius: "30px",
-                fontSize: "0.9rem",
+                fontSize: "1.3rem",
                 fontWeight: 900,
                 letterSpacing: "0.15em",
                 color: "#FFF",
@@ -252,7 +252,7 @@ export default function Home() {
                 marginBottom: "24px",
               }}
             >
-              Ecological Communities in Karnataka
+              Natural Managed Farmland Communities
             </motion.span>
 
             <AnimatePresence mode="wait">
@@ -267,7 +267,7 @@ export default function Home() {
                   style={{
                     display: "block",
                     color: "var(--accent-gold)",
-                    fontSize: "0.95rem",
+                    fontSize: "1.2rem",
                     fontWeight: 900,
                     letterSpacing: "0.15em",
                     marginBottom: "16px",
@@ -404,83 +404,92 @@ export default function Home() {
           ))}
         </div>
       </section>
-     {/* Continuous Infinite Ecosystem Marquee */}
-<div
-  className="vana-marquee"
-  style={{
-    width: "100%",
-    overflow: "hidden",
-    position: "relative",
-    whiteSpace: "nowrap",
-  }}
->
-  <div
-    className="vana-marquee-track"
-    style={{
-      display: "flex",
-      width: "max-content",
-      willChange: "transform",
-      animationName: "vana-marquee-scroll",
-      animationDuration: "30s",
-      animationTimingFunction: "linear",
-      animationIterationCount: "infinite",
-      animationPlayState: "running",
-    }}
-  >
-    {Array.from({ length: 2 }, (_, rep) => (
+      {/* Continuous Infinite Ecosystem Marquee */}
       <div
-        className="vana-marquee-group"
-        key={rep}
-        aria-hidden={rep === 1}
+        className="vana-marquee"
         style={{
-          display: "flex",
-          alignItems: "center",
-          flexShrink: 0,
+          width: "100%",
+          overflow: "hidden",
+          position: "relative",
+          whiteSpace: "nowrap",
         }}
       >
-        {[
-          "Brindavana", "Madhuvana", "Anantavana", "Eeshavana",
-          "Brindavana", "Madhuvana", "Anantavana", "Eeshavana",
-          "Brindavana", "Madhuvana", "Anantavana", "Eeshavana",
-        ].map((name, index) => (
-          <span
-            key={`${rep}-${index}`}
-            className="vana-marquee-item"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              flexShrink: 0,
-            }}
-          >
-            {name}
-            <Leaf
-              className="size-4"
-              strokeWidth={1.5}
-              aria-hidden="true"
+        <div
+          className="vana-marquee-track"
+          style={{
+            display: "flex",
+            width: "max-content",
+            willChange: "transform",
+            animationName: "vana-marquee-scroll",
+            animationDuration: "30s",
+            animationTimingFunction: "linear",
+            animationIterationCount: "infinite",
+            animationPlayState: "running",
+          }}
+        >
+          {Array.from({ length: 2 }, (_, rep) => (
+            <div
+              className="vana-marquee-group"
+              key={rep}
+              aria-hidden={rep === 1}
               style={{
-                display: "inline-block",
+                display: "flex",
+                alignItems: "center",
                 flexShrink: 0,
-                margin: "0 28px",
-                color: "var(--accent-gold)",
               }}
-            />
-          </span>
-        ))}
+            >
+              {[
+                "Brindavana",
+                "Madhuvana",
+                "Anantavana",
+                "Eeshavana",
+                "Brindavana",
+                "Madhuvana",
+                "Anantavana",
+                "Eeshavana",
+                "Brindavana",
+                "Madhuvana",
+                "Anantavana",
+                "Eeshavana",
+              ].map((name, index) => (
+                <span
+                  key={`${rep}-${index}`}
+                  className="vana-marquee-item"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  {name}
+                  <Leaf
+                    className="size-4"
+                    strokeWidth={1.5}
+                    aria-hidden="true"
+                    style={{
+                      display: "inline-block",
+                      flexShrink: 0,
+                      margin: "0 28px",
+                      color: "var(--accent-gold)",
+                    }}
+                  />
+                </span>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
-    ))}
-  </div>
-</div>
 
-<style jsx global>{`
-  @keyframes vana-marquee-scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-`}</style>
+      <style jsx global>{`
+        @keyframes vana-marquee-scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
       <section
         style={{
@@ -1992,7 +2001,7 @@ export default function Home() {
               marginBottom: "20px",
             }}
           >
-            LIFE ATVanaTvam
+            LIFE AT VanaTvam
           </span>
 
           <h2
@@ -2029,7 +2038,7 @@ export default function Home() {
             }}
           >
             Slow mornings, open skies, nature-filled moments, and memories
-            waiting to be made. Discover the feeling of life atVanaTvam.
+            waiting to be made. Discover the feeling of life at VanaTvam.
           </p>
 
           {/* Decorative Gold Line */}

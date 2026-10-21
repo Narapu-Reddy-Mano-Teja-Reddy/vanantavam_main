@@ -2,6 +2,8 @@
 
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 
 export interface HangingPolaroidItem {
   id: string | number;
@@ -33,6 +35,7 @@ export default function HangingPolaroidCarousel({
   const [isMobile, setIsMobile] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<HangingPolaroidItem | null>(null);
 
   // Responsive container width and mobile detection
   useEffect(() => {
@@ -60,9 +63,26 @@ export default function HangingPolaroidCarousel({
     }
   }, []);
 
+  useEffect(() => {
+    if (!selectedItem) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedItem(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [selectedItem]);
+
   // Responsive Dimensions
-  const cardWidth = isMobile ? 180 : 250;
-  const cardSpacing = isMobile ? 215 : 295;
+  const cardWidth = isMobile ? 220 : 300;
+  const cardSpacing = isMobile ? 255 : 345;
   const singleLoopWidth = items.length * cardSpacing;
 
   // String Curvature Coordinates (exact shared coordinate system)
@@ -223,10 +243,49 @@ export default function HangingPolaroidCarousel({
               swingAngle={swingAngle}
               prefersReducedMotion={prefersReducedMotion}
               isMobile={isMobile}
+              onImageClick={() => setSelectedItem(item)}
             />
           ))}
         </motion.div>
       </div>
+
+      {selectedItem &&
+        createPortal(
+          <motion.div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedItem.title || selectedItem.caption || 'Enlarged farm photo'}
+            onClick={() => setSelectedItem(null)}
+          >
+            <button
+              type="button"
+              className="absolute right-4 top-4 z-10 rounded-full bg-white/10 p-3 text-white transition-colors hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+              aria-label="Close enlarged image"
+              onClick={() => setSelectedItem(null)}
+            >
+              <X aria-hidden="true" size={24} />
+            </button>
+            <div
+              className="flex max-h-full max-w-full flex-col items-center gap-3"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <img
+                src={selectedItem.img}
+                alt={selectedItem.alt || selectedItem.title || 'Vanatvam moment'}
+                className="max-h-[85vh] max-w-[92vw] rounded-sm object-contain shadow-2xl"
+              />
+              {(selectedItem.title || selectedItem.caption) && (
+                <p className="text-center text-sm font-medium tracking-wide text-white sm:text-base">
+                  {selectedItem.title || selectedItem.caption}
+                </p>
+              )}
+            </div>
+          </motion.div>,
+          document.body,
+        )}
     </div>
   );
 }
@@ -246,6 +305,7 @@ interface ClampedPolaroidProps {
   swingAngle: any;
   prefersReducedMotion: boolean;
   isMobile: boolean;
+  onImageClick: () => void;
 }
 
 function ClampedPolaroid({
@@ -260,6 +320,7 @@ function ClampedPolaroid({
   swingAngle,
   prefersReducedMotion,
   isMobile,
+  onImageClick,
 }: ClampedPolaroidProps) {
   // Base resting tilt angle for organic variety
   const restingAngles = [-2.2, 1.6, -1.0, 2.0, -1.6, 1.2, -2.0, 1.4];
@@ -387,11 +448,21 @@ function ClampedPolaroid({
               backgroundColor: '#FAF8F5',
             }}
           >
-            <img
-              src={item.img}
-              alt={item.alt || 'Vanatvam moment'}
-              className="w-full h-full object-cover pointer-events-none select-none transition-transform duration-500 ease-out hover:scale-104 block"
-            />
+            <button
+              type="button"
+              className="block h-full w-full cursor-zoom-in"
+              aria-label={`View larger: ${item.alt || item.title || item.caption || 'Vanatvam moment'}`}
+              onClick={(event) => {
+                event.stopPropagation();
+                onImageClick();
+              }}
+            >
+              <img
+                src={item.img}
+                alt={item.alt || 'Vanatvam moment'}
+                className="block h-full w-full pointer-events-none select-none object-cover transition-transform duration-500 ease-out hover:scale-104"
+              />
+            </button>
             {/* Photographic gloss reflection */}
             <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-transparent to-white/10 pointer-events-none" />
           </div>
