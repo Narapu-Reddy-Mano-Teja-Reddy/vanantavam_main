@@ -68,7 +68,6 @@ type Chapter = {
   no: string;
   title: string;
   caption: string;
-  position: string;
   blocks: Block[];
   extra?: "heritage";
 };
@@ -81,7 +80,6 @@ const CHAPTERS: Chapter[] = [
     no: "01",
     title: "Our Belief",
     caption: "Coexistence",
-    position: "30% 50%",
     blocks: [
       {
         kind: "p",
@@ -103,7 +101,6 @@ const CHAPTERS: Chapter[] = [
     no: "02",
     title: "Our Work",
     caption: "Living landscapes",
-    position: "70% 40%",
     blocks: [
       {
         kind: "p",
@@ -124,7 +121,6 @@ const CHAPTERS: Chapter[] = [
     no: "03",
     title: "Our Roots",
     caption: "Rooted in tradition",
-    position: "50% 30%",
     extra: "heritage",
     blocks: [
       {
@@ -138,7 +134,6 @@ const CHAPTERS: Chapter[] = [
     no: "04",
     title: "Our Community",
     caption: "Belonging",
-    position: "20% 60%",
     blocks: [
       { kind: "p", text: "But our vision extends beyond the land and its biodiversity." },
       {
@@ -168,7 +163,6 @@ const CHAPTERS: Chapter[] = [
     no: "05",
     title: "Our Journey",
     caption: "Always learning",
-    position: "60% 70%",
     blocks: [
       {
         kind: "p",
@@ -382,23 +376,16 @@ function ImageFrame({
   alt,
   caption,
   tag,
-  position = "center",
-  aspect = "4 / 5",
 }: {
   src: string;
   alt: string;
   caption: string;
   tag: string;
-  position?: string;
-  aspect?: string;
 }) {
   const reduceMotion = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
 
   return (
-    <div ref={ref} style={{ position: "relative" }}>
+    <div style={{ position: "relative" }}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -407,8 +394,10 @@ function ImageFrame({
         style={{
           position: "relative",
           borderRadius: "26px",
+          overflow: "hidden",
           boxShadow: "0 30px 60px rgba(18,34,23,0.22)",
           border: "1px solid rgba(198,162,101,0.45)",
+          background: COLORS.forest,
         }}
       >
         <motion.div
@@ -418,9 +407,7 @@ function ImageFrame({
           transition={{ duration: 1.3, ease: EASE }}
           style={{
             position: "relative",
-            aspectRatio: aspect,
-            overflow: "hidden",
-            borderRadius: "26px",
+            borderRadius: "26px 26px 0 0",
             background: COLORS.forest,
           }}
         >
@@ -428,36 +415,28 @@ function ImageFrame({
             src={src}
             alt={alt}
             style={{
-              inset: "-10% 0",
-              height: "120%",
-              y: reduceMotion ? 0 : y,
-              objectPosition: position,
+              position: "relative",
+              inset: "auto",
+              display: "block",
+              width: "100%",
+              height: "auto",
+              objectFit: "contain",
             }}
           />
-          <div
-            aria-hidden="true"
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(180deg, transparent 55%, rgba(18,34,23,0.78) 100%)",
-            }}
-          />
-          <span
-            style={{
-              position: "absolute",
-              left: "22px",
-              bottom: "18px",
-              color: "var(--accent-gold)",
-              fontSize: "0.68rem",
-              letterSpacing: "0.24em",
-              textTransform: "uppercase",
-              fontWeight: 700,
-            }}
-          >
-            {caption}
-          </span>
         </motion.div>
+        <span
+          style={{
+            display: "block",
+            padding: "12px 22px",
+            color: "var(--accent-gold)",
+            fontSize: "0.68rem",
+            letterSpacing: "0.24em",
+            textTransform: "uppercase",
+            fontWeight: 700,
+          }}
+        >
+          {caption}
+        </span>
       </motion.div>
 
       {/* Floating chapter badge */}
@@ -1283,7 +1262,6 @@ export default function FoundersStatementPage() {
                         alt={chapter.title}
                         caption={chapter.caption}
                         tag={chapter.no}
-                        position={chapter.position}
                       />
                     </div>
                   </div>

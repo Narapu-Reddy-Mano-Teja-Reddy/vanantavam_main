@@ -7,6 +7,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Magnetic from "@/components/premium/Magnetic";
 
+const STORY_SECTIONS = [
+  "The Covid years changed how we saw life. Pollution, shrinking green spaces and isolation made clean air and time in nature feel more precious than ever. We began asking: had we moved too far away from nature?",
+  "Though modern life has distanced us from the land, time among trees and open spaces still brings calm and a sense of belonging. We imagined creating places where people could reconnect with nature and one another.",
+  "That vision led us to establish Vanatvam in March 2022: to nurture biodiverse landscapes and communities where people can breathe, reconnect and belong.",
+  "That is the journey we are on today. Every tree we plant and every landscape we nurture brings us a little closer to that vision.",
+];
+
 export default function About() {
   return (
     <>
@@ -392,62 +399,7 @@ export default function About() {
                 />
               </motion.div>
 
-              {/* Decorative overlapping quote block */}
-              <motion.div
-                initial={{ opacity: 0, x: -50, y: 40 }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 1,
-                  delay: 0.35,
-                  ease: [0.25, 1, 0.5, 1],
-                }}
-                style={{
-                  position: "absolute",
-                  bottom: "-40px",
-                  right: "-40px",
-                  background: "var(--bg-dark-forest)",
-                  padding: "40px",
-                  borderRadius: "24px",
-                  maxWidth: "320px",
-                  color: "#FFF",
-                  boxShadow: "0 25px 50px rgba(0,0,0,0.3)",
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: "clamp(2.2rem, 4.0vw, 4.0rem)",
-                    color: "var(--accent-gold)",
-                    fontFamily: "var(--font-serif)",
-                    lineHeight: 0.5,
-                    display: "block",
-                    marginBottom: "20px",
-                  }}
-                >
-                  &ldquo;
-                </span>
-                <p
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.25rem",
-                    fontStyle: "italic",
-                    marginBottom: "15px",
-                    lineHeight: 1.5,
-                    color: "#FFFFFF",
-                  }}
-                >
-                  When nature is nurtured, life flourishes in its purest form.
-                </p>
-                <span
-                  style={{
-                    fontSize: "0.85rem",
-                    color: "rgba(255,255,255,0.7)",
-                    fontWeight: 300,
-                  }}
-                >
-                  — Deepak Kasthuri, MD
-                </span>
-              </motion.div>
+               
             </div>
 
             <div style={{ flex: "1 1 500px" }}>
@@ -555,6 +507,221 @@ export default function About() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Personal Journey Section */}
+      <section
+        style={{
+          padding: "clamp(80px, 10vh, 120px) 0",
+          background: "var(--bg-cream)",
+          color: "var(--text-dark)",
+          overflow: "hidden",
+        }}
+      >
+        <div
+          className="container about-story-layout"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "minmax(0, 1fr) minmax(360px, 1.05fr)",
+            alignItems: "center",
+            gap: "clamp(36px, 6vw, 80px)",
+          }}
+        >
+          <div style={{ minWidth: 0 }}>
+            <motion.div
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+              style={{ marginBottom: "32px" }}
+            >
+              <span
+                style={{
+                  display: "block",
+                  color: "var(--accent-gold)",
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  marginBottom: "16px",
+                }}
+              >
+                Our Story
+              </span>
+              <h2
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.8rem, 4vw, 3.8rem)",
+                  color: "var(--bg-dark-forest)",
+                  lineHeight: 1.12,
+                  margin: 0,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                The Story of Vanatvam —{" "}
+                <span style={{ color: "var(--accent-gold)", fontStyle: "italic" }}>
+                  A Personal Journey Back to Nature
+                </span>
+              </h2>
+            </motion.div>
+
+            <div style={{ display: "grid", gap: "24px" }}>
+              {STORY_SECTIONS.map((paragraph, index) => (
+                <motion.p
+                  key={paragraph}
+                  initial={{ opacity: 0, y: 22 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.7,
+                    delay: Math.min(index * 0.04, 0.2),
+                    ease: [0.25, 1, 0.5, 1],
+                  }}
+                  style={{
+                    fontSize: "1.2rem",
+                    color: "var(--text-dark)",
+                    lineHeight: 1.8,
+                    margin: 0,
+                    fontWeight: 300,
+                  }}
+                >
+                  {paragraph}
+                </motion.p>
+              ))}
+            </div>
+
+          </div>
+
+          <motion.div
+            className="about-story-image"
+            initial={{ opacity: 0, scale: 0.96, y: 24 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 1, ease: [0.25, 1, 0.5, 1] }}
+            style={{
+              minWidth: 0,
+              position: "sticky",
+              top: "120px",
+              height: "min(76vh, 760px)",
+              minHeight: "520px",
+              overflow: "visible",
+            }}
+          >
+            <div className="about-story-photo">
+              <motion.img
+                whileHover={{ scale: 1.025 }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+                src="/assets/images/ourstory.png"
+                alt="A family walking through a green landscape at sunrise"
+                style={{
+                  display: "block",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+            <motion.div
+              className="about-story-callout"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+              style={{
+                position: "absolute",
+                zIndex: 1,
+                left: "-24px",
+                bottom: "-34px",
+                width: "min(78%, 360px)",
+                padding: "clamp(20px, 2.5vw, 28px)",
+                borderRadius: "22px",
+                border: "1px solid rgba(198,162,101,0.5)",
+                background: "linear-gradient(145deg, #1E352F 0%, #122217 100%)",
+                boxShadow: "0 24px 60px rgba(18,34,23,0.32)",
+                color: "#FFF",
+              }}
+            >
+               
+              <h3
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(1.25rem, 2vw, 1.3rem)",
+                  fontStyle: "italic",
+                  lineHeight: 1.35,
+                  color: "#FFF",
+                  margin: "0 0 14px",
+                }}
+              >
+                Come, Be Part of Our Journey
+              </h3>
+              <p
+                style={{
+                  maxWidth: "400px",
+                  margin: "0 0 22px",
+                  fontSize: "0.98rem",
+                  lineHeight: 1.7,
+                  color: "rgba(255,255,255,0.82)",
+                }}
+              >
+                Join a community building a greener, more connected future through a deeper relationship with nature.
+              </p>
+              <Link
+                href="/contact"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  padding: "11px 18px",
+                  borderRadius: "999px",
+                  background: "var(--accent-gold)",
+                  color: "var(--bg-dark-forest)",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+              >
+                Speak to our team
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+        <style jsx>{`
+          @media (max-width: 850px) {
+            .about-story-layout {
+              grid-template-columns: minmax(0, 1fr) !important;
+            }
+
+            .about-story-image {
+              position: relative !important;
+              top: auto !important;
+              height: 480px;
+              min-height: 0;
+              max-width: 600px;
+              margin: 0 auto;
+            }
+
+            .about-story-photo {
+              height: 100%;
+            }
+
+            .about-story-callout {
+              left: 0 !important;
+              bottom: -48px !important;
+              width: calc(100% - 24px) !important;
+            }
+          }
+
+          .about-story-photo {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            border-radius: 26px;
+            border: 1px solid rgba(198, 162, 101, 0.55);
+            box-shadow: 0 32px 80px rgba(18, 34, 23, 0.24);
+            background: var(--bg-dark-forest);
+          }
+        `}</style>
       </section>
 
       {/* Sacred Ecosystems Section */}
@@ -742,7 +909,7 @@ export default function About() {
                     <strong>An ecosystem must be nurtured.</strong>
                   </p>
                   <p style={{ marginBottom: "20px" }}>
-                    AtVanaTvam, we don't simply plant trees, create gardens or
+                    At VanaTvam, we don't simply plant trees, create gardens or
                     beautify land. We thoughtfully bring together{" "}
                     <strong>
                       trees, water, soil, native plants, birds, butterflies and

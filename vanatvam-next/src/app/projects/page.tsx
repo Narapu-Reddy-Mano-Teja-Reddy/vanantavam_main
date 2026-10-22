@@ -7,6 +7,7 @@ import Link from 'next/link';
 import RevealText from '@/components/premium/RevealText';
 import Magnetic from '@/components/premium/Magnetic';
 import TiltCard from '@/components/premium/TiltCard';
+import ProjectTunnel from '@/components/premium/ProjectTunnel';
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
@@ -99,8 +100,16 @@ export default function Projects() {
       </section>
 
       <section style={{ padding: 'clamp(60px, 8vh, 90px) 0', background: 'var(--bg-cream)' }}>
-        <div className="container">
-          <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '40px' }}>
+        <div className="container project-list-container">
+          <motion.div
+            className="project-cards-grid"
+            layout
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, minmax(0, 1fr))',
+              gap: '24px',
+            }}
+          >
             <AnimatePresence mode="popLayout">
               {filteredProjects.map(proj => (
                 <motion.div 
@@ -113,7 +122,7 @@ export default function Projects() {
                   whileHover={{ y: -15, boxShadow: '0 30px 60px rgba(0,0,0,0.12)' }}
                   style={{ background: '#FFF', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.06)', display: 'flex', flexDirection: 'column', border: '1px solid rgba(0,0,0,0.03)' }}
                 >
-                  <TiltCard max={4} style={{ position: 'relative', height: '400px', overflow: 'hidden' }}>
+                  <TiltCard max={4} style={{ position: 'relative', height: '280px', overflow: 'hidden' }}>
                     <motion.img 
                       whileHover={{ scale: 1.05 }} 
                       transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -123,7 +132,7 @@ export default function Projects() {
                       {proj.badge}
                     </div>
                   </TiltCard>
-                  <div style={{ padding: '48px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                     <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.15em', fontWeight: 600, marginBottom: '15px', display: 'block', textTransform: 'uppercase' }}>{proj.location}</span>
                     
                     {proj.logo ? (
@@ -155,7 +164,32 @@ export default function Projects() {
             </AnimatePresence>
           </motion.div>
         </div>
+        <style jsx>{`
+          .project-list-container {
+            padding-right: 0px !important;
+            padding-left: 0px !important;
+          }
+
+          @media (max-width: 1100px) {
+            .project-cards-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+          }
+
+          @media (max-width: 600px) {
+            .project-cards-grid {
+              grid-template-columns: minmax(0, 1fr) !important;
+            }
+
+            .project-list-container {
+              padding-right: 0px !important;
+              padding-left: 0px !important;
+            }
+          }
+        `}</style>
       </section>
+
+      <ProjectTunnel items={projects} />
 
       <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: '#F9F8F6' }}>
         <div className="container">
