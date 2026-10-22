@@ -187,7 +187,7 @@ export default function About() {
                     color: "#FFFFFF",
                   }}
                 >
-                  If you want to save the wildlife, start by saving the trees.
+                  When nature is nurtured, life flourishes in its purest form.
                 </p>
                 <div
                   style={{
@@ -436,7 +436,7 @@ export default function About() {
                     color: "#FFFFFF",
                   }}
                 >
-                  If you want to save the wildlife, start by saving the trees.
+                  When nature is nurtured, life flourishes in its purest form.
                 </p>
                 <span
                   style={{
@@ -978,7 +978,7 @@ export default function About() {
       </section>
 
       {/* Recognition Section */}
-      <section
+      {/* <section
         style={{ padding: "clamp(90px, 12vh, 140px) 0", background: "#F9F8F6" }}
       >
         <div className="container">
@@ -1055,10 +1055,10 @@ export default function About() {
                 delivering both ecological regeneration and long-term asset
                 security.
               </p>
-            </motion.div>
+            </motion.div> */}
 
             {/* Right Side — Recognition Image */}
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0, x: 40, y: 20 }}
               whileInView={{ opacity: 1, x: 0, y: 0 }}
               viewport={{ once: true }}
@@ -1086,7 +1086,7 @@ export default function About() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       
 
