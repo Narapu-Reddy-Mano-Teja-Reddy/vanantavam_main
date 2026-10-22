@@ -43,11 +43,11 @@ const BASE_IMG = "/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Se
 
 const IMAGES = {
   hero: BASE_IMG,
-  belief: BASE_IMG, // e.g. forest canopy / people in nature
-  work: BASE_IMG, // e.g. birds, bees, native planting
-  roots: BASE_IMG, // e.g. sacred grove / Nakshatra Vana
-  community: BASE_IMG, // e.g. cottages, treehouse, watching deck
-  journey: BASE_IMG, // e.g. sunrise over the land
+  belief: "/assets/project-images/founder/founder1.jpeg",
+  work: "/assets/project-images/founder/founder2.jpeg",
+  roots: "/assets/project-images/founder/founder3.png",
+  community: "/assets/project-images/founder/founder4.png",
+  journey: "/assets/project-images/founder/founder5.png",
   quoteBand: BASE_IMG,
   vision: BASE_IMG,
   projects: {
@@ -85,7 +85,7 @@ const CHAPTERS: Chapter[] = [
     blocks: [
       {
         kind: "p",
-        text: "At Vanatvam, our journey began with a simple belief: humans and nature were always meant to coexist. We were never meant to be separate from the forests, trees, birds and countless living organisms that sustain our world.",
+        text: " At VanaTvam, our journey began with a simple belief: humans and nature were always meant to coexist. We were never meant to be separate from the forests, trees, birds and countless living organisms that sustain our world.",
       },
       {
         kind: "p",
@@ -95,7 +95,7 @@ const CHAPTERS: Chapter[] = [
         kind: "p",
         text: "Perhaps this is because our relationship with nature is far older than modern civilisation. We evolved alongside the natural world, and our minds and bodies continue to respond to its rhythms. Our connection with nature is not merely a preference; it is part of our human story.",
       },
-      { kind: "hl", text: "This understanding inspires us to build Vanatvam." },
+      { kind: "hl", text: "This understanding inspires us to build VanaTvam." },
     ],
   },
   {
@@ -151,7 +151,7 @@ const CHAPTERS: Chapter[] = [
       },
       {
         kind: "p",
-        text: "At Vanatvam, we aspire to bring together individuals and families who value simplicity, integrity, sustainability and a deeper connection with life. We want our communities to encourage unhurried conversations, meaningful relationships, shared experiences and a renewed appreciation for the natural world.",
+        text: "At VanaTvam, we aspire to bring together individuals and families who value simplicity, integrity, sustainability and a deeper connection with life. We want our communities to encourage unhurried conversations, meaningful relationships, shared experiences and a renewed appreciation for the natural world.",
       },
       {
         kind: "p",
@@ -1056,7 +1056,7 @@ export default function FoundersStatementPage() {
                   transition={{ duration: 1, delay: 0.3, ease: EASE }}
                   style={{ display: "block", height: "1px", background: "var(--accent-gold)" }}
                 />
-                A Founder&apos;s Statement | Vanatvam
+                A Founder&apos;s Statement | VanaTvam
               </motion.span>
 
               <h1
@@ -1112,7 +1112,7 @@ export default function FoundersStatementPage() {
                 }}
               >
                 Humans and nature were always meant to coexist. This is the belief
-                that grew into Vanatvam, and the landscapes and community we are
+                that grew into VanaTvam, and the landscapes and community we are
                 building from it.
               </motion.p>
 
@@ -1336,7 +1336,7 @@ export default function FoundersStatementPage() {
                     marginBottom: "12px",
                   }}
                 >
-                  The Vanatvam Vision
+                  The VanaTvam Vision
                 </span>
               </Reveal>
               <Reveal delay={0.08}>
@@ -1349,7 +1349,7 @@ export default function FoundersStatementPage() {
                     margin: "0 0 16px",
                   }}
                 >
-                  That is the Vanatvam vision.
+                  That is the VanaTvam vision.
                 </h2>
               </Reveal>
               <GoldRule width={64} />
@@ -1470,7 +1470,7 @@ export default function FoundersStatementPage() {
                         marginTop: "4px",
                       }}
                     >
-                      Founder, Vanatvam
+                      Founder, VanaTvam
                     </div>
                   </div>
                 </div>

@@ -144,7 +144,7 @@ export default function About() {
                 }}
               >
                 <img
-                  src="/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.png"
+                  src="/assets/images/founder.png"
                   alt="Founder leadership and land care"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
