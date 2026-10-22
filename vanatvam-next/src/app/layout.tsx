@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import SmoothScroll from "@/components/premium/SmoothScroll";
 import GrainOverlay from "@/components/premium/GrainOverlay";
@@ -52,6 +52,12 @@ export const metadata: Metadata = {
     title: "Vanatvam | Sustainable Managed Farmland",
     card: "summary_large_image",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 const structuredData = {

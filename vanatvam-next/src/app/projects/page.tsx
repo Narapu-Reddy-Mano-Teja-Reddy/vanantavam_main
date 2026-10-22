@@ -14,30 +14,6 @@ export default function Projects() {
 
   const projects = [
     {
-      id: 'brindavana',
-      category: 'completed',
-      name: 'BRINDAVANA',
-      logo: '/assets/images/Project-Logos/BrindaVana.webp',
-      location: 'PAVAGADA · 30 ACRES',
-      desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
-      img: '/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png',
-      badge: 'Completed',
-      badgeBg: 'var(--bg-dark-forest)',
-      pills: ['Native Canopy', 'Rain Catchments']
-    },
-    {
-      id: 'madhuvana',
-      category: 'water',
-      name: 'MADHUVANA',
-      logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
-      location: 'MADDUR',
-      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
-      img: '/assets/project-images/Maduvana/hero.png',
-      badge: 'Water Forest',
-      badgeBg: 'var(--accent-gold)',
-      pills: ['200+ Native Trees', 'Sacred Groves']
-    },
-    {
       id: 'anantavana',
       category: 'wildlife',
       name: 'ANANTAVANA',
@@ -45,7 +21,8 @@ export default function Projects() {
       location: 'NEAR KABINI · 34 ACRES',
       desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 10,000 sq. ft.',
       img: '/assets/project-images/Ananthavana/hero_image.jpg',
-      badge: 'Wildlife Corridor',
+      brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
+       
       badgeBg: '#2D6A4F',
       pills: ['Bandipur Corridor', 'Heritage Cottages']
     },
@@ -57,10 +34,38 @@ export default function Projects() {
       location: 'KOLLEGALA · CAUVERY RIVERFRONT',
       desc: 'Our premier riverfront community set along the banks of the sacred Cauvery river. Designed around the deep relationship between people, riparian ecology, and water.',
       img: '/assets/project-images/Esahavana/EV Image.png',
-      badge: 'Cauvery Riverfront',
+      brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
+      
       badgeBg: '#1B4965',
       pills: ['Cauvery Frontage', 'River Ecosystem']
     },
+     {
+      id: 'madhuvana',
+      category: 'water',
+      name: 'MADHUVANA',
+      logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
+      location: 'MADDUR',
+      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
+      img: '/assets/project-images/Maduvana/hero.png',
+      brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
+       
+      badgeBg: 'var(--accent-gold)',
+      pills: ['200+ Native Trees', 'Sacred Groves']
+    },
+      {
+      id: 'brindavana',
+      category: 'completed',
+      name: 'BRINDAVANA',
+      logo: '/assets/images/Project-Logos/BrindaVana.webp',
+      location: 'PAVAGADA · 30 ACRES',
+      desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
+      img: '/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png',
+      brochure: null,
+       
+      badgeBg: 'var(--bg-dark-forest)',
+      pills: ['Native Canopy', 'Rain Catchments']
+    },
+   
   ];
 
   const filteredProjects = filter === 'all' ? projects : projects.filter(p => p.category === filter);
@@ -128,9 +133,7 @@ export default function Projects() {
                       transition={{ duration: 0.6, ease: 'easeOut' }}
                       src={proj.img} alt={proj.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                     />
-                    <div style={{ position: 'absolute', top: 20, left: 20, background: proj.badgeBg, color: '#FFF', padding: '6px 14px', borderRadius: '30px', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.05em' }}>
-                      {proj.badge}
-                    </div>
+                     
                   </TiltCard>
                   <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                     <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.15em', fontWeight: 600, marginBottom: '15px', display: 'block', textTransform: 'uppercase' }}>{proj.location}</span>
@@ -153,11 +156,31 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    <Magnetic strength={0.15} style={{ display: 'block', width: '100%' }}>
-                      <Link href={`/${proj.id}`} className="btn-pill btn-pill-dark" style={{ justifyContent: 'center', width: '100%' }}>
-                        Explore Project
-                      </Link>
-                    </Magnetic>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      <Magnetic strength={0.15} style={{ display: 'block', width: '100%' }}>
+                        <Link href={`/${proj.id}`} className="btn-pill btn-pill-dark" style={{ justifyContent: 'center', width: '100%' }}>
+                          Explore Project
+                        </Link>
+                      </Magnetic>
+                      {proj.brochure ? (
+                        <a
+                          href={proj.brochure}
+                          download
+                          className="btn-pill btn-pill-project-brochure"
+                          style={{ justifyContent: 'center', width: '100%' }}
+                        >
+                          Download Brochure
+                        </a>
+                      ) : (
+                        <Link
+                          href="/contact"
+                          className="btn-pill btn-pill-project-brochure"
+                          style={{ justifyContent: 'center', width: '100%' }}
+                        >
+                          Request Brochure
+                        </Link>
+                      )}
+                    </div>
                   </div>
                 </motion.div>
               ))}
@@ -223,52 +246,6 @@ export default function Projects() {
         </div>
       </section>
 
-      <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: 'var(--bg-dark-forest)', color: '#FFF' }}>
-        <div className="container">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-            style={{ textAlign: 'center', marginBottom: '80px', maxWidth: '800px', margin: '0 auto 60px' }}
-          >
-            <span style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '20px' }}>
-              Built Spaces
-            </span>
-            <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: 1.1, marginBottom: '30px' }}>
-              Shared Cottages: Convenience Meets Comfort
-            </h2>
-            <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8 }}>
-              For plot owners not yet ready to build their homes,VanaTvam offers beautifully designed Shared Cottages, with complimentary stays for a fixed number of days each year. It’s the perfect way to enjoy the land you own—without the pressure of immediate construction. Whether you seek solitude, connection, or celebration, our shared cottages offer a living experience that is rooted in nature, refined in design, and rich in meaning.
-            </p>
-          </motion.div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '40px' }}>
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.1 }}
-              style={{ padding: '50px 40px', background: 'rgba(255,255,255,0.03)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)' }}
-            >
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--accent-gold)', marginBottom: '20px' }}>Madhuvana Cottages</h3>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', fontWeight: 300, marginBottom: '20px' }}>
-                4 cottages of about 400+sft each are built using exposed wire-cut bricks and feature a central courtyard, open green views on both sides, and two bathrooms—one with a skylight and semi-open design for a rare, nature-connected bathing experience.
-              </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', fontWeight: 300 }}>
-                Modern conveniences like a compact workstation and kitchenette ensure a comfortable, soulful retreat.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, delay: 0.2 }}
-              style={{ padding: '50px 40px', background: 'rgba(255,255,255,0.03)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.05)' }}
-            >
-              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--accent-gold)', marginBottom: '20px' }}>AnantaVana Cottages</h3>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.7)', fontWeight: 300, marginBottom: '20px' }}>
-                Our distinctive roundhouse cottages offer panoramic forest views, overlook a serene pond, and blend harmoniously with the landscaped surroundings.
-              </p>
-              <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--accent-gold)', fontWeight: 500, marginTop: '40px' }}>
-                With ~20% of each project dedicated to community spaces, there’s always room to gather, celebrate, or simply unwind—together.
-              </p>
-            </motion.div>
-          </div>
-        </div>
-      </section>
 
       <Footer />
     </>

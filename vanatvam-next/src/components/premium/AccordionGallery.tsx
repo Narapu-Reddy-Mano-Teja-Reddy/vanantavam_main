@@ -12,13 +12,29 @@ export default function AccordionGallery({ items, height = '500px' }: { items: G
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
 
   return (
-    <div className="accordion-gallery-wrapper" style={{ '--gallery-height': height } as React.CSSProperties}>
+    <div
+      className="accordion-gallery-wrapper"
+      style={{ '--gallery-height': height } as React.CSSProperties}
+      onMouseLeave={() => setHoveredIndex(items.length > 0 ? 0 : null)}
+    >
       {items.map((item, index) => {
         const isActive = hoveredIndex === index;
         return (
           <motion.div
             key={index}
             onMouseEnter={() => setHoveredIndex(index)}
+            onFocus={() => setHoveredIndex(index)}
+            onClick={() => setHoveredIndex(index)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                setHoveredIndex(index);
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-pressed={isActive}
+            aria-label={[item.title, item.desc].filter(Boolean).join(': ')}
             layout
             initial={false}
             animate={{
@@ -84,36 +100,6 @@ export default function AccordionGallery({ items, height = '500px' }: { items: G
                 </motion.div>
               )}
             </AnimatePresence>
-            
-            {/* Vertical title for non-active state */}
-            <AnimatePresence>
-              {!isActive && item.title && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  style={{
-                    position: 'absolute',
-                    bottom: '30px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    writingMode: 'vertical-rl',
-                    textOrientation: 'mixed',
-                    color: '#FFF',
-                    fontWeight: 600,
-                    letterSpacing: '0.2em',
-                    fontSize: '0.85rem',
-                    textTransform: 'uppercase',
-                    whiteSpace: 'nowrap',
-                    transformOrigin: 'center bottom',
-                    rotate: '180deg'
-                  }}
-                >
-                  {item.title}
-                </motion.div>
-              )}
-            </AnimatePresence>
-
           </motion.div>
         );
       })}

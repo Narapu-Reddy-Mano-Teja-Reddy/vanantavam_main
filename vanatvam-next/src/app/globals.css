@@ -3,7 +3,7 @@
  * Luxury Architectural & Eco-Estate Design System
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Jost:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -220,6 +220,19 @@ ul {
 .btn-pill-outline:hover {
   border-color: #FFFFFF;
   background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-pill-project-brochure {
+  border: 1px solid var(--accent-gold);
+  color: #122217;
+  background: var(--accent-gold);
+  font-weight: 600;
+}
+
+.btn-pill-project-brochure:hover {
+  border-color: var(--accent-gold-hover);
+  color: #122217;
+  background: var(--accent-gold-hover);
 }
 
 .btn-pill-dark {
@@ -3528,6 +3541,11 @@ ul {
   border-radius: 24px;
 }
 
+.accordion-gallery-wrapper > [role="button"]:focus-visible {
+  outline: 3px solid var(--accent-gold);
+  outline-offset: -3px;
+}
+
 @media (max-width: 768px) {
   .accordion-gallery-wrapper {
     flex-direction: column;
@@ -3755,5 +3773,41 @@ body.at-top .kenyt-bot-container {
 
   .hero-quick-actions {
     gap: 8px;
+  }
+}
+
+.anantavana-amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.anantavana-amenity-card {
+  transform-origin: center;
+}
+
+.anantavana-amenity-image {
+  transition: transform 0.6s ease;
+}
+
+.anantavana-amenity-card:hover .anantavana-amenity-image {
+  transform: scale(1.08);
+}
+
+@media (max-width: 900px) {
+  .anantavana-amenities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .anantavana-amenities-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anantavana-amenity-image {
+    transition: none;
   }
 }
