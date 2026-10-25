@@ -615,19 +615,78 @@ export default function Eeshavana() {
            style={{ position: "relative", zIndex: 2 }}
          >
            <div className="eeshavana-idea">
-             <div className="eeshavana-idea-image-wrap">
-               <motion.img
-                 src="/assets/project-images/Esahavana/EV River View 2.jpg"
-                 alt="A view of the Kaveri river landscape"
-                 loading="lazy"
-                 initial={reduce ? false : { scale: 1.15 }}
-                 whileInView={{ scale: 1 }}
+             <div style={{ position: "relative", width: "100%", maxWidth: "520px" }}>
+               <motion.div
+                 initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                 whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                 viewport={{ once: true, margin: "-80px" }}
+                 transition={{ duration: 1.2, ease: EASE }}
+                 style={{
+                   borderRadius: "28px",
+                   overflow: "hidden",
+                   aspectRatio: "4 / 5",
+                   boxShadow: "0 30px 60px rgba(18, 34, 23, 0.14)",
+                   border: "1px solid rgba(198, 162, 101, 0.25)",
+                   position: "relative",
+                 }}
+               >
+                 <motion.img
+                   src="/assets/project-images/Esahavana/EV River View 2.jpg"
+                   alt="A view of the Kaveri river landscape"
+                   loading="lazy"
+                   initial={reduce ? false : { scale: 1.2 }}
+                   whileInView={{ scale: 1 }}
+                   viewport={{ once: true }}
+                   transition={{ duration: 1.8, ease: EASE }}
+                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                 />
+                 <span className="eeshavana-image-caption">
+                   The Eeshavana idea
+                 </span>
+               </motion.div>
+
+               {/* Floating Acreage Badge */}
+               <motion.div
+                 initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                  viewport={{ once: true }}
-                 transition={{ duration: 1.8, ease: EASE }}
-               />
-               <span className="eeshavana-image-caption">
-                 The Eeshavana idea
-               </span>
+                 transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
+                 style={{
+                   position: "absolute",
+                   left: -16,
+                   bottom: 32,
+                   background: FOREST,
+                   color: "#FFF",
+                   padding: "18px 24px",
+                   borderRadius: "20px",
+                   border: "1px solid rgba(198, 162, 101, 0.35)",
+                   boxShadow: "0 20px 40px rgba(18, 34, 23, 0.3)",
+                   zIndex: 3,
+                 }}
+               >
+                 <strong
+                   style={{
+                     display: "block",
+                     fontFamily: "var(--font-serif)",
+                     fontSize: "1.8rem",
+                     lineHeight: 1,
+                     marginBottom: "4px",
+                   }}
+                 >
+                   6.5 Acres
+                 </strong>
+                 <span
+                   style={{
+                     fontSize: "0.78rem",
+                     letterSpacing: "0.15em",
+                     textTransform: "uppercase",
+                     color: GOLD,
+                     fontWeight: 600,
+                   }}
+                 >
+                   Kollegala · Cauvery River
+                 </span>
+               </motion.div>
              </div>
              <div className="eeshavana-idea-copy">
                <Kicker>Designed for peace, privacy, and purity.</Kicker>

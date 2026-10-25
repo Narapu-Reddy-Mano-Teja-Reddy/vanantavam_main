@@ -65,20 +65,20 @@ export default function Contact() {
               <div style={{ marginBottom: '22px' }}>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>Email</div>
                 <p style={{ fontSize: '0.95rem', color: 'var(--text-dark)', margin: 0 }}>
-                  <i className="fa-regular fa-envelope" style={{ color: 'var(--accent-gold)', marginRight: '8px' }}></i> hello@vanatvam.com
+                  <i className="fa-regular fa-envelope" style={{ color: 'var(--accent-gold)', marginRight: '8px' }}></i> info@vanatvam.com
                 </p>
               </div>
 
               <div style={{ marginBottom: '30px' }}>
                 <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '6px' }}>Phone</div>
                 <p style={{ fontSize: '0.95rem', color: 'var(--text-dark)', margin: 0 }}>
-                  <i className="fa-solid fa-phone" style={{ color: 'var(--accent-gold)', marginRight: '8px' }}></i> +91 99999 99999
+                  <i className="fa-solid fa-phone" style={{ color: 'var(--accent-gold)', marginRight: '8px' }}></i> +91 (080) 4709-5111 
                 </p>
               </div>
 
               <Magnetic strength={0.2} style={{ display: 'block', width: '100%' }}>
                 <a
-                  href="https://wa.me/919999999999"
+                  href="https://wa.me/918047095111"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-pill btn-pill-dark"

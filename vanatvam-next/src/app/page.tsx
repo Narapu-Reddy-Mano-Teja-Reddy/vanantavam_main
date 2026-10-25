@@ -1090,20 +1090,7 @@ export default function Home() {
             {/* RIGHT COLUMN: Overlapping Scrolling Project Cards Stack */}
             <div className="projects-sticky-cards">
               {[
-                {
-                  id: "brindavana",
-                  name: "BRINDAVANA",
-                  badge: "PAVAGADA · 30 ACRES",
-                  img: "/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png",
-                  desc: "A benchmark in ecological regeneration, turning barren land into a thriving Nakshatra Vana forest.",
-                },
-                {
-                  id: "madhuvana",
-                  name: "MADHUVANA",
-                  badge: "MADDUR · 18 ACRES",
-                  img: "/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png",
-                  desc: "A dense water-forest ecosystem built around 250+ native trees and tranquil farm courtyards.",
-                },
+                
                 {
                   id: "anantavana",
                   name: "ANANTAVANA",
@@ -1118,6 +1105,21 @@ export default function Home() {
                   img: "/assets/project-images/Esahavana/Riverside%20view.png",
                   desc: "A premier riverfront sanctuary on the sacred banks of Cauvery with pristine waterscapes.",
                 },
+                {
+                  id: "madhuvana",
+                  name: "MADHUVANA",
+                  badge: "MADDUR · 18 ACRES",
+                  img: "/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png",
+                  desc: "A dense water-forest ecosystem built around 250+ native trees and tranquil farm courtyards.",
+                },
+                {
+                  id: "brindavana",
+                  name: "BRINDAVANA",
+                  badge: "PAVAGADA · 30 ACRES",
+                  img: "/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png",
+                  desc: "A benchmark in ecological regeneration, turning barren land into a thriving Nakshatra Vana forest.",
+                },
+                
               ].map((proj, i) => (
                 <motion.div
                   key={proj.id}

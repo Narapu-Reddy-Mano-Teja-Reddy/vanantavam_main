@@ -27,6 +27,18 @@ const TITLE = "MADHUVANA";
 const GOLD = "var(--accent-gold)";
 const FOREST = "#122217";
 
+const amenityHotspots: { id: string; top: string; left: string; title: string }[] = [
+  { id: 'A', top: '5%', left: '44%', title: 'Entrance / Site for School' },
+  { id: 'B', top: '14%', left: '44%', title: 'Theme park' },
+  { id: 'C', top: '27%', left: '44%', title: 'Mud House' },
+  { id: 'D', top: '32%', left: '44%', title: 'Cottage' },
+  { id: 'E', top: '37%', left: '44%', title: 'Pond' },
+  { id: 'F', top: '42%', left: '44%', title: 'Tree House' },
+  { id: 'G', top: '71%', left: '44%', title: 'Road & Circular Garden' },
+  { id: 'H', top: '79%', left: '44%', title: 'Natural Pond' },
+];
+
+
 /* ---------- Fireflies (canvas) ---------- */
 function Fireflies({ still }: { still: boolean }) {
   const ref = useRef<HTMLCanvasElement>(null);
@@ -293,6 +305,46 @@ const galleryImages = [
   },
 ];
 
+const amenities = [
+  {
+    letter: "A",
+    name: "Entrance Arch & Security",
+    desc: "Grand eco-entrance arch with security and school site access.",
+    img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.png",
+  },
+  {
+    letter: "B",
+    name: "Botanical Theme Park",
+    desc: "Lush botanical theme park and green biodiversity trails.",
+    img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.png",
+  },
+  {
+    letter: "C",
+    name: "Eco Mud House",
+    desc: "Traditional eco-friendly mud house built with sustainable earth blocks.",
+    img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.png",
+  },
+  {
+    letter: "D",
+    name: "Cottage Retreat",
+    desc: "Serene heritage cottages overlooking private water bodies.",
+    img: "/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.png",
+  },
+  {
+    letter: "E",
+    name: "Rainwater Pond",
+    desc: "Rainwater harvesting pond supporting native flora and aquatic life.",
+    img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.png",
+  },
+  {
+    letter: "F",
+    name: "Elevated Tree House",
+    desc: "Wooden tree house perched amidst ancient canopy trees.",
+    img: "/assets/project-images/Maduvana/72b47d11-1784-4ca8-bcad-b18bdfe4c679.png",
+  },
+ 
+];
+
 export default function Madhuvana() {
   const reduce = useReducedMotion() ?? false;
   const enter = (delay: number, duration = 0.8) =>
@@ -545,19 +597,78 @@ export default function Madhuvana() {
             style={{ position: "relative", zIndex: 2 }}
           >
             <div className="eeshavana-idea">
-              <div className="eeshavana-idea-image-wrap">
-                <motion.img
-                  src="/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.png"
-                  alt="A view of the MadhuVana landscape"
-                  loading="lazy"
-                  initial={reduce ? false : { scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
+              <div style={{ position: "relative", width: "100%", maxWidth: "520px" }}>
+                <motion.div
+                  initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 1.2, ease: EASE }}
+                  style={{
+                    borderRadius: "28px",
+                    overflow: "hidden",
+                    aspectRatio: "4 / 5",
+                    boxShadow: "0 30px 60px rgba(18, 34, 23, 0.14)",
+                    border: "1px solid rgba(198, 162, 101, 0.25)",
+                    position: "relative",
+                  }}
+                >
+                  <motion.img
+                    src="/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.png"
+                    alt="A view of the MadhuVana landscape"
+                    loading="lazy"
+                    initial={reduce ? false : { scale: 1.2 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.8, ease: EASE }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                  <span className="eeshavana-image-caption">
+                    The MadhuVana idea
+                  </span>
+                </motion.div>
+
+                {/* Floating Acreage Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1.8, ease: EASE }}
-                />
-                <span className="eeshavana-image-caption">
-                  The MadhuVana idea
-                </span>
+                  transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
+                  style={{
+                    position: "absolute",
+                    left: -16,
+                    bottom: 32,
+                    background: FOREST,
+                    color: "#FFF",
+                    padding: "18px 24px",
+                    borderRadius: "20px",
+                    border: "1px solid rgba(198, 162, 101, 0.35)",
+                    boxShadow: "0 20px 40px rgba(18, 34, 23, 0.3)",
+                    zIndex: 3,
+                  }}
+                >
+                  <strong
+                    style={{
+                      display: "block",
+                      fontFamily: "var(--font-serif)",
+                      fontSize: "1.8rem",
+                      lineHeight: 1,
+                      marginBottom: "4px",
+                    }}
+                  >
+                    17 Acres
+                  </strong>
+                  <span
+                    style={{
+                      fontSize: "0.78rem",
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      color: GOLD,
+                      fontWeight: 600,
+                    }}
+                  >
+                    Maddur · Karnataka
+                  </span>
+                </motion.div>
               </div>
               <div className="eeshavana-idea-copy">
                 <Kicker>The MadhuVana idea</Kicker>
@@ -1106,7 +1217,7 @@ export default function Madhuvana() {
                   }}
                 >
                   <img
-                    src="/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.png"
+                    src="/assets/project-images/Maduvana/Master Plan.jpeg"
                     alt="MadhuVana Concept Master Plan Layout"
                     style={{
                       width: "100%",
@@ -1119,6 +1230,131 @@ export default function Madhuvana() {
                   />
                 </div>
               </motion.div>
+            </div>
+          </div>
+        </section>
+        {/* ================= AMENITIES ================= */}
+        <section
+          id="amenities"
+          style={{ padding: "clamp(60px, 8vh, 90px) 0", background: "#FFFFFF" }}
+        >
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: "60px" }}>
+              <Kicker center>Master Plan Amenities</Kicker>
+              <Words
+                text="Designed for Slower, Holistic Living"
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
+                  color: FOREST,
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 12px",
+                }}
+              />
+              <Reveal delay={0.15}>
+                <p
+                  style={{
+                    fontSize: "1rem",
+                    color: "var(--eeshavana-muted, #687b63)",
+                    maxWidth: "640px",
+                    margin: "12px auto 0",
+                    lineHeight: 1.7,
+                  }}
+                >
+                  Explore the key community spaces and natural sanctuaries thoughtfully embedded within MadhuVana.
+                </p>
+              </Reveal>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+                gap: "24px",
+              }}
+            >
+              {amenities.map((a, i) => (
+                <motion.div
+                  key={a.letter}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.05 }}
+                  whileHover={{ y: -6 }}
+                  style={{
+                    background: "#FFF",
+                    borderRadius: "24px",
+                    overflow: "hidden",
+                    boxShadow: "0 10px 30px rgba(18, 34, 23, 0.06)",
+                    border: "1px solid rgba(18, 34, 23, 0.06)",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "200px",
+                      width: "100%",
+                      position: "relative",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <img
+                      src={a.img}
+                      alt={a.name}
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                    <div
+                      style={{
+                        position: "absolute",
+                        top: "15px",
+                        left: "15px",
+                        background: FOREST,
+                        color: "#FFF",
+                        width: "36px",
+                        height: "36px",
+                        borderRadius: "50%",
+                        display: "grid",
+                        placeItems: "center",
+                        fontSize: "0.85rem",
+                        fontWeight: 700,
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                      }}
+                    >
+                      {a.letter}
+                    </div>
+                  </div>
+                  <div style={{ padding: "24px", flexGrow: 1 }}>
+                    <h4
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "1.35rem",
+                        color: FOREST,
+                        margin: "0 0 10px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {a.name}
+                    </h4>
+                    <p
+                      style={{
+                        color: "#5A685E",
+                        fontSize: "0.95rem",
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
+                      {a.desc}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

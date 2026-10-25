@@ -1,141 +1,9 @@
 [
-  {
-    "id": "redefining-farmland-ownership",
-    "title": "How VanaTvam is Redefining Farmland Ownership with a Natural & Sustainable Approach",
-    "date": "January 12, 2026",
-    "author": "Vanatvam Ecological Team",
-    "img": "/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.png",
-    "category": "Ecology",
-    "excerpt": "Discover how we are moving away from traditional real estate to create living, breathing ecosystems that you can call home.",
-    "contentBlocks": [
-      {
-        "type": "p",
-        "text": "For decades, purchasing agricultural land was seen purely as a financial investment—a piece of earth to hold onto until its value increased. However, this traditional model often leads to neglected plots, monoculture farming, or complete ecological degradation. At VanaTvam, we are fundamentally redefining what it means to own farmland."
-      },
-      {
-        "type": "h3",
-        "text": "From Ownership to Custodianship"
-      },
-      {
-        "type": "p",
-        "text": "When you purchase a plot in a VanaTvam community, you aren’t just buying land; you are becoming a custodian of a living ecosystem. We shift the paradigm from resource extraction to ecological restoration. This means implementing deep water trenching, soil regeneration protocols, and strict guidelines against chemical fertilizers."
-      },
-      {
-        "type": "img",
-        "src": "/assets/project-images/Brindavana/Farmer Tending Lush Seedlings.png",
-        "alt": "Seedling care at Vanatvam"
-      },
-      {
-        "type": "h3",
-        "text": "The Power of Managed Sustainability"
-      },
-      {
-        "type": "p",
-        "text": "The primary hurdle for urban individuals wanting to own farmland is maintenance. How do you manage a farm when you live in a city? Our managed farmland model completely removes this friction. Our team of ecologists, agriculturists, and local farmers handle the day-to-day operations—from planting native canopy trees to harvesting organic produce."
-      }
-    ]
-  },
-  {
-    "id": "wellness-benefits-nature",
-    "title": "The Wellness Benefits of Living Close to Nature: A Guide for Modern Families",
-    "date": "December 05, 2025",
-    "author": "Dr. Vivek Sharma",
-    "img": "/assets/project-images/Ananthavana/hero_image.jpg",
-    "category": "Wellness",
-    "excerpt": "Modern science is finally catching up to ancient wisdom: living near forests and rich biodiversity profoundly impacts mental and physical health.",
-    "contentBlocks": [
-      {
-        "type": "p",
-        "text": "In our hyper-connected, concrete-heavy modern lives, the human nervous system is in a constant state of low-grade stress. The antidote, it turns out, is not a new wellness app, but something our ancestors knew intimately: deep, uninterrupted time in nature."
-      },
-      {
-        "type": "h3",
-        "text": "The Science of Phytoncides"
-      },
-      {
-        "type": "p",
-        "text": "When you walk through communities like Anantavana or Brindavana, you are breathing in phytoncides—antimicrobial essential oils emitted by trees to protect themselves from insects and rot. Studies show that inhaling these organic compounds significantly decreases cortisol levels, lowers blood pressure, and boosts the activity of white blood cells."
-      },
-      {
-        "type": "quote",
-        "text": "\"We are not apart from nature; we are a part of it. When we return to the forest, our bodies biochemically recognize that we have come home.\""
-      },
-      {
-        "type": "h3",
-        "text": "Rewilding Childhood"
-      },
-      {
-        "type": "p",
-        "text": "For children growing up today, structured outdoor time is rare. Natural farm communities provide a safe, unbounded environment for children to engage in free play. This type of unstructured interaction with soil, plants, and water is crucial for cognitive development and building robust immune systems."
-      }
-    ]
-  },
-  {
-    "id": "sustainable-farmland-future",
-    "title": "Why Sustainable Farmland is the Future of Real Estate in India",
-    "date": "November 22, 2025",
-    "author": "Vanatvam Research",
-    "img": "/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png",
-    "category": "Investment",
-    "excerpt": "As urban spaces become increasingly crowded, managed agricultural land offers an incredible inflation-hedging asset that also secures our ecological future.",
-    "contentBlocks": [
-      {
-        "type": "p",
-        "text": "The real estate landscape in India is undergoing a massive shift. As urban centers become saturated and pollution levels rise, High Net Worth Individuals (HNIs) and urban professionals are looking beyond city limits—not just for weekend homes, but for secure, inflation-hedging assets."
-      },
-      {
-        "type": "h3",
-        "text": "The Mathematics of Managed Farmland"
-      },
-      {
-        "type": "p",
-        "text": "Unlike commercial real estate which is subject to market volatility and high maintenance overheads, agricultural land in strategic corridors (like the Kabini or Nandi Hills belts) has historically appreciated steadily. When combined with a managed model, the asset generates passive agricultural yield while the land value compounds."
-      },
-      {
-        "type": "h3",
-        "text": "Ecological Equity"
-      },
-      {
-        "type": "p",
-        "text": "What sets VanaTvam apart is the concept of Ecological Equity. A barren piece of land has a certain value. But a piece of land that has been scientifically reforested, with active water tables, rich topsoil, and mature fruit-bearing trees, commands a significant premium. We build wealth by building the ecosystem."
-      }
-    ]
-  },
-  {
-    "id": "madhuvana-sacred-groves",
-    "title": "Sacred Groves, Eternal Harmony: How Madhuvana Revives India’s Soul",
-    "date": "October 15, 2025",
-    "author": "Vanatvam Heritage Team",
-    "img": "/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.png",
-    "category": "Heritage",
-    "excerpt": "A deep dive into the philosophy behind Project Madhuvana and how we are using ancient Nakshatra Vana principles to create sacred ecological spaces.",
-    "contentBlocks": [
-      {
-        "type": "p",
-        "text": "In traditional Indian ecology, a Vana (forest) is not just a collection of trees; it is a sacred space. Ancient texts like the Brihat Samhita meticulously detail the relationships between specific plant species, cosmic energies, and human well-being. Project Madhuvana is a modern homage to this ancient science."
-      },
-      {
-        "type": "h3",
-        "text": "The Architecture of a Sacred Grove"
-      },
-      {
-        "type": "p",
-        "text": "At the heart of Madhuvana lies the integration of specialized groves like the Nakshatra Vana and Navagraha Vana. By planting 27 specific species of trees corresponding to the 27 constellations, we create a highly resilient micro-forest. Because these species have vastly different root depths and leaf structures, they thrive together without competing for the same soil nutrients."
-      },
-      {
-        "type": "h3",
-        "text": "Beyond Aesthetics"
-      },
-      {
-        "type": "p",
-        "text": "This is not landscaping; this is ecological engineering. The diverse flora attracts specific endemic bird species and critical pollinators. The dense canopy lowers the ambient temperature by several degrees, creating a self-sustaining micro-climate that honors India deep ecological heritage."
-      }
-    ]
-  },
+   
   {
     "id": "the-big-picture-of-vanatvam",
     "title": "The Big Picture of Vanatvam: Our Core Philosophy",
-    "date": "May 10, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Ecological Team",
     "img": "/Blogs-content/May 2022/VT_Blog_1_The_Vanatvam_Philosophy.png",
     "category": "Philosophy",
@@ -302,7 +170,7 @@
   {
     "id": "farmhouse-vs-city-lifestyle",
     "title": "Farm House vs. City Lifestyle: Rediscovering the Rhythm of the Land",
-    "date": "May 16, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Living Journal",
     "img": "/Blogs-content/May 2022/VT_Blog_3_Farm_House_vs_City_Lifestyle.png",
     "category": "Lifestyle",
@@ -365,7 +233,7 @@
   {
     "id": "easy-way-to-own-a-farmhouse-community",
     "title": "The Thoughtful Way to Own a Farmhouse Near Bangalore",
-    "date": "May 20, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Advisory Team",
     "img": "/Blogs-content/May 2022/VT_Blog_4_Easy_Way_to_Own_a_Farmhouse_Community.png",
     "category": "Guide",
@@ -484,7 +352,7 @@
   {
     "id": "going-back-to-our-roots-vedic-forest-science",
     "title": "Going Back to Our Roots: Vedic Forest Science at AnantaVana, Kabini",
-    "date": "May 24, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Heritage Team",
     "img": "/Blogs-content/May 2022/VT_Blog_5_Going_Back_to_Our_Roots.png",
     "category": "Heritage",
@@ -591,7 +459,7 @@
   {
     "id": "fulfil-your-dream-of-owning-a-farmland",
     "title": "Fulfil Your Dream of Owning Farmland: Managed Farmland Near Bangalore",
-    "date": "May 28, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Community Team",
     "img": "/Blogs-content/May 2022/VT_Blog_7_Fulfil_Your_Dream_of_Owning_a_Farmland.png",
     "category": "Living",
@@ -690,7 +558,7 @@
   {
     "id": "essence-of-life-enhanced-in-nature",
     "title": "The Essence of Life is Enhanced in Nature",
-    "date": "June 04, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Editorial",
     "img": "/Blogs-content/June 2022/VT_Blog_1_Essence_of_Life_Enhanced_in_Nature.png",
     "category": "Nature",
@@ -765,7 +633,7 @@
   {
     "id": "getting-children-out-of-the-virtual-world",
     "title": "Getting Children Out of the Virtual World",
-    "date": "June 10, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Family & Wellness",
     "img": "/Blogs-content/June 2022/VT_Blog_2_Getting_Children_Out_of_the_Virtual_World.png",
     "category": "Family",
@@ -908,7 +776,7 @@
   {
     "id": "importance-of-educating-newer-generation-about-farmlands",
     "title": "Importance of Educating the Newer Generation About Farmlands",
-    "date": "June 16, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Education Team",
     "img": "/Blogs-content/June 2022/VT_Blog_3_Importance_of_Educating_Newer_Generation.png",
     "category": "Education",
@@ -999,7 +867,7 @@
   {
     "id": "is-farmland-a-wise-investment",
     "title": "Is Farmland a Wise Investment?",
-    "date": "June 22, 2022",
+    "date": "OCT 25, 2026",
     "author": "Vanatvam Research & Advisory",
     "img": "/Blogs-content/June 2022/VT_Blog_4_Is_Farmland_a_Wise_Investment.png",
     "category": "Investment",
@@ -1142,7 +1010,7 @@
   {
     "id": "benefits-of-living-amidst-nature",
     "title": "Benefits of Living Amidst Nature: Science Backed Wellness",
-    "date": "June 27, 2022",
+    "date": "OCT 25, 2026",
     "author": "Dr. Vivek Sharma",
     "img": "/Blogs-content/June 2022/VT_Blog_6_Benefits_of_Living_Amidst_Nature.png",
     "category": "Wellness",

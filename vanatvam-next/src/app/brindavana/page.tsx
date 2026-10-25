@@ -545,24 +545,83 @@ export default function Brindavana() {
             style={{ position: "relative", zIndex: 2 }}
           >
             <div className="eeshavana-idea">
-              <div className="eeshavana-idea-image-wrap">
-                <motion.img
-                  src="/assets/project-images/Brindavana/Sunlit Tropical Garden with Yellow Macramé Swing.png"
-                  alt="A view of Brindavana landscape"
-                  loading="lazy"
-                  initial={reduce ? false : { scale: 1.15 }}
-                  whileInView={{ scale: 1 }}
+              <div style={{ position: "relative", width: "100%", maxWidth: "520px" }}>
+                <motion.div
+                  initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                  viewport={{ once: true, margin: "-80px" }}
+                  transition={{ duration: 1.2, ease: EASE }}
+                  style={{
+                    borderRadius: "28px",
+                    overflow: "hidden",
+                    aspectRatio: "4 / 5",
+                    boxShadow: "0 30px 60px rgba(18, 34, 23, 0.14)",
+                    border: "1px solid rgba(198, 162, 101, 0.25)",
+                    position: "relative",
+                  }}
+                >
+                  <motion.img
+                    src="/assets/project-images/Brindavana/Sunlit Tropical Garden with Yellow Macramé Swing.png"
+                    alt="A view of Brindavana landscape"
+                    loading="lazy"
+                    initial={reduce ? false : { scale: 1.2 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1.8, ease: EASE }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  />
+                  <span className="eeshavana-image-caption">
+                    The Brindavana idea
+                  </span>
+                </motion.div>
+
+                {/* Floating Acreage Badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1.8, ease: EASE }}
-                />
-                <span className="eeshavana-image-caption">
-                  The Brindavana idea
-                </span>
+                  transition={{ duration: 0.8, delay: 0.6, ease: EASE }}
+                  style={{
+                    position: "absolute",
+                    left: -16,
+                    bottom: 32,
+                    background: FOREST,
+                    color: "#FFF",
+                    padding: "18px 24px",
+                    borderRadius: "20px",
+                    border: "1px solid rgba(198, 162, 101, 0.35)",
+                    boxShadow: "0 20px 40px rgba(18, 34, 23, 0.3)",
+                    zIndex: 3,
+                  }}
+                >
+                  <strong
+                    style={{
+                      display: "block",
+                      fontFamily: "var(--font-serif)",
+                      fontSize: "1.8rem",
+                      lineHeight: 1,
+                      marginBottom: "4px",
+                    }}
+                  >
+                    30 Acres
+                  </strong>
+                  <span
+                    style={{
+                      fontSize: "0.78rem",
+                      letterSpacing: "0.15em",
+                      textTransform: "uppercase",
+                      color: GOLD,
+                      fontWeight: 600,
+                    }}
+                  >
+                    Pavagada · Krishnapura
+                  </span>
+                </motion.div>
               </div>
               <div className="eeshavana-idea-copy">
                 <Kicker>The Brindavana idea</Kicker>
                 <Words
-                  text="A story of land transformation & sacred roots."
+                  text="Where roots run deep and nature thrives."
                   style={{
                     fontFamily: "var(--font-serif)",
                     fontSize: "clamp(2.2rem, 4.2vw, 4rem)",
@@ -575,7 +634,7 @@ export default function Brindavana() {
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "16px",
+                    gap: "18px",
                     color: "#4d594d",
                     fontSize: "1.08rem",
                     lineHeight: 1.8,
@@ -583,25 +642,25 @@ export default function Brindavana() {
                 >
                   <Reveal delay={0.1}>
                     <p style={{ margin: 0 }}>
-                      A place to reconnect with your roots and slow down. Brindavana is a 30-acre sacred farm community nestled amidst Krishnapura in Pavagada Taluk.
+                      A 30-acre story of land transformation. Nestled amidst Krishnapura in Pavagada Taluk, Brindavana by VanaTvam weaves ancient cultural wisdom with organic agroforestry to nurture a flourishing ecosystem.
                     </p>
                   </Reveal>
                   <Reveal delay={0.2}>
                     <p style={{ margin: 0 }}>
-                      Here, ancient cultural wisdom is woven together with agroforestry and organic farming to nurture a resilient, self-sustaining ecosystem.
+                      Meticulously revived through years of chemical-free care, the soil has been nurtured back to abundant health — creating a natural foundation for 85%+ native forest cover and sacred groves like Nakshatra Vana.
                     </p>
                   </Reveal>
                   <Reveal delay={0.3}>
                     <p style={{ margin: 0 }}>
-                      Shaped for like-minded families, Brindavana offers a peaceful sanctuary featuring native tree canopies, therapeutic walking trails, and sacred groves like Nakshatra Vana.
+                      Therapeutic farming &amp; family sanctuary: Brindavana provides a peaceful haven for families to escape city noise, reconnect with the earth, and belong to a community of like-minded eco-conscious owners.
                     </p>
                   </Reveal>
                 </div>
                 <div className="eeshavana-pills">
                   {[
-                    "30-Acre Natural Farmland",
+                    "30-Acre Revived Farmland",
                     "Nakshatra Vana Sacred Forest",
-                    "Organic Agroforestry",
+                    "Therapeutic Organic Farming",
                   ].map((item, index) => (
                     <Reveal key={item} delay={0.12 + index * 0.06}>
                       <span className="eeshavana-pill">{item}</span>
@@ -876,252 +935,7 @@ export default function Brindavana() {
           </div>
         </section>
 
-        {/* ================= CONCEPT MASTER PLAN ================= */}
-        <section
-          id="master-plan"
-          style={{
-            padding: "clamp(60px, 8vh, 100px) 0",
-            background: "#F4F1EA",
-            position: "relative",
-            overflow: "hidden",
-          }}
-        >
-          <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <div style={{ textAlign: "center", marginBottom: "50px" }}>
-              <Kicker center>Master Plan</Kicker>
-              <Words
-                text="Concept Layout & Master Plan"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
-                  lineHeight: 1.15,
-                  color: FOREST,
-                  textAlign: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px",
-                }}
-              />
-              <Reveal delay={0.15}>
-                <p
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "var(--eeshavana-muted, #687b63)",
-                    maxWidth: "720px",
-                    margin: "0 auto",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  Explore the 30-acre master plan featuring farm parcels starting from 10,000+ sq. ft., Nakshatra Vana sacred grove, eco-cottages, ponds, and trekking trails in Pavagada.
-                </p>
-              </Reveal>
-            </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 480px), 1fr))",
-                gap: "clamp(30px, 5vw, 60px)",
-                alignItems: "center",
-              }}
-            >
-              {/* Left: Legend & Key Highlights */}
-              <motion.div
-                initial={reduce ? false : { opacity: 0, x: -25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, ease: EASE }}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {/* Plots Box */}
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(18, 34, 23, 0.08)",
-                    borderRadius: "24px",
-                    padding: "36px 40px",
-                    boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18px",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "48px",
-                        height: "48px",
-                        borderRadius: "50%",
-                        background: "#844329",
-                        color: "#FFFFFF",
-                        display: "grid",
-                        placeItems: "center",
-                        fontSize: "1.05rem",
-                        fontWeight: 700,
-                        flexShrink: 0,
-                      }}
-                    >
-                      1–32
-                    </span>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.85rem",
-                        fontWeight: 600,
-                        color: FOREST,
-                        margin: 0,
-                      }}
-                    >
-                      Private Farm Parcels
-                    </h3>
-                  </div>
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "#4A584E",
-                      fontSize: "1.2rem",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    Spacious 10,000+ sq. ft. farm spaces carved thoughtfully along natural contours, mature tree line, and organic soil zones.
-                  </p>
-                </div>
-
-                {/* Amenities Legend Grid */}
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(18, 34, 23, 0.08)",
-                    borderRadius: "24px",
-                    padding: "36px 40px",
-                    boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: "1.85rem",
-                      fontWeight: 600,
-                      color: FOREST,
-                      margin: "0 0 24px",
-                    }}
-                  >
-                    Master Plan Key (A – H)
-                  </h3>
-
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns:
-                        "repeat(auto-fit, minmax(210px, 1fr))",
-                      gap: "18px 24px",
-                    }}
-                  >
-                    {[
-                      { code: "A", label: "Entrance Gate" },
-                      { code: "B", label: "Nakshatra Vana" },
-                      { code: "C", label: "Eco Cottages" },
-                      { code: "D", label: "Clubhouse Center" },
-                      { code: "E", label: "Rainy Pond" },
-                      { code: "F", label: "Pickleball Court" },
-                      { code: "G", label: "Trekking Path" },
-                      { code: "H", label: "Botanical Nursery" },
-                    ].map((item) => (
-                      <div
-                        key={item.code}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "14px",
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: "36px",
-                            height: "36px",
-                            borderRadius: "50%",
-                            background: "rgba(198, 162, 101, 0.22)",
-                            color: "#844329",
-                            fontSize: "0.95rem",
-                            fontWeight: 700,
-                            display: "grid",
-                            placeItems: "center",
-                            flexShrink: 0,
-                          }}
-                        >
-                          {item.code}
-                        </span>
-                        <span
-                          style={{
-                            fontSize: "1.2rem",
-                            color: "#2C3E31",
-                            fontWeight: 600,
-                          }}
-                        >
-                          {item.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Right: Master Plan Main Image */}
-              <motion.div
-                initial={reduce ? false : { opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
-                style={{
-                  position: "relative",
-                  borderRadius: "28px",
-                  overflow: "hidden",
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(18, 34, 23, 0.08)",
-                  boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
-                  padding: "16px",
-                  width: "100%",
-                  maxWidth: "520px",
-                  margin: "0 auto",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    background: "#E8ECE5",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    src="/assets/project-images/Brindavana/brindavanaaa.png"
-                    alt="Brindavana Concept Master Plan Layout"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      maxHeight: "580px",
-                      objectFit: "contain",
-                      display: "block",
-                      borderRadius: "20px",
-                    }}
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
+         
 
         {/* ================= GALLERY ================= */}
         <section
