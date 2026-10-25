@@ -54,6 +54,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
   const pathname = usePathname();
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -106,10 +107,11 @@ export default function Navigation() {
     borderRadius: "inherit",
     background:
       "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 243, 235, 0.94) 100%)",
-    pointerEvents: "none",
-    zIndex: 0,
-  }}
-/>
+   
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
         <div
           className="header-inner"
          style={{

@@ -10,6 +10,18 @@ import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import AccordionGallery from "@/components/premium/AccordionGallery";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Droplets,
+  Leaf,
+  MapPin,
+  Mountain,
+  PawPrint,
+  Ship,
+  Trees,
+  Waves,
+} from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
 const TITLE = "ANANTAVANA";
@@ -491,22 +503,22 @@ const landscape: Pillar[] = [
 
 const amenities = [
   {
-    image: "/assets/project-images/Ananthavana/fa9905d3-3bb6-4dfd-9e16-d72bb1d681ff.png",
+    image: "/assets/project-images/Ananthavana/CommonSpace.png",
     name: "20%+ Common Spaces",
     desc: "Open areas to gather, unwind and connect.",
   },
   {
-    image: "/assets/project-images/Ananthavana/WhatsApp Image 2026-10-04 at 3.30.48 PM.jpeg",
+    image: "/assets/project-images/Ananthavana/Tree-Lined.png",
     name: "Tree-Lined Roads",
     desc: "Native landscapes along the way.",
   },
   {
-    image: "/assets/project-images/Ananthavana/hero_image_2.jpg",
+    image: "/assets/project-images/Ananthavana/NaturalPonds.png",
     name: "Natural Ponds",
     desc: "Water features and biodiversity spaces.",
   },
   {
-    image: "/assets/project-images/Ananthavana/ChatGPT Image Aug 3, 2026, 01_16_33 PM (2).png",
+    image: "/assets/project-images/Ananthavana/Pergolas.png",
     name: "Pergolas",
     desc: "Shaded spots for rest and quiet gatherings.",
   },
@@ -521,12 +533,13 @@ const amenities = [
     desc: "A raised retreat amidst nature.",
   },
   {
-    image: "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.png",
+    image:
+      "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.png",
     name: "Herbal Gardens",
     desc: "Inspired by ancient wisdom.",
   },
   {
-    image: "/assets/project-images/Ananthavana/9f5cea54-01f1-417d-862a-f818a7f97cfb.png",
+    image: "/assets/project-images/Ananthavana/FireCamp.png",
     name: "Fire Camp & Tents",
     desc: "Outdoor evenings under the open sky.",
   },
@@ -801,8 +814,8 @@ export default function Anantavana() {
               margin: 0,
             }}
           >
-            You&apos;re in{" "}
-            <span style={{ color: "var(--accent-gold)" }}>Kabini.</span>
+            Breathe in, You&apos;re in{" "}
+            <span style={{ color: "var(--accent-gold)" }}>Kabini...</span>
           </motion.p>
 
           <motion.p
@@ -843,14 +856,23 @@ export default function Anantavana() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: "10px",
+                backgroundColor: "var(--accent-gold)",
+                color: "#0d0d0d",
+                fontWeight: 600,
+                fontSize:  "1rem",
               }}
             >
               Download brochure <span aria-hidden="true">↓</span>
             </a>
-            <Link href="/contact" className="btn-pill btn-pill-outline">
+            <Link href="/contact" className="btn-pill btn-pill-outline" style={{
+                
+                fontWeight: 600,
+                fontSize:  "1rem",
+              }}>
               Plan a visit
             </Link>
           </motion.div>
+          
 
           <motion.p
             initial={from(14)}
@@ -896,9 +918,9 @@ export default function Anantavana() {
             }}
           >
             <div style={{ flex: "1.1 1 420px" }}>
-              <Kicker>The AnantaVana idea</Kicker>
+              <Kicker>The AnantaVana</Kicker>
               <Words
-                text="Where the forest breathes with you."
+                text="WHERE NATURE SHAPES EVERYDAY LIFE"
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "clamp(2.2rem, 4.2vw, 4rem)",
@@ -919,26 +941,42 @@ export default function Anantavana() {
               >
                 <Reveal delay={0.1}>
                   <p style={{ margin: 0 }}>
-                    AnantaVana is a nature-led community planned across 34 acres
-                    near Kabini, a region celebrated for its wildlife and
-                    timeless landscapes. It invites you to slow down, reconnect
-                    with the outdoors and experience a more thoughtful
-                    relationship with nature.
+                    A nature-led community near Kabini, rooted in conscious
+                    living and respect for the natural world.
                   </p>
                 </Reveal>
                 <Reveal delay={0.2}>
                   <p style={{ margin: 0 }}>
-                    The project vision brings together native trees, natural
-                    ponds, herbal gardens and nature-inspired places to pause.
-                    The wider Kabini region is known for its rich wildlife;
-                    references to bird and mammal diversity describe the region,
-                    not a verified count on the project land.
+                    Spread across 34 acres near Kabini, AnantaVana brings people
+                    closer to the outdoors in a landscape celebrated for its
+                    timeless beauty and rich wildlife. It offers an opportunity
+                    to slow down, reconnect with nature and experience a more
+                    thoughtful way of living.
                   </p>
                 </Reveal>
                 <Reveal delay={0.3}>
                   <p style={{ margin: 0 }}>
-                    Our approach is rooted in conscious community, natural
-                    farming and care for the living landscape.
+                    Native trees, natural ponds, herbal gardens and thoughtfully
+                    created places to pause bring a sense of calm to the
+                    surroundings. Walking paths and spaces for quiet reflection
+                    encourage residents to spend more time outdoors and
+                    appreciate the rhythms of the natural world.
+                  </p>
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <p style={{ margin: 0 }}>
+                    At its heart, AnantaVana is about more than a place to stay.
+                    It is about conscious community, natural farming and a
+                    deeper appreciation of the living landscape.
+                  </p>
+                </Reveal>
+                <Reveal delay={0.3}>
+                  <p style={{ margin: 0 }}>
+                    The wider Kabini region is renowned for its birdlife and
+                    diverse mammals, adding to the natural character of the
+                    setting. This regional biodiversity is part of the larger
+                    landscape story, rather than a verified species count for
+                    the AnantaVana property itself.
                   </p>
                 </Reveal>
               </div>
@@ -1024,125 +1062,107 @@ export default function Anantavana() {
         </div>
       </section>
 
-      {/* ================= A QUIETER RHYTHM (3 pillars) ================= */}
+      {/* ================= THE LAND IN NUMBERS ================= */}
       <section
         style={{
-          position: "relative",
-          overflow: "hidden",
-          padding: "clamp(70px, 10vh, 110px) 0",
+          padding: "clamp(56px, 8vh, 88px) 0",
           background: FOREST,
         }}
       >
-        <FloatingOrb
-          size={300}
-          top="-80px"
-          left="10%"
-          color="rgba(190,212,167,0.18)"
-        />
-        <FloatingOrb
-          size={240}
-          top="55%"
-          right="5%"
-          delay={2}
-          color="rgba(198,162,101,0.2)"
-        />
-        <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <Kicker center>Three ideas</Kicker>
-            <Words
-              text="A quieter rhythm, shaped by nature."
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2rem, 4vw, 3.6rem)",
-                lineHeight: 1.15,
-                color: "#FFF",
-                textAlign: "center",
-                maxWidth: 780,
-                margin: "0 auto",
-              }}
-            />
-          </div>
+        <div className="container">
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "28px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+              gap: "clamp(24px, 4vw, 48px)",
+              alignItems: "start",
             }}
           >
-            {pillars.map((p, i) => (
-              <PillarCard key={p.n} p={p} i={i} dark />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ================= A LANDSCAPE TO RECONNECT WITH ================= */}
-      <section
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          padding: "clamp(70px, 10vh, 110px) 0",
-          background: "#F4F1EA",
-        }}
-      >
-        <FloatingOrb size={240} top="5%" right="-40px" delay={1} />
-        <div className="container" style={{ position: "relative", zIndex: 1 }}>
-          <div style={{ textAlign: "center", maxWidth: 820, margin: "0 auto" }}>
-            <Kicker center>A landscape to reconnect with</Kicker>
-            <Words
-              text="Rooted in nature. Inspired by heritage."
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2rem, 4vw, 3.6rem)",
-                lineHeight: 1.15,
-                color: FOREST,
-                textAlign: "center",
-                marginBottom: "28px",
-              }}
-            />
-            <Reveal delay={0.15}>
-              <p
+            {[
+              {
+                value: "34",
+                suffix: "acres",
+                label: "Project area",
+              },
+              {
+                value: "70%",
+                suffix: "*",
+                label: "Forest cover",
+              },
+              {
+                value: "200+",
+                suffix: "*",
+                label: "Native trees",
+              },
+            ].map((s, i) => (
+              <motion.div
+                key={s.label}
+                initial={reduce ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.65,
+                  delay: reduce ? 0 : i * 0.12,
+                  ease: EASE,
+                }}
                 style={{
-                  margin: 0,
-                  color: "var(--text-dark)",
-                  fontSize: "1.1rem",
-                  lineHeight: 1.8,
+                  textAlign: "center",
                 }}
               >
-                From Sandalwood and Seeta Ashoka to Teak and Seethaphala, the
-                project narrative celebrates native and culturally significant
-                trees. Herbal gardens inspired by ancient Indian traditions
-                bring another layer of meaning to the landscape.
-              </p>
-            </Reveal>
-          </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "baseline",
+                    justifyContent: "center",
+                    gap: 8,
+                    flexWrap: "wrap",
+                    marginBottom: 14,
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "clamp(2.5rem, 4.5vw, 4rem)",
+                    fontWeight: 700,
+                    lineHeight: 1,
+                  }}
+                >
+                  <span
+                    style={{
+                      color: GOLD,
+                    }}
+                  >
+                    {s.value}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: s.suffix === "*" ? "0.5em" : "0.3em",
+                      fontWeight: 600,
+                      color: GOLD,
+                      letterSpacing: s.suffix === "*" ? 0 : "0.14em",
+                      textTransform: "uppercase",
+                    }}
+                  >
+                    {s.suffix}
+                  </span>
+                </div>
 
-          <TreeMarquee />
-
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-              gap: "28px",
-              marginTop: "40px",
-            }}
-          >
-            {landscape.map((p, i) => (
-              <PillarCard key={p.n} p={p} i={i} dark={false} />
+                <h3
+                  style={{
+                    maxWidth: 280,
+                    margin: "0 auto",
+                    color: "rgba(255,255,255,0.88)",
+                    fontFamily: "var(--font-sans)",
+                    fontSize: "clamp(1.92rem, 2.3vw, 2.05rem)",
+                    fontWeight: 400,
+                    lineHeight: 1.55,
+                  }}
+                >
+                  {s.label}
+                </h3>
+              </motion.div>
             ))}
           </div>
 
-          {/*
-            Editorial note supplied with the content (keep internal, do not publish as-is):
-            The 34-acre extent, 70% forest-cover figure and biodiversity counts were supplied in the project
-            narrative and should be substantiated before publication. Forest cover, species counts and
-            air-quality readings require clear definitions and reliable, dated evidence.
-          */}
+
         </div>
       </section>
-
-      {/* ================= SPACE TO LIVE WITH NATURE (parallax band) ================= */}
-      <SpaceBand />
 
       {/* ================= THOUGHTFUL SPACES ================= */}
       <section
@@ -1269,62 +1289,249 @@ export default function Anantavana() {
         </div>
       </section>
 
-      {/* ================= VIDEO TOUR ================= */}
+      {/* ================= CONCEPT MASTER PLAN ================= */}
       <section
-        style={{ padding: "clamp(50px, 6vh, 70px) 0", background: "#122217" }}
+        id="master-plan"
+        style={{
+          padding: "clamp(60px, 8vh, 100px) 0",
+          background: "#F4F1EA",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "40px" }}>
-            <span
-              style={{
-                color: "var(--accent-gold)",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                display: "block",
-                marginBottom: "16px",
-              }}
-            >
-              Project Video
-            </span>
-            <h2
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+            <Kicker center>Master Plan</Kicker>
+            <Words
+              text="Concept Layout & Master Plan"
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
-                color: "#FFF",
+                fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
+                lineHeight: 1.15,
+                color: FOREST,
+                textAlign: "center",
+                justifyContent: "center",
+                margin: "0 auto 16px",
               }}
-            >
-              Experience AnantaVana
-            </h2>
+            />
+            <Reveal delay={0.15}>
+              <p
+                style={{
+                  fontSize: "1.1rem",
+                  color: "var(--text-muted)",
+                  maxWidth: "720px",
+                  margin: "0 auto",
+                  lineHeight: 1.75,
+                }}
+              >
+                Explore the 34-acre master plan featuring farm parcels starting from 12,000+ sq. ft., tree-lined roads, natural ponds, heritage cottages, and tree house retreats near Kabini.
+              </p>
+            </Reveal>
           </div>
 
           <div
             style={{
-              background: "#000",
-              padding: "0",
-              borderRadius: "24px",
-              boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-              overflow: "hidden",
-              position: "relative",
-              paddingTop: "56.25%",
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(min(100%, 480px), 1fr))",
+              gap: "clamp(30px, 5vw, 60px)",
+              alignItems: "center",
             }}
           >
-            <iframe
-              src="https://www.youtube.com/embed/ZMd2mZhfvsI?si=UftSlEEPsjw9E41T&autoplay=1&mute=1"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
+            {/* Left: Legend & Key Highlights */}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, x: -25 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, ease: EASE }}
               style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: "32px",
               }}
-            ></iframe>
+            >
+              {/* Plots Box */}
+              <div
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(18, 34, 23, 0.08)",
+                  borderRadius: "24px",
+                  padding: "36px 40px",
+                  boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "18px",
+                    marginBottom: "20px",
+                  }}
+                >
+                  <span
+                    style={{
+                      width: "48px",
+                      height: "48px",
+                      borderRadius: "50%",
+                      background: "#844329",
+                      color: "#FFFFFF",
+                      display: "grid",
+                      placeItems: "center",
+                      fontSize: "1.05rem",
+                      fontWeight: 700,
+                      flexShrink: 0,
+                    }}
+                  >
+                    1–35
+                  </span>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontSize: "1.85rem",
+                      fontWeight: 600,
+                      color: FOREST,
+                      margin: 0,
+                    }}
+                  >
+                    Private Farm Parcels
+                  </h3>
+                </div>
+                <p
+                  style={{
+                    margin: 0,
+                    color: "#4A584E",
+                    fontSize: "1.2rem",
+                    lineHeight: 1.8,
+                  }}
+                >
+                  35 individually carved plots starting from 12,000+ sq. ft., arranged thoughtfully amidst native forest cover and wildlife corridors.
+                </p>
+              </div>
+
+              {/* Amenities Legend Grid */}
+              <div
+                style={{
+                  background: "#FFFFFF",
+                  border: "1px solid rgba(18, 34, 23, 0.08)",
+                  borderRadius: "24px",
+                  padding: "36px 40px",
+                  boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
+                }}
+              >
+                <h3
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "1.85rem",
+                    fontWeight: 600,
+                    color: FOREST,
+                    margin: "0 0 24px",
+                  }}
+                >
+                  Master Plan Key (A – H)
+                </h3>
+
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns:
+                      "repeat(auto-fit, minmax(210px, 1fr))",
+                    gap: "18px 24px",
+                  }}
+                >
+                  {[
+                    { code: "A", label: "20%+ Common Spaces" },
+                    { code: "B", label: "Tree-Lined Roads" },
+                    { code: "C", label: "Natural Ponds" },
+                    { code: "D", label: "Shaded Pergolas" },
+                    { code: "E", label: "Heritage Cottages" },
+                    { code: "F", label: "Tree House Retreat" },
+                    { code: "G", label: "Herbal Gardens" },
+                    { code: "H", label: "Fire Camp & Tents" },
+                  ].map((item) => (
+                    <div
+                      key={item.code}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "14px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          width: "36px",
+                          height: "36px",
+                          borderRadius: "50%",
+                          background: "rgba(198, 162, 101, 0.22)",
+                          color: "#844329",
+                          fontSize: "0.95rem",
+                          fontWeight: 700,
+                          display: "grid",
+                          placeItems: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {item.code}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: "1.2rem",
+                          color: "#2C3E31",
+                          fontWeight: 600,
+                        }}
+                      >
+                        {item.label}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right: Master Plan Main Image */}
+            <motion.div
+              initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
+              style={{
+                position: "relative",
+                borderRadius: "28px",
+                overflow: "hidden",
+                background: "#FFFFFF",
+                border: "1px solid rgba(18, 34, 23, 0.08)",
+                boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
+                padding: "16px",
+                width: "100%",
+                maxWidth: "520px",
+                margin: "0 auto",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  background: "#E8ECE5",
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                }}
+              >
+                <img
+                  src="/assets/project-images/Ananthavana/ananthavanamasterplan.webp"
+                  alt="AnantaVana Concept Master Plan Layout"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "580px",
+                    objectFit: "contain",
+                    display: "block",
+                    borderRadius: "20px",
+                  }}
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -1332,6 +1539,7 @@ export default function Anantavana() {
       {/* ================= GALLERY ================= */}
       {galleryItems.length > 0 && (
         <section
+          id="gallery"
           style={{ padding: "clamp(60px, 8vh, 90px) 0", background: "#FFF" }}
         >
           <div className="container">
@@ -1339,34 +1547,103 @@ export default function Anantavana() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              style={{ textAlign: "center", marginBottom: "40px" }}
             >
               <span
                 style={{
                   color: "var(--accent-gold)",
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.1em",
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
                   display: "block",
-                  marginBottom: "20px",
-                  textAlign: "center",
+                  marginBottom: "10px",
                 }}
               >
-                GALLERY
+                Gallery
               </span>
               <h2
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(1.8rem, 3.0vw, 3.0rem)",
+                  fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
                   color: "var(--bg-dark-forest)",
-                  marginBottom: "60px",
-                  textAlign: "center",
+                  margin: 0,
+                  fontWeight: 500,
                 }}
               >
-                Life at ANANTAVANA
+                Glimpses of AnantaVana
               </h2>
             </motion.div>
 
-            <AccordionGallery items={galleryItems} height="500px" />
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
+                gap: "24px",
+              }}
+            >
+              {galleryItems.slice(0, 4).map((item, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={reduce ? false : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.6, delay: idx * 0.1, ease: EASE }}
+                  whileHover={reduce ? undefined : { y: -6, scale: 1.02 }}
+                  style={{
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    boxShadow: "0 10px 30px rgba(18, 34, 23, 0.08)",
+                    aspectRatio: "4 / 3",
+                    position: "relative",
+                    background: "#F4F1E8",
+                  }}
+                >
+                  <img
+                    src={item.img}
+                    alt={`AnantaVana Gallery Image ${idx + 1}`}
+                    loading="lazy"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "44px",
+              }}
+            >
+              <a
+                href="https://photos.app.goo.gl/dJaNg8zYHyjvxHnN6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill btn-pill-gold"
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "10px",
+                                backgroundColor: "var(--accent-gold)",
+                                color: "#0d0d0d",
+                                fontWeight: 600,
+                                fontSize:  "1rem",
+                              }}
+              >
+                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+              </a>
+            </motion.div>
           </div>
         </section>
       )}
@@ -1374,272 +1651,1226 @@ export default function Anantavana() {
       {/* ================= NEARBY DESTINATIONS ================= */}
       <section
         style={{
-          padding: "clamp(60px, 8vh, 90px) 0",
-          background: "var(--bg-cream)",
+          position: "relative",
+          isolation: "isolate",
+          padding: "clamp(72px, 10vh, 120px) 0",
+          background: "linear-gradient(180deg, #FBF9F5 0%, #F4F1E8 100%)",
+          overflow: "hidden",
         }}
       >
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <span
+        {/* Soft background ambient glow */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: "20%",
+            left: "-10%",
+            width: "500px",
+            height: "500px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(198,162,101,0.08), transparent 70%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            bottom: "10%",
+            right: "-10%",
+            width: "600px",
+            height: "600px",
+            borderRadius: "50%",
+            background: "radial-gradient(circle, rgba(24,48,35,0.05), transparent 70%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
+        <style>{`
+          .av-nearby-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+            gap: clamp(28px, 4.5vw, 56px);
+            align-items: stretch;
+            max-width: 1240px;
+            margin: 0 auto;
+          }
+          .av-nearby-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 16px 20px;
+            border: 1px solid rgba(18, 34, 23, 0.08);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 18px rgba(18, 34, 23, 0.03);
+            transition: all 300ms cubic-bezier(0.2, 0.9, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+          }
+          .av-nearby-card::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--accent-gold);
+            opacity: 0;
+            transition: opacity 300ms ease;
+          }
+          .av-nearby-card:hover {
+            transform: translateX(6px);
+            border-color: rgba(198, 162, 101, 0.4);
+            background: #FFFFFF;
+            box-shadow: 0 12px 32px rgba(18, 34, 23, 0.08);
+          }
+          .av-nearby-card:hover::before {
+            opacity: 1;
+          }
+          .av-nearby-card:hover .av-nearby-icon {
+            background: var(--accent-gold);
+            color: #122217;
+            transform: scale(1.05);
+          }
+          .av-nearby-icon {
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            border-radius: 14px;
+            color: var(--bg-dark-forest);
+            background: rgba(198, 162, 101, 0.15);
+            flex-shrink: 0;
+            transition: all 300ms ease;
+          }
+          .av-nearby-name {
+            color: var(--bg-dark-forest);
+            font-family: var(--font-serif);
+            font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+            font-weight: 600;
+            line-height: 1.25;
+            margin-bottom: 2px;
+          }
+          .av-nearby-desc {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            line-height: 1.3;
+            margin: 0;
+          }
+          .av-nearby-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            flex-shrink: 0;
+          }
+          .av-nearby-distance {
+            display: flex;
+            align-items: baseline;
+            gap: 3px;
+            color: var(--bg-dark-forest);
+          }
+          .av-nearby-distance strong {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--bg-dark-forest);
+          }
+          .av-nearby-distance span {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+          }
+          .av-nearby-time {
+            font-size: 0.74rem;
+            color: #987443;
+            font-weight: 600;
+            background: rgba(198, 162, 101, 0.12);
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-top: 4px;
+            white-space: nowrap;
+          }
+          .av-nearby-map {
+            position: relative;
+            min-height: 580px;
+            height: 100%;
+            overflow: hidden;
+            isolation: isolate;
+            border: 1px solid rgba(198, 162, 101, 0.4);
+            border-radius: 28px;
+            background: #E5E8E0;
+            box-shadow: 0 24px 60px rgba(18, 34, 23, 0.12);
+          }
+          .av-nearby-map iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+          }
+          .av-nearby-map-header {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            background: rgba(18, 34, 23, 0.88);
+            border: 1px solid rgba(198, 162, 101, 0.35);
+            backdrop-filter: blur(12px);
+            color: #FFF;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+          }
+          .av-nearby-map-header .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #B38B4D;
+            box-shadow: 0 0 10px #B38B4D;
+            animation: pulse-dot 2s infinite;
+          }
+          @keyframes pulse-dot {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.3); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+          }
+          .av-nearby-map-link {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 18px;
+            border: 1px solid rgba(198, 162, 101, 0.5);
+            border-radius: 999px;
+            color: #122217;
+            background: #F3E3C0;
+            box-shadow: 0 8px 24px rgba(18, 34, 23, 0.16);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            transition: all 250ms ease;
+            text-decoration: none;
+          }
+          .av-nearby-map-link:hover {
+            transform: translateY(-2px);
+            background: #FFFFFF;
+            box-shadow: 0 12px 30px rgba(18, 34, 23, 0.22);
+          }
+          .av-nearby-map-label {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border: 1px solid rgba(198, 162, 101, 0.35);
+            border-radius: 20px;
+            color: #FFF;
+            background: rgba(18, 34, 23, 0.92);
+            box-shadow: 0 12px 32px rgba(18, 34, 23, 0.25);
+            backdrop-filter: blur(12px);
+          }
+          .av-nearby-map-label strong {
+            display: block;
+            color: #F3E3C0;
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            line-height: 1.2;
+          }
+          .av-nearby-map-label span {
+            display: block;
+            margin-top: 3px;
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.8rem;
+          }
+          @media (max-width: 900px) {
+            .av-nearby-grid {
+              grid-template-columns: minmax(0, 1fr);
+            }
+            .av-nearby-map {
+              min-height: 480px;
+            }
+          }
+          @media (max-width: 520px) {
+            .av-nearby-card {
+              padding: 14px 16px;
+            }
+            .av-nearby-icon {
+              width: 42px;
+              height: 42px;
+            }
+            .av-nearby-map {
+              min-height: 400px;
+              border-radius: 20px;
+            }
+            .av-nearby-map-header {
+              top: 14px;
+              left: 14px;
+              padding: 8px 14px;
+              font-size: 0.75rem;
+            }
+            .av-nearby-map-link {
+              top: 14px;
+              right: 14px;
+              padding: 9px 14px;
+            }
+            .av-nearby-map-label {
+              bottom: 14px;
+              left: 14px;
+              right: 14px;
+              padding: 12px 16px;
+            }
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .av-nearby-card, .av-nearby-map-link {
+              transition: none;
+            }
+          }
+        `}</style>
+
+        <div className="container" style={{ position: "relative", zIndex: 1 }}>
+          <motion.div
+            initial={reduce ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: EASE }}
+            style={{
+              maxWidth: 820,
+              margin: "0 auto clamp(36px, 5vw, 56px)",
+              textAlign: "center",
+            }}
+          >
+            <div
               style={{
-                color: "var(--accent-gold)",
-                fontSize: "0.9rem",
-                fontWeight: 600,
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                display: "block",
-                marginBottom: "16px",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "14px",
               }}
             >
-              Nearby Destinations
-            </span>
+              <span
+                style={{
+                  width: "24px",
+                  height: "1px",
+                  background: "var(--accent-gold)",
+                }}
+              />
+              <span
+                style={{
+                  color: "var(--accent-gold)",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Nearby destinations
+              </span>
+              <span
+                style={{
+                  width: "24px",
+                  height: "1px",
+                  background: "var(--accent-gold)",
+                }}
+              />
+            </div>
+
+            <h2
+              style={{
+                margin: 0,
+                color: "var(--bg-dark-forest)",
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)",
+                fontWeight: 500,
+                letterSpacing: "-0.035em",
+                lineHeight: 1.12,
+                textWrap: "balance",
+              }}
+            >
+              Surrounded by wilderness.
+              <br />
+              <span style={{ color: "#987443", fontStyle: "italic", fontWeight: 400 }}>
+                Connected to comfort.
+              </span>
+            </h2>
+          </motion.div>
+
+          <div className="av-nearby-grid">
+            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+              {[
+                {
+                  name: "Bheemanakolli",
+                  desc: "Scenic riverfront & backwaters",
+                  km: 6,
+                  time: "~10 mins",
+                  icon: Waves,
+                },
+                {
+                  name: "Boating in Gandatoor",
+                  desc: "Tranquil boat rides & water views",
+                  km: 7,
+                  time: "~12 mins",
+                  icon: Ship,
+                },
+                {
+                  name: "Kabini Dam",
+                  desc: "Historic reservoir & bird sanctuary",
+                  km: 11,
+                  time: "~18 mins",
+                  icon: Droplets,
+                },
+                {
+                  name: "Kakankote Safari",
+                  desc: "Famous elephant & jungle safari",
+                  km: 27,
+                  time: "~35 mins",
+                  icon: PawPrint,
+                },
+                {
+                  name: "Bandipur National Park",
+                  desc: "Renowned tiger & wildlife reserve",
+                  km: 85,
+                  time: "~1.5 hrs",
+                  icon: Trees,
+                },
+                {
+                  name: "Coorg",
+                  desc: "Coffee plantations & misty hills",
+                  km: 130,
+                  time: "~2.5 hrs",
+                  icon: Mountain,
+                },
+              ].map(({ name, desc, km, time, icon: Icon }, i) => (
+                <motion.div
+                  key={name}
+                  className="av-nearby-card"
+                  initial={reduce ? false : { opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-30px" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: reduce ? 0 : i * 0.08,
+                    ease: EASE,
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                    <span className="av-nearby-icon" aria-hidden="true">
+                      <Icon size={22} strokeWidth={1.8} />
+                    </span>
+                    <div>
+                      <h3 className="av-nearby-name">{name}</h3>
+                      <p className="av-nearby-desc">{desc}</p>
+                    </div>
+                  </div>
+
+                  <div className="av-nearby-badge">
+                    <div className="av-nearby-distance">
+                      <strong>{km}</strong>
+                      <span>km</span>
+                    </div>
+                    <span className="av-nearby-time">{time}</span>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div
+              className="av-nearby-map"
+              initial={reduce ? false : { opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.7, delay: reduce ? 0 : 0.15, ease: EASE }}
+            >
+              <div className="av-nearby-map-header">
+                <span className="dot" aria-hidden="true" />
+                <span style={{ fontSize: "0.82rem", fontWeight: 600, letterSpacing: "0.03em" }}>
+                  AnantaVana Location
+                </span>
+              </div>
+
+              <iframe
+                title="Google Maps showing AnantaVana near Kabini"
+                src="https://www.google.com/maps?q=11.9128648,76.3000445&z=13&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+
+              <a
+                className="av-nearby-map-link"
+                href="https://maps.app.goo.gl/QT39pF4XsRq3YYHR6"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Open in Google Maps
+                <ArrowUpRight size={16} strokeWidth={2.2} aria-hidden="true" />
+              </a>
+
+              <div className="av-nearby-map-label">
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                  <div
+                    style={{
+                      width: "42px",
+                      height: "42px",
+                      borderRadius: "12px",
+                      background: "rgba(198,162,101,0.18)",
+                      color: "#F3E3C0",
+                      display: "grid",
+                      placeItems: "center",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <MapPin size={22} aria-hidden="true" />
+                  </div>
+                  <div>
+                    <strong>AnantaVana Sanctuary</strong>
+                    <span>Near Kabini, Mysuru Region, Karnataka</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Premium Final CTA — Nature-inspired Contact Experience */}
+      <section
+        id="contact-cta"
+        style={{
+          position: "relative",
+          isolation: "isolate",
+          overflow: "hidden",
+          padding: "clamp(60px, 8vw, 110px) 20px",
+          width: "100%",
+          boxSizing: "border-box",
+          background: "#FFFFFF",
+          color: "#183023",
+        }}
+      >
+        {/* Soft ambient background decoration */}
+        <motion.div
+          aria-hidden="true"
+          animate={{
+            scale: [1, 1.12, 1],
+            opacity: [0.06, 0.12, 0.06],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            position: "absolute",
+            zIndex: -1,
+            width: "clamp(280px, 40vw, 560px)",
+            aspectRatio: "1",
+            top: "-180px",
+            left: "-130px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(198,162,101,0.35), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        <motion.div
+          aria-hidden="true"
+          animate={{
+            scale: [1.05, 1, 1.05],
+            opacity: [0.05, 0.1, 0.05],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          style={{
+            position: "absolute",
+            zIndex: -1,
+            width: "clamp(320px, 45vw, 640px)",
+            aspectRatio: "1",
+            right: "-220px",
+            bottom: "-300px",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle, rgba(72,119,81,0.3), transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Decorative gold divider */}
+        <div
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 0,
+            left: "2%",
+            right: "2%",
+            height: "1px",
+            background:
+              "linear-gradient(90deg, transparent, rgba(198,162,101,0.45), transparent)",
+          }}
+        />
+
+        <div
+          className="container"
+          style={{
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+            maxWidth: "1240px",
+            margin: "0 auto",
+            display: "grid",
+            gridTemplateColumns:
+              "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+            alignItems: "center",
+            gap: "clamp(48px, 6vw, 96px)",
+            boxSizing: "border-box",
+            padding: "0 10px",
+          }}
+        >
+          {/* Left: Editorial content */}
+          <motion.div
+            initial={{ opacity: 0, x: -35 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.9,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "12px",
+                marginBottom: "28px",
+              }}
+            >
+              <span
+                aria-hidden="true"
+                style={{
+                  width: "34px",
+                  height: "1px",
+                  background: "#B38B4D",
+                }}
+              />
+
+              <span
+                style={{
+                  color: "#987443",
+                  fontSize: "0.78rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Your Kabini Sanctuary Awaits
+              </span>
+            </div>
+
             <h2
               style={{
                 fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2rem, 3.5vw, 3rem)",
-                color: "var(--bg-dark-forest)",
+                fontSize: "clamp(2.2rem, 4.5vw, 4.2rem)",
+                lineHeight: 1.08,
+                letterSpacing: "-0.035em",
+                fontWeight: 500,
+                margin: "0 0 28px",
+                maxWidth: "100%",
+                color: "#183023",
               }}
             >
-              Surrounded by Wilderness. Connected to Comfort.
-            </h2>
-          </div>
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              gap: "30px",
-            }}
-          >
-            {[
-              {
-                time: "85",
-                unit: "Kilometers",
-                desc: "To Bandipur National Park",
-                icon: "fa-leaf",
-              },
-              {
-                time: "27",
-                unit: "Kilometers",
-                desc: "To Kakankote Forest",
-                icon: "fa-tree",
-              },
-              {
-                time: "7",
-                unit: "Kilometers",
-                desc: "To Boating in Gandatoor",
-                icon: "fa-ship",
-              },
-              {
-                time: "130",
-                unit: "Kilometers",
-                desc: "To Scenic Coorg",
-                icon: "fa-mountain",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+              Experience{" "}
+              <span
                 style={{
-                  background: "#FFF",
-                  padding: "30px",
-                  borderRadius: "20px",
-                  textAlign: "center",
-                  border: "1px solid rgba(0,0,0,0.03)",
-                  boxShadow: "0 10px 20px rgba(0,0,0,0.03)",
+                  display: "inline-block",
+                  color: "#B38B4D",
+                  fontStyle: "italic",
+                  fontWeight: 400,
                 }}
               >
-                <div
-                  style={{
-                    fontSize: "2rem",
-                    color: "var(--accent-gold)",
-                    marginBottom: "16px",
-                  }}
-                >
-                  <i className={`fa-solid ${item.icon}`}></i>
-                </div>
+                AnantaVana.
+              </span>
+              <br />A space to live with nature.
+            </h2>
+
+            <p
+              style={{
+                maxWidth: "100%",
+                color: "#5A685E",
+                fontSize: "clamp(1.02rem, 1.25vw, 1.15rem)",
+                lineHeight: 1.95,
+                margin: "0 0 36px",
+              }}
+            >
+              Discover 34 acres of forest-inspired managed farmland near Kabini. Nurture your connection with nature through native tree canopies, organic farming, natural ponds, and a conscious community. Schedule a site visit or connect with our team to explore available farmland plots.
+            </p>
+
+            {/* Decorative signature */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "16px",
+                paddingTop: "24px",
+                borderTop: "1px solid #E2E8E3",
+                maxWidth: "100%",
+              }}
+            >
+              <div
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  flexShrink: 0,
+                  borderRadius: "50%",
+                  display: "grid",
+                  placeItems: "center",
+                  color: "#B38B4D",
+                  border: "1px solid rgba(179,139,77,0.35)",
+                  background: "rgba(198,162,101,0.06)",
+                }}
+              >
+                <Leaf className="size-6" strokeWidth={1.5} />
+              </div>
+
+              <div>
                 <div
                   style={{
                     fontFamily: "var(--font-serif)",
-                    fontSize: "2.5rem",
-                    color: "var(--bg-dark-forest)",
-                    lineHeight: 1,
-                    marginBottom: "8px",
+                    fontSize: "1.12rem",
+                    fontWeight: 600,
+                    marginBottom: "3px",
+                    color: "#183023",
                   }}
                 >
-                  {item.time}
+                  AnantaVana at Kabini
                 </div>
                 <div
                   style={{
-                    fontSize: "0.9rem",
-                    fontWeight: 600,
-                    color: "var(--text-dark)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.05em",
-                    marginBottom: "12px",
+                    color: "#727E74",
+                    fontSize: "0.86rem",
+                    letterSpacing: "0.035em",
                   }}
                 >
-                  {item.unit}
+                  34 Acres · Managed Natural Farmland
                 </div>
-                <p
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Right: Premium larger contact form */}
+
+          <motion.form
+            initial={{ opacity: 0, y: 25, scale: 0.99 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.12,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            action="/api/contact"
+            method="POST"
+            style={{
+              position: "relative",
+              background: "linear-gradient(145deg, #F9FBF9 0%, #F3F7F4 100%)",
+              color: "#26352B",
+              padding: "clamp(30px, 3.5vw, 48px)",
+              borderRadius: "24px",
+              border: "1px solid #DCE4DE",
+              boxShadow: "0 22px 55px rgba(0,0,0,0.08)",
+              boxSizing: "border-box",
+              width: "100%",
+              maxWidth: "560px",
+              justifySelf: "center",
+              margin: "0 auto",
+            }}
+          >
+            {/* Gold accent */}
+            <div
+              aria-hidden="true"
+              style={{
+                position: "absolute",
+                top: 0,
+                left: "10%",
+                right: "10%",
+                height: "4px",
+                borderRadius: "0 0 4px 4px",
+                background:
+                  "linear-gradient(90deg, transparent, #C6A265, #E9D6AD, #C6A265, transparent)",
+              }}
+            />
+
+            {/* Form heading */}
+            <div style={{ marginBottom: "28px" }}>
+              <span
+                style={{
+                  display: "block",
+                  color: "#987443",
+                  fontSize: "0.72rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  marginBottom: "10px",
+                }}
+              >
+                Plan Your Visit
+              </span>
+
+              <h3
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(1.8rem, 2.4vw, 2.2rem)",
+                  lineHeight: 1.2,
+                  fontWeight: 500,
+                  color: "#183023",
+                  margin: "0 0 10px",
+                }}
+              >
+                Enquire About AnantaVana.
+              </h3>
+
+              <p
+                style={{
+                  color: "#6B776D",
+                  fontSize: "0.92rem",
+                  lineHeight: 1.65,
+                  margin: 0,
+                }}
+              >
+                Fill out your details below to receive plot details, brochure &amp; site visit availability.
+              </p>
+            </div>
+
+            {/* Form fields */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "20px",
+              }}
+            >
+              {[
+                {
+                  id: "cta-name",
+                  label: "Full name",
+                  type: "text",
+                  placeholder: "Enter your full name",
+                  name: "name",
+                  autoComplete: "name",
+                },
+                {
+                  id: "cta-phone",
+                  label: "Phone number",
+                  type: "tel",
+                  placeholder: "Enter your phone number",
+                  name: "phone",
+                  autoComplete: "tel",
+                },
+                {
+                  id: "cta-email",
+                  label: "Email address",
+                  type: "email",
+                  placeholder: "Enter your email address",
+                  name: "email",
+                  autoComplete: "email",
+                },
+              ].map((field, index) => (
+                <motion.div
+                  key={field.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.15 + index * 0.08,
+                  }}
                   style={{
-                    color: "var(--text-muted)",
-                    fontSize: "0.95rem",
-                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "8px",
                   }}
                 >
-                  {item.desc}
-                </p>
-              </motion.div>
+                  <label
+                    htmlFor={field.id}
+                    style={{
+                      color: "#35483A",
+                      fontSize: "0.88rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {field.label}
+                  </label>
+
+                  <input
+                    id={field.id}
+                    name={field.name}
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    autoComplete={field.autoComplete}
+                    required
+                    style={{
+                      width: "100%",
+                      minHeight: "52px",
+                      boxSizing: "border-box",
+                      padding: "13px 16px",
+                      border: "1px solid #DCE1DA",
+                      borderRadius: "10px",
+                      background: "#FFFFFF",
+                      color: "#26352B",
+                      fontFamily: "inherit",
+                      fontSize: "0.95rem",
+                      outline: "none",
+                      transition:
+                        "border-color 0.25s ease, box-shadow 0.25s ease",
+                    }}
+                    onFocus={(event) => {
+                      event.currentTarget.style.borderColor = "#B38B4D";
+                      event.currentTarget.style.boxShadow =
+                        "0 0 0 3px rgba(198,162,101,0.15)";
+                    }}
+                    onBlur={(event) => {
+                      event.currentTarget.style.borderColor = "#DCE1DA";
+                      event.currentTarget.style.boxShadow = "none";
+                    }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Submit button */}
+            <motion.button
+              type="submit"
+              whileHover={{
+                y: -2,
+                boxShadow: "0 12px 26px rgba(116,53,31,0.25)",
+              }}
+              whileTap={{ scale: 0.985 }}
+              transition={{ duration: 0.2 }}
+              style={{
+                width: "100%",
+                minHeight: "54px",
+                marginTop: "26px",
+                padding: "14px 22px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: "10px",
+                border: "none",
+                borderRadius: "10px",
+                background: "linear-gradient(135deg, #844329, #67301D)",
+                color: "#FFFFFF",
+                fontFamily: "inherit",
+                fontSize: "0.98rem",
+                fontWeight: 700,
+                cursor: "pointer",
+              }}
+            >
+              Request AnantaVana Details
+              <ArrowRight className="size-5" />
+            </motion.button>
+
+            <p
+              style={{
+                margin: "14px 0 0",
+                textAlign: "center",
+                color: "#7B857D",
+                fontSize: "0.75rem",
+                lineHeight: 1.6,
+              }}
+            >
+              Your information is private and will only be used to answer your enquiry.
+            </p>
+          </motion.form>
+        </div>
+      </section>
+
+      {/* Premium FAQ Section — Vanatvam */}
+      <section
+        id="faq-section"
+        style={{
+          position: "relative",
+          isolation: "isolate",
+          overflow: "hidden",
+          padding: "clamp(40px, 5vw, 80px) 10px",
+          width: "100%",
+          boxSizing: "border-box",
+          background: "#FFFFFF",
+          color: "#183023",
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            position: "relative",
+            zIndex: 1,
+            width: "100%",
+            maxWidth: "1000px",
+            margin: "0 auto",
+            boxSizing: "border-box",
+            padding: "0 10px",
+          }}
+        >
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              textAlign: "center",
+              marginBottom: "clamp(40px, 6vw, 70px)",
+            }}
+          >
+            <div
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "16px",
+              }}
+            >
+              <span
+                style={{ width: "24px", height: "1px", background: "#B38B4D" }}
+              />
+              <span
+                style={{
+                  color: "#987443",
+                  fontSize: "0.74rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Got Questions?
+              </span>
+              <span
+                style={{ width: "24px", height: "1px", background: "#B38B4D" }}
+              />
+            </div>
+
+            <h2
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.4rem, 4.5vw, 3.8rem)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.03em",
+                fontWeight: 500,
+                color: "#183023",
+                margin: 0,
+              }}
+            >
+              Frequently Asked Questions <br />
+              <span
+                style={{
+                  color: "#B38B4D",
+                  fontStyle: "italic",
+                  fontWeight: 400,
+                }}
+              >
+                About AnantaVana
+              </span>
+            </h2>
+          </motion.div>
+
+          {/* FAQ Items */}
+          <div
+            style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+          >
+            {[
+              {
+                number: "01",
+                question: "Where is AnantaVana located?",
+                answer: (
+                  <>
+                    N Begur Rd, Katwalu, Begurjungle, Karnataka 571116
+                    <br />
+                    <a
+                      href="https://maps.app.goo.gl/QT39pF4XsRq3YYHR6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        color: "#B38B4D",
+                        textDecoration: "underline",
+                        marginTop: "6px",
+                        display: "inline-block",
+                      }}
+                    >
+                      https://maps.app.goo.gl/QT39pF4XsRq3YYHR6
+                    </a>
+                  </>
+                ),
+              },
+              {
+                number: "02",
+                question: "What is AnantaVana at Kabini?",
+                answer:
+                  "AnantaVana is a nature-oriented managed farmland community by Vanatvam, envisioned as a forest-inspired retreat rooted in sustainable land management, biodiversity, and a deeper connection with nature. Designed to offer a peaceful escape into the natural world, the community brings together organic farming, green landscapes, and nature-conscious living. The master plan shows agricultural parcels, internal roads, common areas, theme-park areas, a water body, and an existing building.",
+              },
+              {
+                number: "03",
+                question:
+                  "What are the available plot sizes at AnantaVana Managed Farmland near Kabini?",
+                answer: (
+                  <>
+                    Plot sizes at AnantaVana, a natural managed farmland
+                    community by Vanatvam near Kabini, Karnataka, start from{" "}
+                    <strong>12,000 sq. ft.</strong> Designed for nature-inspired
+                    living and organic farming, AnantaVana offers a peaceful,
+                    forest-style retreat surrounded by natural landscapes. Contact
+                    the Vanatvam team for the latest farmland plot availability,
+                    exact plot measurements, and pricing.
+                  </>
+                ),
+              },
+              {
+                number: "04",
+                question:
+                  "What makes AnantaVana a unique managed farmland community near Kabini?",
+                answer:
+                  "AnantaVana by Vanatvam is envisioned as a nature-inspired farmland community that combines organic farming, biodiversity, and forest-style retreat living. Beyond agricultural plots, the proposed master plan includes common spaces, theme-park areas, and a water body, creating opportunities to connect with nature. Contact the Vanatvam team to learn more about the project and confirm which features are completed or proposed.",
+              },
+              {
+                number: "05",
+                question: "What amenities are planned at AnantaVana?",
+                answer:
+                  "The project brief highlights over 20% of land reserved for common spaces, tree-lined roads and native landscapes, natural ponds and biodiversity spaces, pergolas, heritage cottages and mud houses, a tree house, herbal gardens inspired by ancient wisdom, and fire-camp and outdoor tent spaces. Confirm final specifications and implementation status with Vanatvam.",
+              },
+              {
+                number: "06",
+                question:
+                  "Will I earn guaranteed income from my AnantaVana plot?",
+                answer:
+                  "No income should be assumed unless it is supported by a specific, legally reviewed agreement. Agricultural output depends on crop selection, weather, water, management and market prices. Consider the land for its ownership and nature-oriented experience rather than assuming assured returns.",
+              },
+            ].map((faq, index) => (
+              <motion.details
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+                style={{
+                  background:
+                    "linear-gradient(145deg, #F9FBF9 0%, #F3F7F4 100%)",
+                  border: "1px solid #DCE4DE",
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.02)",
+                  transition: "border-color 0.25s ease, box-shadow 0.25s ease",
+                }}
+              >
+                <summary
+                  style={{
+                    padding: "22px 28px",
+                    fontSize: "1.05rem",
+                    fontWeight: 600,
+                    color: "#183023",
+                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "16px",
+                    userSelect: "none",
+                    fontFamily: "var(--font-serif)",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "16px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        color: "#987443",
+                        fontSize: "0.85rem",
+                        fontWeight: 200,
+                      }}
+                    >
+                      {faq.number}
+                    </span>
+                    <span>{faq.question}</span>
+                  </div>
+                  {/* Custom arrow toggle indicator */}
+                  <span
+                    style={{
+                      width: "28px",
+                      height: "28px",
+                      borderRadius: "50%",
+                      background: "rgba(152, 116, 67, 0.1)",
+                      color: "#987443",
+                      display: "grid",
+                      placeItems: "center",
+                      flexShrink: 0,
+                      fontSize: "0.8rem",
+                    }}
+                  >
+                    ↓
+                  </span>
+                </summary>
+
+                <div
+                  style={{
+                    padding: "0 28px 24px 28px",
+                    color: "#5A685E",
+                    fontSize: "0.96rem",
+                    lineHeight: 1.85,
+                    borderTop: "1px solid rgba(220, 228, 222, 0.6)",
+                    marginTop: "4px",
+                    paddingTop: "16px",
+                  }}
+                >
+                  {faq.answer}
+                </div>
+              </motion.details>
             ))}
           </div>
         </div>
       </section>
 
-     {/* ================= CTA ================= */}
-<section
-  style={{
-    padding: 'clamp(70px, 10vh, 110px) 0',
-    background: 'var(--bg-dark-forest)',
-    textAlign: 'center',
-    position: 'relative',
-    overflow: 'hidden',
-  }}
->
-  {/* Slow breathing glow behind the content */}
-  <motion.div
-    aria-hidden="true"
-    style={{
-      position: 'absolute', inset: 0, pointerEvents: 'none',
-      background: 'radial-gradient(ellipse at 50% 40%, rgba(190,212,167,0.18), transparent 60%)',
-    }}
-    animate={reduce ? undefined : { opacity: [0.5, 1, 0.5], scale: [1, 1.08, 1] }}
-    transition={{ duration: 8, ease: 'easeInOut', repeat: Infinity }}
-  />
-  <FloatingOrb size={280} top="-80px" left="6%" color="rgba(190,212,167,0.2)" />
-  <FloatingOrb size={220} top="55%" right="6%" delay={2} color="rgba(198,162,101,0.22)" />
-
-  <div className="container relative" style={{ zIndex: 1 }}>
-    <Kicker center>Visit the land</Kicker>
-
-    <Words
-      text="Experience ANANTAVANA"
-      style={{
-        fontFamily: 'var(--font-serif)',
-        fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-        lineHeight: 1.1,
-        color: '#FFF',
-        textAlign: 'center',
-        marginBottom: '24px',
-      }}
-    />
-
-    <Reveal delay={0.2}>
-      <p style={{ color: 'rgba(255,255,255,0.75)', fontSize: '1.2rem', maxWidth: '600px', margin: '0 auto 40px', lineHeight: 1.6 }}>
-        Step into the wild. Secure your legacy in the heart of nature. Schedule a site visit to walk the land and
-        understand the ecological principles driving this community.
-      </p>
-    </Reveal>
-
-    {/* Primary button: pulse ring + hover lift + light sweep */}
-    <Reveal delay={0.35} style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '44px' }}>
-      <motion.div
-        whileHover={{ y: -5, scale: 1.05 }}
-        whileTap={{ scale: 0.97 }}
-        animate={reduce ? undefined : { boxShadow: ['0 0 0 0 rgba(198,162,101,0.45)', '0 0 0 18px rgba(198,162,101,0)'] }}
-        transition={{ boxShadow: { duration: 2.4, repeat: Infinity, ease: 'easeOut' } }}
-        style={{ position: 'relative', overflow: 'hidden', borderRadius: '999px' }}
-      >
-        <Link href="/contact" className="btn-pill btn-pill-gold">
-          Schedule a Site Visit
-        </Link>
-        <motion.span
-          aria-hidden="true"
-          style={{
-            position: 'absolute', top: 0, bottom: 0, width: '40%', pointerEvents: 'none',
-            background: 'linear-gradient(100deg, transparent, rgba(255,255,255,0.45), transparent)',
-          }}
-          initial={{ left: '-60%' }}
-          animate={reduce ? undefined : { left: ['-60%', '130%'] }}
-          transition={{ duration: 2.2, delay: 1.5, repeat: Infinity, repeatDelay: 3, ease: 'easeInOut' }}
-        />
-      </motion.div>
-    </Reveal>
-
-    {/* Divider that grows from the centre */}
-    <motion.div
-      aria-hidden="true"
-      initial={{ scaleX: 0 }}
-      whileInView={{ scaleX: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1.2, delay: 0.3, ease: EASE }}
-      style={{
-        height: 1, maxWidth: 720, margin: '0 auto 32px', transformOrigin: 'center',
-        background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent)',
-      }}
-    />
-
-    {/* Contact items: staggered entrance + hover lift */}
-    <div style={{ display: 'flex', justifyContent: 'center', gap: '18px', flexWrap: 'wrap', color: '#FFF' }}>
-      {[
-        {
-          icon: 'fa-phone',
-          label: '080 47095111',
-          href: 'tel:+918047095111',
-          external: false,
-        },
-        {
-          icon: 'fa-location-dot',
-          label: 'View location on Google Maps',
-          href: 'https://maps.app.goo.gl/QT39pF4XsRq3YYHR6',
-          external: true,
-        },
-        {
-          icon: 'fa-globe',
-          label: 'Visit the AnantaVana website',
-          href: 'https://priyankadharemane-spec.github.io/Anantavana/',
-          external: true,
-        },
-      ].map((item, i) => (
-        <motion.a
-          key={item.icon}
-          href={item.href}
-          {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-          initial={reduce ? false : { opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.5 + i * 0.12, ease: EASE }}
-          whileHover={{ y: -6, borderColor: 'rgba(198,162,101,0.7)', backgroundColor: 'rgba(255,255,255,0.08)' }}
-          style={{
-            display: 'inline-flex', alignItems: 'center', gap: '14px',
-            padding: '14px 22px', borderRadius: '999px',
-            border: '1px solid rgba(255,255,255,0.15)',
-            background: 'rgba(255,255,255,0.03)',
-            color: '#FFF', textDecoration: 'none', fontSize: '1.05rem',
-          }}
-        >
-          {/* Icon with soft pulse ring */}
-          <span style={{ position: 'relative', display: 'inline-flex', width: 34, height: 34, alignItems: 'center', justifyContent: 'center' }}>
-            <motion.span
-              aria-hidden="true"
-              style={{ position: 'absolute', inset: 0, borderRadius: '50%', border: '1px solid var(--accent-gold)' }}
-              animate={reduce ? undefined : { scale: [1, 1.7], opacity: [0.7, 0] }}
-              transition={{ duration: 2.2, delay: i * 0.5, repeat: Infinity, ease: 'easeOut' }}
-            />
-            <i className={`fa-solid ${item.icon}`} style={{ color: 'var(--accent-gold)' }}></i>
-          </span>
-          <span>
-            {item.label}
-            {item.external && <span aria-hidden="true" style={{ marginLeft: 8, opacity: 0.7 }}>↗</span>}
-          </span>
-        </motion.a>
-      ))}
-    </div>
-  </div>
-</section>
-      
+    <section style={{ padding: 'clamp(60px, 8vh, 90px) 0', background: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', color: 'var(--bg-dark-forest)' }}>Discover Other Projects</h3>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
+            {[
+              { id: 'brindavana', name: 'BRINDAVANA', loc: 'Pavagada', img: '/assets/images/Project-Logos/BrindaVana.webp' },
+              { id: 'madhuvana', name: 'MADHUVANA', loc: 'Maddur', img: '/assets/images/Project-Logos/Logo-MadhuVana.svg' },
+              { id: 'eeshavana', name: 'EESHAVANA', loc: 'Kollegala', img: '/assets/images/Project-Logos/eeshavanaalogo.webp' }
+            ].map((p, i) => (
+              <Link key={p.id} href={`/${p.id}`} style={{ textDecoration: 'none', display: 'block' }}>
+                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                  style={{ background: 'var(--bg-cream)', borderRadius: '24px', padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '200px', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'transform 0.3s' }}
+                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '20px', fontWeight: 600 }}>{p.loc}</span>
+                  <img src={p.img} alt={p.name} style={{ maxHeight: '60px', maxWidth: '180px', objectFit: 'contain' }} />
+                </motion.div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </>

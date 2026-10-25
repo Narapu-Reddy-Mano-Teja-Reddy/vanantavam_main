@@ -214,38 +214,6 @@ export default function Projects() {
 
       <ProjectTunnel items={projects} />
 
-      <section style={{ padding: 'clamp(80px, 10vh, 120px) 0', background: '#F9F8F6' }}>
-        <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '60px', alignItems: 'center' }}>
-            <motion.div
-              initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-            >
-              <span style={{ color: 'var(--accent-gold)', fontSize: '0.9rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', display: 'block', marginBottom: '20px' }}>
-                EXPERIENCE THE LAND
-              </span>
-              <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2.5rem, 4vw, 3.2rem)', color: 'var(--bg-dark-forest)', lineHeight: 1.1, marginBottom: '30px', letterSpacing: '-0.02em' }}>
-                Immerse in Nature's Rhythm.
-              </h2>
-              <p style={{ fontSize: '1.15rem', color: 'var(--text-dark)', lineHeight: 1.8, marginBottom: '20px', fontWeight: 300 }}>
-                AtVanaTvam, land is just the beginning. Every farm plot is crafted as an enriching experience—an opportunity to reconnect with the earth and immerse in the natural rhythms of nature.
-              </p>
-              <p style={{ fontSize: '1.15rem', color: 'var(--text-dark)', lineHeight: 1.8, marginBottom: '20px', fontWeight: 300 }}>
-                When you own a farm plot inVanaTvam projects, you can enjoy stays in serene eco cottages, walk through verdant trails brimming with biodiversity, plant saplings to honour nature’s legacy, and experience vibrant cultural festivals that celebrate community, heritage, and sustainability.
-              </p>
-              <p style={{ fontSize: '1.25rem', color: 'var(--bg-dark-forest)', lineHeight: 1.8, fontWeight: 500 }}>
-               VanaTvam's farms aren’t just a place you buy, it's a life you experience.
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8 }}
-              style={{ borderRadius: '30px', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.04)' }}
-            >
-              <img src="/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.png" alt="Nature's Rhythm" style={{ width: '100%', height: '500px', objectFit: 'cover' }} />
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
 
       <Footer />
     </>

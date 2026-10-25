@@ -115,399 +115,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Founder Leadership Section */}
-      <section
-        style={{
-          padding: "clamp(90px, 12vh, 130px) 0",
-          background: "#122217",
-          color: "#FFFFFF",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "80px",
-              alignItems: "center",
-            }}
-          >
-            {/* Founder Visual Frame */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.94 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              style={{ flex: "1 1 420px", position: "relative" }}
-            >
-              <div
-                style={{
-                  borderRadius: "28px",
 
-                  boxShadow: "0 30px 70px rgba(0,0,0,0.5)",
-                  border: "1px solid rgba(255,255,255,0.1)",
-                }}
-              >
-                <img
-                  src="/assets/images/founder.png"
-                  alt="Founder leadership and land care"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </div>
 
-              {/* Floating Quote Badge */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "-25px",
-                  right: "-15px",
-                  background: "rgba(18,34,23,0.92)",
-                  backdropFilter: "blur(16px)",
-                  padding: "28px 32px",
-                  borderRadius: "20px",
-                  border: "1px solid rgba(198,162,101,0.4)",
-                  maxWidth: "320px",
-                  boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
-                }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "2rem",
-                    color: "var(--accent-gold)",
-                    lineHeight: 0.5,
-                    display: "block",
-                    marginBottom: "14px",
-                  }}
-                >
-                  &ldquo;
-                </span>
-                <p
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "1.18rem",
-                    fontStyle: "italic",
-                    margin: 0,
-                    lineHeight: 1.5,
-                    color: "#FFFFFF",
-                  }}
-                >
-                  When nature is nurtured, life flourishes in its purest form.
-                </p>
-                <div
-                  style={{
-                    marginTop: "12px",
-                    fontSize: "0.8rem",
-                    color: "var(--accent-gold)",
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    fontWeight: 600,
-                  }}
-                >
-                  — Deepak Kasthuri
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Founder Bio Column */}
-            <div style={{ flex: "1 1 500px" }}>
-              <span
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "0.82rem",
-                  letterSpacing: "0.22em",
-                  textTransform: "uppercase",
-                  fontWeight: 700,
-                  display: "block",
-                  marginBottom: "18px",
-                }}
-              >
-                FOUNDER &amp; MANAGING DIRECTOR
-              </span>
-
-              <h2
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.6rem, 5vw, 4rem)",
-                  color: "#FFFFFF",
-                  lineHeight: 1.12,
-                  letterSpacing: "-0.02em",
-                  fontWeight: 600,
-                  marginBottom: "20px",
-                }}
-              >
-                Deepak Kasthuri
-              </h2>
-
-              <p
-                style={{
-                  fontSize: "1.2rem",
-                  color: "var(--accent-gold)",
-                  fontFamily: "var(--font-serif)",
-                  fontStyle: "italic",
-                  marginBottom: "24px",
-                }}
-              >
-                Pioneering Karnataka&apos;s Nature-Led Managed Farmland Movement
-              </p>
-
-              <p
-                style={{
-                  fontSize: "1.12rem",
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: 1.8,
-                  marginBottom: "18px",
-                  fontWeight: 400,
-                }}
-              >
-                Driven by a profound reverence for India&apos;s sacred forestry
-                traditions, Deepak Kasthuri foundedVanaTvam to dismantle the
-                false boundary between urban families and the natural earth.
-              </p>
-
-              <p
-                style={{
-                  fontSize: "1.05rem",
-                  color: "rgba(255,255,255,0.7)",
-                  lineHeight: 1.8,
-                  marginBottom: "32px",
-                }}
-              >
-                Under his leadership,VanaTvam has transformed over 100 acres of
-                barren and depleted soil across Pavagada, Maddur, Kabini, and
-                Kollegala into biodiverse multi-canopy ecosystems. His
-                pioneering work unites regenerative permaculture, Vedic
-                forestry, and hassle-free managed land ownership.
-              </p>
-
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(2, 1fr)",
-                  gap: "24px",
-                  borderTop: "1px solid rgba(255,255,255,0.12)",
-                  paddingTop: "28px",
-                  marginBottom: "36px",
-                }}
-              >
-                <div>
-                  <span
-                    style={{
-                      fontSize: "0.78rem",
-                      color: "rgba(255,255,255,0.5)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      display: "block",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    Registered Entity
-                  </span>
-                  <strong
-                    style={{
-                      fontSize: "1.05rem",
-                      color: "#FFFFFF",
-                      fontWeight: 600,
-                    }}
-                  >
-                    VanaTvam Private Limited
-                  </strong>
-                </div>
-                <div>
-                  <span
-                    style={{
-                      fontSize: "0.78rem",
-                      color: "rgba(255,255,255,0.5)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      display: "block",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    Headquarters
-                  </span>
-                  <strong
-                    style={{
-                      fontSize: "1.05rem",
-                      color: "#FFFFFF",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Bengaluru, Karnataka
-                  </strong>
-                </div>
-              </div>
-
-              <Magnetic strength={0.25}>
-                <Link
-                  href="/founders-statement"
-                  className="btn-pill btn-pill-gold"
-                  style={{
-                    padding: "14px 32px",
-                    fontSize: "1rem",
-                    fontWeight: 700,
-                  }}
-                >
-                  Read Our Full Story <ArrowRight className="size-4" />
-                </Link>
-              </Magnetic>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Story Section */}
-      <section
-        style={{
-          padding: "clamp(90px, 12vh, 140px) 0",
-          background: "var(--bg-cream)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "80px",
-              alignItems: "center",
-            }}
-          >
-            <div style={{ flex: "1 1 400px", position: "relative" }}>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 40 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1] }}
-                style={{
-                  width: "100%",
-                  height: "600px",
-                  borderRadius: "30px",
-                  overflow: "hidden",
-                  boxShadow: "0 35px 70px rgba(0,0,0,0.12)",
-                }}
-              >
-                <motion.img
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.7, ease: "easeOut" }}
-                  src="/assets/project-images/Ananthavana/hero_image_2.jpg"
-                  alt="Forest walkway -VanaTvam"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-              </motion.div>
-
-               
-            </div>
-
-            <div style={{ flex: "1 1 500px" }}>
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  display: "block",
-                  marginBottom: "20px",
-                }}
-              >
-                Our Story & Founding Philosophy
-              </motion.span>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.15 }}
-              >
-                <h2
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "clamp(2.8rem, 4vw, 3.8rem)",
-                    color: "var(--bg-dark-forest)",
-                    lineHeight: 1.1,
-                    marginBottom: "30px",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  <RevealText>From a Vision to a</RevealText>
-                  <br />
-                  <RevealText delay={0.1}>Living Legacy.</RevealText>
-                </h2>
-              </motion.div>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.25 }}
-                style={{
-                  fontSize: "1.2rem",
-                  color: "var(--text-dark)",
-                  lineHeight: 1.8,
-                  marginBottom: "25px",
-                  fontWeight: 300,
-                }}
-              >
-                <strong
-                  style={{ color: "var(--bg-dark-forest)", fontWeight: 500 }}
-                >
-                  VanaTvam
-                </strong>
-                , in collaboration with Indus Herbs, is an organization of
-                passionate individuals who believe that farming and leisure must
-                be in harmony with nature. Our mission is to create Sustainable
-                Natural Farm Communities that connect us to our ancient cultural
-                traditions and revive them for future generations.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.35 }}
-                style={{
-                  fontSize: "1.2rem",
-                  color: "var(--text-dark)",
-                  lineHeight: 1.8,
-                  marginBottom: "25px",
-                  fontWeight: 300,
-                }}
-              >
-                AtVanaTvam, we believe in the power of Natural Sustainability to
-                create a better world. &ldquo;Natural Sustainable land
-                practices&rdquo; refers to the use and management of land
-                resources in a way that maintains productivity and benefits both
-                current and future generations. This preserves soil fertility,
-                conserves water resources, and protects biodiversity while
-                meeting our needs.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.45 }}
-                style={{
-                  fontSize: "1.2rem",
-                  color: "var(--text-dark)",
-                  lineHeight: 1.8,
-                  fontWeight: 300,
-                }}
-              >
-                We are not just a &ldquo;Farmland Developer&rdquo;. We
-                understand many would love to connect with nature and enjoy
-                living on their own farms, but face obstacles like lack of time
-                or farming knowledge. We are on a mission to change that—by
-                making owning a farm simple, meaningful, and fulfilling.
-              </motion.p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Personal Journey Section */}
       <section
@@ -587,7 +196,21 @@ export default function About() {
                 >
                   {paragraph}
                 </motion.p>
+
               ))}
+           <Magnetic strength={0.25}>
+                                <Link
+                                  href="/founders-statement"
+                                  className="btn-pill btn-pill-gold"
+                                  style={{
+                                    padding: "14px 32px",
+                                    fontSize: "1rem",
+                                    fontWeight: 700,
+                                  }}
+                                >
+                                  Read Our Full Story <ArrowRight className="size-4" />
+                                </Link>
+                              </Magnetic>
             </div>
 
           </div>
@@ -841,308 +464,252 @@ export default function About() {
         </div>
       </section>
 
-      {/* Ecosystem Section */}
-      <section
-        style={{
-          background: "#1B2B1F",
-          color: "#FFF",
-          padding: "clamp(90px, 12vh, 140px) 0",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{ display: "flex", flexDirection: "column", gap: "80px" }}
-          >
-            {/* Top Text Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9 }}
+      {/* Founder Leadership Section */}
+            <section
+              style={{
+                padding: "clamp(90px, 12vh, 130px) 0",
+                background: "#122217",
+                color: "#FFFFFF",
+                position: "relative",
+                overflow: "hidden",
+              }}
             >
-              <span
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  display: "block",
-                  marginBottom: "20px",
-                }}
-              >
-                Biodiversity by Design
-              </span>
-              <h2
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                  lineHeight: 1.1,
-                  letterSpacing: "-0.02em",
-                  marginBottom: "40px",
-                }}
-              >
-                We don't landscape.
-                <br />
-                <span
-                  style={{ color: "var(--accent-gold)", fontStyle: "italic" }}
+              <div className="container">
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "80px",
+                    alignItems: "center",
+                  }}
                 >
-                  We create ecosystems.
-                </span>
-              </h2>
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
-                  gap: "40px",
-                  fontSize: "1.15rem",
-                  color: "rgba(255,255,255,0.8)",
-                  lineHeight: 1.8,
-                  fontWeight: 300,
-                }}
-              >
-                <div>
-                  <p style={{ marginBottom: "20px" }}>
-                    A landscape can be designed.{" "}
-                    <strong>An ecosystem must be nurtured.</strong>
-                  </p>
-                  <p style={{ marginBottom: "20px" }}>
-                    At VanaTvam, we don't simply plant trees, create gardens or
-                    beautify land. We thoughtfully bring together{" "}
-                    <strong>
-                      trees, water, soil, native plants, birds, butterflies and
-                      natural habitats
-                    </strong>{" "}
-                    to create places where life can flourish.
-                  </p>
-                  <p>
-                    Our approach is rooted in{" "}
-                    <strong>
-                      India's ancient understanding of living with nature
-                    </strong>{" "}
-                    — from the wisdom documented in <em>Brihat Samhita</em> to
-                    traditions such as{" "}
-                    <strong>
-                      Vinayaka Vana, Rashi Vana and Navagraha Vana
-                    </strong>
-                    .
-                  </p>
-                </div>
-                <div>
-                  <div
-                    style={{
-                      padding: "30px",
-                      background: "rgba(255,255,255,0.03)",
-                      borderRadius: "20px",
-                      borderLeft: "4px solid var(--accent-gold)",
-                      marginBottom: "30px",
-                    }}
+                  {/* Founder Visual Frame */}
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.94 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    style={{ flex: "1 1 420px", position: "relative" }}
                   >
-                    <p
+                    <div
                       style={{
-                        margin: 0,
-                        fontStyle: "italic",
-                        color: "var(--accent-gold)",
-                        fontSize: "1.2rem",
-                        lineHeight: 1.6,
+                        borderRadius: "28px",
+
+                        boxShadow: "0 30px 70px rgba(0,0,0,0.5)",
+                        border: "1px solid rgba(255,255,255,0.1)",
                       }}
                     >
-                      Every tree has a purpose.
-                      <br />
-                      Every grove creates habitat.
-                      <br />
-                      Every water body supports life.
-                      <br />
-                      Every living element becomes part of a larger whole.
-                    </p>
-                  </div>
-                  <p style={{ marginBottom: "20px" }}>
-                    This is not landscaping. This is the patient work of
-                    creating a living, breathing ecosystem — one that grows
-                    richer with every passing year.
-                  </p>
-                  <p
-                    style={{
-                      fontSize: "1.25rem",
-                      fontWeight: 500,
-                      color: "#FFF",
-                    }}
-                  >
-                    Our belief: When nature thrives, people thrive too.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+                      <img
+                        src="/assets/images/founder.png"
+                        alt="Founder leadership and land care"
+                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                      />
+                    </div>
 
-            {/* Stats Grid with staggered entrances */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-                gap: "20px",
-              }}
-            >
-              {[
-                { value: "250+", label: "Tree Varieties" },
-                { value: "150+", label: "Rare & Endangered Species" },
-                { value: "20,000+", label: "Trees" },
-                { value: "60+", label: "Bird Species" },
-                { value: "150+", label: "Butterfly Species" },
-              ].map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.7,
-                    delay: i * 0.1,
-                    ease: [0.25, 1, 0.5, 1],
-                  }}
-                  whileHover={{
-                    y: -10,
-                    borderColor: "rgba(198,162,101,0.5)",
-                    background: "rgba(255,255,255,0.07)",
-                    transition: { duration: 0.3 },
-                  }}
-                  style={{
-                    background: "rgba(255,255,255,0.03)",
-                    padding: "40px 20px",
-                    borderRadius: "20px",
-                    border: "1px solid rgba(255,255,255,0.05)",
-                    textAlign: "center",
-                    cursor: "default",
-                  }}
-                >
-                  <div
-                    style={{
-                      fontSize: "2.5rem",
-                      fontFamily: "var(--font-serif)",
-                      color: "var(--accent-gold)",
-                      marginBottom: "10px",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {stat.value}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: "1rem",
-                      color: "rgba(255,255,255,0.7)",
-                      fontWeight: 500,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                    }}
-                  >
-                    {stat.label}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                    {/* Floating Quote Badge */}
+                    <div
+                      style={{
+                        position: "absolute",
+                        bottom: "-25px",
+                        right: "-15px",
+                        background: "rgba(18,34,23,0.92)",
+                        backdropFilter: "blur(16px)",
+                        padding: "28px 32px",
+                        borderRadius: "20px",
+                        border: "1px solid rgba(198,162,101,0.4)",
+                        maxWidth: "320px",
+                        boxShadow: "0 20px 40px rgba(0,0,0,0.4)",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: "var(--font-serif)",
+                          fontSize: "2rem",
+                          color: "var(--accent-gold)",
+                          lineHeight: 0.5,
+                          display: "block",
+                          marginBottom: "14px",
+                        }}
+                      >
+                        &ldquo;
+                      </span>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-serif)",
+                          fontSize: "1.18rem",
+                          fontStyle: "italic",
+                          margin: 0,
+                          lineHeight: 1.5,
+                          color: "#FFFFFF",
+                        }}
+                      >
+                        When nature is nurtured, life flourishes in its purest form.
+                      </p>
+                      <div
+                        style={{
+                          marginTop: "12px",
+                          fontSize: "0.8rem",
+                          color: "var(--accent-gold)",
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          fontWeight: 600,
+                        }}
+                      >
+                        — Deepak Kasthuri
+                      </div>
+                    </div>
+                  </motion.div>
 
-            {/* 2x2 Concept Grid with staggered entrances */}
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-                gap: "30px",
-              }}
-            >
-              {[
-                {
-                  title: "Nakshatra Vana",
-                  text: "Forests inspired by India's ancient connection between trees, nature, and the stars. A tranquil space for reflection.",
-                },
-                {
-                  title: "Navagraha Vana",
-                  text: "Thematic plantations rooted in India's traditional ecological knowledge, bringing balance to the environment.",
-                },
-                {
-                  title: "Soil & Water",
-                  text: "Engineered swales, rain catchments, and organic soil enrichment that continuously recharge groundwater levels.",
-                },
-                {
-                  title: "Self-Sustaining",
-                  text: "The ultimate objective is simple yet profound: Create an ecosystem that can naturally sustain and regenerate itself.",
-                },
-              ].map((concept, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.8,
-                    delay: i * 0.15,
-                    ease: [0.25, 1, 0.5, 1],
-                  }}
-                  whileHover={{
-                    y: -12,
-                    boxShadow: "0 30px 60px rgba(0,0,0,0.3)",
-                    borderColor: "rgba(198,162,101,0.4)",
-                    transition: { duration: 0.3 },
-                  }}
-                  style={{
-                    background: "#FFF",
-                    color: "var(--text-dark)",
-                    padding: "40px",
-                    borderRadius: "24px",
-                    textAlign: "center",
-                    boxShadow: "0 15px 35px rgba(0,0,0,0.1)",
-                    cursor: "pointer",
-                    border: "1px solid transparent",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "60px",
-                      height: "60px",
-                      borderRadius: "50%",
-                      background: "var(--bg-cream)",
-                      margin: "0 auto 20px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      color: "var(--accent-gold)",
-                      border: "1px solid rgba(198,162,101,0.2)",
-                    }}
-                  >
+                  {/* Founder Bio Column */}
+                  <div style={{ flex: "1 1 500px" }}>
                     <span
                       style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.2rem",
+                        color: "var(--accent-gold)",
+                        fontSize: "0.82rem",
+                        letterSpacing: "0.22em",
+                        textTransform: "uppercase",
+                        fontWeight: 700,
+                        display: "block",
+                        marginBottom: "18px",
                       }}
                     >
-                      0{i + 1}
+                      FOUNDER &amp; MANAGING DIRECTOR
                     </span>
+
+                    <h2
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "clamp(2.6rem, 5vw, 4rem)",
+                        color: "#FFFFFF",
+                        lineHeight: 1.12,
+                        letterSpacing: "-0.02em",
+                        fontWeight: 600,
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Deepak Kasthuri
+                    </h2>
+
+                    <p
+                      style={{
+                        fontSize: "1.2rem",
+                        color: "var(--accent-gold)",
+                        fontFamily: "var(--font-serif)",
+                        fontStyle: "italic",
+                        marginBottom: "24px",
+                      }}
+                    >
+                       Deepak Kasturi founded Vanatvam after nearly three decades in IT, working at Wipro, Infosys and Capgemini. He led international programmes for Fortune 500 clients and won recognition for large-scale delivery. That career taught him how to plan, execute, and hold a standard.
+                    </p>
+
+                    <p
+                      style={{
+                        fontSize: "1.12rem",
+                        color: "rgba(255,255,255,0.85)",
+                        lineHeight: 1.8,
+                        marginBottom: "18px",
+                        fontWeight: 400,
+                      }}
+                    >
+                      Deepak Kasturi founded Vanatvam after nearly three decades in IT, working at Wipro, Infosys and Capgemini. He led international programmes for Fortune 500 clients and won recognition for large-scale delivery. That career taught him how to plan, execute, and hold a standard.
+                    </p>
+
+                    <p
+                      style={{
+                        fontSize: "1.05rem",
+                        color: "rgba(255,255,255,0.7)",
+                        lineHeight: 1.8,
+                        marginBottom: "32px",
+                      }}
+                    >
+                      Vaishnavi Achar carried that same discipline into Brindavana. She managed the project on the ground, in the arid terrain of Pavagada, while Deepak stayed in his corporate role. Years of planting, learning, and adjusting taught her what it actually takes to grow something in difficult land — patience measured in seasons, not quarters.
+                    </p>
+                    <p
+                                    style={{
+                                      fontSize: "1.05rem",
+                                      color: "rgba(255,255,255,0.7)",
+                                      lineHeight: 1.8,
+                                      marginBottom: "32px",
+                                    }}
+                                  >
+                                    When Deepak eventually left his corporate career, he brought both halves together: the rigor of running global programmes and the patience of growing something from soil. That combination is Vanatvam’s foundation — natural farm communities that restore biodiversity, reconnect people with land, and bring like-minded people together.
+                                  </p>
+                    <p
+                                    style={{
+                                      fontSize: "1.05rem",
+                                      color: "rgba(255,255,255,0.7)",
+                                      lineHeight: 1.8,
+                                      marginBottom: "32px",
+                                    }}
+                                  >
+
+      Vaishnavi and Deepak want Vanatvam’s name to mean something: integrity, responsible development, a real commitment to the land and the people on it. For them, this isn’t a business venture. It’s a chance to put their values into something their children’s generation can still walk through.
+                                  </p>
+
+                    <div
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: "repeat(2, 1fr)",
+                        gap: "24px",
+                        borderTop: "1px solid rgba(255,255,255,0.12)",
+                        paddingTop: "28px",
+                        marginBottom: "36px",
+                      }}
+                    >
+                      <div>
+                        <span
+                          style={{
+                            fontSize: "0.78rem",
+                            color: "rgba(255,255,255,0.5)",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.1em",
+                            display: "block",
+                            marginBottom: "4px",
+                          }}
+                        >
+                          Registered Entity
+                        </span>
+                        <strong
+                          style={{
+                            fontSize: "1.05rem",
+                            color: "#FFFFFF",
+                            fontWeight: 600,
+                          }}
+                        >
+                          VanaTvam Private Limited
+                        </strong>
+                      </div>
+                      <div>
+                        <span
+                          style={{
+                            fontSize: "0.78rem",
+                            color: "rgba(255,255,255,0.5)",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.1em",
+                            display: "block",
+                            marginBottom: "4px",
+                          }}
+                        >
+                          Headquarters
+                        </span>
+                        <strong
+                          style={{
+                            fontSize: "1.05rem",
+                            color: "#FFFFFF",
+                            fontWeight: 600,
+                          }}
+                        >
+                          Bengaluru, Karnataka
+                        </strong>
+                      </div>
+                    </div>
+
+
                   </div>
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: "1.5rem",
-                      color: "var(--bg-dark-forest)",
-                      marginBottom: "15px",
-                    }}
-                  >
-                    {concept.title}
-                  </h3>
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      lineHeight: 1.6,
-                      fontSize: "0.95rem",
-                    }}
-                  >
-                    {concept.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+                </div>
+              </div>
+            </section>
+
 
       {/* Recognition Section */}
       {/* <section
