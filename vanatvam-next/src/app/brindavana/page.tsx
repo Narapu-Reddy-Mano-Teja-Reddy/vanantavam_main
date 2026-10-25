@@ -619,48 +619,69 @@ export default function Brindavana() {
                 </motion.div>
               </div>
               <div className="eeshavana-idea-copy">
-                <Kicker>The Brindavana idea</Kicker>
+                <Kicker>The Brindavana Story</Kicker>
                 <Words
-                  text="Where roots run deep and nature thrives."
+                  text="Brindavana — A Journey of Persistence"
                   style={{
                     fontFamily: "var(--font-serif)",
-                    fontSize: "clamp(2.2rem, 4.2vw, 4rem)",
-                    lineHeight: 1.1,
+                    fontSize: "clamp(2.2rem, 4vw, 3.6rem)",
+                    lineHeight: 1.12,
                     color: FOREST,
-                    marginBottom: "30px",
+                    marginBottom: "28px",
                   }}
                 />
                 <div
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    gap: "18px",
+                    gap: "16px",
                     color: "#4d594d",
-                    fontSize: "1.08rem",
+                    fontSize: "1.04rem",
                     lineHeight: 1.8,
                   }}
                 >
                   <Reveal delay={0.1}>
                     <p style={{ margin: 0 }}>
-                      A 30-acre story of land transformation. Nestled amidst Krishnapura in Pavagada Taluk, Brindavana by VanaTvam weaves ancient cultural wisdom with organic agroforestry to nurture a flourishing ecosystem.
+                      Krishnapura, Pavagada, holds a special place in our founders’ family history. Established by their ancestors in 1823, over 200 years ago, the village is where their family roots run deep. Their father and uncles were born here, and the family has continued its involvement in rural development to nurture their ancestral village.
                     </p>
                   </Reveal>
+
+                  <Reveal delay={0.15}>
+                    <p style={{ margin: 0 }}>
+                      During their visits, they noticed vast stretches of dry land covered with Bellary Jaali (thorny bushes), with very few trees and almost no shade. When they asked villagers why trees were not being grown, the answer was always the same: “Trees don’t grow here.”
+                    </p>
+                  </Reveal>
+
                   <Reveal delay={0.2}>
                     <p style={{ margin: 0 }}>
-                      Meticulously revived through years of chemical-free care, the soil has been nurtured back to abundant health — creating a natural foundation for 85%+ native forest cover and sacred groves like Nakshatra Vana.
+                      Rather than accept this, they decided to try. In 2007, they acquired approximately 25 acres at Krishnapura and began planting trees, determined to see what was possible.
                     </p>
                   </Reveal>
+
+                  <Reveal delay={0.25}>
+                    <p style={{ margin: 0 }}>
+                      The journey was far from easy. Harsh summers, scanty rainfall, shallow bedrock and highly alkaline soils presented persistent challenges. Through years of planting, learning and trying again, they continued to work with the land.
+                    </p>
+                  </Reveal>
+
                   <Reveal delay={0.3}>
                     <p style={{ margin: 0 }}>
-                      Therapeutic farming &amp; family sanctuary: Brindavana provides a peaceful haven for families to escape city noise, reconnect with the earth, and belong to a community of like-minded eco-conscious owners.
+                      Brindavana is the result of nearly two decades of persistence and learning — an ongoing effort to demonstrate that even a harsh, arid landscape can support thriving tree cover when nurtured with patience and care.
+                    </p>
+                  </Reveal>
+
+                  <Reveal delay={0.35}>
+                    <p style={{ margin: 0 }}>
+                      What began as a commitment to their ancestral village has become an important part of Vanatvam’s journey in ecological restoration, showing that meaningful change begins when we challenge what others believe is impossible.
                     </p>
                   </Reveal>
                 </div>
-                <div className="eeshavana-pills">
+
+                <div className="eeshavana-pills" style={{ marginTop: "24px" }}>
                   {[
-                    "30-Acre Revived Farmland",
-                    "Nakshatra Vana Sacred Forest",
-                    "Therapeutic Organic Farming",
+                    "200+ Years Ancestral Heritage",
+                    "20 Years of Persistence",
+                    "Ecological Restoration",
                   ].map((item, index) => (
                     <Reveal key={item} delay={0.12 + index * 0.06}>
                       <span className="eeshavana-pill">{item}</span>
