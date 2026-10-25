@@ -503,7 +503,7 @@ const landscape: Pillar[] = [
 
 const amenities = [
   {
-    image: "/assets/project-images/Ananthavana/CommonSpace.png",
+    image: "/assets/project-images/Ananthavana/Common.png",
     name: "20%+ Common Spaces",
     desc: "Open areas to gather, unwind and connect.",
   },
