@@ -320,8 +320,8 @@ const amenities = [
   },
   {
     letter: "C",
-    name: "Eco Mud House",
-    desc: "Traditional eco-friendly mud house built with sustainable earth blocks.",
+    name: "Gazebo",
+    desc: "Traditional eco-friendly Gazebo house built with sustainable earth blocks.",
     img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.png",
   },
   {
@@ -340,7 +340,7 @@ const amenities = [
     letter: "F",
     name: "Elevated Tree House",
     desc: "Wooden tree house perched amidst ancient canopy trees.",
-    img: "/assets/project-images/Maduvana/72b47d11-1784-4ca8-bcad-b18bdfe4c679.png",
+    img: "/assets/project-images/Maduvana/MV Tree House.jpeg",
   },
  
 ];

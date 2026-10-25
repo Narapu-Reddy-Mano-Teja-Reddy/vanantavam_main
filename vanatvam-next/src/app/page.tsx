@@ -1332,82 +1332,34 @@ export default function Home() {
                 {lifeAtVanatvamPolaroids.map((item) => (
                   <motion.div
                     key={item.id + rep}
-                    whileHover={{ y: -8, scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
+                    whileHover={{ y: -8, scale: 1.03 }}
+                    transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     style={{
-                      width: "340px",
+                      width: "360px",
+                      height: "250px",
                       flexShrink: 0,
                       borderRadius: "20px",
                       overflow: "hidden",
-                      background: "#FAF9F5",
-                      boxShadow: "0 20px 45px rgba(0,0,0,0.4)",
-                      padding: "16px 16px 20px",
-                      display: "flex",
-                      flexDirection: "column",
-                      border: "1px solid rgba(255,255,255,0.1)",
+                      boxShadow: "0 16px 40px rgba(0,0,0,0.4)",
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      position: "relative",
+                      background: "#1E352F",
+                      cursor: "pointer",
                     }}
                   >
-                    <div
+                    <motion.img
+                      src={item.img}
+                      alt={item.title}
+                      loading="lazy"
+                      whileHover={{ scale: 1.06 }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       style={{
-                        position: "relative",
                         width: "100%",
-                        height: "250px",
-                        borderRadius: "14px",
-                        overflow: "hidden",
-                        marginBottom: "16px",
-                        background: "#EBE8DF",
+                        height: "100%",
+                        objectFit: "cover",
+                        display: "block",
                       }}
-                    >
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        loading="lazy"
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "cover",
-                          display: "block",
-                        }}
-                      />
-                    </div>
-
-                    <div style={{ padding: "0 4px" }}>
-                      <span
-                        style={{
-                          fontSize: "0.72rem",
-                          fontWeight: 700,
-                          letterSpacing: "0.15em",
-                          color: "#987443",
-                          textTransform: "uppercase",
-                          display: "block",
-                          marginBottom: "6px",
-                        }}
-                      >
-                        {item.caption}
-                      </span>
-                      <h3
-                        style={{
-                          fontFamily: "var(--font-serif)",
-                          fontSize: "1.3rem",
-                          color: "#183023",
-                          margin: "0 0 8px",
-                          fontWeight: 600,
-                          lineHeight: 1.2,
-                        }}
-                      >
-                        {item.title}
-                      </h3>
-                      <p
-                        style={{
-                          fontSize: "0.88rem",
-                          color: "#5A685E",
-                          margin: 0,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        {item.subtitle}
-                      </p>
-                    </div>
+                    />
                   </motion.div>
                 ))}
               </div>
