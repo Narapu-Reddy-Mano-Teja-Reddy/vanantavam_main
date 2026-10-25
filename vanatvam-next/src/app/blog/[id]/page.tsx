@@ -1,169 +1,830 @@
-'use client';
-import { motion } from 'framer-motion';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { blogsData, getBlogById } from '@/data/blogs';
+import TableOfContents from '../components/TableOfContents';
 
-export default function BlogPost() {
-  const params = useParams();
-  const id = params.id as string;
+export async function generateStaticParams() {
+  return blogsData.map((blog) => ({
+    id: blog.id,
+  }));
+}
 
-  const blogs: Record<string, any> = {
-    'redefining-farmland-ownership': {
-      title: 'HowVanaTvam is Redefining Farmland Ownership with a Natural & Sustainable Approach',
-      date: 'January 12, 2026',
-      author: 'Vanatvam Ecological Team',
-      img: '/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.png',
-      category: 'Ecology',
-      content: (
-        <>
-          <p>For decades, purchasing agricultural land was seen purely as a financial investment—a piece of earth to hold onto until its value increased. However, this traditional model often leads to neglected plots, monoculture farming, or complete ecological degradation. AtVanaTvam, we are fundamentally redefining what it means to own farmland.</p>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>From Ownership to Custodianship</h3>
-          <p>When you purchase a plot in aVanaTvam community, you aren't just buying land; you are becoming a custodian of a living ecosystem. We shift the paradigm from resource extraction to ecological restoration. This means implementing deep water trenching, soil regeneration protocols, and strict guidelines against chemical fertilizers.</p>
-          
-          <img src="/assets/project-images/Brindavana/Farmer Tending Lush Seedlings.png" alt="Seedling" style={{ width: '100%', borderRadius: '16px', margin: '40px 0', boxShadow: '0 10px 30px rgba(0,0,0,0.08)' }} />
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>The Power of Managed Sustainability</h3>
-          <p>The primary hurdle for urban individuals wanting to own farmland is maintenance. How do you manage a farm when you live in a city? Our managed farmland model completely removes this friction. Our team of ecologists, agriculturists, and local farmers handle the day-to-day operations—from planting native canopy trees to harvesting organic produce.</p>
-        </>
-      )
-    },
-    'wellness-benefits-nature': {
-      title: 'The Wellness Benefits of Living Close to Nature: A Guide for Modern Families',
-      date: 'December 05, 2025',
-      author: 'Dr. Vivek Sharma',
-      img: '/assets/project-images/Ananthavana/hero_image.jpg',
-      category: 'Wellness',
-      content: (
-        <>
-          <p>In our hyper-connected, concrete-heavy modern lives, the human nervous system is in a constant state of low-grade stress. The antidote, it turns out, is not a new wellness app, but something our ancestors knew intimately: deep, uninterrupted time in nature.</p>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>The Science of Phytoncides</h3>
-          <p>When you walk through communities like Anantavana or Brindavana, you are breathing in phytoncides—antimicrobial essential oils emitted by trees to protect themselves from insects and rot. Studies show that inhaling these organic compounds significantly decreases cortisol levels, lowers blood pressure, and boosts the activity of white blood cells.</p>
-          
-          <blockquote style={{ borderLeft: '3px solid var(--accent-gold)', paddingLeft: '24px', margin: '40px 0', fontSize: '1.4rem', fontFamily: 'var(--font-serif)', fontStyle: 'italic', color: 'var(--bg-dark-forest)', lineHeight: 1.6 }}>
-            "We are not apart from nature; we are a part of it. When we return to the forest, our bodies biochemically recognize that we have come home."
-          </blockquote>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>Rewilding Childhood</h3>
-          <p>For children growing up today, structured outdoor time is rare. Natural farm communities provide a safe, unbounded environment for children to engage in 'free play'. This type of unstructured interaction with soil, plants, and water is crucial for cognitive development and building robust immune systems.</p>
-        </>
-      )
-    },
-    'sustainable-farmland-future': {
-      title: 'Why Sustainable Farmland is the Future of Real Estate in India',
-      date: 'November 22, 2025',
-      author: 'Vanatvam Research',
-      img: '/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png',
-      category: 'Investment',
-      content: (
-        <>
-          <p>The real estate landscape in India is undergoing a massive shift. As urban centers become saturated and pollution levels rise, High Net Worth Individuals (HNIs) and urban professionals are looking beyond city limits—not just for weekend homes, but for secure, inflation-hedging assets.</p>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>The Mathematics of Managed Farmland</h3>
-          <p>Unlike commercial real estate which is subject to market volatility and high maintenance overheads, agricultural land in strategic corridors (like the Kabini or Nandi Hills belts) has historically appreciated steadily. When combined with a managed model, the asset generates passive agricultural yield while the land value compounds.</p>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>Ecological Equity</h3>
-          <p>What setsVanaTvam apart is the concept of 'Ecological Equity'. A barren piece of land has a certain value. But a piece of land that has been scientifically reforested, with active water tables, rich topsoil, and mature fruit-bearing trees, commands a significant premium. We build wealth by building the ecosystem.</p>
-        </>
-      )
-    },
-    'madhuvana-sacred-groves': {
-      title: 'Sacred Groves, Eternal Harmony: How Madhuvana Revives India’s Soul',
-      date: 'October 15, 2025',
-      author: 'Vanatvam Heritage Team',
-      img: '/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.png',
-      category: 'Heritage',
-      content: (
-        <>
-          <p>In traditional Indian ecology, a 'Vana' (forest) is not just a collection of trees; it is a sacred space. Ancient texts like the Brihat Samhita meticulously detail the relationships between specific plant species, cosmic energies, and human well-being. Project Madhuvana is a modern homage to this ancient science.</p>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>The Architecture of a Sacred Grove</h3>
-          <p>At the heart of Madhuvana lies the integration of specialized groves like the Nakshatra Vana and Navagraha Vana. By planting 27 specific species of trees corresponding to the 27 constellations, we create a highly resilient micro-forest. Because these species have vastly different root depths and leaf structures, they thrive together without competing for the same soil nutrients.</p>
-          
-          <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.8rem', color: 'var(--bg-dark-forest)', marginTop: '40px', marginBottom: '20px' }}>Beyond Aesthetics</h3>
-          <p>This is not landscaping; this is ecological engineering. The diverse flora attracts specific endemic bird species and critical pollinators. The dense canopy lowers the ambient temperature by several degrees, creating a self-sustaining micro-climate that honors India's deep ecological heritage.</p>
-        </>
-      )
-    }
-  };
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .replace(/<[^>]*>/g, '')
+    .replace(/[^\w\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-');
+}
 
-  const blog = blogs[id];
+export default async function BlogPost({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const blog = getBlogById(id);
 
   if (!blog) {
-    return (
-      <>
-        <Navigation />
-        <div style={{ height: '70vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--bg-cream)' }}>
-          <div style={{ textAlign: 'center' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 3.0vw, 3.0rem)', color: 'var(--bg-dark-forest)' }}>Article Not Found</h1>
-            <Link href="/blog" className="btn-pill btn-pill-dark" style={{ marginTop: '20px' }}>Back to Journal</Link>
-          </div>
-        </div>
-        <Footer />
-      </>
-    );
+    notFound();
   }
+
+  // Related posts (excluding current)
+  const relatedPosts = blogsData
+    .filter((b) => b.id !== blog.id)
+    .slice(0, 3);
+
+  // Extract headings for Table of Contents
+  const headings = blog.contentBlocks
+    .filter((b) => (b.type === 'h3' || b.type === 'h4') && b.text)
+    .map((b, i) => {
+      const cleanText = (b.text || '').replace(/<[^>]*>/g, '');
+      return {
+        id: `heading-${i}-${slugify(cleanText).slice(0, 25)}`,
+        text: cleanText,
+        level: b.type as 'h3' | 'h4',
+      };
+    });
+
+  let headingCounter = 0;
+
+  // Approximate reading time
+  const totalWords = blog.contentBlocks.reduce((acc, b) => {
+    return acc + (b.text ? b.text.split(' ').length : 0);
+  }, 0);
+  const readTimeMinutes = Math.max(2, Math.ceil(totalWords / 200));
 
   return (
     <>
       <Navigation />
 
-      <article style={{ background: 'var(--bg-cream)', paddingBottom: '120px' }}>
-        <header style={{ minHeight: '60vh', position: 'relative', display: 'flex', alignItems: 'flex-end', paddingTop: '180px', paddingBottom: '60px' }}>
-          <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-            <img src={blog.img} alt={blog.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(18,34,23,0.7) 0%, rgba(18,34,23,0.95) 100%)' }}></div>
+      <article style={{ background: 'var(--bg-cream, #F9F8F6)', paddingBottom: '100px' }}>
+        {/* Atmospheric Full-Image Hero Section */}
+        <header
+          style={{
+            position: 'relative',
+            minHeight: 'clamp(460px, 58vh, 600px)',
+            display: 'flex',
+            alignItems: 'flex-end',
+            paddingTop: 'clamp(150px, 18vh, 190px)',
+            paddingBottom: 'clamp(55px, 8vh, 75px)',
+            backgroundColor: '#0D1A10',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Background Image with Cinematic Depth Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              zIndex: 0,
+            }}
+          >
+            <Image
+              src={blog.img}
+              alt={blog.title}
+              fill
+              priority
+              style={{
+                objectFit: 'cover',
+                objectPosition: 'center 35%',
+                transform: 'scale(1.02)',
+              }}
+            />
+            {/* Multi-stop cinematic gradient to ensure crisp readability */}
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background:
+                  'linear-gradient(180deg, rgba(13, 26, 16, 0.55) 0%, rgba(13, 26, 16, 0.72) 45%, rgba(13, 26, 16, 0.94) 85%, #0E1A12 100%)',
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                background:
+                  'radial-gradient(ellipse at 20% 50%, rgba(198, 162, 101, 0.12) 0%, transparent 60%)',
+                pointerEvents: 'none',
+              }}
+            />
           </div>
-          
-          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-              <span style={{ display: 'inline-block', background: 'var(--accent-gold)', color: '#122217', padding: '6px 16px', borderRadius: '30px', fontSize: '0.85rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '25px' }}>
+
+          <div
+            className="container"
+            style={{
+              position: 'relative',
+              zIndex: 1,
+              maxWidth: '1280px',
+              margin: '0 auto',
+              padding: '0 28px',
+              width: '100%',
+            }}
+          >
+            {/* Breadcrumbs */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '10px',
+                fontSize: '0.86rem',
+                color: 'rgba(255, 255, 255, 0.7)',
+                marginBottom: '20px',
+                flexWrap: 'wrap',
+              }}
+            >
+              <Link href="/" style={{ color: 'rgba(255, 255, 255, 0.75)', textDecoration: 'none' }}>
+                Home
+              </Link>
+              <span style={{ opacity: 0.5 }}>/</span>
+              <Link href="/blog" style={{ color: 'rgba(255, 255, 255, 0.75)', textDecoration: 'none' }}>
+                Journal
+              </Link>
+              <span style={{ opacity: 0.5 }}>/</span>
+              <span style={{ color: 'var(--accent-gold, #C6A265)', fontWeight: 500 }}>{blog.category}</span>
+            </div>
+
+            {/* Meta Pill: Category + Read Time */}
+            <div
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '22px',
+                flexWrap: 'wrap',
+                background: 'rgba(255, 255, 255, 0.08)',
+                padding: '6px 16px 6px 6px',
+                borderRadius: '999px',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.12)',
+              }}
+            >
+              <span
+                style={{
+                  display: 'inline-block',
+                  background: 'var(--accent-gold, #C6A265)',
+                  color: '#122217',
+                  padding: '5px 14px',
+                  borderRadius: '999px',
+                  fontSize: '0.74rem',
+                  fontWeight: 700,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                }}
+              >
                 {blog.category}
               </span>
-              <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(2rem, 5vw, 3.5rem)', color: '#FFF', lineHeight: 1.3, maxWidth: '900px', marginBottom: '25px', wordWrap: 'break-word' }}>
-                {blog.title}
-              </h1>
-              <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1.1rem', display: 'flex', gap: '20px', alignItems: 'center' }}>
-                <span>{blog.date}</span>
-                <span style={{ width: '5px', height: '5px', background: 'var(--accent-gold)', borderRadius: '50%' }}></span>
-                <span>By {blog.author}</span>
+              <span
+                style={{
+                  color: 'rgba(255, 255, 255, 0.88)',
+                  fontSize: '0.84rem',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontWeight: 500,
+                }}
+              >
+                <span>⏱</span> {readTimeMinutes} min read
+              </span>
+            </div>
+
+            {/* Expansive, Elegant Title */}
+            <h1
+              style={{
+                fontFamily: 'var(--font-serif)',
+                fontSize: 'clamp(2.1rem, 3.8vw, 3.4rem)',
+                color: '#FFFFFF',
+                lineHeight: 1.2,
+                maxWidth: '1120px',
+                marginBottom: '24px',
+                letterSpacing: '-0.02em',
+                fontWeight: 600,
+                textShadow: '0 4px 20px rgba(0, 0, 0, 0.35)',
+              }}
+            >
+              {blog.title}
+            </h1>
+
+            {/* Author, Date & Editorial Info */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '16px',
+                color: 'rgba(255, 255, 255, 0.85)',
+                fontSize: '0.95rem',
+                flexWrap: 'wrap',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span
+                  style={{
+                    width: '32px',
+                    height: '32px',
+                    borderRadius: '50%',
+                    backgroundColor: 'rgba(198, 162, 101, 0.25)',
+                    border: '1px solid rgba(198, 162, 101, 0.5)',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--accent-gold, #C6A265)',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                  }}
+                >
+                  VT
+                </span>
+                <span style={{ fontWeight: 600, color: '#FFFFFF' }}>{blog.author}</span>
               </div>
-            </motion.div>
+              <span
+                style={{
+                  width: '4px',
+                  height: '4px',
+                  background: 'var(--accent-gold, #C6A265)',
+                  borderRadius: '50%',
+                }}
+              />
+              <span>{blog.date}</span>
+              <span
+                style={{
+                  width: '4px',
+                  height: '4px',
+                  background: 'rgba(255, 255, 255, 0.4)',
+                  borderRadius: '50%',
+                }}
+              />
+              <span style={{ color: 'rgba(255, 255, 255, 0.7)' }}>Vanatvam Journal</span>
+            </div>
           </div>
         </header>
 
-        <div className="container" style={{ marginTop: '80px', maxWidth: '900px' }}>
-          <div style={{ background: '#FFF', padding: 'clamp(30px, 5vw, 60px) clamp(20px, 5vw, 80px)', borderRadius: '30px', boxShadow: '0 20px 40px rgba(0,0,0,0.04)', border: '1px solid rgba(0,0,0,0.03)' }}>
-            <motion.div 
-              initial={{ opacity: 0 }} 
-              animate={{ opacity: 1 }} 
-              transition={{ delay: 0.3 }}
-              style={{ fontSize: '1.25rem', color: 'var(--text-dark)', lineHeight: 1.9, fontWeight: 300 }}
-              className="blog-content"
+        {/* 2-Column Layout: Main Content (Left) + Sidebar (Right) */}
+        <div
+          className="container"
+          style={{
+            maxWidth: '1280px',
+            margin: '40px auto 0',
+            padding: '0 24px',
+          }}
+        >
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'minmax(0, 1fr) 360px',
+              gap: '40px',
+              alignItems: 'start',
+            }}
+            className="blog-detail-grid"
+          >
+            {/* Left Column: Article Core */}
+            <main
+              style={{
+                background: '#FFFFFF',
+                borderRadius: '24px',
+                padding: 'clamp(28px, 4.5vw, 52px)',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.04)',
+                border: '1px solid rgba(40, 44, 39, 0.06)',
+                overflow: 'hidden',
+              }}
             >
-              {blog.content}
-            </motion.div>
+              {/* Featured 1x1 Image */}
+              <div
+                style={{
+                  position: 'relative',
+                  width: '100%',
+                  aspectRatio: '1 / 1',
+                  maxHeight: '480px',
+                  borderRadius: '18px',
+                  overflow: 'hidden',
+                  marginBottom: '36px',
+                  boxShadow: '0 10px 24px rgba(0, 0, 0, 0.06)',
+                  backgroundColor: '#16261B',
+                }}
+              >
+                <Image
+                  src={blog.img}
+                  alt={blog.title}
+                  fill
+                  priority
+                  style={{ objectFit: 'cover' }}
+                />
+              </div>
 
-            <div style={{ marginTop: '60px', paddingTop: '40px', borderTop: '1px solid var(--border-light)' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', background: 'var(--bg-cream)', padding: '30px', borderRadius: '20px' }}>
-                <span style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', fontWeight: 600 }}>Written By</span>
-                <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--bg-dark-forest)', margin: '0' }}>{blog.author}</h3>
-                <p style={{ fontSize: '1rem', color: 'var(--text-muted)', lineHeight: 1.6, margin: 0 }}>
-                  A core part of theVanaTvam team dedicated to ecological restoration, sustainable design, and preserving indigenous knowledge.
+              {/* Dynamic Content Blocks */}
+              <div
+                className="blog-content"
+                style={{
+                  fontSize: '1.14rem',
+                  color: '#282C27',
+                  lineHeight: 1.85,
+                  fontWeight: 300,
+                }}
+              >
+                {blog.contentBlocks.map((block, idx) => {
+                  if (block.type === 'h3') {
+                    const headingId = headings[headingCounter]?.id || `heading-${idx}`;
+                    headingCounter++;
+                    return (
+                      <h3
+                        id={headingId}
+                        key={idx}
+                        style={{
+                          fontFamily: 'var(--font-serif)',
+                          fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)',
+                          color: 'var(--bg-dark-forest, #122217)',
+                          marginTop: '40px',
+                          marginBottom: '16px',
+                          lineHeight: 1.3,
+                          fontWeight: 600,
+                          scrollMarginTop: '100px',
+                        }}
+                        dangerouslySetInnerHTML={{ __html: block.text || '' }}
+                      />
+                    );
+                  }
+                  if (block.type === 'h4') {
+                    const headingId = headings[headingCounter]?.id || `heading-${idx}`;
+                    headingCounter++;
+                    return (
+                      <h4
+                        id={headingId}
+                        key={idx}
+                        style={{
+                          fontFamily: 'var(--font-serif)',
+                          fontSize: '1.24rem',
+                          color: 'var(--brand-earth-brown, #72351C)',
+                          marginTop: '28px',
+                          marginBottom: '12px',
+                          lineHeight: 1.35,
+                          fontWeight: 600,
+                          scrollMarginTop: '100px',
+                        }}
+                        dangerouslySetInnerHTML={{ __html: block.text || '' }}
+                      />
+                    );
+                  }
+                  if (block.type === 'quote') {
+                    return (
+                      <blockquote
+                        key={idx}
+                        style={{
+                          borderLeft: '4px solid var(--accent-gold, #C6A265)',
+                          backgroundColor: 'var(--bg-cream, #F9F8F6)',
+                          padding: '22px 28px',
+                          borderRadius: '0 14px 14px 0',
+                          margin: '32px 0',
+                          fontSize: '1.2rem',
+                          fontFamily: 'var(--font-serif)',
+                          fontStyle: 'italic',
+                          color: 'var(--bg-dark-forest, #122217)',
+                          lineHeight: 1.6,
+                        }}
+                        dangerouslySetInnerHTML={{ __html: block.text || '' }}
+                      />
+                    );
+                  }
+                  if (block.type === 'img' && block.src) {
+                    return (
+                      <div
+                        key={idx}
+                        style={{
+                          position: 'relative',
+                          width: '100%',
+                          height: '380px',
+                          borderRadius: '16px',
+                          overflow: 'hidden',
+                          margin: '36px 0',
+                          boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)',
+                        }}
+                      >
+                        <Image
+                          src={block.src}
+                          alt={block.alt || 'Vanatvam blog visual'}
+                          fill
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
+                    );
+                  }
+                  return (
+                    <p
+                      key={idx}
+                      style={{ marginBottom: '20px' }}
+                      dangerouslySetInnerHTML={{ __html: block.text || '' }}
+                    />
+                  );
+                })}
+              </div>
+
+              {/* Author Box */}
+              <div
+                style={{
+                  marginTop: '48px',
+                  paddingTop: '32px',
+                  borderTop: '1px solid rgba(40, 44, 39, 0.08)',
+                }}
+              >
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '18px',
+                    background: 'var(--bg-cream, #F9F8F6)',
+                    padding: '24px 28px',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(40, 44, 39, 0.05)',
+                  }}
+                >
+                  <div
+                    style={{
+                      width: '48px',
+                      height: '48px',
+                      borderRadius: '50%',
+                      backgroundColor: 'var(--bg-dark-forest, #122217)',
+                      color: 'var(--accent-gold, #C6A265)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      fontFamily: 'var(--font-serif)',
+                      fontWeight: 700,
+                      fontSize: '1.1rem',
+                      flexShrink: 0,
+                    }}
+                  >
+                    V
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '0.74rem',
+                        color: 'var(--text-muted, #687B63)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.12em',
+                        fontWeight: 700,
+                        marginBottom: '4px',
+                      }}
+                    >
+                      WRITTEN BY
+                    </span>
+                    <h3
+                      style={{
+                        fontFamily: 'var(--font-serif)',
+                        fontSize: '1.35rem',
+                        color: 'var(--bg-dark-forest, #122217)',
+                        margin: '0 0 6px',
+                      }}
+                    >
+                      {blog.author}
+                    </h3>
+                    <p style={{ fontSize: '0.94rem', color: '#556056', lineHeight: 1.6, margin: 0 }}>
+                      Part of the Vanatvam research and ecological team dedicated to agro-ecological
+                      restoration, biodiversity by design, and Vedic forest science.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Back Link */}
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    marginTop: '32px',
+                    flexWrap: 'wrap',
+                    gap: '16px',
+                  }}
+                >
+                  <Link
+                    href="/blog"
+                    style={{
+                      color: 'var(--bg-dark-forest, #122217)',
+                      textDecoration: 'none',
+                      fontWeight: 700,
+                      fontSize: '0.95rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                    }}
+                  >
+                    ← Back to All Articles
+                  </Link>
+                  <Link
+                    href="/contact"
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      backgroundColor: 'var(--brand-earth-brown, #72351C)',
+                      color: '#FFFFFF',
+                      padding: '10px 22px',
+                      borderRadius: '999px',
+                      fontSize: '0.86rem',
+                      fontWeight: 600,
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Discuss Farmland Ownership →
+                  </Link>
+                </div>
+              </div>
+            </main>
+
+            {/* Right Column: Sticky Sidebar with Table of Contents & Widgets */}
+            <aside
+              style={{
+                position: 'sticky',
+                top: '100px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px',
+              }}
+            >
+              {/* Table of Contents Widget */}
+              {headings.length > 0 && <TableOfContents headings={headings} />}
+
+              {/* Consultation / CTA Card */}
+              <div
+                style={{
+                  background: 'linear-gradient(135deg, #122217 0%, #1A2E20 100%)',
+                  borderRadius: '20px',
+                  padding: '28px 24px',
+                  color: '#FFFFFF',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  boxShadow: '0 12px 30px rgba(18, 34, 23, 0.12)',
+                }}
+              >
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: '-30px',
+                    right: '-30px',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(198, 162, 101, 0.2) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                  }}
+                />
+                <span
+                  style={{
+                    color: 'var(--accent-gold, #C6A265)',
+                    fontSize: '0.74rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    display: 'block',
+                    marginBottom: '8px',
+                  }}
+                >
+                  DISCOVER VANATVAM
+                </span>
+                <h4
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '1.38rem',
+                    lineHeight: 1.3,
+                    color: '#FFFFFF',
+                    marginBottom: '10px',
+                  }}
+                >
+                  Experience Managed Farmland Firsthand
+                </h4>
+                <p
+                  style={{
+                    fontSize: '0.9rem',
+                    color: 'rgba(255, 255, 255, 0.82)',
+                    lineHeight: 1.6,
+                    marginBottom: '20px',
+                  }}
+                >
+                  Schedule a private visit to our nature-first communities across Karnataka. Walk the
+                  soil, sacred groves, and experience living in rhythm with nature.
                 </p>
+                <Link
+                  href="/book-a-visit"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '8px',
+                    width: '100%',
+                    backgroundColor: 'var(--accent-gold, #C6A265)',
+                    color: '#122217',
+                    padding: '12px 20px',
+                    borderRadius: '999px',
+                    fontSize: '0.88rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.04em',
+                    textDecoration: 'none',
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  Book a Site Visit →
+                </Link>
               </div>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '40px' }}>
-                <Link href="/blog" style={{ color: 'var(--bg-dark-forest)', textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', fontSize: '1.1rem' }}>
-                  <i className="fa-solid fa-arrow-left" style={{ marginRight: '12px' }}></i> Back to Journal
-                </Link>
-                <Link href="/projects" className="btn-pill btn-pill-gold">
-                  Explore Projects
-                </Link>
+              {/* Curated Projects Widget */}
+              <div
+                style={{
+                  background: '#FFFFFF',
+                  borderRadius: '20px',
+                  padding: '24px 22px',
+                  border: '1px solid rgba(40, 44, 39, 0.08)',
+                  boxShadow: '0 8px 24px rgba(0, 0, 0, 0.03)',
+                }}
+              >
+                <h4
+                  style={{
+                    fontSize: '0.82rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: 'var(--bg-dark-forest, #122217)',
+                    marginBottom: '16px',
+                    paddingBottom: '12px',
+                    borderBottom: '1px solid rgba(40, 44, 39, 0.06)',
+                  }}
+                >
+                  Featured Projects
+                </h4>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+                  {[
+                    { name: 'Brindavana', tag: 'Pavagada · 30 Acres', href: '/brindavana' },
+                    { name: 'Madhuvana', tag: 'Maddur · 18 Acres · Cauvery', href: '/madhuvana' },
+                    { name: 'Anantavana', tag: 'Kabini · 35 Acres · Biodiversity', href: '/anantavana' },
+                    { name: 'Eeshavana', tag: 'Cauvery Riverfront Estate', href: '/eeshavana' },
+                  ].map((proj) => (
+                    <Link
+                      key={proj.name}
+                      href={proj.href}
+                      className="sidebar-proj-link"
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        textDecoration: 'none',
+                        padding: '10px 12px',
+                        borderRadius: '12px',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      <div>
+                        <div
+                          style={{
+                            fontFamily: 'var(--font-serif)',
+                            fontSize: '1.02rem',
+                            fontWeight: 600,
+                            color: 'var(--bg-dark-forest, #122217)',
+                          }}
+                        >
+                          {proj.name}
+                        </div>
+                        <div style={{ fontSize: '0.78rem', color: '#687B63' }}>{proj.tag}</div>
+                      </div>
+                      <span style={{ color: 'var(--accent-gold, #C6A265)', fontSize: '0.9rem' }}>→</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
+            </aside>
+          </div>
+
+          {/* Related Articles Carousel / Grid */}
+          <div style={{ marginTop: '80px', paddingTop: '50px', borderTop: '1px solid rgba(40, 44, 39, 0.08)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '32px', flexWrap: 'wrap', gap: '16px' }}>
+              <div>
+                <span
+                  style={{
+                    color: 'var(--accent-gold, #C6A265)',
+                    fontSize: '0.8rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.18em',
+                    textTransform: 'uppercase',
+                    display: 'block',
+                    marginBottom: '6px',
+                  }}
+                >
+                  KEEP EXPLORING
+                </span>
+                <h2
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: 'clamp(1.8rem, 3vw, 2.3rem)',
+                    color: 'var(--bg-dark-forest, #122217)',
+                    margin: 0,
+                  }}
+                >
+                  Recommended Stories
+                </h2>
+              </div>
+              <Link
+                href="/blog"
+                style={{
+                  color: 'var(--brand-earth-brown, #72351C)',
+                  fontWeight: 700,
+                  fontSize: '0.92rem',
+                  textDecoration: 'none',
+                }}
+              >
+                View all articles →
+              </Link>
+            </div>
+
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '28px',
+              }}
+            >
+              {relatedPosts.map((r) => (
+                <div
+                  key={r.id}
+                  style={{
+                    background: '#FFFFFF',
+                    borderRadius: '20px',
+                    overflow: 'hidden',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.03)',
+                    border: '1px solid rgba(40, 44, 39, 0.06)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    transition: 'transform 0.3s ease',
+                  }}
+                >
+                  <Link
+                    href={`/blog/${r.id}`}
+                    style={{ textDecoration: 'none', color: 'inherit', display: 'flex', flexDirection: 'column', height: '100%' }}
+                  >
+                    <div
+                      style={{
+                        position: 'relative',
+                        width: '100%',
+                        aspectRatio: '1 / 1',
+                        backgroundColor: '#16261B',
+                      }}
+                    >
+                      <Image
+                        src={r.img}
+                        alt={r.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                        style={{ objectFit: 'cover' }}
+                      />
+                      <span
+                        style={{
+                          position: 'absolute',
+                          top: 14,
+                          left: 14,
+                          background: 'rgba(255, 255, 255, 0.95)',
+                          color: '#122217',
+                          padding: '4px 10px',
+                          borderRadius: '999px',
+                          fontSize: '0.7rem',
+                          fontWeight: 700,
+                          textTransform: 'uppercase',
+                        }}
+                      >
+                        {r.category}
+                      </span>
+                    </div>
+                    <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                      <span
+                        style={{
+                          fontSize: '0.78rem',
+                          color: 'var(--text-muted, #687B63)',
+                          marginBottom: '6px',
+                        }}
+                      >
+                        {r.date}
+                      </span>
+                      <h4
+                        style={{
+                          fontFamily: 'var(--font-serif)',
+                          fontSize: '1.14rem',
+                          color: 'var(--bg-dark-forest, #122217)',
+                          lineHeight: 1.35,
+                          marginBottom: '10px',
+                        }}
+                      >
+                        {r.title}
+                      </h4>
+                      <div
+                        style={{
+                          marginTop: 'auto',
+                          fontSize: '0.84rem',
+                          color: 'var(--brand-earth-brown, #72351C)',
+                          fontWeight: 700,
+                        }}
+                      >
+                        Read Article →
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
             </div>
           </div>
         </div>
