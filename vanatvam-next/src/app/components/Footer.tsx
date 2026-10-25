@@ -227,7 +227,7 @@ export default function Footer() {
               Terms & Conditions
             </Link>
             <span>
-              &copy; {new Date().getFullYear()}VanaTvam Private Limited.
+              &copy; {new Date().getFullYear()} VanaTvam Private Limited.
             </span>
           </div>
         </div>
