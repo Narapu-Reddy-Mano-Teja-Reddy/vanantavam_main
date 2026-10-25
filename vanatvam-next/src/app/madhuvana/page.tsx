@@ -332,8 +332,8 @@ const amenities = [
   },
   {
     letter: "E",
-    name: "Rainwater Pond",
-    desc: "Rainwater harvesting pond supporting native flora and aquatic life.",
+    name: "Pond",
+    desc: "A serene natural pond that enhances the landscape and supports local flora and aquatic life.",
     img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.png",
   },
   {
@@ -2752,3 +2752,5 @@ export default function Madhuvana() {
     </>
   );
 }
+
+
