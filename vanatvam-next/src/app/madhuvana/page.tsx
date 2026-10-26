@@ -333,8 +333,7 @@ const amenities = [
   },
   {
     letter: "F",
-    name: "Elevated Tree House",
-    desc: "Wooden tree house perched amidst ancient canopy trees.",
+    name: "Tree House",
     img: "/assets/project-images/Maduvana/MV Tree House.jpeg",
   },
  
