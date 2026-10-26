@@ -104,19 +104,21 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
 
 const heroSlides = [
   {
-    id: "anantavana",
-    name: "ANANTAVANA",
-     
-    tagline: "Near Kabini— a biodiversity hotspot.",
-    img: "/assets/project-images/Ananthavana/hero_image.jpg",
-  },
-  {
     id: "eeshavana",
     name: "EESHAVANA",
     
     tagline: "A premium riverfront community on the sacred Cauvery.",
     img: "/assets/project-images/Esahavana/EV%20River%20View%201.jpg",
   },
+  
+  {
+    id: "anantavana",
+    name: "ANANTAVANA",
+     
+    tagline: "Near Kabini— a biodiversity hotspot.",
+    img: "/assets/project-images/Ananthavana/hero_image.jpg",
+  },
+  
   {
     id: "madhuvana",
     name: "MADHUVANA",
@@ -124,6 +126,7 @@ const heroSlides = [
     tagline: "A dense water-forest ecosystem built around 250+ native trees.",
     img: "/assets/project-images/Maduvana/hero.png",
   },
+  
   {
     id: "brindavana",
     name: "BRINDAVANA",
