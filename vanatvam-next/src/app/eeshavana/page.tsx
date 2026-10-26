@@ -1748,7 +1748,7 @@ export default function Eeshavana() {
                   icon: PawPrint,
                 },
                 {
-                  name: "Mysuru City",
+                  name: "Mysore City",
                   desc: "Palace city & cultural hub",
                   km: 65,
                   time: "~1.2 hrs",

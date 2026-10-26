@@ -8,10 +8,10 @@ import { ArrowRight } from "lucide-react";
 import Magnetic from "@/components/premium/Magnetic";
 
 const STORY_SECTIONS = [
-  "The Covid years changed how we saw life. Pollution, shrinking green spaces and isolation made clean air and time in nature feel more precious than ever. We began asking: had we moved too far away from nature?",
-  "Though modern life has distanced us from the land, time among trees and open spaces still brings calm and a sense of belonging. We imagined creating places where people could reconnect with nature and one another.",
-  "That vision led us to establish Vanatvam in March 2022: to nurture biodiverse landscapes and communities where people can breathe, reconnect and belong.",
-  "That is the journey we are on today. Every tree we plant and every landscape we nurture brings us a little closer to that vision.",
+  "For most of human history, we lived close to the land, surrounded by trees, birds and open spaces. It is only in the last century, with rapid urbanisation, that many of us have drifted away from this natural connection. Yet, whenever we step into a forest, walk among trees or spend time in the countryside, something changes. We feel lighter, calmer and more at ease. It feels familiar, almost as if we are returning to something we have always known.",
+  "These thoughts led us to establish Vanatvam in March 2022.",
+  "Our dream was never simply to develop farmland. We wanted to nurture living landscapes, encourage biodiversity, revive traditional connections with nature and create communities where people could find space to breathe, reconnect and belong.",
+   
 ];
 
 export default function About() {
@@ -56,26 +56,7 @@ export default function About() {
           className="container relative"
           style={{ zIndex: 1, textAlign: "center", paddingTop: "80px" }}
         >
-          <motion.span
-            initial={{ opacity: 0, y: 30, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
-            style={{
-              color: "#FFFFFF",
-              fontSize: "0.85rem",
-              fontWeight: 600,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-              marginBottom: "30px",
-              display: "inline-block",
-              border: "1px solid rgba(255,255,255,0.3)",
-              padding: "8px 24px",
-              borderRadius: "30px",
-              backdropFilter: "blur(5px)",
-            }}
-          >
-            AboutVanaTvam Private Limited
-          </motion.span>
+           
           <h1
             style={{
               fontFamily: "var(--font-serif)",
@@ -95,23 +76,7 @@ export default function About() {
               in Nature.
             </RevealText>
           </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.25, ease: [0.25, 1, 0.5, 1] }}
-            style={{
-              fontSize: "1.25rem",
-              color: "rgba(255,255,255,0.85)",
-              maxWidth: "650px",
-              margin: "0 auto",
-              lineHeight: 1.7,
-              fontWeight: 300,
-            }}
-          >
-            VanaTvam is more than land development. It is a living ecosystem of
-            nature, community, and purpose — designed for a healthier, calmer,
-            and more meaningful life.
-          </motion.p>
+        
         </div>
       </section>
 
