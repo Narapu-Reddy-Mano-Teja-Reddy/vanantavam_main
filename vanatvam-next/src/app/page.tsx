@@ -792,14 +792,14 @@ export default function Home() {
             desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose. ",
           },
           {
-            num: "05 / Enriching Experiences",
-            title: "Cottages, ponds, gazebos and tree houses laid out in an architect-led master plan and shared across the community.",
-            desc: "Features like these are built to enrich the experience and invite people to keep returning to Vanatvam communities.",
+            num: "05 /Features to Enrich Experience",
+            title: "Shared amenities to Enrich Experience.",
+            desc: "Cottages, ponds, gazebos, tree houses — laid out in an architect-led master plan and shared across the community. Features like these are built to enrich the experience and invite people to keep returning to Vanatvam communities.",
           },
           {
-            num: "06 / Water Bodies",
-            title: "Ponds and groves that purify groundwater and shape how a place feels. ",
-            desc: "Every community is designed around its relationship with water — ponds and groves that purify groundwater and keep it healthy, shaping how a place feels as much as how it functions. The aesthetically designed water bodies enable visitors to reflect and feel a calming effect. ",
+            num: "06 /Aesthetically Designed Water Bodies",
+            title: "Well designed water bodies create a calming effect. ",
+            desc: "Every community is designed around its relationship with water — ponds and groves that purify groundwater and keep it healthy, shaping how a place feels as much as how it functions. The aesthetically designed water bodies enable visitors to reflect and feel a calming effect ",
           },
         ].map((card, i) => (
           <motion.div
@@ -1101,7 +1101,7 @@ export default function Home() {
                 {
                   id: "eeshavana",
                   name: "EESHAVANA",
-                  badge: "KOLLEGALA · CAUVERY RIVERFRONT",
+                  badge: "KOLLEGALA ·10 Acres",
                   img: "/assets/project-images/Esahavana/Riverside%20view.png",
                    
                 },
@@ -1487,15 +1487,14 @@ export default function Home() {
                   fontWeight: 400,
                 }}
               >
-                VanaTvam&apos;s ecological model has received distinguished
-                recognition through the{" "}
+             Vanatvam has been honoured with the{" "}
                 <strong
                   style={{ color: "var(--bg-dark-forest)", fontWeight: 600 }}
                 >
-                  FKCCI Award in Tourism and Hospitality
+                  FKCCI Award in Tourism and Hospitality - 2026
                 </strong>{" "}
-                presented by the Federation of Karnataka Chambers of Commerce
-                and Industry.
+                presented by the Federation of Karnataka Chambers of Commerce and Industry, in recognition of its distinctive approach to nature-led experiences, eco-conscious living, responsible eco-tourism, and biodiversity conservation.
+
               </p>
 
               <p
@@ -1506,10 +1505,9 @@ export default function Home() {
                   marginBottom: "32px",
                 }}
               >
-                This honor reaffirms that nature-led land development, cultural
-                restoration of sacred groves, and commercial viability thrive
-                together — creating long-term generational wealth and living
-                habitats.
+                
+By bringing together ecological restoration, India’s cultural heritage, and thoughtfully developed natural farm communities,
+                Vanatvam demonstrates how meaningful nature experiences and environmental stewardship can flourish together for generations to come.
               </p>
 
               <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
