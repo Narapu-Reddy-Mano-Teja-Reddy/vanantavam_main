@@ -1858,7 +1858,7 @@ export default function Madhuvana() {
                     icon: Waves,
                   },
                   {
-                    name: "Historic Mysuru",
+                    name: "Historic Mysore",
                     desc: "Palace city & cultural hub",
                     km: 60,
                     time: "~1 hr",
@@ -2534,9 +2534,9 @@ export default function Madhuvana() {
                 },
                 {
                   number: "02",
-                  question: "How far is MadhuVana from Bengaluru and Mysuru?",
+                  question: "How far is MadhuVana from Bengaluru and Mysore?",
                   answer:
-                    "Approximate distances provided by the project team are 80 km from Bengaluru (~1.5 hrs) and 60 km from Mysuru (~1 hr), located conveniently off the Bangalore-Mysore Highway near Maddur.",
+                    "Approximate distances provided by the project team are 80 km from Bengaluru (~1.5 hrs) and 60 km from Mysore (~1 hr), located conveniently off the Bangalore-Mysore Highway near Maddur.",
                 },
                 {
                   number: "03",

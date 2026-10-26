@@ -756,7 +756,7 @@ export default function Home() {
             margin: 0,
           }}
         >
-          Every decision on every piece of land we touch comes back to six foundational commitments — ensuring that as the landscape matures, experiences take root and people become true stewards of the place.
+          Every decision on every piece of land we touch comes back to six foundational principles — ensuring that as the landscape matures, experiences take root and people become true stewards of the place.
         </motion.p>
       </div>
 
@@ -1094,30 +1094,30 @@ export default function Home() {
                 {
                   id: "anantavana",
                   name: "ANANTAVANA",
-                  badge: "NEAR KABINI · 35 ACRES",
+                  badge: "NEAR KABINI · 34 ACRES",
                   img: "/assets/project-images/Ananthavana/hero_image.jpg",
-                  desc: "Nestled in the Bandipur wildlife corridor, connecting heritage eco-architecture with pristine wilderness.",
+                   
                 },
                 {
                   id: "eeshavana",
                   name: "EESHAVANA",
                   badge: "KOLLEGALA · CAUVERY RIVERFRONT",
                   img: "/assets/project-images/Esahavana/Riverside%20view.png",
-                  desc: "A premier riverfront sanctuary on the sacred banks of Cauvery with pristine waterscapes.",
+                   
                 },
                 {
                   id: "madhuvana",
                   name: "MADHUVANA",
-                  badge: "MADDUR · 18 ACRES",
+                  badge: "MADDUR · 17 ACRES",
                   img: "/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png",
-                  desc: "A dense water-forest ecosystem built around 250+ native trees and tranquil farm courtyards.",
+                   
                 },
                 {
                   id: "brindavana",
                   name: "BRINDAVANA",
                   badge: "PAVAGADA · 30 ACRES",
                   img: "/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png",
-                  desc: "A benchmark in ecological regeneration, turning barren land into a thriving Nakshatra Vana forest.",
+                   
                 },
                 
               ].map((proj, i) => (
@@ -1201,18 +1201,7 @@ export default function Home() {
                         {proj.name}
                       </h3>
 
-                      <p
-                        style={{
-                          color: "rgba(255,255,255,0.8)",
-                          fontSize: "0.95rem",
-                          lineHeight: 1.5,
-                          margin: 0,
-                          fontWeight: 300,
-                          maxWidth: "90%",
-                        }}
-                      >
-                        {proj.desc}
-                      </p>
+                       
                     </div>
                   </Link>
                 </motion.div>
@@ -1485,7 +1474,7 @@ export default function Home() {
                     fontSize: "2.8rem",
                   }}
                 >
-                  Tourism &amp; Hospitality - 2026
+                   Tourism &amp; Hospitality - 2026
                 </span>
               </h2>
 
@@ -2297,27 +2286,27 @@ export default function Home() {
                 question:
                   "What makes Vanatvam different from other farmland developers?",
                 answer:
-                  "Vanatvam creates natural, green spaces where people can enjoy life closer to nature. Our projects focus on native trees, fruit-bearing plants, bird-friendly habitats and sustainable land care. We aim to create thoughtfully planned farm communities that families can enjoy for years to come.",
+                  "VanaTvam creates natural, green spaces where people can experience life closer to nature. Our projects focus on native trees, fruit-bearing plants, bird-friendly habitats and sustainable land care. We create thoughtfully planned farm communities where families can benefit from living close to nature for years to come.",
               },
               {
                 number: "02",
                 question: "Where can I buy managed farmland near Bangalore?",
                 answer:
-                  "If you are looking to buy farmland near Bangalore, Vanatvam offers nature-focused farm communities in selected locations across Karnataka, including the Mysuru and Cauvery regions. Explore our managed farmland near Bangalore projects to learn about available plots, pricing and site visits. You can also enquire about farmland for sale near Bangalore and farmland for sale near Mysore.",
+                  "If you are looking to buy farmland near Bangalore, Vanatvam offers nature-focused farm communities in selected locations across Karnataka, including the Mysore and Kaveri regions. Explore our managed farmland near Bangalore to learn about available plots, pricing and site visits. You can also enquire about farmland near Bangalore and Mysore. ",
               },
               {
                 number: "03",
                 question:
                   "What is managed farmland, and how does Vanatvam maintain it?",
                 answer:
-                  "Managed farmland combines land ownership with organised support for plantation development and ongoing land care, depending on the project. Vanatvam focuses on tree care, soil health and biodiversity. If you are considering farmland near Bangalore with maintenance, we recommend checking the services included, maintenance costs and owner responsibilities before purchasing.",
+                  "Managed farmland combines land ownership with organised support for plantation development and ongoing land care, depending on the project. Vanatvam focuses on tree care, soil health and biodiversity. Our managed farmland near Bangalore include hassle free maintenance.",
               },
               {
                 number: "04",
                 question:
                   "Can I build a farmhouse on agricultural land in Karnataka?",
                 answer:
-                  "Building a farmhouse depends on the property's legal status, applicable land-use rules and local building regulations. If you plan to buy agricultural land in Karnataka or are considering whether agricultural land can be used to build a farmhouse in Karnataka, check the necessary permissions with the relevant authorities and consult a qualified property lawyer. Owning agricultural land does not automatically permit residential construction.",
+                  "Building a farmhouse depends on the property's legal status, applicable land-use rules and local building regulations. If you plan to buy agricultural land in Karnataka or are considering whether agricultural land can be used to build a farmhouse in Karnataka, Under Section 95 of the Karnataka Land Revenue Act, 1964, agricultural land may be used for a limited farmhouse (not exceeding 10% of the holding).",
               },
               {
                 number: "05",

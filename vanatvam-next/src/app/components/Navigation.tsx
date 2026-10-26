@@ -1,33 +1,41 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants, Transition } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Magnetic from "@/components/premium/Magnetic";
+import {
+  Home,
+  Leaf,
+  Sprout,
+  Coins,
+  BookOpen,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react";
 
-type NavItem = { path: string; label: string };
+type NavItem = {
+  path: string;
+  label: string;
+  icon: LucideIcon;
+};
 
 const NAV_ITEMS: NavItem[] = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "Our Story" },
-  { path: "/projects", label: "Projects" },
-  { path: "/investment", label: "Investment" },
-  { path: "/blog", label: "Journal" },
+  { path: "/", label: "Home", icon: Home },
+  { path: "/about", label: "Our Story", icon: Leaf },
+  { path: "/projects", label: "Projects", icon: Sprout },
+  { path: "/investment", label: "Investment", icon: Coins },
+  { path: "/blog", label: "Journal", icon: BookOpen },
 ];
 
-const DRAWER_ITEMS: NavItem[] = [
-  ...NAV_ITEMS,
+const DRAWER_ITEMS = [
+  ...NAV_ITEMS.map((item) => ({ path: item.path, label: item.label })),
   { path: "/contact", label: "Find your project" },
 ];
 
-// Explicit 4-number tuple so framer-motion accepts it as a cubic-bezier "ease"
 const EASE_PREMIUM: [number, number, number, number] = [0.16, 1, 0.3, 1];
-
-// ---- Typed transitions / variants (kept outside JSX so TS never widens `ease`) ----
-const logoTransition: Transition = { duration: 0.4, ease: EASE_PREMIUM };
-
-const ctaTextTransition: Transition = { duration: 0.4, ease: EASE_PREMIUM };
 
 const shineVariants: Variants = {
   rest: { x: "-130%" },
@@ -37,11 +45,6 @@ const shineVariants: Variants = {
 const glowVariants: Variants = {
   rest: { opacity: 0 },
   hover: { opacity: 1, transition: { duration: 0.3 } },
-};
-
-const ctaTextVariants: Variants = {
-  rest: { letterSpacing: "0em" },
-  hover: { letterSpacing: "0.03em" },
 };
 
 const arrowVariants: Variants = {
@@ -75,9 +78,9 @@ export default function Navigation() {
         animate={{
           width: scrolled ? "min(94%, 1320px)" : "100%",
           y: scrolled ? 16 : 0,
-          borderRadius: scrolled ? "44px" : "0px",
+          borderRadius: scrolled ? "40px" : "0px",
           boxShadow: scrolled
-            ? "0 24px 60px rgba(18, 34, 23, 0.14), 0 0 0 1px rgba(198, 162, 101, 0.4)"
+            ? "0 20px 50px rgba(18, 34, 23, 0.14), 0 0 0 1px rgba(198, 162, 101, 0.35)"
             : "none",
         }}
         transition={{ type: "spring", stiffness: 260, damping: 24 }}
@@ -94,35 +97,215 @@ export default function Navigation() {
           willChange: "transform, width, background, border-radius, height",
         }}
       >
-        {/* Animated gradient background */}
-<motion.div
-  initial={false}
-  animate={{ opacity: scrolled ? 1 : 0 }}
-  transition={{ duration: 0.4, ease: "easeInOut" }}
-  aria-hidden="true"
-  style={{
-    position: "absolute",
-    inset: 0,
-    borderRadius: "inherit",
-    background:
-      "linear-gradient(135deg, rgba(255, 255, 255, 0.96) 0%, rgba(246, 243, 235, 0.94) 100%)",
-    pointerEvents: "none",
-    zIndex: 0,
-  }}
-/>
+        {/* Scrolled Cream Background */}
+        <motion.div
+          initial={false}
+          animate={{ opacity: scrolled ? 1 : 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "inherit",
+            background:
+              "linear-gradient(180deg, #FAF8F2 0%, #F5F0E4 100%)",
+            pointerEvents: "none",
+            zIndex: 0,
+          }}
+        />
+
+        {/* Left Botanical SVG Vector (visible when scrolled) */}
+        <motion.div
+          initial={false}
+          animate={{ opacity: scrolled ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: "150px",
+            pointerEvents: "none",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <svg
+            width="150"
+            height="82"
+            viewBox="0 0 150 82"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ width: "100%", height: "100%" }}
+          >
+            {/* Stems */}
+            <path
+              d="M-15 85C20 62 48 38 32 8C25 -12 -8 -18 -15 -18"
+              stroke="#162E20"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+            />
+            <path
+              d="M10 50C35 42 55 25 48 2"
+              stroke="#162E20"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+
+            {/* Deep Background Foliage */}
+            <path
+              d="M-5 68C-18 50 2 38 18 52C12 72 -5 68 -5 68Z"
+              fill="#122217"
+              opacity="0.9"
+            />
+            <path
+              d="M12 56C0 38 22 26 36 40C28 60 12 56 12 56Z"
+              fill="#1C3829"
+              opacity="0.95"
+            />
+
+            {/* Midground Forest Green Leaves */}
+            <path
+              d="M26 42C12 22 36 12 50 28C42 46 26 42 26 42Z"
+              fill="#2A4D36"
+            />
+            <path
+              d="M32 24C20 6 42 -4 54 12C48 30 32 24 32 24Z"
+              fill="#1B3625"
+            />
+
+            {/* Accent Soft Olive/Lush Leaf Highlights */}
+            <path
+              d="M20 48C28 38 42 34 38 46C30 52 20 48 20 48Z"
+              fill="#487556"
+              opacity="0.85"
+            />
+            <path
+              d="M32 30C40 20 52 18 48 28C40 34 32 30 32 30Z"
+              fill="#629270"
+              opacity="0.8"
+            />
+
+            {/* Leaf Vein Accents */}
+            <path
+              d="M12 56C20 46 28 44 36 40"
+              stroke="#487556"
+              strokeWidth="1"
+              opacity="0.6"
+            />
+            <path
+              d="M26 42C34 32 42 30 50 28"
+              stroke="#7BA887"
+              strokeWidth="1"
+              opacity="0.6"
+            />
+          </svg>
+        </motion.div>
+
+        {/* Right Botanical SVG Vector (visible when scrolled) */}
+        <motion.div
+          initial={false}
+          animate={{ opacity: scrolled ? 1 : 0 }}
+          transition={{ duration: 0.4 }}
+          style={{
+            position: "absolute",
+            right: 0,
+            top: 0,
+            bottom: 0,
+            width: "150px",
+            pointerEvents: "none",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "center",
+            transform: "scaleX(-1)",
+          }}
+        >
+          <svg
+            width="150"
+            height="82"
+            viewBox="0 0 150 82"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{ width: "100%", height: "100%" }}
+          >
+            {/* Stems */}
+            <path
+              d="M-15 85C20 62 48 38 32 8C25 -12 -8 -18 -15 -18"
+              stroke="#162E20"
+              strokeWidth="2.8"
+              strokeLinecap="round"
+            />
+            <path
+              d="M10 50C35 42 55 25 48 2"
+              stroke="#162E20"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            />
+
+            {/* Deep Background Foliage */}
+            <path
+              d="M-5 68C-18 50 2 38 18 52C12 72 -5 68 -5 68Z"
+              fill="#122217"
+              opacity="0.9"
+            />
+            <path
+              d="M12 56C0 38 22 26 36 40C28 60 12 56 12 56Z"
+              fill="#1C3829"
+              opacity="0.95"
+            />
+
+            {/* Midground Forest Green Leaves */}
+            <path
+              d="M26 42C12 22 36 12 50 28C42 46 26 42 26 42Z"
+              fill="#2A4D36"
+            />
+            <path
+              d="M32 24C20 6 42 -4 54 12C48 30 32 24 32 24Z"
+              fill="#1B3625"
+            />
+
+            {/* Accent Soft Olive/Lush Leaf Highlights */}
+            <path
+              d="M20 48C28 38 42 34 38 46C30 52 20 48 20 48Z"
+              fill="#487556"
+              opacity="0.85"
+            />
+            <path
+              d="M32 30C40 20 52 18 48 28C40 34 32 30 32 30Z"
+              fill="#629270"
+              opacity="0.8"
+            />
+
+            {/* Leaf Vein Accents */}
+            <path
+              d="M12 56C20 46 28 44 36 40"
+              stroke="#487556"
+              strokeWidth="1"
+              opacity="0.6"
+            />
+            <path
+              d="M26 42C34 32 42 30 50 28"
+              stroke="#7BA887"
+              strokeWidth="1"
+              opacity="0.6"
+            />
+          </svg>
+        </motion.div>
+
         <div
           className="header-inner"
-         style={{
-  position: "relative",
-  zIndex: 1,
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  width: "100%",
-  height: "100%",
-  padding: scrolled ? "0 26px 0 20px" : "0 40px",
-  boxSizing: "border-box",
-}}
+          style={{
+            position: "relative",
+            zIndex: 2,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            width: "100%",
+            height: "100%",
+            padding: scrolled ? "0 28px 0 24px" : "0 40px",
+            boxSizing: "border-box",
+          }}
         >
           {/* Logo */}
           <Link
@@ -153,11 +336,11 @@ export default function Navigation() {
                 transition={{ duration: 0.25, ease: EASE_PREMIUM }}
                 whileHover={{ scale: 1.04 }}
                 style={{
-                  height: scrolled ? "80px" : "96px",
+                  height: scrolled ? "72px" : "96px",
                   width: "auto",
                   maxWidth: scrolled ? "150px" : "220px",
                   filter: scrolled
-                    ? "none"
+                    ? "drop-shadow(0 2px 6px rgba(18,34,23,0.1))"
                     : "drop-shadow(0 2px 10px rgba(0,0,0,0.4))",
                   objectFit: "contain",
                   display: "block",
@@ -173,26 +356,30 @@ export default function Navigation() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: scrolled ? "6px" : "30px",
-              background: scrolled ? "rgba(235, 230, 218, 0.6)" : "transparent",
-              padding: scrolled ? "6px 8px" : "0",
-              borderRadius: scrolled ? "34px" : "0px",
-              border: scrolled ? "1px solid rgba(198, 162, 101, 0.25)" : "none",
+              gap: scrolled ? "4px" : "30px",
+              background: scrolled ? "rgba(240, 237, 226, 0.85)" : "transparent",
+              padding: scrolled ? "5px 6px" : "0",
+              borderRadius: scrolled ? "36px" : "0px",
+              border: scrolled ? "1px solid rgba(198, 162, 101, 0.3)" : "none",
+              boxShadow: scrolled ? "inset 0 1px 3px rgba(0,0,0,0.04)" : "none",
               transition: "all 0.4s ease",
             }}
           >
             {NAV_ITEMS.map((item) => {
+              const Icon = item.icon;
               const isActive = pathname === item.path;
               const isHovered = hoveredPath === item.path;
               const lit = isActive || isHovered;
 
               const textColor = scrolled
-                ? lit
-                  ? "#1E352F"
-                  : "#334A42"
+                ? isActive
+                  ? "#FFFFFF"
+                  : lit
+                  ? "#183023"
+                  : "#2C4032"
                 : lit
-                  ? "var(--accent-gold)"
-                  : "#FFFFFF";
+                ? "var(--accent-gold)"
+                : "#FFFFFF";
 
               return (
                 <Link
@@ -207,8 +394,9 @@ export default function Navigation() {
                     display: "inline-flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: scrolled ? "9px 20px" : "10px 14px",
-                    fontSize: scrolled ? "0.93rem" : "1rem",
+                    gap: "8px",
+                    padding: scrolled ? "8px 18px" : "10px 14px",
+                    fontSize: scrolled ? "0.9rem" : "1rem",
                     fontWeight: isActive ? 600 : 500,
                     letterSpacing: isHovered ? "0.02em" : "0em",
                     color: textColor,
@@ -217,7 +405,7 @@ export default function Navigation() {
                       "color 0.3s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
-                  {/* Active page: white pill that glides between routes (scrolled) */}
+                  {/* Active page: Dark green pill (scrolled) */}
                   {isActive && scrolled && (
                     <motion.span
                       layoutId="nav-active-pill"
@@ -230,16 +418,16 @@ export default function Navigation() {
                       style={{
                         position: "absolute",
                         inset: 0,
-                        borderRadius: "22px",
-                        background: "#FFFFFF",
-                        boxShadow: "0 6px 16px rgba(18, 34, 23, 0.1)",
+                        borderRadius: "26px",
+                        background: "#183023",
+                        boxShadow: "0 4px 14px rgba(24, 48, 35, 0.25)",
                         zIndex: 0,
                       }}
                     />
                   )}
 
-                  {/* Hover pill that follows the mouse from link to link */}
-                  {isHovered && (
+                  {/* Hover pill */}
+                  {isHovered && !isActive && (
                     <motion.span
                       layoutId="nav-hover-pill"
                       aria-hidden="true"
@@ -254,14 +442,12 @@ export default function Navigation() {
                       style={{
                         position: "absolute",
                         inset: 0,
-                        borderRadius: scrolled ? "22px" : "999px",
+                        borderRadius: scrolled ? "26px" : "999px",
                         background: scrolled
-                          ? isActive
-                            ? "rgba(198, 162, 101, 0.16)"
-                            : "linear-gradient(135deg, rgba(198, 162, 101, 0.28) 0%, rgba(198, 162, 101, 0.14) 100%)"
+                          ? "rgba(198, 162, 101, 0.2)"
                           : "rgba(255, 255, 255, 0.12)",
                         boxShadow: scrolled
-                          ? "inset 0 0 0 1px rgba(198, 162, 101, 0.45)"
+                          ? "inset 0 0 0 1px rgba(198, 162, 101, 0.35)"
                           : "inset 0 0 0 1px rgba(255, 255, 255, 0.22)",
                         backdropFilter: scrolled ? "none" : "blur(6px)",
                         WebkitBackdropFilter: scrolled ? "none" : "blur(6px)",
@@ -270,20 +456,56 @@ export default function Navigation() {
                     />
                   )}
 
-                  {/* Label lifts slightly on hover */}
+                  {/* Icon & Label */}
                   <motion.span
-                    animate={{ y: isHovered ? -1.5 : 0 }}
+                    animate={{ y: isHovered ? -1 : 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                     style={{
                       position: "relative",
                       zIndex: 1,
-                      display: "block",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "8px",
                     }}
                   >
-                    {item.label}
+                    {scrolled && (
+                      <Icon
+                        size={16}
+                        strokeWidth={2}
+                        style={{
+                          color: isActive
+                            ? "#FFFFFF"
+                            : lit
+                            ? "#987443"
+                            : "#3A5241",
+                          transition: "color 0.3s ease",
+                        }}
+                      />
+                    )}
+                    <span>{item.label}</span>
                   </motion.span>
 
-                  {/* Active page: gold dot that glides between routes (top of page) */}
+                  {/* Active Indicator Bar beneath the pill (when scrolled & active) */}
+                  {isActive && scrolled && (
+                    <motion.span
+                      layoutId="nav-active-bar"
+                      aria-hidden="true"
+                      style={{
+                        position: "absolute",
+                        bottom: "-10px",
+                        left: "50%",
+                        transform: "translateX(-50%)",
+                        width: "32px",
+                        height: "3px",
+                        borderRadius: "2px",
+                        background: "#183023",
+                        boxShadow: "0 2px 6px rgba(24, 48, 35, 0.3)",
+                        zIndex: 1,
+                      }}
+                    />
+                  )}
+
+                  {/* Active page: gold dot (top of page) */}
                   {isActive && !scrolled && (
                     <motion.span
                       layoutId="nav-active-dot"
@@ -329,21 +551,28 @@ export default function Navigation() {
                   style={{
                     position: "relative",
                     overflow: "hidden",
-                    background:
-                      "linear-gradient(135deg, #74351F 0%, #542211 100%)",
+                    background: scrolled
+                      ? "#183023"
+                      : "linear-gradient(135deg, #74351F 0%, #542211 100%)",
                     color: "#FFFFFF",
-                    padding: scrolled ? "11px 22px" : "14px 26px",
+                    padding: scrolled ? "12px 24px" : "14px 26px",
                     borderRadius: "34px",
-                    fontSize: scrolled ? "0.9rem" : "0.98rem",
-                    fontWeight: 600,
+                    fontSize: scrolled ? "0.85rem" : "0.98rem",
+                    fontWeight: 700,
+                    letterSpacing: scrolled ? "0.06em" : "0em",
+                    textTransform: scrolled ? "uppercase" : "none",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "10px",
                     textDecoration: "none",
-                    boxShadow: "0 8px 22px rgba(116, 53, 31, 0.32)",
-                    border: "1px solid rgba(198, 162, 101, 0.4)",
+                    boxShadow: scrolled
+                      ? "0 8px 22px rgba(24, 48, 35, 0.28)"
+                      : "0 8px 22px rgba(116, 53, 31, 0.32)",
+                    border: scrolled
+                      ? "1px solid rgba(198, 162, 101, 0.4)"
+                      : "1px solid rgba(198, 162, 101, 0.4)",
                     whiteSpace: "nowrap",
-                    transition: "padding 0.3s ease, font-size 0.3s ease",
+                    transition: "all 0.3s ease",
                   }}
                 >
                   {/* Gold shine sweep on hover */}
@@ -377,24 +606,22 @@ export default function Navigation() {
                     }}
                   />
 
-                  <motion.span
-                    variants={ctaTextVariants}
-                    transition={ctaTextTransition}
-                    style={{ position: "relative", zIndex: 1 }}
-                  >
-                    Find your project
-                  </motion.span>
+                  <span style={{ position: "relative", zIndex: 1 }}>
+                    {scrolled ? "Find Your Project" : "Find your project"}
+                  </span>
 
-                  <motion.i
-                    className="fa-solid fa-arrow-right"
+                  <motion.span
                     variants={arrowVariants}
                     style={{
                       position: "relative",
                       zIndex: 1,
-                      fontSize: "0.74rem",
-                      color: "var(--accent-gold)",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      color: scrolled ? "#FFFFFF" : "var(--accent-gold)",
                     }}
-                  />
+                  >
+                    <ArrowRight size={15} strokeWidth={2.5} />
+                  </motion.span>
                 </Link>
               </motion.div>
             </Magnetic>
@@ -419,7 +646,7 @@ export default function Navigation() {
                   width: "24px",
                   height: "2px",
                   backgroundColor:
-                    scrolled || isDrawerOpen ? "#1E352F" : "#FFFFFF",
+                    scrolled || isDrawerOpen ? "#183023" : "#FFFFFF",
                   transition: "background-color 0.3s ease",
                 }}
               ></span>
@@ -429,7 +656,7 @@ export default function Navigation() {
                   width: "24px",
                   height: "2px",
                   backgroundColor:
-                    scrolled || isDrawerOpen ? "#1E352F" : "#FFFFFF",
+                    scrolled || isDrawerOpen ? "#183023" : "#FFFFFF",
                   transition: "background-color 0.3s ease",
                 }}
               ></span>
@@ -485,7 +712,7 @@ export default function Navigation() {
                       color:
                         pathname === item.path
                           ? "var(--accent-gold)"
-                          : "#1E352F",
+                          : "#183023",
                       textDecoration: "none",
                       fontFamily: "var(--font-serif)",
                       display: "block",
@@ -512,7 +739,7 @@ export default function Navigation() {
                   width: "100%",
                   justifyContent: "center",
                   padding: "16px",
-                  background: "#1E352F",
+                  background: "#183023",
                   color: "#FFFFFF",
                   borderRadius: "30px",
                   textDecoration: "none",

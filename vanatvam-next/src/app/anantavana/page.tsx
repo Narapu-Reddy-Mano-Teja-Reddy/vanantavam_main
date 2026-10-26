@@ -2140,7 +2140,7 @@ export default function Anantavana() {
                   </div>
                   <div>
                     <strong>AnantaVana Sanctuary</strong>
-                    <span>Near Kabini, Mysuru Region, Karnataka</span>
+                    <span>Near Kabini, Mysore Region, Karnataka</span>
                   </div>
                 </div>
               </div>
