@@ -819,24 +819,7 @@ export default function Anantavana() {
             <span style={{ color: "var(--accent-gold)" }}>Kabini...</span>
           </motion.p>
 
-          <motion.p
-            initial={from(18)}
-            animate={{ opacity: 1, y: 0 }}
-            transition={enter(2.4)}
-            style={{
-              maxWidth: "640px",
-              margin: "16px auto 0",
-              color: "rgba(255,255,255,0.84)",
-              fontSize: "clamp(0.9rem, 1.5vw, 1.05rem)",
-              fontWeight: 300,
-              lineHeight: 1.8,
-            }}
-          >
-            Welcome to AnantaVana — where the forest breathes with you. A
-            nature-led sanctuary created by Vanatvam, shaped around the quiet
-            beauty of the Kabini region.
-          </motion.p>
-
+    
           <motion.div
             initial={from(18)}
             animate={{ opacity: 1, y: 0 }}
