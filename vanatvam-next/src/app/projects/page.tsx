@@ -52,7 +52,7 @@ export default function Projects() {
       brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
        
       badgeBg: '#2D6A4F',
-      pills: ['Bandipur Corridor', 'Heritage Cottages']
+      pills: ['Kabini', 'Heritage Cottages']
     },
     
     {
