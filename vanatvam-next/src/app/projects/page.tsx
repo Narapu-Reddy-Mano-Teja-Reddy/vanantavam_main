@@ -13,46 +13,7 @@ export default function Projects() {
   const [filter, setFilter] = useState('all');
 
   const projects = [
-    {
-      id: 'anantavana',
-      category: 'wildlife',
-      name: 'ANANTAVANA',
-      logo: '/assets/images/Project-Logos/Anantavana.webp',
-      location: 'NEAR KABINI · 34 ACRES',
-      desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 10,000 sq. ft.',
-      img: '/assets/project-images/Ananthavana/hero_image.jpg',
-      brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
-       
-      badgeBg: '#2D6A4F',
-      pills: ['Bandipur Corridor', 'Heritage Cottages']
-    },
-    {
-      id: 'eeshavana',
-      category: 'riverfront',
-      name: 'EESHAVANA',
-      logo: '/assets/images/Project-Logos/eeshavanaalogo.webp',
-      location: 'KOLLEGALA · CAUVERY RIVERFRONT',
-      desc: 'Our premier riverfront community set along the banks of the sacred Cauvery river. Designed around the deep relationship between people, riparian ecology, and water.',
-      img: '/assets/project-images/Esahavana/EV Image.png',
-      brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
-      
-      badgeBg: '#1B4965',
-      pills: ['Cauvery Frontage', 'River Ecosystem']
-    },
      {
-      id: 'madhuvana',
-      category: 'water',
-      name: 'MADHUVANA',
-      logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
-      location: 'MADDUR',
-      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
-      img: '/assets/project-images/Maduvana/hero.png',
-      brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
-       
-      badgeBg: 'var(--accent-gold)',
-      pills: ['200+ Native Trees', 'Sacred Groves']
-    },
-      {
       id: 'brindavana',
       category: 'completed',
       name: 'BRINDAVANA',
@@ -65,6 +26,49 @@ export default function Projects() {
       badgeBg: 'var(--bg-dark-forest)',
       pills: ['Native Canopy', 'Rain Catchments']
     },
+
+     {
+      id: 'madhuvana',
+      category: 'water',
+      name: 'MADHUVANA',
+      logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
+      location: 'MADDUR - 17 Acres',
+      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
+      img: '/assets/project-images/Maduvana/hero.png',
+      brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
+       
+      badgeBg: 'var(--accent-gold)',
+      pills: ['200+ Native Trees', 'Sacred Groves']
+    },
+     
+    {
+      id: 'anantavana',
+      category: 'wildlife',
+      name: 'ANANTAVANA',
+      logo: '/assets/images/Project-Logos/Anantavana.webp',
+      location: 'NEAR KABINI · 34 ACRES',
+      desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 10,000 sq. ft.',
+      img: '/assets/project-images/Ananthavana/hero_image.jpg',
+      brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
+       
+      badgeBg: '#2D6A4F',
+      pills: ['Kabini', 'Heritage Cottages']
+    },
+    
+    {
+      id: 'eeshavana',
+      category: 'riverfront',
+      name: 'EESHAVANA',
+      logo: '/assets/images/Project-Logos/eeshavanaalogo.webp',
+      location: 'KOLLEGALA - 10 Acres',
+      desc: 'Our premier riverfront community set along the banks of the sacred Cauvery river. Designed around the deep relationship between people, riparian ecology, and water.',
+      img: '/assets/project-images/Esahavana/EV Image.png',
+      brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
+      
+      badgeBg: '#1B4965',
+      pills: ['Cauvery Frontage', 'River Ecosystem']
+    },
+    
    
   ];
 
@@ -92,7 +96,6 @@ export default function Projects() {
 
         <div className="container relative" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
-            <span style={{ display: 'inline-block', padding: '6px 16px', border: '1px solid var(--accent-gold)', borderRadius: '30px', color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '20px' }}>OUR LIVING SANCTUARIES</span>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.5rem, 7vw, 6.5rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em' }}>
               <RevealText>Four Expressions of</RevealText><br/>
               <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Nature.</RevealText>

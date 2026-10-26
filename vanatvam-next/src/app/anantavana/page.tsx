@@ -503,13 +503,18 @@ const landscape: Pillar[] = [
 
 const amenities = [
   {
+    image: "/assets/project-images/Ananthavana/Pergolas.png",
+    name: "Enterance",
+    desc: "Shaded spots for rest and quiet gatherings.",
+  },
+  {
     image: "/assets/project-images/Ananthavana/Common.png",
-    name: "20%+ Common Spaces",
+    name: "Community Cottage",
     desc: "Open areas to gather, unwind and connect.",
   },
   {
     image: "/assets/project-images/Ananthavana/Tree-Lined.png",
-    name: "Tree-Lined Roads",
+    name: "Broad Internal Roads",
     desc: "Native landscapes along the way.",
   },
   {
@@ -517,14 +522,10 @@ const amenities = [
     name: "Natural Ponds",
     desc: "Water features and biodiversity spaces.",
   },
-  {
-    image: "/assets/project-images/Ananthavana/Pergolas.png",
-    name: "Pergolas",
-    desc: "Shaded spots for rest and quiet gatherings.",
-  },
+
   {
     image: "/assets/project-images/Ananthavana/hero_image.jpg",
-    name: "Heritage Cottages",
+    name: "Heritage Farmhouse",
     desc: "Traditional cottages and mud houses.",
   },
   {
@@ -818,24 +819,7 @@ export default function Anantavana() {
             <span style={{ color: "var(--accent-gold)" }}>Kabini...</span>
           </motion.p>
 
-          <motion.p
-            initial={from(18)}
-            animate={{ opacity: 1, y: 0 }}
-            transition={enter(2.4)}
-            style={{
-              maxWidth: "640px",
-              margin: "16px auto 0",
-              color: "rgba(255,255,255,0.84)",
-              fontSize: "clamp(0.9rem, 1.5vw, 1.05rem)",
-              fontWeight: 300,
-              lineHeight: 1.8,
-            }}
-          >
-            Welcome to AnantaVana — where the forest breathes with you. A
-            nature-led sanctuary created by Vanatvam, shaped around the quiet
-            beauty of the Kabini region.
-          </motion.p>
-
+    
           <motion.div
             initial={from(18)}
             animate={{ opacity: 1, y: 0 }}
@@ -1439,14 +1423,14 @@ export default function Anantavana() {
                   }}
                 >
                   {[
-                    { code: "A", label: "20%+ Common Spaces" },
-                    { code: "B", label: "Tree-Lined Roads" },
-                    { code: "C", label: "Natural Ponds" },
-                    { code: "D", label: "Shaded Pergolas" },
-                    { code: "E", label: "Heritage Cottages" },
-                    { code: "F", label: "Tree House Retreat" },
-                    { code: "G", label: "Herbal Gardens" },
-                    { code: "H", label: "Fire Camp & Tents" },
+                    { code: "A", label: "Entrance" },
+                    { code: "B", label: "Theme Park" },
+                    { code: "C", label: "Mud House" },
+                    { code: "D", label: "Cottage" },
+                    { code: "E", label: "Pond" },
+                    { code: "F", label: "Tree House" },
+                    { code: "G", label: "Road" },
+                    { code: "H", label: "Natural Pond" },
                   ].map((item) => (
                     <div
                       key={item.code}

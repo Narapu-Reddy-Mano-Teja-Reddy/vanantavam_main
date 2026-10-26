@@ -308,38 +308,32 @@ const galleryImages = [
 const amenities = [
   {
     letter: "A",
-    name: "Entrance Arch & Security",
-    desc: "Grand eco-entrance arch with security and school site access.",
+    name: "Entrance Arch",
     img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.png",
   },
   {
     letter: "B",
-    name: "Botanical Theme Park",
-    desc: "Lush botanical theme park and green biodiversity trails.",
+    name: "Sacred Groves",
     img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.png",
   },
   {
     letter: "C",
     name: "Gazebo",
-    desc: "Traditional eco-friendly Gazebo house built with sustainable earth blocks.",
     img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.png",
   },
   {
     letter: "D",
-    name: "Cottage Retreat",
-    desc: "Serene heritage cottages overlooking private water bodies.",
+    name: "Eco friendly Cottage ",
     img: "/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.png",
   },
   {
     letter: "E",
-    name: "Pond",
-    desc: "A serene natural pond that enhances the landscape and supports local flora and aquatic life.",
+    name: "Kids Pool",
     img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.png",
   },
   {
     letter: "F",
-    name: "Elevated Tree House",
-    desc: "Wooden tree house perched amidst ancient canopy trees.",
+    name: "Tree House",
     img: "/assets/project-images/Maduvana/MV Tree House.jpeg",
   },
  
