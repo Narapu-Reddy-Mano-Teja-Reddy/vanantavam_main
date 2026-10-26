@@ -787,19 +787,19 @@ export default function Home() {
             desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
           },
           {
-            num: "04 / Sacred Groves",
+            num: "04 / Integration Of Sacred Groves",
             title: "Vedic forest science, woven into the land",
-            desc: "Woven with conceptual Vanas based on traditions documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose. These are treated as essential ecological infrastructure.",
+            desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose. ",
           },
           {
             num: "05 / Enriching Experiences",
-            title: "Cottages, ponds, gazebos and tree houses",
-            desc: "Laid out in an architect-led master plan and shared across the community. Features like these are built to enrich the experience and invite people to keep returning to Vanatvam communities.",
+            title: "Cottages, ponds, gazebos and tree houses laid out in an architect-led master plan and shared across the community.",
+            desc: "Features like these are built to enrich the experience and invite people to keep returning to Vanatvam communities.",
           },
           {
             num: "06 / Water Bodies",
-            title: "Ponds and groves that purify groundwater",
-            desc: "Designed around our relationship with water to purify groundwater and shape how a place feels. Three of our four communities sit on real water: MadhuVana on the Cauvery, Eeshavana on the Kaveri, and AnantaVana near Kabini.",
+            title: "Ponds and groves that purify groundwater and shape how a place feels. ",
+            desc: "Every community is designed around its relationship with water — ponds and groves that purify groundwater and keep it healthy, shaping how a place feels as much as how it functions. The aesthetically designed water bodies enable visitors to reflect and feel a calming effect. ",
           },
         ].map((card, i) => (
           <motion.div
