@@ -510,45 +510,68 @@ export default function Investment() {
               transition={{ duration: 0.6 }}
               style={{
                 background: 'var(--bg-cream, #F9F8F6)',
-                padding: '36px',
                 borderRadius: '20px',
                 border: '1px solid rgba(0, 0, 0, 0.05)',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
+                display: 'flex',
+                flexDirection: 'column',
               }}
             >
               <div
                 style={{
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: 'var(--brand-earth-brown, #72351C)',
-                  fontWeight: 700,
-                  marginBottom: '12px',
+                  position: 'relative',
+                  width: '100%',
+                  height: '210px',
+                  overflow: 'hidden',
+                  background: '#1B2B1F',
                 }}
               >
-                Global Ripple Effects
+                <Image
+                  src="/assets/images/Global Ripple Effects.png"
+                  alt="Global Ripple Effects"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
-              <h3
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.45rem',
-                  color: '#122217',
-                  marginBottom: '14px',
-                }}
-              >
-                Cross-Market Interconnectedness
-              </h3>
-              <p
-                style={{
-                  fontSize: '1rem',
-                  color: '#556056',
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}
-              >
-                Global markets add a further layer of uncertainty. Shifts in US interest rates, trade
-                policy and geopolitical events have been sending ripples through every major market
-                at once, which is why diversification across asset classes matters.
-              </p>
+
+              <div style={{ padding: '32px' }}>
+                <div
+                  style={{
+                    fontSize: '0.8rem',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: 'var(--brand-earth-brown, #72351C)',
+                    fontWeight: 700,
+                    marginBottom: '12px',
+                  }}
+                >
+                  Global Ripple Effects
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '1.45rem',
+                    color: '#122217',
+                    marginBottom: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  Cross-Market Interconnectedness
+                </h3>
+                <p
+                  style={{
+                    fontSize: '1rem',
+                    color: '#556056',
+                    lineHeight: 1.75,
+                    margin: 0,
+                  }}
+                >
+                  Global markets add a further layer of uncertainty. Shifts in US interest rates, trade
+                  policy and geopolitical events have been sending ripples through every major market
+                  at once, which is why diversification across asset classes matters.
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -558,48 +581,71 @@ export default function Investment() {
               transition={{ duration: 0.6, delay: 0.1 }}
               style={{
                 background: 'var(--bg-cream, #F9F8F6)',
-                padding: '36px',
                 borderRadius: '20px',
                 border: '1px solid rgba(0, 0, 0, 0.05)',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
+                display: 'flex',
+                flexDirection: "column",
               }}
             >
               <div
                 style={{
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: '#B33928',
-                  fontWeight: 700,
-                  marginBottom: '12px',
+                  position: 'relative',
+                  width: '100%',
+                  height: '210px',
+                  overflow: 'hidden',
+                  background: '#1B2B1F',
                 }}
               >
-                Early 2026 Downturn
+                <Image
+                  src="/assets/images/Benchmark.png"
+                  alt="15–16% Benchmark Declines"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
-              <h3
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.45rem',
-                  color: '#122217',
-                  marginBottom: '14px',
-                }}
-              >
-                15–16% Benchmark Declines
-              </h3>
-              <p
-                style={{
-                  fontSize: '1rem',
-                  color: '#556056',
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}
-              >
-                The numbers since January 2026 show how sharp and divergent that volatility has been.
-                After the US and Israeli strikes on Iran began in late February, both Indian and global
-                markets fell hard: the Nifty 50 dropped from a January 5 record of 26,373 to a March 30
-                closing low of 22,331, and the Sensex fell from its December 2025 peak of 86,159 to a
-                March 30 low near 71,948 — declines of roughly 15–16% (NSE/BSE data via Business
-                Standard).
-              </p>
+
+              <div style={{ padding: '32px' }}>
+                <div
+                  style={{
+                    fontSize: '0.8rem',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: '#B33928',
+                    fontWeight: 700,
+                    marginBottom: '12px',
+                  }}
+                >
+                  Early 2026 Downturn
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '1.45rem',
+                    color: '#122217',
+                    marginBottom: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  15–16% Benchmark Declines
+                </h3>
+                <p
+                  style={{
+                    fontSize: '1rem',
+                    color: '#556056',
+                    lineHeight: 1.75,
+                    margin: 0,
+                  }}
+                >
+                  The numbers since January 2026 show how sharp and divergent that volatility has been.
+                  After the US and Israeli strikes on Iran began in late February, both Indian and global
+                  markets fell hard: the Nifty 50 dropped from a January 5 record of 26,373 to a March 30
+                  closing low of 22,331, and the Sensex fell from its December 2025 peak of 86,159 to a
+                  March 30 low near 71,948 — declines of roughly 15–16% (NSE/BSE data via Business
+                  Standard).
+                </p>
+              </div>
             </motion.div>
 
             <motion.div
@@ -609,48 +655,71 @@ export default function Investment() {
               transition={{ duration: 0.6, delay: 0.2 }}
               style={{
                 background: 'var(--bg-cream, #F9F8F6)',
-                padding: '36px',
                 borderRadius: '20px',
                 border: '1px solid rgba(0, 0, 0, 0.05)',
+                overflow: 'hidden',
+                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
+                display: 'flex',
+                flexDirection: "column",
               }}
             >
               <div
                 style={{
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.15em',
-                  textTransform: 'uppercase',
-                  color: '#2D6A4F',
-                  fontWeight: 700,
-                  marginBottom: '12px',
+                  position: 'relative',
+                  width: '100%',
+                  height: '210px',
+                  overflow: 'hidden',
+                  background: '#1B2B1F',
                 }}
               >
-                Market Divergence
+                <Image
+                  src="/assets/images/Market Divergence.png"
+                  alt="Divergent Paths Across Borders"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
-              <h3
-                style={{
-                  fontFamily: 'var(--font-serif)',
-                  fontSize: '1.45rem',
-                  color: '#122217',
-                  marginBottom: '14px',
-                }}
-              >
-                Divergent Paths Across Borders
-              </h3>
-              <p
-                style={{
-                  fontSize: '1rem',
-                  color: '#556056',
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}
-              >
-                The Nasdaq Composite confirmed its own correction on March 26, down about 11% from its
-                October 2025 record, as Iran war fears, a Meta Platforms selloff and doubts over AI
-                spending weighed on US tech stocks. By October 1, the S&P 500 and Nasdaq recovered to new
-                highs, up roughly 12% and over 15% YTD. Indian markets, by contrast, remained down ~14%
-                to 16% from their peaks, pressured by rising US 10-year yields, a weaker rupee and foreign
-                investor selling.
-              </p>
+
+              <div style={{ padding: '32px' }}>
+                <div
+                  style={{
+                    fontSize: '0.8rem',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: '#2D6A4F',
+                    fontWeight: 700,
+                    marginBottom: '12px',
+                  }}
+                >
+                  Market Divergence
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '1.45rem',
+                    color: '#122217',
+                    marginBottom: '14px',
+                    fontWeight: 600,
+                  }}
+                >
+                  Divergent Paths Across Borders
+                </h3>
+                <p
+                  style={{
+                    fontSize: '1rem',
+                    color: '#556056',
+                    lineHeight: 1.75,
+                    margin: 0,
+                  }}
+                >
+                  The Nasdaq Composite confirmed its own correction on March 26, down about 11% from its
+                  October 2025 record, as Iran war fears, a Meta Platforms selloff and doubts over AI
+                  spending weighed on US tech stocks. By October 1, the S&P 500 and Nasdaq recovered to new
+                  highs, up roughly 12% and over 15% YTD. Indian markets, by contrast, remained down ~14%
+                  to 16% from their peaks, pressured by rising US 10-year yields, a weaker rupee and foreign
+                  investor selling.
+                </p>
+              </div>
             </motion.div>
           </div>
 

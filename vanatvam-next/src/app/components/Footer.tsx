@@ -188,6 +188,56 @@ export default function Footer() {
                 </Magnetic>
               ))}
             </div>
+
+            {/* Office Address & Direct Contact Info */}
+            <div
+              style={{
+                fontSize: "0.88rem",
+                color: "rgba(255,255,255,0.8)",
+                lineHeight: 1.7,
+                display: "flex",
+                flexDirection: "column",
+                gap: "12px",
+                marginBottom: "24px",
+              }}
+            >
+              <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
+                <i
+                  className="fa-solid fa-location-dot"
+                  style={{ color: "var(--accent-gold)", marginTop: "4px", flexShrink: 0 }}
+                />
+                <span>
+                  #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase (Behind Radhakrishna Hospital), Bangalore – 560085
+                </span>
+              </div>
+
+              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                <i
+                  className="fa-solid fa-phone"
+                  style={{ color: "var(--accent-gold)", flexShrink: 0 }}
+                />
+                <a
+                  href="tel:+918047095111"
+                  style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                >
+                  (080) 4709-5111
+                </a>
+              </div>
+
+              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                <i
+                  className="fa-solid fa-envelope"
+                  style={{ color: "var(--accent-gold)", flexShrink: 0 }}
+                />
+                <a
+                  href="mailto:info@vanatvam.com"
+                  style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
+                >
+                  info@vanatvam.com
+                </a>
+              </div>
+            </div>
+
             <p
               style={{
                 fontSize: "0.8rem",

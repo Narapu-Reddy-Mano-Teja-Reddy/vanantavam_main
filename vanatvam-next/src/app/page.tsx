@@ -2140,6 +2140,81 @@ By bringing together ecological restoration, India’s cultural heritage, and th
                   />
                 </motion.div>
               ))}
+
+              {/* Community / Project Select Dropdown */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.39,
+                }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                }}
+              >
+                <label
+                  htmlFor="cta-project"
+                  style={{
+                    color: "#35483A",
+                    fontSize: "0.88rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  Select project of interest
+                </label>
+
+                <select
+                  id="cta-project"
+                  name="project"
+                  required
+                  defaultValue=""
+                  style={{
+                    width: "100%",
+                    minHeight: "52px",
+                    boxSizing: "border-box",
+                    padding: "13px 16px",
+                    border: "1px solid #DCE1DA",
+                    borderRadius: "10px",
+                    background: "#FFFFFF",
+                    color: "#26352B",
+                    fontFamily: "inherit",
+                    fontSize: "0.95rem",
+                    outline: "none",
+                    cursor: "pointer",
+                    transition:
+                      "border-color 0.25s ease, box-shadow 0.25s ease",
+                  }}
+                  onFocus={(event) => {
+                    event.currentTarget.style.borderColor = "#B38B4D";
+                    event.currentTarget.style.boxShadow =
+                      "0 0 0 3px rgba(198,162,101,0.15)";
+                  }}
+                  onBlur={(event) => {
+                    event.currentTarget.style.borderColor = "#DCE1DA";
+                    event.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  <option value="" disabled hidden>
+                    Select project of interest...
+                  </option>
+                  <option value="Brindavana (Pavagada · 30 Acres)">
+                    Brindavana (Pavagada · 30 Acres)
+                  </option>
+                  <option value="Madhuvana (Maddur · 18 Acres)">
+                    Madhuvana (Maddur · 18 Acres)
+                  </option>
+                  <option value="Anantavana (Kabini · 35 Acres)">
+                    Anantavana (Kabini · 35 Acres)
+                  </option>
+                  <option value="Eeshavana (Cauvery Riverfront)">
+                    Eeshavana (Cauvery Riverfront)
+                  </option>
+                </select>
+              </motion.div>
             </div>
 
             {/* Submit button */}

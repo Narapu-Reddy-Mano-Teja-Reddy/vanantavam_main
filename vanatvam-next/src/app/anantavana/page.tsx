@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import {
   motion,
   useScroll,
@@ -10,6 +10,7 @@ import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import AccordionGallery from "@/components/premium/AccordionGallery";
+import BrochureModal from "@/components/premium/BrochureModal";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -19,6 +20,7 @@ import {
   Mountain,
   PawPrint,
   Ship,
+  Sparkles,
   Trees,
   Waves,
 } from "lucide-react";
@@ -547,6 +549,7 @@ const amenities = [
 ];
 
 export default function Anantavana() {
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 1000], ["0%", "15%"], {
     clamp: true,
@@ -832,9 +835,9 @@ export default function Anantavana() {
               marginTop: "24px",
             }}
           >
-            <a
-              href="/assets/project-images/AnantaVana%20Brochure.pdf"
-              download
+            <button
+              type="button"
+              onClick={() => setIsBrochureOpen(true)}
               className="btn-pill btn-pill-gold"
               style={{
                 display: "inline-flex",
@@ -843,11 +846,13 @@ export default function Anantavana() {
                 backgroundColor: "var(--accent-gold)",
                 color: "#0d0d0d",
                 fontWeight: 600,
-                fontSize:  "1rem",
+                fontSize: "1rem",
+                border: "none",
+                cursor: "pointer",
               }}
             >
               Download brochure <span aria-hidden="true">↓</span>
-            </a>
+            </button>
             <Link href="/contact" className="btn-pill btn-pill-outline" style={{
                 
                 fontWeight: 600,
@@ -904,10 +909,10 @@ export default function Anantavana() {
             <div style={{ flex: "1.1 1 420px" }}>
               <Kicker>The AnantaVana</Kicker>
               <Words
-                text="WHERE NATURE SHAPES EVERYDAY LIFE"
+                text="Kabini – The land of spectacular landscapes and wildlife."
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 4.2vw, 4rem)",
+                  fontSize: "clamp(1.2rem, 3.2vw, 3rem)",
                   lineHeight: 1.1,
                   color: FOREST,
                   marginBottom: "30px",
@@ -925,17 +930,12 @@ export default function Anantavana() {
               >
                 <Reveal delay={0.1}>
                   <p style={{ margin: 0 }}>
-                    A nature-led community near Kabini, rooted in conscious
-                    living and respect for the natural world.
+                    The rustle of leaves blowing in the wind, the deep silence of the forest, the chirping of birds and the calmness of River Kabini, all whisper the breathtaking beauty of this most wonderful land. Everyone, from a wildlife enthusiast to the nature lover, and the average citizen have a reason to love Kabini, known as one of the country’s richest biodiversity spots.
                   </p>
                 </Reveal>
                 <Reveal delay={0.2}>
                   <p style={{ margin: 0 }}>
-                    Spread across 34 acres near Kabini, AnantaVana brings people
-                    closer to the outdoors in a landscape celebrated for its
-                    timeless beauty and rich wildlife. It offers an opportunity
-                    to slow down, reconnect with nature and experience a more
-                    thoughtful way of living.
+                    AnantaVana is a sustainable natural re-forestation project in Kabini for nature lovers. Here, VanaTvam in association with Indus Herbs is creating a niche community of land owners who understand, appreciate, and consciously participate in sustaining the unique biosphere of Kabini. This limited edition one acre plot of land is a personal nature retreat that one can plug into to recharge the body and spirit! 
                   </p>
                 </Reveal>
                 <Reveal delay={0.3}>
@@ -1148,6 +1148,176 @@ export default function Anantavana() {
         </div>
       </section>
 
+      {/* ================= OUR APPROACH ================= */}
+      <section
+        id="our-approach"
+        style={{
+          padding: "clamp(60px, 8vh, 100px) 0",
+          background: "#FFFFFF",
+          position: "relative",
+        }}
+      >
+        <div className="container" style={{ position: "relative", zIndex: 2 }}>
+          <div style={{ textAlign: "center", marginBottom: "50px" }}>
+            <Kicker center>OUR PHILOSOPHY</Kicker>
+            <Words
+              text="Our Approach"
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
+                fontWeight: 500,
+                color: FOREST,
+                textAlign: "center",
+                justifyContent: "center",
+                margin: "0 auto",
+                letterSpacing: "-0.02em",
+              }}
+            />
+          </div>
+
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns:
+                "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
+              gap: "24px",
+            }}
+          >
+            {[
+              {
+                num: "01 /",
+                title: "Excellent Locations",
+                subtitle: "Along the Bangalore–Mysore Corridor",
+                desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+                icon: MapPin,
+              },
+              {
+                num: "02 /",
+                title: "Biodiversity by Design",
+                subtitle: "We plant for the ecosystem, not just a crop",
+                desc: "Featuring 200+ native, rare and endangered tree species gathered into sacred groves like Nakshatra, Navagraha and Saraswathi Vana. Naturalists have documented 50+ bird species on our chemical-free land against national decline trends (State of India's Birds, 2023).",
+                icon: Trees,
+              },
+              {
+                num: "03 /",
+                title: "Natural and Organic",
+                subtitle: "Grown naturally, no compromise",
+                desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
+                icon: Leaf,
+              },
+              {
+                num: "04 /",
+                title: "Integration Of Sacred Groves",
+                subtitle: "Vedic forest science, woven into the land",
+                desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose.",
+                icon: Sparkles,
+              },
+            ].map((item, idx) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.num}
+                  initial={reduce ? false : { opacity: 0, y: 25 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.6,
+                    delay: reduce ? 0 : idx * 0.1,
+                    ease: EASE,
+                  }}
+                  whileHover={
+                    reduce
+                      ? undefined
+                      : {
+                          y: -6,
+                          boxShadow: "0 18px 40px rgba(18, 34, 23, 0.08)",
+                          borderColor: "rgba(198, 162, 101, 0.4)",
+                        }
+                  }
+                  style={{
+                    background: "#FFFFFF",
+                    border: "1px solid rgba(18, 34, 23, 0.08)",
+                    borderRadius: "24px",
+                    padding: "36px 28px 32px",
+                    textAlign: "left",
+                    display: "flex",
+                    flexDirection: "column",
+                    boxShadow: "0 8px 24px rgba(0, 0, 0, 0.02)",
+                    transition: "all 0.3s ease",
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "56px",
+                        height: "56px",
+                        borderRadius: "50%",
+                        background: "rgba(132, 67, 41, 0.07)",
+                        border: "1px solid rgba(132, 67, 41, 0.2)",
+                        color: "#844329",
+                        display: "grid",
+                        placeItems: "center",
+                        flexShrink: 0,
+                      }}
+                    >
+                      <Icon size={24} strokeWidth={1.6} />
+                    </div>
+
+                   
+                  </div>
+
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontSize: "1.35rem",
+                      fontWeight: 600,
+                      color: FOREST,
+                      margin: "0 0 6px",
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    {item.title}
+                  </h3>
+
+                  <span
+                    style={{
+                      fontSize: "0.82rem",
+                      fontWeight: 700,
+                      color: "#844329",
+                      textTransform: "uppercase",
+                      letterSpacing: "0.08em",
+                      marginBottom: "14px",
+                      display: "block",
+                    }}
+                  >
+                    {item.subtitle}
+                  </span>
+
+                  <p
+                    style={{
+                      margin: 0,
+                      color: "#5A685E",
+                      fontSize: "0.93rem",
+                      lineHeight: 1.7,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {item.desc}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ================= THOUGHTFUL SPACES ================= */}
       <section
         id="amenities"
@@ -1270,6 +1440,35 @@ export default function Anantavana() {
               </motion.article>
             ))}
           </div>
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "44px",
+              }}
+            >
+              <a
+                href="https://photos.app.goo.gl/dJaNg8zYHyjvxHnN6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill btn-pill-gold"
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "10px",
+                                backgroundColor: "var(--accent-gold)",
+                                color: "#0d0d0d",
+                                fontWeight: 600,
+                                fontSize:  "1rem",
+                              }}
+              >
+                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+              </a>
+            </motion.div>
         </div>
       </section>
 
@@ -1520,117 +1719,7 @@ export default function Anantavana() {
         </div>
       </section>
 
-      {/* ================= GALLERY ================= */}
-      {galleryItems.length > 0 && (
-        <section
-          id="gallery"
-          style={{ padding: "clamp(60px, 8vh, 90px) 0", background: "#FFF" }}
-        >
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              style={{ textAlign: "center", marginBottom: "40px" }}
-            >
-              <span
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "0.85rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.2em",
-                  textTransform: "uppercase",
-                  display: "block",
-                  marginBottom: "10px",
-                }}
-              >
-                Gallery
-              </span>
-              <h2
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
-                  color: "var(--bg-dark-forest)",
-                  margin: 0,
-                  fontWeight: 500,
-                }}
-              >
-                Glimpses of AnantaVana
-              </h2>
-            </motion.div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
-                gap: "24px",
-              }}
-            >
-              {galleryItems.slice(0, 4).map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={reduce ? false : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.6, delay: idx * 0.1, ease: EASE }}
-                  whileHover={reduce ? undefined : { y: -6, scale: 1.02 }}
-                  style={{
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                    boxShadow: "0 10px 30px rgba(18, 34, 23, 0.08)",
-                    aspectRatio: "4 / 3",
-                    position: "relative",
-                    background: "#F4F1E8",
-                  }}
-                >
-                  <img
-                    src={item.img}
-                    alt={`AnantaVana Gallery Image ${idx + 1}`}
-                    loading="lazy"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                      display: "block",
-                    }}
-                  />
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "44px",
-              }}
-            >
-              <a
-                href="https://photos.app.goo.gl/dJaNg8zYHyjvxHnN6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-pill-gold"
-                              style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: "10px",
-                                backgroundColor: "var(--accent-gold)",
-                                color: "#0d0d0d",
-                                fontWeight: 600,
-                                fontSize:  "1rem",
-                              }}
-              >
-                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-              </a>
-            </motion.div>
-          </div>
-        </section>
-      )}
+      
 
       {/* ================= NEARBY DESTINATIONS ================= */}
       <section
@@ -2537,6 +2626,81 @@ export default function Anantavana() {
                   />
                 </motion.div>
               ))}
+
+              {/* Community / Project Select Dropdown */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.39,
+                }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                }}
+              >
+                <label
+                  htmlFor="cta-project"
+                  style={{
+                    color: "#35483A",
+                    fontSize: "0.88rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  Select project of interest
+                </label>
+
+                <select
+                  id="cta-project"
+                  name="project"
+                  required
+                  defaultValue="Anantavana (Kabini · 35 Acres)"
+                  style={{
+                    width: "100%",
+                    minHeight: "52px",
+                    boxSizing: "border-box",
+                    padding: "13px 16px",
+                    border: "1px solid #DCE1DA",
+                    borderRadius: "10px",
+                    background: "#FFFFFF",
+                    color: "#26352B",
+                    fontFamily: "inherit",
+                    fontSize: "0.95rem",
+                    outline: "none",
+                    cursor: "pointer",
+                    transition:
+                      "border-color 0.25s ease, box-shadow 0.25s ease",
+                  }}
+                  onFocus={(event) => {
+                    event.currentTarget.style.borderColor = "#B38B4D";
+                    event.currentTarget.style.boxShadow =
+                      "0 0 0 3px rgba(198,162,101,0.15)";
+                  }}
+                  onBlur={(event) => {
+                    event.currentTarget.style.borderColor = "#DCE1DA";
+                    event.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  <option value="" disabled hidden>
+                    Select project of interest...
+                  </option>
+                  <option value="Brindavana (Pavagada · 30 Acres)">
+                    Brindavana (Pavagada · 30 Acres)
+                  </option>
+                  <option value="Madhuvana (Maddur · 18 Acres)">
+                    Madhuvana (Maddur · 18 Acres)
+                  </option>
+                  <option value="Anantavana (Kabini · 35 Acres)">
+                    Anantavana (Kabini · 35 Acres)
+                  </option>
+                  <option value="Eeshavana (Cauvery Riverfront)">
+                    Eeshavana (Cauvery Riverfront)
+                  </option>
+                </select>
+              </motion.div>
             </div>
 
             {/* Submit button */}
@@ -2855,6 +3019,13 @@ export default function Anantavana() {
           </div>
         </div>
       </section>
+
+      <BrochureModal
+        isOpen={isBrochureOpen}
+        onClose={() => setIsBrochureOpen(false)}
+        projectName="AnantaVana"
+        brochureUrl="/assets/project-images/AnantaVana%20Brochure.pdf"
+      />
 
       <Footer />
     </>

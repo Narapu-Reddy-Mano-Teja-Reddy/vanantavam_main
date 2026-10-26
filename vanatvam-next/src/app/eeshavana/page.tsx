@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Droplets, Leaf, MapPin, Mountain, PawPrint, ShieldCheck, Ship, Trees, Users, Waves } from "lucide-react";
+import BrochureModal from "@/components/premium/BrochureModal";
+import { ArrowRight, ArrowUpRight, Droplets, Leaf, MapPin, Mountain, PawPrint, ShieldCheck, Ship, Sparkles, Trees, Users, Waves } from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
 const TITLE = "EESHAVANA";
@@ -360,6 +361,7 @@ const galleryImages = [
 ];
 
 export default function Eeshavana() {
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const reduce = useReducedMotion() ?? false;
   const enter = (delay: number, duration = 0.8) =>
     reduce ? { duration: 0 } : { duration, delay, ease: EASE };
@@ -531,24 +533,23 @@ export default function Eeshavana() {
               }}
             />
 
-            <motion.p
-              initial={from(20)}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(2.1)}
-              style={{
-                fontSize: "clamp(1rem, 1.7vw, 1.2rem)",
-                color: "rgba(255,255,255,0.86)",
-                maxWidth: "690px",
-                fontWeight: 300,
-                lineHeight: 1.8,
-                margin: 0,
-              }}
-            >
-              Find your place beside the Kaveri. A thoughtfully planned
-              community near Kollegala, created for people who want more room
-              for nature, quieter weekends and a lasting connection with the
-              land.
-            </motion.p>
+           <motion.p
+            initial={from(20)}
+            animate={{ opacity: 1, y: 0 }}
+            transition={enter(2.1)}
+            style={{
+              fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)",
+              color: "rgba(255,255,255,0.94)",
+              maxWidth: "600px",
+              fontWeight: 300,
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              margin: 0,
+            }}
+          >
+            Find your place beside the  {" "}
+            <span style={{ color: "var(--accent-gold)" }}>Kaveri...</span>
+          </motion.p>
 
             <motion.div
               initial={from(18)}
@@ -562,22 +563,24 @@ export default function Eeshavana() {
                 marginTop: "24px",
               }}
             >
-              <a
+              <button
+                type="button"
+                onClick={() => setIsBrochureOpen(true)}
                 className="btn-pill btn-pill-gold"
                 style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "10px",
-                backgroundColor: "var(--accent-gold)",
-                color: "#0d0d0d",
-                fontWeight: 600,
-                fontSize:  "1rem",
-              }}
-                href="/assets/project-images/Eeshavana%20Brochure.pdf"
-                download
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  backgroundColor: "var(--accent-gold)",
+                  color: "#0d0d0d",
+                  fontWeight: 600,
+                  fontSize: "1rem",
+                  border: "none",
+                  cursor: "pointer",
+                }}
               >
                 Download brochure <span aria-hidden="true">↓</span>
-              </a>
+              </button>
               <Link className="btn-pill btn-pill-outline" href="/contact" style={{
                 
                 fontWeight: 600,
@@ -673,7 +676,7 @@ export default function Eeshavana() {
                      marginBottom: "4px",
                    }}
                  >
-                   6.5 Acres
+                   10 Acres
                  </strong>
                  <span
                    style={{
@@ -689,48 +692,49 @@ export default function Eeshavana() {
                </motion.div>
              </div>
              <div className="eeshavana-idea-copy">
-               <Kicker>Designed for peace, privacy, and purity.</Kicker>
+               <Kicker>A premium Kaveri riverfront farm community by Vanatvam</Kicker>
                <Words
-                 text="A little closer to what matters."
+                 text="Where the river becomes part of everyday life"
                  style={{
                    fontFamily: "var(--font-serif)",
-                   fontSize: "clamp(2.2rem, 4.2vw, 4rem)",
-                   lineHeight: 1.1,
+                   fontSize: "clamp(1.5rem, 3vw, 2.6rem)",
+                   lineHeight: 1.12,
                    color: FOREST,
-                   marginBottom: "30px",
+                   marginBottom: "28px",
                  }}
                />
                <div
                  style={{
                    display: "flex",
                    flexDirection: "column",
-                   gap: "16px",
+                   gap: "18px",
                    color: "#4d594d",
-                   fontSize: "1.08rem",
+                   fontSize: "1.05rem",
                    lineHeight: 1.8,
                  }}
                >
+                
                  <Reveal delay={0.1}>
                    <p style={{ margin: 0 }}>
-                     Eeshavana is a thoughtfully planned premium riverfront community envisioned along the serene banks of the Kaveri.
+                     Nestled along the sacred Kaveri river in Dhanagere, Kollegala Taluk, Eeshavana is envisioned as a nature-first community where architecture listens to the land, landscapes remain alive, and every home enjoys the calm rhythm of rural Karnataka.
                    </p>
                  </Reveal>
                  <Reveal delay={0.2}>
                    <p style={{ margin: 0 }}>
-                     Every plot, pathway, and pause point has been laid out to keep you close to the river and far from the noise — connected to the essentials of life, without losing the wild calm of the land it sits on.
+                     Inspired by the philosophy of living with nature, Eeshavana brings together river, trees, open skies, and thoughtfully designed community spaces. The architectural vision emphasizes organic forms, natural materials, native vegetation, and experiences that deepen one&apos;s connection with the land and water.
                    </p>
                  </Reveal>
                  <Reveal delay={0.3}>
                    <p style={{ margin: 0 }}>
-                     This is land for those who’ve outgrown the city’s pace but never want for its comforts. A place to build slowly, live simply, and return to often — where the river sets the rhythm of your days.
+                     The Kaveri is more than a river. It is part of the cultural, ecological, and historical identity of Karnataka. At Eeshavana, the river is not a distant view — it is a living presence. Its changing reflections, cool breeze, birdsong, and seasonal moods become part of everyday life. Beyond the river stretch coconut groves, native vegetation, and fertile agricultural landscapes that give this place its unmistakable rural character. Eeshavana has been conceived to preserve and enhance this natural setting rather than compete with it.
                    </p>
                  </Reveal>
                </div>
-               <div className="eeshavana-pills">
+               <div className="eeshavana-pills" style={{ marginTop: "24px" }}>
                  {[
-                   "Peace, privacy & purity",
-                   "Kaveri riverfront community",
-                   "Build slowly, live simply",
+                   "Sacred Kaveri Riverfront",
+                   "Dhanagere, Kollegala",
+                   "Nature-First Architecture",
                  ].map((item, index) => (
                    <Reveal key={item} delay={0.12 + index * 0.06}>
                      <span className="eeshavana-pill">{item}</span>
@@ -849,8 +853,9 @@ export default function Eeshavana() {
           </div>
         </section>
 
-        {/* ================= WAY OF LIFE ================= */}
+        {/* ================= OUR APPROACH ================= */}
         <section
+          id="our-approach"
           style={{
             padding: "clamp(60px, 8vh, 100px) 0",
             background: "#FFFFFF",
@@ -858,61 +863,65 @@ export default function Eeshavana() {
           }}
         >
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, ease: EASE }}
-              style={{ textAlign: "center", marginBottom: "50px" }}
-            >
-              <h2
+            <div style={{ textAlign: "center", marginBottom: "50px" }}>
+              <Kicker center>OUR PHILOSOPHY</Kicker>
+              <Words
+                text="Our Approach"
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2rem, 3.8vw, 3.2rem)",
+                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
                   fontWeight: 500,
                   color: FOREST,
-                  margin: 0,
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "0 auto",
                   letterSpacing: "-0.02em",
                 }}
-              >
-                This isn&apos;t just a plot. It&apos;s a way of life.
-              </h2>
-            </motion.div>
+              />
+            </div>
 
             <div
               style={{
                 display: "grid",
                 gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
+                  "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
                 gap: "24px",
               }}
             >
               {[
                 {
-                  title: "Live Natural",
-                  desc: "Surrounded by native trees, open skies, and unhurried mornings.",
+                  num: "01 /",
+                  title: "Excellent Locations",
+                  subtitle: "Along the Bangalore–Mysore Corridor",
+                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+                  icon: MapPin,
+                },
+                {
+                  num: "02 /",
+                  title: "Biodiversity by Design",
+                  subtitle: "We plant for the ecosystem, not just a crop",
+                  desc: "Featuring 200+ native, rare and endangered tree species gathered into sacred groves like Nakshatra, Navagraha and Saraswathi Vana. Naturalists have documented 50+ bird species on our chemical-free land against national decline trends (State of India's Birds, 2023).",
                   icon: Trees,
                 },
                 {
-                  title: "Live Peaceful",
-                  desc: "A gated, low-density community built for privacy and stillness.",
-                  icon: ShieldCheck,
+                  num: "03 /",
+                  title: "Natural and Organic",
+                  subtitle: "Grown naturally, no compromise",
+                  desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
+                  icon: Leaf,
                 },
                 {
-                  title: "Live Connected",
-                  desc: "A close-knit circle of landowners who value the same things you do.",
-                  icon: Users,
-                },
-                {
-                  title: "Live by the River",
-                  desc: "Direct Kaveri frontage with a private deck, bio-pool & nature pathways.",
-                  icon: Waves,
+                  num: "04 /",
+                  title: "Integration Of Sacred Groves",
+                  subtitle: "Vedic forest science, woven into the land",
+                  desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose.",
+                  icon: Sparkles,
                 },
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <motion.div
-                    key={item.title}
+                    key={item.num}
                     initial={reduce ? false : { opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
@@ -932,32 +941,40 @@ export default function Eeshavana() {
                     }
                     style={{
                       background: "#FFFFFF",
-                      border: "1px solid rgba(18, 34, 23, 0.07)",
-                      borderRadius: "20px",
-                      padding: "36px 24px 32px",
-                      textAlign: "center",
+                      border: "1px solid rgba(18, 34, 23, 0.08)",
+                      borderRadius: "24px",
+                      padding: "36px 28px 32px",
+                      textAlign: "left",
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "center",
                       boxShadow: "0 8px 24px rgba(0, 0, 0, 0.02)",
                       transition: "all 0.3s ease",
                     }}
                   >
                     <div
                       style={{
-                        width: "64px",
-                        height: "64px",
-                        borderRadius: "50%",
-                        background: "rgba(132, 67, 41, 0.07)",
-                        border: "1px solid rgba(132, 67, 41, 0.2)",
-                        color: "#844329",
-                        display: "grid",
-                        placeItems: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
                         marginBottom: "20px",
-                        flexShrink: 0,
                       }}
                     >
-                      <Icon size={26} strokeWidth={1.6} />
+                      <div
+                        style={{
+                          width: "56px",
+                          height: "56px",
+                          borderRadius: "50%",
+                          background: "rgba(132, 67, 41, 0.07)",
+                          border: "1px solid rgba(132, 67, 41, 0.2)",
+                          color: "#844329",
+                          display: "grid",
+                          placeItems: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Icon size={24} strokeWidth={1.6} />
+                      </div>
+ 
                     </div>
 
                     <h3
@@ -965,19 +982,34 @@ export default function Eeshavana() {
                         fontFamily: "var(--font-serif)",
                         fontSize: "1.35rem",
                         fontWeight: 600,
-                        color: "#844329",
-                        margin: "0 0 12px",
+                        color: FOREST,
+                        margin: "0 0 6px",
+                        lineHeight: 1.25,
                       }}
                     >
                       {item.title}
                     </h3>
 
+                    <span
+                      style={{
+                        fontSize: "0.82rem",
+                        fontWeight: 700,
+                        color: "#844329",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                        marginBottom: "14px",
+                        display: "block",
+                      }}
+                    >
+                      {item.subtitle}
+                    </span>
+
                     <p
                       style={{
                         margin: 0,
                         color: "#5A685E",
-                        fontSize: "0.94rem",
-                        lineHeight: 1.65,
+                        fontSize: "0.93rem",
+                        lineHeight: 1.7,
                         fontWeight: 300,
                       }}
                     >
@@ -987,6 +1019,178 @@ export default function Eeshavana() {
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* ================= AMENITIES ================= */}
+        <section
+          id="amenities"
+          style={{ padding: "clamp(60px, 8vh, 100px) 0", background: "#FFFFFF" }}
+        >
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: "50px" }}>
+              <Kicker center>Eeshavana Experiences</Kicker>
+              <Words
+                text="Designed for Slower, Holistic Living"
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
+                  lineHeight: 1.15,
+                  color: FOREST,
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 16px",
+                }}
+              />
+              <Reveal delay={0.15}>
+                <p
+                  style={{
+                    fontSize: "1.1rem",
+                    color: "var(--eeshavana-muted, #687b63)",
+                    maxWidth: "680px",
+                    margin: "0 auto",
+                    lineHeight: 1.75,
+                  }}
+                >
+                  More room for shared moments, quiet pauses, and a closer connection with the Cauvery river.
+                </p>
+              </Reveal>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+                gap: "24px",
+              }}
+            >
+              {[
+                {
+                  name: "Walk by the River",
+                  desc: "Tranquil riverfront walking pathways winding along the scenic banks of the Cauvery.",
+                  image: "/assets/project-images/Esahavana/EV1.png",
+                },
+                {
+                  name: "Bio Pool",
+                  desc: "Natural chemical-free bio pool integrated with aquatic filtration flora.",
+                  image: "/assets/project-images/Esahavana/Biopool.png",
+                },
+                {
+                  name: "Amphitheatre",
+                  desc: "Open-air eco amphitheatre designed for cultural gatherings and starlit evenings.",
+                  image: "/assets/project-images/Esahavana/Amphithiater.png",
+                },
+                {
+                  name: "Dining Deck",
+                  desc: "Elevated open-breeze wooden dining deck overlooking the serene river landscape.",
+                  image: "/assets/project-images/Esahavana/EV.png",
+                },
+              ].map((amenity, index) => (
+                <motion.article
+                  key={amenity.name}
+                  initial={reduce ? false : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={
+                    reduce
+                      ? undefined
+                      : {
+                          y: -8,
+                          scale: 1.02,
+                          boxShadow: "0 22px 45px rgba(18,34,23,0.16)",
+                          transition: { duration: 0.3, ease: EASE },
+                        }
+                  }
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                    ease: EASE,
+                  }}
+                  style={{
+                    background: "#FFF",
+                    borderRadius: "24px",
+                    overflow: "hidden",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+                    border: "1px solid rgba(0,0,0,0.04)",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "200px",
+                      width: "100%",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <img
+                      src={amenity.image}
+                      alt={amenity.name}
+                      loading="lazy"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div style={{ padding: "24px", flexGrow: 1 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "1.35rem",
+                        color: FOREST,
+                        margin: "0 0 10px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {amenity.name}
+                    </h3>
+                    <p
+                      style={{
+                        color: "var(--eeshavana-muted, #687b63)",
+                        fontSize: "0.95rem",
+                        lineHeight: 1.6,
+                        margin: 0,
+                      }}
+                    >
+                      {amenity.desc}
+                    </p>
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "44px",
+                }}
+              >
+                <a
+                  href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-pill-gold"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    backgroundColor: "var(--accent-gold)",
+                    color: "#0d0d0d",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    textDecoration: "none",
+                  }}
+                >
+                  Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+                </a>
+              </motion.div>
           </div>
         </section>
 
@@ -1105,7 +1309,7 @@ export default function Eeshavana() {
                       lineHeight: 1.8,
                     }}
                   >
-                    20 individually carved plots ranging from 8,000+ sq. ft., arranged thoughtfully to preserve natural topography and privacy.
+                    Work in progress - 20 individually carved plots, each spanning 8,000+ sq. ft., thoughtfully arranged to preserve the natural topography and ensure privacy.
                   </p>
                 </div>
 
@@ -1240,118 +1444,7 @@ export default function Eeshavana() {
         </section>
 
         
-        {/* ================= GALLERY ================= */}
-        {galleryImages.length > 0 && (
-          <section
-            id="gallery"
-            style={{ padding: "clamp(60px, 8vh, 90px) 0", background: "#FFF" }}
-          >
-            <div className="container">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                style={{ textAlign: "center", marginBottom: "40px" }}
-              >
-                <span
-                  style={{
-                    color: "var(--accent-gold)",
-                    fontSize: "0.85rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.2em",
-                    textTransform: "uppercase",
-                    display: "block",
-                    marginBottom: "10px",
-                  }}
-                >
-                  Gallery
-                </span>
-                <h2
-                  style={{
-                    fontFamily: "var(--font-serif)",
-                    fontSize: "clamp(2rem, 3.5vw, 3.2rem)",
-                    color: FOREST,
-                    margin: 0,
-                    fontWeight: 500,
-                  }}
-                >
-                  Glimpses of Eeshavana
-                </h2>
-              </motion.div>
-
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns:
-                    "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
-                  gap: "24px",
-                }}
-              >
-                {galleryImages.slice(0, 4).map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    initial={reduce ? false : { opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-40px" }}
-                    transition={{ duration: 0.6, delay: idx * 0.1, ease: EASE }}
-                    whileHover={reduce ? undefined : { y: -6, scale: 1.02 }}
-                    style={{
-                      borderRadius: "20px",
-                      overflow: "hidden",
-                      boxShadow: "0 10px 30px rgba(18, 34, 23, 0.08)",
-                      aspectRatio: "4 / 3",
-                      position: "relative",
-                      background: "#F4F1E8",
-                    }}
-                  >
-                    <img
-                      src={item.src}
-                      alt={item.alt || `Eeshavana Gallery Image ${idx + 1}`}
-                      loading="lazy"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                        display: "block",
-                      }}
-                    />
-                  </motion.div>
-                ))}
-              </div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "44px",
-                }}
-              >
-                <a
-                  href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-gold"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    backgroundColor: "var(--accent-gold)",
-                    color: "#0d0d0d",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                    textDecoration: "none",
-                  }}
-                >
-                  Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-                </a>
-              </motion.div>
-            </div>
-          </section>
-        )}
+        
 
       {/* ================= NEARBY DESTINATIONS ================= */}
       <section
@@ -2258,6 +2351,81 @@ export default function Eeshavana() {
                   />
                 </motion.div>
               ))}
+
+              {/* Community / Project Select Dropdown */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.39,
+                }}
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "8px",
+                }}
+              >
+                <label
+                  htmlFor="cta-project"
+                  style={{
+                    color: "#35483A",
+                    fontSize: "0.88rem",
+                    fontWeight: 600,
+                  }}
+                >
+                  Select project of interest
+                </label>
+
+                <select
+                  id="cta-project"
+                  name="project"
+                  required
+                  defaultValue="Eeshavana (Cauvery Riverfront)"
+                  style={{
+                    width: "100%",
+                    minHeight: "52px",
+                    boxSizing: "border-box",
+                    padding: "13px 16px",
+                    border: "1px solid #DCE1DA",
+                    borderRadius: "10px",
+                    background: "#FFFFFF",
+                    color: "#26352B",
+                    fontFamily: "inherit",
+                    fontSize: "0.95rem",
+                    outline: "none",
+                    cursor: "pointer",
+                    transition:
+                      "border-color 0.25s ease, box-shadow 0.25s ease",
+                  }}
+                  onFocus={(event) => {
+                    event.currentTarget.style.borderColor = "#B38B4D";
+                    event.currentTarget.style.boxShadow =
+                      "0 0 0 3px rgba(198,162,101,0.15)";
+                  }}
+                  onBlur={(event) => {
+                    event.currentTarget.style.borderColor = "#DCE1DA";
+                    event.currentTarget.style.boxShadow = "none";
+                  }}
+                >
+                  <option value="" disabled hidden>
+                    Select project of interest...
+                  </option>
+                  <option value="Brindavana (Pavagada · 30 Acres)">
+                    Brindavana (Pavagada · 30 Acres)
+                  </option>
+                  <option value="Madhuvana (Maddur · 18 Acres)">
+                    Madhuvana (Maddur · 18 Acres)
+                  </option>
+                  <option value="Anantavana (Kabini · 35 Acres)">
+                    Anantavana (Kabini · 35 Acres)
+                  </option>
+                  <option value="Eeshavana (Cauvery Riverfront)">
+                    Eeshavana (Cauvery Riverfront)
+                  </option>
+                </select>
+              </motion.div>
             </div>
 
             {/* Submit button */}
@@ -2564,6 +2732,14 @@ export default function Eeshavana() {
       </section>
 
       </main>
+
+      <BrochureModal
+        isOpen={isBrochureOpen}
+        onClose={() => setIsBrochureOpen(false)}
+        projectName="Eeshavana"
+        brochureUrl="/assets/project-images/Eeshavana%20Brochure.pdf"
+      />
+
       <Footer />
 
       <style jsx>{`

@@ -165,7 +165,7 @@ export default function About() {
               ))}
            <Magnetic strength={0.25}>
                                 <Link
-                                  href="/founders-statement"
+                                  href="/blog"
                                   className="btn-pill btn-pill-gold"
                                   style={{
                                     padding: "14px 32px",
@@ -191,7 +191,7 @@ export default function About() {
               position: "sticky",
               top: "120px",
               height: "min(76vh, 760px)",
-              minHeight: "520px",
+              minHeight: "1000px",
               overflow: "visible",
             }}
           >
@@ -199,7 +199,7 @@ export default function About() {
               <motion.img
                 whileHover={{ scale: 1.025 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                src="/assets/images/ourstory.png"
+                src="/assets/images/ourstory1.png"
                 alt="A family walking through a green landscape at sunrise"
                 style={{
                   display: "block",
@@ -210,28 +210,7 @@ export default function About() {
                 }}
               />
             </div>
-            <motion.div
-              className="about-story-callout"
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
-              style={{
-                position: "absolute",
-                zIndex: 1,
-                left: "-24px",
-                bottom: "-34px",
-                width: "min(78%, 360px)",
-                padding: "clamp(20px, 2.5vw, 28px)",
-                borderRadius: "22px",
-                border: "1px solid rgba(198,162,101,0.5)",
-                background: "linear-gradient(145deg, #1E352F 0%, #122217 100%)",
-                boxShadow: "0 24px 60px rgba(18,34,23,0.32)",
-                color: "#FFF",
-              }}
-            >            
-              
-            </motion.div>
+           
           </motion.div>
         </div>
         <style jsx>{`

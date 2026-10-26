@@ -8,9 +8,15 @@ import RevealText from '@/components/premium/RevealText';
 import Magnetic from '@/components/premium/Magnetic';
 import TiltCard from '@/components/premium/TiltCard';
 import ProjectTunnel from '@/components/premium/ProjectTunnel';
+import BrochureModal from '@/components/premium/BrochureModal';
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState({
+    name: 'AnantaVana',
+    brochureUrl: '/assets/project-images/AnantaVana%20Brochure.pdf',
+  });
 
   const projects = [
      {
@@ -134,9 +140,9 @@ export default function Projects() {
                     <motion.img 
                       whileHover={{ scale: 1.05 }} 
                       transition={{ duration: 0.6, ease: 'easeOut' }}
-                      src={proj.img} alt={proj.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                      src={proj.img} alt={proj.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                     />
-                     
+
                   </TiltCard>
                   <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
                     <span style={{ color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.15em', fontWeight: 600, marginBottom: '15px', display: 'block', textTransform: 'uppercase' }}>{proj.location}</span>
@@ -151,9 +157,9 @@ export default function Projects() {
 
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '25px', flex: 1 }}>{proj.desc}</p>
                     
-                    <div style={{ display: 'flex', gap: '10px', marginBottom: '30px', flexWrap: 'wrap' }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '30px' }}>
                       {proj.pills.map((pill, i) => (
-                        <span key={i} style={{ background: 'var(--bg-cream)', padding: '6px 12px', borderRadius: '6px', fontSize: '0.8rem', color: 'var(--text-dark)', border: '1px solid var(--border-light)' }}>
+                        <span key={i} style={{ display: 'inline-flex', alignItems: 'center', background: 'var(--bg-cream)', padding: '6px 12px', borderRadius: '6px', fontSize: '0.8rem', color: 'var(--text-dark)', border: '1px solid var(--border-light)', width: 'fit-content' }}>
                           <i className="fa-solid fa-leaf" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i>{pill}
                         </span>
                       ))}
@@ -165,24 +171,20 @@ export default function Projects() {
                           Explore Project
                         </Link>
                       </Magnetic>
-                      {proj.brochure ? (
-                        <a
-                          href={proj.brochure}
-                          download
-                          className="btn-pill btn-pill-project-brochure"
-                          style={{ justifyContent: 'center', width: '100%' }}
-                        >
-                          Download Brochure
-                        </a>
-                      ) : (
-                        <Link
-                          href="/contact"
-                          className="btn-pill btn-pill-project-brochure"
-                          style={{ justifyContent: 'center', width: '100%' }}
-                        >
-                          Request Brochure
-                        </Link>
-                      )}
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedProject({
+                            name: proj.name,
+                            brochureUrl: proj.brochure || '/assets/project-images/AnantaVana%20Brochure.pdf',
+                          });
+                          setIsBrochureOpen(true);
+                        }}
+                        className="btn-pill btn-pill-project-brochure"
+                        style={{ justifyContent: 'center', width: '100%', cursor: 'pointer', border: 'none' }}
+                      >
+                        Download Brochure ↓
+                      </button>
                     </div>
                   </div>
                 </motion.div>
@@ -217,6 +219,12 @@ export default function Projects() {
 
       <ProjectTunnel items={projects} />
 
+      <BrochureModal
+        isOpen={isBrochureOpen}
+        onClose={() => setIsBrochureOpen(false)}
+        projectName={selectedProject.name}
+        brochureUrl={selectedProject.brochureUrl}
+      />
 
       <Footer />
     </>

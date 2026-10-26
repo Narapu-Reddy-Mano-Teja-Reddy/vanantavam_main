@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
+import BrochureModal from "@/components/premium/BrochureModal";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -294,6 +295,7 @@ const galleryImages = [
 ];
 
 export default function Brindavana() {
+  const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const reduce = useReducedMotion() ?? false;
   const enter = (delay: number, duration = 0.8) =>
     reduce ? { duration: 0 } : { duration, delay, ease: EASE };
@@ -466,21 +468,22 @@ export default function Brindavana() {
             />
 
             <motion.p
-              initial={from(20)}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(2.1)}
-              style={{
-                fontSize: "clamp(1rem, 1.7vw, 1.2rem)",
-                color: "rgba(255,255,255,0.86)",
-                maxWidth: "690px",
-                fontWeight: 300,
-                lineHeight: 1.8,
-                margin: 0,
-              }}
-            >
-              Where roots run deep and nature thrives. Welcome to Brindavana — a 30-acre haven of sustainable managed farmland in Krishnapura near Pavagada, weaving ancient cultural wisdom with innovative agroforestry.
-            </motion.p>
-
+            initial={from(20)}
+            animate={{ opacity: 1, y: 0 }}
+            transition={enter(2.1)}
+            style={{
+              fontSize: "clamp(1rem, 3vw, 2rem)",
+              color: "rgba(255,255,255,0.94)",
+              maxWidth: "600px",
+              fontWeight: 300,
+              fontFamily: "var(--font-serif)",
+              fontStyle: "italic",
+              margin: 0,
+            }}
+          >
+            Where roots run deep and 
+            <span style={{ color: "var(--accent-gold)" }}> nature thrives..</span>
+          </motion.p>
             <motion.div
               initial={from(18)}
               animate={{ opacity: 1, y: 0 }}
@@ -493,7 +496,9 @@ export default function Brindavana() {
                 marginTop: "24px",
               }}
             >
-              <a
+              <button
+                type="button"
+                onClick={() => setIsBrochureOpen(true)}
                 className="btn-pill btn-pill-gold"
                 style={{
                   display: "inline-flex",
@@ -503,12 +508,12 @@ export default function Brindavana() {
                   color: "#0d0d0d",
                   fontWeight: 600,
                   fontSize: "1rem",
+                  border: "none",
+                  cursor: "pointer",
                 }}
-                href="/assets/project-images/Brindavana%20Brochure.pdf"
-                download
               >
                 Download brochure <span aria-hidden="true">↓</span>
-              </a>
+              </button>
               <Link
                 className="btn-pill btn-pill-outline"
                 href="/contact"
@@ -815,8 +820,9 @@ export default function Brindavana() {
           </div>
         </section>
 
-        {/* ================= WAY OF LIFE ================= */}
+        {/* ================= OUR APPROACH ================= */}
         <section
+          id="our-approach"
           style={{
             padding: "clamp(60px, 8vh, 100px) 0",
             background: "#FFFFFF",
@@ -824,61 +830,65 @@ export default function Brindavana() {
           }}
         >
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <motion.div
-              initial={reduce ? false : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.7, ease: EASE }}
-              style={{ textAlign: "center", marginBottom: "50px" }}
-            >
-              <h2
+            <div style={{ textAlign: "center", marginBottom: "50px" }}>
+              <Kicker center>OUR PHILOSOPHY</Kicker>
+              <Words
+                text="Our Approach"
                 style={{
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2rem, 3.8vw, 3.2rem)",
+                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
                   fontWeight: 500,
                   color: FOREST,
-                  margin: 0,
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "0 auto",
                   letterSpacing: "-0.02em",
                 }}
-              >
-                This isn&apos;t just a plot. It&apos;s a way of life.
-              </h2>
-            </motion.div>
+              />
+            </div>
 
             <div
               style={{
                 display: "grid",
                 gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 240px), 1fr))",
+                  "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
                 gap: "24px",
               }}
             >
               {[
                 {
-                  title: "Live Natural",
-                  desc: "Surrounded by 85%+ native forest canopy, organic soil, and unhurried mornings.",
+                  num: "01 /",
+                  title: "Excellent Locations",
+                  subtitle: "Along the Bangalore–Mysore Corridor",
+                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+                  icon: MapPin,
+                },
+                {
+                  num: "02 /",
+                  title: "Biodiversity by Design",
+                  subtitle: "We plant for the ecosystem, not just a crop",
+                  desc: "Featuring 200+ native, rare and endangered tree species gathered into sacred groves like Nakshatra, Navagraha and Saraswathi Vana. Naturalists have documented 50+ bird species on our chemical-free land against national decline trends (State of India's Birds, 2023).",
                   icon: Trees,
                 },
                 {
-                  title: "Live Peaceful",
-                  desc: "A tranquil, low-density sanctuary built for quiet reflection and privacy.",
-                  icon: ShieldCheck,
+                  num: "03 /",
+                  title: "Natural and Organic",
+                  subtitle: "Grown naturally, no compromise",
+                  desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
+                  icon: Leaf,
                 },
                 {
-                  title: "Live Connected",
-                  desc: "A close-knit circle of families who value sustainability and cultural roots.",
-                  icon: Users,
-                },
-                {
-                  title: "Live in Harmony",
-                  desc: "Nakshatra Vana sacred groves, therapeutic trekking trails, and eco-cottages.",
+                  num: "04 /",
+                  title: "Integration Of Sacred Groves",
+                  subtitle: "Vedic forest science, woven into the land",
+                  desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose.",
                   icon: Sparkles,
                 },
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <motion.div
-                    key={item.title}
+                    key={item.num}
                     initial={reduce ? false : { opacity: 0, y: 25 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, margin: "-40px" }}
@@ -898,32 +908,40 @@ export default function Brindavana() {
                     }
                     style={{
                       background: "#FFFFFF",
-                      border: "1px solid rgba(18, 34, 23, 0.07)",
-                      borderRadius: "20px",
-                      padding: "36px 24px 32px",
-                      textAlign: "center",
+                      border: "1px solid rgba(18, 34, 23, 0.08)",
+                      borderRadius: "24px",
+                      padding: "36px 28px 32px",
+                      textAlign: "left",
                       display: "flex",
                       flexDirection: "column",
-                      alignItems: "center",
                       boxShadow: "0 8px 24px rgba(0, 0, 0, 0.02)",
                       transition: "all 0.3s ease",
                     }}
                   >
                     <div
                       style={{
-                        width: "64px",
-                        height: "64px",
-                        borderRadius: "50%",
-                        background: "rgba(132, 67, 41, 0.07)",
-                        border: "1px solid rgba(132, 67, 41, 0.2)",
-                        color: "#844329",
-                        display: "grid",
-                        placeItems: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
                         marginBottom: "20px",
-                        flexShrink: 0,
                       }}
                     >
-                      <Icon size={26} strokeWidth={1.6} />
+                      <div
+                        style={{
+                          width: "56px",
+                          height: "56px",
+                          borderRadius: "50%",
+                          background: "rgba(132, 67, 41, 0.07)",
+                          border: "1px solid rgba(132, 67, 41, 0.2)",
+                          color: "#844329",
+                          display: "grid",
+                          placeItems: "center",
+                          flexShrink: 0,
+                        }}
+                      >
+                        <Icon size={24} strokeWidth={1.6} />
+                      </div>
+ 
                     </div>
 
                     <h3
@@ -931,19 +949,34 @@ export default function Brindavana() {
                         fontFamily: "var(--font-serif)",
                         fontSize: "1.35rem",
                         fontWeight: 600,
-                        color: "#844329",
-                        margin: "0 0 12px",
+                        color: FOREST,
+                        margin: "0 0 6px",
+                        lineHeight: 1.25,
                       }}
                     >
                       {item.title}
                     </h3>
 
+                    <span
+                      style={{
+                        fontSize: "0.82rem",
+                        fontWeight: 700,
+                        color: "#844329",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.08em",
+                        marginBottom: "14px",
+                        display: "block",
+                      }}
+                    >
+                      {item.subtitle}
+                    </span>
+
                     <p
                       style={{
                         margin: 0,
                         color: "#5A685E",
-                        fontSize: "0.94rem",
-                        lineHeight: 1.65,
+                        fontSize: "0.93rem",
+                        lineHeight: 1.7,
                         fontWeight: 300,
                       }}
                     >
@@ -1450,19 +1483,13 @@ export default function Brindavana() {
                     icon: Ship,
                   },
                   {
-                    name: "Medical & Health Hubs",
+                    name: "Penukonda",
                     desc: "Nearby healthcare & emergency facilities",
                     km: 4,
                     time: "~5 mins",
                     icon: Droplets,
                   },
-                  {
-                    name: "Educational Hubs",
-                    desc: "Schools & institutional centers",
-                    km: 12,
-                    time: "~15 mins",
-                    icon: Compass,
-                  },
+                 
                   {
                     name: "Bengaluru City",
                     desc: "Capital city connection",
@@ -1966,6 +1993,81 @@ export default function Brindavana() {
                     />
                   </motion.div>
                 ))}
+
+                {/* Community / Project Select Dropdown */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.39,
+                  }}
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "8px",
+                  }}
+                >
+                  <label
+                    htmlFor="cta-project"
+                    style={{
+                      color: "#35483A",
+                      fontSize: "0.88rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Select project of interest
+                  </label>
+
+                  <select
+                    id="cta-project"
+                    name="project"
+                    required
+                    defaultValue="Brindavana (Pavagada · 30 Acres)"
+                    style={{
+                      width: "100%",
+                      minHeight: "52px",
+                      boxSizing: "border-box",
+                      padding: "13px 16px",
+                      border: "1px solid #DCE1DA",
+                      borderRadius: "10px",
+                      background: "#FFFFFF",
+                      color: "#26352B",
+                      fontFamily: "inherit",
+                      fontSize: "0.95rem",
+                      outline: "none",
+                      cursor: "pointer",
+                      transition:
+                        "border-color 0.25s ease, box-shadow 0.25s ease",
+                    }}
+                    onFocus={(event) => {
+                      event.currentTarget.style.borderColor = "#B38B4D";
+                      event.currentTarget.style.boxShadow =
+                        "0 0 0 3px rgba(198,162,101,0.15)";
+                    }}
+                    onBlur={(event) => {
+                      event.currentTarget.style.borderColor = "#DCE1DA";
+                      event.currentTarget.style.boxShadow = "none";
+                    }}
+                  >
+                    <option value="" disabled hidden>
+                      Select project of interest...
+                    </option>
+                    <option value="Brindavana (Pavagada · 30 Acres)">
+                      Brindavana (Pavagada · 30 Acres)
+                    </option>
+                    <option value="Madhuvana (Maddur · 18 Acres)">
+                      Madhuvana (Maddur · 18 Acres)
+                    </option>
+                    <option value="Anantavana (Kabini · 35 Acres)">
+                      Anantavana (Kabini · 35 Acres)
+                    </option>
+                    <option value="Eeshavana (Cauvery Riverfront)">
+                      Eeshavana (Cauvery Riverfront)
+                    </option>
+                  </select>
+                </motion.div>
               </div>
 
               {/* Submit button */}
@@ -2272,6 +2374,14 @@ export default function Brindavana() {
         </div>
       </section>
       </main>
+
+      <BrochureModal
+        isOpen={isBrochureOpen}
+        onClose={() => setIsBrochureOpen(false)}
+        projectName="Brindavana"
+        brochureUrl="/assets/project-images/Brindavana%20Brochure.pdf"
+      />
+
       <Footer />
 
       <style jsx>{`
