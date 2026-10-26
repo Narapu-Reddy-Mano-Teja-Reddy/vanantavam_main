@@ -229,48 +229,8 @@ export default function About() {
                 boxShadow: "0 24px 60px rgba(18,34,23,0.32)",
                 color: "#FFF",
               }}
-            >
-               
-              <h3
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(1.25rem, 2vw, 1.3rem)",
-                  fontStyle: "italic",
-                  lineHeight: 1.35,
-                  color: "#FFF",
-                  margin: "0 0 14px",
-                }}
-              >
-                Come, Be Part of Our Journey
-              </h3>
-              <p
-                style={{
-                  maxWidth: "400px",
-                  margin: "0 0 22px",
-                  fontSize: "0.98rem",
-                  lineHeight: 1.7,
-                  color: "rgba(255,255,255,0.82)",
-                }}
-              >
-                Join a community building a greener, more connected future through a deeper relationship with nature.
-              </p>
-              <Link
-                href="/contact"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  padding: "11px 18px",
-                  borderRadius: "999px",
-                  background: "var(--accent-gold)",
-                  color: "var(--bg-dark-forest)",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                }}
-              >
-                Speak to our team
-                <ArrowRight size={18} aria-hidden="true" />
-              </Link>
+            >            
+              
             </motion.div>
           </motion.div>
         </div>
@@ -311,60 +271,7 @@ export default function About() {
           }
         `}</style>
       </section>
-
-      {/* Sacred Ecosystems Section */}
-      <section
-        style={{
-          padding: "clamp(90px, 12vh, 140px) 0",
-          background: "var(--bg-dark-forest)",
-          color: "#FFF",
-        }}
-      >
-        <div className="container">
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "80px",
-              alignItems: "center",
-            }}
-          >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, x: -40 }}
-              whileInView={{ opacity: 1, scale: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1.1, ease: [0.25, 1, 0.5, 1] }}
-              style={{
-                flex: "1 1 400px",
-              }}
-            >
-              <motion.img
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                src="/assets/project-images/Esahavana/EV_Image1.png"
-                alt="Sacred Ecosystems"
-                style={{ width: "100%", height: "500px" }}
-              />
-            </motion.div>
-
-            <div style={{ flex: "1 1 500px" }}>
-              <motion.span
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "0.9rem",
-                  fontWeight: 600,
-                  letterSpacing: "0.15em",
-                  textTransform: "uppercase",
-                  display: "block",
-                  marginBottom: "20px",
-                }}
-              >
-                
-
+  
       {/* Founder Leadership Section */}
             <section
               style={{
