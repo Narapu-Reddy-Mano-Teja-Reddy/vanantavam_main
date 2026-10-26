@@ -13,6 +13,34 @@ export default function Projects() {
   const [filter, setFilter] = useState('all');
 
   const projects = [
+     {
+      id: 'brindavana',
+      category: 'completed',
+      name: 'BRINDAVANA',
+      logo: '/assets/images/Project-Logos/BrindaVana.webp',
+      location: 'PAVAGADA · 30 ACRES',
+      desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
+      img: '/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png',
+      brochure: null,
+       
+      badgeBg: 'var(--bg-dark-forest)',
+      pills: ['Native Canopy', 'Rain Catchments']
+    },
+
+     {
+      id: 'madhuvana',
+      category: 'water',
+      name: 'MADHUVANA',
+      logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
+      location: 'MADDUR - 17 Acres',
+      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
+      img: '/assets/project-images/Maduvana/hero.png',
+      brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
+       
+      badgeBg: 'var(--accent-gold)',
+      pills: ['200+ Native Trees', 'Sacred Groves']
+    },
+     
     {
       id: 'anantavana',
       category: 'wildlife',
@@ -26,12 +54,13 @@ export default function Projects() {
       badgeBg: '#2D6A4F',
       pills: ['Bandipur Corridor', 'Heritage Cottages']
     },
+    
     {
       id: 'eeshavana',
       category: 'riverfront',
       name: 'EESHAVANA',
       logo: '/assets/images/Project-Logos/eeshavanaalogo.webp',
-      location: 'KOLLEGALA · CAUVERY RIVERFRONT',
+      location: 'KOLLEGALA - 10 Acres',
       desc: 'Our premier riverfront community set along the banks of the sacred Cauvery river. Designed around the deep relationship between people, riparian ecology, and water.',
       img: '/assets/project-images/Esahavana/EV Image.png',
       brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
@@ -39,32 +68,7 @@ export default function Projects() {
       badgeBg: '#1B4965',
       pills: ['Cauvery Frontage', 'River Ecosystem']
     },
-     {
-      id: 'madhuvana',
-      category: 'water',
-      name: 'MADHUVANA',
-      logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
-      location: 'MADDUR',
-      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
-      img: '/assets/project-images/Maduvana/hero.png',
-      brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
-       
-      badgeBg: 'var(--accent-gold)',
-      pills: ['200+ Native Trees', 'Sacred Groves']
-    },
-      {
-      id: 'brindavana',
-      category: 'completed',
-      name: 'BRINDAVANA',
-      logo: '/assets/images/Project-Logos/BrindaVana.webp',
-      location: 'PAVAGADA · 30 ACRES',
-      desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
-      img: '/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png',
-      brochure: null,
-       
-      badgeBg: 'var(--bg-dark-forest)',
-      pills: ['Native Canopy', 'Rain Catchments']
-    },
+    
    
   ];
 
