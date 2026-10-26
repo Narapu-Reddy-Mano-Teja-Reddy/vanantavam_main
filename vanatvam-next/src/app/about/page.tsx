@@ -363,71 +363,7 @@ export default function About() {
                   marginBottom: "20px",
                 }}
               >
-                OUR INSPIRATION
-              </motion.span>
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.15 }}
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 4vw, 3.5rem)",
-                  color: "#FFF",
-                  lineHeight: 1.1,
-                  marginBottom: "30px",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Re-creating Sacred
-                <br />
-                <span
-                  style={{ fontStyle: "italic", color: "var(--accent-gold)" }}
-                >
-                  Ecosystems.
-                </span>
-              </motion.h2>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.25 }}
-                style={{
-                  fontSize: "1.2rem",
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: 1.8,
-                  marginBottom: "25px",
-                  fontWeight: 300,
-                }}
-              >
-                Our vision forVanaTvam is deeply rooted in the profound wisdom
-                of the Brihat Samhita, an ancient Indian text illuminating
-                sustainable living and sacred ecological balance. We embarked on
-                this journey driven by a desire to recreate these sacred,
-                thriving ecosystems that honour both the land and those who
-                inhabit it.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.35 }}
-                style={{
-                  fontSize: "1.2rem",
-                  color: "rgba(255,255,255,0.85)",
-                  lineHeight: 1.8,
-                  fontWeight: 300,
-                }}
-              >
-                VanaTvam is our heartfelt commitment to nurturing a space where
-                nature flourishes alongside human aspiration—cultivating a
-                community bound by respect, sustainability, and cultural
-                richness.
-              </motion.p>
-            </div>
-          </div>
-        </div>
-      </section>
+                
 
       {/* Founder Leadership Section */}
             <section
