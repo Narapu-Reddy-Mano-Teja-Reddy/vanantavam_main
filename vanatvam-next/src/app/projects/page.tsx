@@ -96,7 +96,6 @@ export default function Projects() {
 
         <div className="container relative" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
-            <span style={{ display: 'inline-block', padding: '6px 16px', border: '1px solid var(--accent-gold)', borderRadius: '30px', color: 'var(--accent-gold)', fontSize: '0.85rem', letterSpacing: '0.1em', marginBottom: '20px' }}>OUR LIVING SANCTUARIES</span>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.5rem, 7vw, 6.5rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em' }}>
               <RevealText>Four Expressions of</RevealText><br/>
               <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Nature.</RevealText>
