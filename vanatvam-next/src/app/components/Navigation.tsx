@@ -73,241 +73,29 @@ export default function Navigation() {
 
   return (
     <>
-      <motion.header
-        initial={false}
-        animate={{
-          width: scrolled ? "min(94%, 1320px)" : "100%",
-          y: scrolled ? 16 : 0,
-          borderRadius: scrolled ? "40px" : "0px",
-          boxShadow: scrolled
-            ? "0 20px 50px rgba(18, 34, 23, 0.14), 0 0 0 1px rgba(198, 162, 101, 0.35)"
-            : "none",
-        }}
-        transition={{ type: "spring", stiffness: 260, damping: 24 }}
+      <header
         style={{
           position: "fixed",
-          top: 0,
+          top: scrolled ? "16px" : "0px",
           left: "50%",
-          x: "-50%",
+          transform: "translateX(-50%)",
           zIndex: 1000,
-          height: scrolled ? "82px" : "116px",
-          backdropFilter: scrolled ? "blur(18px)" : "none",
-          WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
-          overflow: "hidden",
-          willChange: "transform, width, background, border-radius, height",
+          width: scrolled ? "min(94%, 1320px)" : "100%",
+          padding: scrolled ? "0" : "0 40px",
+          boxSizing: "border-box",
+          transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        {/* Scrolled Cream Background */}
-        <motion.div
-          initial={false}
-          animate={{ opacity: scrolled ? 1 : 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            inset: 0,
-            borderRadius: "inherit",
-            background:
-              "linear-gradient(180deg, #FAF8F2 0%, #F5F0E4 100%)",
-            pointerEvents: "none",
-            zIndex: 0,
-          }}
-        />
-
-        {/* Left Botanical SVG Vector (visible when scrolled) */}
-        <motion.div
-          initial={false}
-          animate={{ opacity: scrolled ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            bottom: 0,
-            width: "150px",
-            pointerEvents: "none",
-            zIndex: 1,
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <svg
-            width="150"
-            height="82"
-            viewBox="0 0 150 82"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ width: "100%", height: "100%" }}
-          >
-            {/* Stems */}
-            <path
-              d="M-15 85C20 62 48 38 32 8C25 -12 -8 -18 -15 -18"
-              stroke="#162E20"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-            />
-            <path
-              d="M10 50C35 42 55 25 48 2"
-              stroke="#162E20"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            />
-
-            {/* Deep Background Foliage */}
-            <path
-              d="M-5 68C-18 50 2 38 18 52C12 72 -5 68 -5 68Z"
-              fill="#122217"
-              opacity="0.9"
-            />
-            <path
-              d="M12 56C0 38 22 26 36 40C28 60 12 56 12 56Z"
-              fill="#1C3829"
-              opacity="0.95"
-            />
-
-            {/* Midground Forest Green Leaves */}
-            <path
-              d="M26 42C12 22 36 12 50 28C42 46 26 42 26 42Z"
-              fill="#2A4D36"
-            />
-            <path
-              d="M32 24C20 6 42 -4 54 12C48 30 32 24 32 24Z"
-              fill="#1B3625"
-            />
-
-            {/* Accent Soft Olive/Lush Leaf Highlights */}
-            <path
-              d="M20 48C28 38 42 34 38 46C30 52 20 48 20 48Z"
-              fill="#487556"
-              opacity="0.85"
-            />
-            <path
-              d="M32 30C40 20 52 18 48 28C40 34 32 30 32 30Z"
-              fill="#629270"
-              opacity="0.8"
-            />
-
-            {/* Leaf Vein Accents */}
-            <path
-              d="M12 56C20 46 28 44 36 40"
-              stroke="#487556"
-              strokeWidth="1"
-              opacity="0.6"
-            />
-            <path
-              d="M26 42C34 32 42 30 50 28"
-              stroke="#7BA887"
-              strokeWidth="1"
-              opacity="0.6"
-            />
-          </svg>
-        </motion.div>
-
-        {/* Right Botanical SVG Vector (visible when scrolled) */}
-        <motion.div
-          initial={false}
-          animate={{ opacity: scrolled ? 1 : 0 }}
-          transition={{ duration: 0.4 }}
-          style={{
-            position: "absolute",
-            right: 0,
-            top: 0,
-            bottom: 0,
-            width: "150px",
-            pointerEvents: "none",
-            zIndex: 1,
-            display: "flex",
-            alignItems: "center",
-            transform: "scaleX(-1)",
-          }}
-        >
-          <svg
-            width="150"
-            height="82"
-            viewBox="0 0 150 82"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ width: "100%", height: "100%" }}
-          >
-            {/* Stems */}
-            <path
-              d="M-15 85C20 62 48 38 32 8C25 -12 -8 -18 -15 -18"
-              stroke="#162E20"
-              strokeWidth="2.8"
-              strokeLinecap="round"
-            />
-            <path
-              d="M10 50C35 42 55 25 48 2"
-              stroke="#162E20"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            />
-
-            {/* Deep Background Foliage */}
-            <path
-              d="M-5 68C-18 50 2 38 18 52C12 72 -5 68 -5 68Z"
-              fill="#122217"
-              opacity="0.9"
-            />
-            <path
-              d="M12 56C0 38 22 26 36 40C28 60 12 56 12 56Z"
-              fill="#1C3829"
-              opacity="0.95"
-            />
-
-            {/* Midground Forest Green Leaves */}
-            <path
-              d="M26 42C12 22 36 12 50 28C42 46 26 42 26 42Z"
-              fill="#2A4D36"
-            />
-            <path
-              d="M32 24C20 6 42 -4 54 12C48 30 32 24 32 24Z"
-              fill="#1B3625"
-            />
-
-            {/* Accent Soft Olive/Lush Leaf Highlights */}
-            <path
-              d="M20 48C28 38 42 34 38 46C30 52 20 48 20 48Z"
-              fill="#487556"
-              opacity="0.85"
-            />
-            <path
-              d="M32 30C40 20 52 18 48 28C40 34 32 30 32 30Z"
-              fill="#629270"
-              opacity="0.8"
-            />
-
-            {/* Leaf Vein Accents */}
-            <path
-              d="M12 56C20 46 28 44 36 40"
-              stroke="#487556"
-              strokeWidth="1"
-              opacity="0.6"
-            />
-            <path
-              d="M26 42C34 32 42 30 50 28"
-              stroke="#7BA887"
-              strokeWidth="1"
-              opacity="0.6"
-            />
-          </svg>
-        </motion.div>
-
         <div
-          className="header-inner"
           style={{
-            position: "relative",
-            zIndex: 2,
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             width: "100%",
-            height: "100%",
-            padding: scrolled ? "0 28px 0 24px" : "0 40px",
-            boxSizing: "border-box",
+            gap: "16px",
           }}
         >
-          {/* Logo */}
+          {/* Left: Logo (Same logo image before and after scroll) */}
           <Link
             href="/"
             className="logo-group"
@@ -315,53 +103,53 @@ export default function Navigation() {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "14px",
               textDecoration: "none",
-              height: "100%",
+              height: scrolled ? "96px" : "125px",
+              transition: "height 0.4s ease",
             }}
           >
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.img
-                key={scrolled ? "scrolled-logo" : "default-logo"}
-                src={
-                  scrolled
-                    ? "/assets/images/main.png"
-                    : "/assets/images/vanatvamlogo.webp"
-                }
-                alt="Vanatvam Logo"
-                className="header-logo-img"
-                initial={{ opacity: 0, scale: 0.92 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.92 }}
-                transition={{ duration: 0.25, ease: EASE_PREMIUM }}
-                whileHover={{ scale: 1.04 }}
-                style={{
-                  height: scrolled ? "72px" : "96px",
-                  width: "auto",
-                  maxWidth: scrolled ? "150px" : "220px",
-                  filter: scrolled
-                    ? "drop-shadow(0 2px 6px rgba(18,34,23,0.1))"
-                    : "drop-shadow(0 2px 10px rgba(0,0,0,0.4))",
-                  objectFit: "contain",
-                  display: "block",
-                }}
-              />
-            </AnimatePresence>
+            <motion.img
+              src="/assets/images/vanatvamlogo.webp"
+              alt="Vanatvam Logo"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, ease: EASE_PREMIUM }}
+              whileHover={{ scale: 1.04 }}
+              style={{
+                height: scrolled ? "108px" : "120px",
+                width: "auto",
+                maxWidth: scrolled ? "240px" : "270px",
+                filter: scrolled
+                  ? "drop-shadow(0 2px 8px rgba(0,0,0,0.25))"
+                  : "drop-shadow(0 2px 12px rgba(0,0,0,0.4))",
+                objectFit: "contain",
+                display: "block",
+                transition: "all 0.4s ease",
+              }}
+            />
           </Link>
 
-          {/* Nav Menu */}
-          <nav
+          {/* Center: Nav Menu Container */}
+          <motion.nav
             className="nav-menu"
             onMouseLeave={() => setHoveredPath(null)}
             style={{
+              position: "relative",
               display: "flex",
               alignItems: "center",
-              gap: scrolled ? "4px" : "30px",
-              background: scrolled ? "rgba(240, 237, 226, 0.85)" : "transparent",
-              padding: scrolled ? "5px 6px" : "0",
-              borderRadius: scrolled ? "36px" : "0px",
-              border: scrolled ? "1px solid rgba(198, 162, 101, 0.3)" : "none",
-              boxShadow: scrolled ? "inset 0 1px 3px rgba(0,0,0,0.04)" : "none",
+              gap: scrolled ? "4px" : "32px",
+              background: scrolled
+                ? "rgba(240, 237, 226, 0.92)"
+                : "transparent",
+              padding: scrolled ? "5px 8px" : "0",
+              borderRadius: scrolled ? "40px" : "0px",
+              border: scrolled ? "1px solid rgba(198, 162, 101, 0.35)" : "none",
+              boxShadow: scrolled
+                ? "0 10px 30px rgba(18, 34, 23, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8)"
+                : "none",
+              backdropFilter: scrolled ? "blur(18px)" : "none",
+              WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
+              height: scrolled ? "56px" : "auto",
               transition: "all 0.4s ease",
             }}
           >
@@ -376,7 +164,7 @@ export default function Navigation() {
                   ? "#FFFFFF"
                   : lit
                   ? "#183023"
-                  : "#2C4032"
+                  : "#233B2C"
                 : lit
                 ? "var(--accent-gold)"
                 : "#FFFFFF";
@@ -395,8 +183,8 @@ export default function Navigation() {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "8px",
-                    padding: scrolled ? "8px 18px" : "10px 14px",
-                    fontSize: scrolled ? "0.9rem" : "1rem",
+                    padding: scrolled ? "8px 18px" : "12px 16px",
+                    fontSize: scrolled ? "0.92rem" : "1.08rem",
                     fontWeight: isActive ? 600 : 500,
                     letterSpacing: isHovered ? "0.02em" : "0em",
                     color: textColor,
@@ -405,7 +193,7 @@ export default function Navigation() {
                       "color 0.3s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                   }}
                 >
-                  {/* Active page: Dark green pill (scrolled) */}
+                  {/* Active page pill (scrolled) */}
                   {isActive && scrolled && (
                     <motion.span
                       layoutId="nav-active-pill"
@@ -477,7 +265,7 @@ export default function Navigation() {
                             ? "#FFFFFF"
                             : lit
                             ? "#987443"
-                            : "#3A5241",
+                            : "#233B2C",
                           transition: "color 0.3s ease",
                         }}
                       />
@@ -485,27 +273,7 @@ export default function Navigation() {
                     <span>{item.label}</span>
                   </motion.span>
 
-                  {/* Active Indicator Bar beneath the pill (when scrolled & active) */}
-                  {isActive && scrolled && (
-                    <motion.span
-                      layoutId="nav-active-bar"
-                      aria-hidden="true"
-                      style={{
-                        position: "absolute",
-                        bottom: "-10px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        width: "32px",
-                        height: "3px",
-                        borderRadius: "2px",
-                        background: "#183023",
-                        boxShadow: "0 2px 6px rgba(24, 48, 35, 0.3)",
-                        zIndex: 1,
-                      }}
-                    />
-                  )}
-
-                  {/* Active page: gold dot (top of page) */}
+                  {/* Active Indicator Bar / Dot */}
                   {isActive && !scrolled && (
                     <motion.span
                       layoutId="nav-active-dot"
@@ -532,9 +300,9 @@ export default function Navigation() {
                 </Link>
               );
             })}
-          </nav>
+          </motion.nav>
 
-          {/* Right Action Section */}
+          {/* Right: Direct Action CTA Button */}
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
             <Magnetic strength={0.3}>
               <motion.div
@@ -551,13 +319,12 @@ export default function Navigation() {
                   style={{
                     position: "relative",
                     overflow: "hidden",
-                    background: scrolled
-                      ? "#183023"
-                      : "linear-gradient(135deg, #74351F 0%, #542211 100%)",
+                    background:
+                      "linear-gradient(135deg, #74351F 0%, #542211 100%)",
                     color: "#FFFFFF",
-                    padding: scrolled ? "12px 24px" : "14px 26px",
-                    borderRadius: "34px",
-                    fontSize: scrolled ? "0.85rem" : "0.98rem",
+                    padding: scrolled ? "14px 28px" : "16px 32px",
+                    borderRadius: "36px",
+                    fontSize: scrolled ? "0.92rem" : "1.02rem",
                     fontWeight: 700,
                     letterSpacing: scrolled ? "0.06em" : "0em",
                     textTransform: scrolled ? "uppercase" : "none",
@@ -565,12 +332,8 @@ export default function Navigation() {
                     alignItems: "center",
                     gap: "10px",
                     textDecoration: "none",
-                    boxShadow: scrolled
-                      ? "0 8px 22px rgba(24, 48, 35, 0.28)"
-                      : "0 8px 22px rgba(116, 53, 31, 0.32)",
-                    border: scrolled
-                      ? "1px solid rgba(198, 162, 101, 0.4)"
-                      : "1px solid rgba(198, 162, 101, 0.4)",
+                    boxShadow: "0 8px 22px rgba(116, 53, 31, 0.32)",
+                    border: "1px solid rgba(198, 162, 101, 0.4)",
                     whiteSpace: "nowrap",
                     transition: "all 0.3s ease",
                   }}
@@ -617,7 +380,7 @@ export default function Navigation() {
                       zIndex: 1,
                       display: "inline-flex",
                       alignItems: "center",
-                      color: scrolled ? "#FFFFFF" : "var(--accent-gold)",
+                      color: "var(--accent-gold)",
                     }}
                   >
                     <ArrowRight size={15} strokeWidth={2.5} />
@@ -663,7 +426,7 @@ export default function Navigation() {
             </div>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       {/* Drawer Menu */}
       <AnimatePresence>
