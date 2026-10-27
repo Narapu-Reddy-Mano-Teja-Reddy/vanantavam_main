@@ -1811,50 +1811,64 @@ export default function Eeshavana() {
 
           <div className="av-nearby-grid">
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              {[
-                {
-                  name: "Kaveri Riverfront",
-                  desc: "Direct Kaveri river views & promenade",
-                  km: 0,
-                  time: "On site",
-                  icon: Waves,
-                },
-                {
-                  name: "Kollegala Town",
-                  desc: "Historical town & daily necessities",
-                  km: 12,
-                  time: "~15 mins",
-                  icon: Mountain,
-                },
-                {
-                  name: "Shivanasamudra Falls",
-                  desc: "Famous waterfalls & hydro-power site",
-                  km: 28,
-                  time: "~35 mins",
-                  icon: Droplets,
-                },
-                {
-                  name: "BR Hills Wildlife Sanctuary",
-                  desc: "Tiger reserve & mountain range",
-                  km: 45,
-                  time: "~55 mins",
-                  icon: PawPrint,
-                },
-                {
-                  name: "Mysore City",
-                  desc: "Palace city & cultural hub",
-                  km: 65,
-                  time: "~1.2 hrs",
-                  icon: Trees,
-                },
-                {
-                  name: "Bengaluru",
-                  desc: "Capital city connection",
-                  km: 145,
-                  time: "~3 hrs",
-                  icon: Ship,
-                },
-              ].map(({ name, desc, km, time, icon: Icon }, i) => (
+             {[
+  {
+    name: "PG Palya Tiger Safari",
+    desc: "Wildlife safari & tiger habitat",
+    km: 31,
+    time: "",
+    icon: PawPrint,
+  },
+  {
+    name: "B R Hills",
+    desc: "Scenic hills & wildlife sanctuary",
+    km: 50,
+    time: "",
+    icon: Mountain,
+  },
+  {
+    name: "MM Hills",
+    desc: "Sacred hills & temple destination",
+    km: 75,
+    time: "",
+    icon: Trees,
+  },
+  {
+    name: "Gaganachukki / Bharachukki Falls",
+    desc: "Spectacular waterfalls of the Kaveri",
+    km: 13,
+    time: "",
+    icon: Droplets,
+  },
+  {
+    name: "Talkadu",
+    desc: "Historic temple town on the Kaveri",
+    km: 21,
+    time: "",
+    icon: Waves,
+  },
+  {
+    name: "Somnathpur",
+    desc: "Historic Hoysala temple destination",
+    km: 44,
+    time: "",
+    icon: ShieldCheck,
+  },
+  {
+    name: "Mysuru",
+    desc: "Royal heritage & cultural attractions",
+    km: 68,
+    time: "",
+    icon: Sparkles,
+  },
+  {
+    name: "Bangalore",
+    desc: "Major city & metropolitan connection",
+    km: 133,
+    time: "",
+    icon: Ship,
+  },
+].map(({ name, desc, km, time, icon: Icon }, i) => (
                 <motion.div
                   key={name}
                   className="av-nearby-card"
@@ -1882,7 +1896,7 @@ export default function Eeshavana() {
                       <strong>{km}</strong>
                       <span>km</span>
                     </div>
-                    <span className="av-nearby-time">{time}</span>
+                  {time && <span className="av-nearby-time">{time}</span>}
                   </div>
                 </motion.div>
               ))}
