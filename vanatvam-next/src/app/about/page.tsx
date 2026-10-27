@@ -165,7 +165,7 @@ export default function About() {
               ))}
            <Magnetic strength={0.25}>
                                 <Link
-                                  href="/blog"
+                                  href="/blog/the-big-picture-of-vanatvam"
                                   className="btn-pill btn-pill-gold"
                                   style={{
                                     padding: "14px 32px",
