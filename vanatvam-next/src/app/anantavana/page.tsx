@@ -505,7 +505,7 @@ const landscape: Pillar[] = [
 
 const amenities = [
   {
-    image: "/assets/project-images/Ananthavana/Pergolas.png",
+    image: "/assets/project-images/Ananthavana/Enterance.jpeg",
     name: "Enterance",
     desc: "Shaded spots for rest and quiet gatherings.",
   },

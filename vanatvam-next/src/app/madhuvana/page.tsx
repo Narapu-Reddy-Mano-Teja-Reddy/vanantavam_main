@@ -329,13 +329,18 @@ const amenities = [
   },
   {
     letter: "E",
-    name: "Kids Pool",
+    name: "Children's Pool",
     img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.png",
   },
   {
     letter: "F",
     name: "Tree House",
     img: "/assets/project-images/Maduvana/MV Tree House.jpeg",
+  },
+  {
+    letter: "G",
+    name: "Pond",
+    img: "/assets/project-images/Maduvana/pond.png",
   },
  
 ];
@@ -1167,17 +1172,17 @@ export default function Madhuvana() {
                   >
                     {[
                       { code: "A", label: "Pond" },
-                      { code: "B", label: "KITCHEN AND DINING" },
-                      { code: "C", label: "Tree Housee" },
-                      { code: "D", label: "EVENT SPACE" },
-                      { code: "E", label: "CAR PARKING " },
-                      { code: "F", label: "CHILDREN POOL" },
-                      { code: "G", label: "PLAYAREA" },
-                      { code: "H", label: "VINAYAKA VANA" },
-                       { code: "I", label: "AMPHITHEATRE" },
-                      { code: "J", label: "COTTAGES" },
-                      { code: "K", label: "ASHOKA VANA WITH POND" },
-                      { code: "L", label: "GAZEBO WITH SHIVAPANCHAYATHA VANA" },
+                      { code: "B", label: "Kitchen and Dining" },
+                      { code: "C", label: "Tree House" },
+                      { code: "D", label: "Event Space" },
+                      { code: "E", label: "Car Parking" },
+                      { code: "F", label: "Children's Pool" },
+                      { code: "G", label: "Play Area" },
+                      { code: "H", label: "Vinayaka Vana" },
+                       { code: "I", label: "Amphitheatre" },
+                      { code: "J", label: "Cottages" },
+                      { code: "K", label: "Ashoka Vana with Pond" },
+                      { code: "L", label: "Gazebo with Shivapanchayatha Vana" },
                     ].map((item) => (
                       <div
                         key={item.code}

@@ -129,7 +129,7 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Center: Nav Menu Container */}
+         {/* Center: Nav Menu Container */}
           <motion.nav
             className="nav-menu"
             onMouseLeave={() => setHoveredPath(null)}

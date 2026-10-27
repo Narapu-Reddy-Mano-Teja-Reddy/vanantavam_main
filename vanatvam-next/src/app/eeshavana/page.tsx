@@ -634,7 +634,7 @@ export default function Eeshavana() {
                  }}
                >
                  <motion.img
-                   src="/assets/project-images/Esahavana/EV River View 2.jpg"
+                   src="/assets/project-images/Esahavana/EV.png"
                    alt="A view of the Kaveri river landscape"
                    loading="lazy"
                    initial={reduce ? false : { scale: 1.2 }}
@@ -1079,7 +1079,7 @@ export default function Eeshavana() {
                 {
                   name: "Amphitheatre",
                   desc: "Open-air eco amphitheatre designed for cultural gatherings and starlit evenings.",
-                  image: "/assets/project-images/Esahavana/Amphithiater.png",
+                  image: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.png",
                 },
                 {
                   name: "Dining Deck",

@@ -26,7 +26,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/BrindaVana.webp',
       location: 'PAVAGADA · 30 ACRES',
       desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
-      img: '/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png',
+      img: '/assets/project-images/Brindavana/brindavanaaa.png',
       brochure: null,
        
       badgeBg: 'var(--bg-dark-forest)',
@@ -68,7 +68,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/eeshavanaalogo.webp',
       location: 'KOLLEGALA - 10 Acres',
       desc: 'Our premier riverfront community set along the banks of the sacred Cauvery river. Designed around the deep relationship between people, riparian ecology, and water.',
-      img: '/assets/project-images/Esahavana/EV Image.png',
+      img: '/assets/project-images/Esahavana/EV.png',
       brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
       
       badgeBg: '#1B4965',

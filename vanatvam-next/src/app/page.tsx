@@ -108,7 +108,7 @@ const heroSlides = [
     name: "EESHAVANA",
     
     tagline: "A premium riverfront community on the sacred Cauvery.",
-    img: "/assets/project-images/Esahavana/EV%20River%20View%201.jpg",
+    img: "/assets/project-images/Esahavana/EV.png",
   },
   
   {
@@ -1105,21 +1105,21 @@ export default function Home() {
                   id: "eeshavana",
                   name: "EESHAVANA",
                   badge: "KOLLEGALA ·10 Acres",
-                  img: "/assets/project-images/Esahavana/Riverside%20view.png",
+                  img: "/assets/project-images/Esahavana/EV.png",
                    
                 },
                 {
                   id: "madhuvana",
                   name: "MADHUVANA",
                   badge: "MADDUR · 17 ACRES",
-                  img: "/assets/project-images/Maduvana/Sunlit%20Terracotta%20Cottage%20and%20Lush%20Garden.png",
+                  img: "/assets/project-images/Maduvana/hero.png",
                    
                 },
                 {
                   id: "brindavana",
                   name: "BRINDAVANA",
                   badge: "PAVAGADA · 30 ACRES",
-                  img: "/assets/project-images/Brindavana/Rainy%20Countryside%20Pond%20Reflections.png",
+                  img: "/assets/project-images/Brindavana/brindavanaaa.png",
                    
                 },
                 
