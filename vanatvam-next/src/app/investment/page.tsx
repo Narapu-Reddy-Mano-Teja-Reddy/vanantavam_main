@@ -522,16 +522,18 @@ export default function Investment() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '210px',
+                  height: '300px',
                   overflow: 'hidden',
-                  background: '#1B2B1F',
+                  background: '#122217',
+                  padding: '12px',
+                  boxSizing: 'border-box',
                 }}
               >
                 <Image
                   src="/assets/images/Global Ripple Effects.png"
                   alt="Global Ripple Effects"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain', padding: '12px' }}
                 />
               </div>
 
@@ -593,16 +595,18 @@ export default function Investment() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '210px',
+                  height: '300px',
                   overflow: 'hidden',
-                  background: '#1B2B1F',
+                  background: '#122217',
+                  padding: '12px',
+                  boxSizing: 'border-box',
                 }}
               >
                 <Image
                   src="/assets/images/Benchmark.png"
                   alt="15–16% Benchmark Declines"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain', padding: '12px' }}
                 />
               </div>
 
@@ -667,16 +671,18 @@ export default function Investment() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '210px',
+                  height: '300px',
                   overflow: 'hidden',
-                  background: '#1B2B1F',
+                  background: '#122217',
+                  padding: '0px',
+                  boxSizing: 'border-box',
                 }}
               >
                 <Image
                   src="/assets/images/Market Divergence.png"
                   alt="Divergent Paths Across Borders"
                   fill
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'contain', padding: '12px' }}
                 />
               </div>
 

@@ -50,7 +50,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Banana Grove",
     subtitle:
       "Vibrant multi-canopy banana and fruit orchards nurtured through chemical-free living soil.",
-    img: "/assets/project-images/Brindavana/Sunny%20Tropical%20Banana%20Orchard.png",
+    img: "/assets/life/vanatvam3.png",
   },
   {
     id: "vasantotsava",
@@ -66,7 +66,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Brick Courtyard",
     subtitle:
       "Vernacular sustainable architecture embracing terracotta courtyards and open breeze pavilions.",
-    img: "/assets/project-images/Maduvana/Modern%20Brick%20Courtyard%20with%20Arched%20Canopy.png",
+    img: "/assets/life/vanatvam.png",
   },
   {
     id: "nursery-saplings",
@@ -74,7 +74,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Native Nursery",
     subtitle:
       "Propagating indigenous forestry saplings to restore ancient biodiversity and sacred groves.",
-    img: "/assets/project-images/Brindavana/Vibrant%20Tropical%20Garden%20Nursery.png",
+    img: "/assets/life/vanatvam1.png",
   },
   {
     id: "bonfire-nights",
@@ -90,7 +90,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Canopy Trails",
     subtitle:
       "Tranquil walking pathways winding through living bamboo clusters and bird-friendly flora.",
-    img: "/assets/project-images/Brindavana/Tropical%20Garden%20Pathway%20Tunnel.png",
+    img: "/assets/life/vanatvam2.png",
   },
   {
     id: "community-harvest",
@@ -99,6 +99,23 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     subtitle:
       "Families and children reconnecting directly with the earth, gathering fresh seasonal produce.",
     img: "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.37.57%20PM%20(2)%20(1).jpeg",
+  },
+
+    {
+    id: "green-tunnel-2",
+    title: "Canopy Trail Pathways",
+    caption: "Canopy Trails",
+    subtitle:
+      "Tranquil walking pathways winding through living bamboo clusters and bird-friendly flora.",
+    img: "/assets/life/vanatvam4.png",
+  },
+  {
+    id: "community-harvest-2",
+    title: "Community Harvest",
+    caption: "Harvest Days",
+    subtitle:
+      "Families and children reconnecting directly with the earth, gathering fresh seasonal produce.",
+    img: "/assets/life/vanatvam4.png",
   },
 ];
 
@@ -1321,9 +1338,9 @@ export default function Home() {
                   flexShrink: 0,
                 }}
               >
-                {lifeAtVanatvamPolaroids.map((item) => (
+                {lifeAtVanatvamPolaroids.map((item, index) => (
                   <motion.div
-                    key={item.id + rep}
+                    key={`${item.id}-${rep}-${index}`}
                     whileHover={{ y: -8, scale: 1.03 }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                     style={{
@@ -1352,6 +1369,7 @@ export default function Home() {
                         display: "block",
                       }}
                     />
+
                   </motion.div>
                 ))}
               </div>
