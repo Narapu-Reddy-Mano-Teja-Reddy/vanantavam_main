@@ -417,9 +417,9 @@ export default function Home() {
           ))}
         </div>
       </section>
-      {/* Continuous Infinite Ecosystem Marquee */}
-    {/* Warli Art Infinite Loop */}
-<div className="vana-marquee warli-loop">
+      
+     {/* Continuous Infinite Warli Art Marquee */}
+<div className="warli-loop">
   <div className="warli-loop-track">
     {[0, 1].map((repeat) => (
       <svg
@@ -477,7 +477,7 @@ export default function Home() {
             <path d="M376 100 L394 100 L385 116 Z" />
           </g>
 
-          {/* Central dancers */}
+          {/* Central dancer */}
           <g className="warli-person person-three">
             <circle cx="485" cy="83" r="6" />
             <path d="M485 90 V117 L470 135 M485 117 L500 135" />
@@ -485,6 +485,7 @@ export default function Home() {
             <path d="M476 100 L494 100 L485 116 Z" />
           </g>
 
+          {/* Dancer 4 */}
           <g className="warli-person person-four">
             <circle cx="715" cy="83" r="6" />
             <path d="M715 90 V117 L700 135 M715 117 L730 135" />
@@ -492,7 +493,7 @@ export default function Home() {
             <path d="M706 100 L724 100 L715 116 Z" />
           </g>
 
-          {/* Right dancers */}
+          {/* Dancer 5 */}
           <g className="warli-person person-five">
             <circle cx="815" cy="83" r="6" />
             <path d="M815 90 V117 L800 135 M815 117 L830 135" />
@@ -513,7 +514,7 @@ export default function Home() {
           {/* Ground */}
           <path d="M25 150 H1175" />
 
-          {/* Decorative tribal border */}
+          {/* Repeating tribal border */}
           {Array.from({ length: 44 }, (_, i) => (
             <path
               key={`pattern-${i}`}
@@ -525,80 +526,7 @@ export default function Home() {
     ))}
   </div>
 </div>
-
-<style jsx>{`
-  .warli-loop {
-    height: 180px;
-    overflow: hidden;
-    position: relative;
-    color: #795033;
-    background: transparent;
-  }
-
-  .warli-loop-track {
-    display: flex;
-    width: max-content;
-    height: 100%;
-    animation: warli-loop-scroll 35s linear infinite;
-  }
-
-  .warli-loop-art {
-    display: block;
-    flex: 0 0 600px;
-    width: 600px;
-    height: 100%;
-    overflow: visible;
-  }
-
-  .warli-person {
-    transform-box: fill-box;
-    transform-origin: center bottom;
-    animation: warli-dance 1.2s ease-in-out infinite alternate;
-  }
-
-  .person-two {
-    animation-delay: -0.3s;
-  }
-
-  .person-three {
-    animation-delay: -0.6s;
-  }
-
-  .person-four {
-    animation-delay: -0.4s;
-  }
-
-  .person-five {
-    animation-delay: -0.8s;
-  }
-
-  @keyframes warli-loop-scroll {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(-50%);
-    }
-  }
-
-  @keyframes warli-dance {
-    from {
-      rotate: -5deg;
-    }
-
-    to {
-      rotate: 5deg;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .warli-loop-track,
-    .warli-person {
-      animation: none;
-    }
-  }
-`}</style>
+    </section>
       
 
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
