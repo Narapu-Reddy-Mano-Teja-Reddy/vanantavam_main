@@ -3877,8 +3877,35 @@ article:hover .blog-card-img {
 }
 
 
-/* Warli / Marquee Animation */
-@keyframes vana-marquee-scroll {
+/* Seamless Warli Art Marquee */
+.warli-loop {
+  width: 100%;
+  height: 77px;
+  overflow: hidden;
+  position: relative;
+  background: #11120f;
+  color: #aaa99f;
+  border-top: 1px solid rgba(210, 210, 195, 0.25);
+  border-bottom: 1px solid rgba(210, 210, 195, 0.25);
+}
+
+.warli-loop-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: warli-seamless-scroll 35s linear infinite;
+  will-change: transform;
+}
+
+.warli-loop-art {
+  display: block;
+  flex: 0 0 auto;
+  width: 600px;
+  height: 100%;
+  color: #aaa99f;
+}
+
+@keyframes warli-seamless-scroll {
   from {
     transform: translateX(0);
   }
@@ -3887,16 +3914,14 @@ article:hover .blog-card-img {
   }
 }
 
-.polaroid-marquee-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  animation: polaroid-marquee-scroll 45s linear infinite;
-}
-
-.polaroid-marquee-track:hover {
+.warli-loop:hover .warli-loop-track {
   animation-play-state: paused;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .warli-loop-track {
+    animation: none;
+  }
+}
 
 
