@@ -418,81 +418,188 @@ export default function Home() {
         </div>
       </section>
       {/* Continuous Infinite Ecosystem Marquee */}
-      <div
-        className="vana-marquee"
-        style={{
-          width: "100%",
-          overflow: "hidden",
-          position: "relative",
-          whiteSpace: "nowrap",
-        }}
+    {/* Warli Art Infinite Loop */}
+<div className="vana-marquee warli-loop">
+  <div className="warli-loop-track">
+    {[0, 1].map((repeat) => (
+      <svg
+        key={repeat}
+        className="warli-loop-art"
+        viewBox="0 0 1200 180"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
       >
-        <div
-          className="vana-marquee-track"
-          style={{
-            display: "flex",
-            width: "max-content",
-            willChange: "transform",
-            animationName: "vana-marquee-scroll",
-            animationDuration: "30s",
-            animationTimingFunction: "linear",
-            animationIterationCount: "infinite",
-            animationPlayState: "running",
-          }}
+        <g
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         >
-          {Array.from({ length: 2 }, (_, rep) => (
-            <div
-              className="vana-marquee-group"
-              key={rep}
-              aria-hidden={rep === 1}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                flexShrink: 0,
-              }}
-            >
-              {[
-                "Brindavana",
-                "Madhuvana",
-                "Anantavana",
-                "Eeshavana",
-                "Brindavana",
-                "Madhuvana",
-                "Anantavana",
-                "Eeshavana",
-                "Brindavana",
-                "Madhuvana",
-                "Anantavana",
-                "Eeshavana",
-              ].map((name, index) => (
-                <span
-                  key={`${rep}-${index}`}
-                  className="vana-marquee-item"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    flexShrink: 0,
-                  }}
-                >
-                  {name}
-                  <Leaf
-                    className="size-4"
-                    strokeWidth={1.5}
-                    aria-hidden="true"
-                    style={{
-                      display: "inline-block",
-                      flexShrink: 0,
-                      margin: "0 28px",
-                      color: "var(--accent-gold)",
-                    }}
-                  />
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
+          {/* Sun */}
+          <circle cx="600" cy="32" r="15" />
 
+          {Array.from({ length: 12 }, (_, i) => (
+            <path
+              key={`ray-${i}`}
+              d="M600 9 V4"
+              transform={`rotate(${i * 30} 600 32)`}
+            />
+          ))}
+
+          {/* Birds */}
+          <path d="M520 42 Q530 32 540 42 Q550 32 560 42" />
+          <path d="M650 42 Q660 32 670 42 Q680 32 690 42" />
+
+          {/* Left tree */}
+          <path d="M75 145 V75 M75 100 L55 82 M75 115 L95 92" />
+          <path d="M75 55 L53 83 H97 Z" />
+          <path d="M75 40 L57 64 H93 Z" />
+
+          {/* Left hut */}
+          <path d="M125 100 L170 65 L215 100 Z" />
+          <path d="M135 100 V145 H205 V100" />
+          <path d="M160 145 V120 H180 V145" />
+
+          {/* Dancer 1 */}
+          <g className="warli-person person-one">
+            <circle cx="285" cy="83" r="6" />
+            <path d="M285 90 V117 L270 135 M285 117 L300 135" />
+            <path d="M285 97 L265 105 L250 92 M285 97 L305 105 L320 92" />
+            <path d="M276 100 L294 100 L285 116 Z" />
+          </g>
+
+          {/* Dancer 2 */}
+          <g className="warli-person person-two">
+            <circle cx="385" cy="83" r="6" />
+            <path d="M385 90 V117 L370 135 M385 117 L400 135" />
+            <path d="M385 97 L365 105 L350 92 M385 97 L405 105 L420 92" />
+            <path d="M376 100 L394 100 L385 116 Z" />
+          </g>
+
+          {/* Central dancers */}
+          <g className="warli-person person-three">
+            <circle cx="485" cy="83" r="6" />
+            <path d="M485 90 V117 L470 135 M485 117 L500 135" />
+            <path d="M485 97 L465 105 L450 92 M485 97 L505 105 L520 92" />
+            <path d="M476 100 L494 100 L485 116 Z" />
+          </g>
+
+          <g className="warli-person person-four">
+            <circle cx="715" cy="83" r="6" />
+            <path d="M715 90 V117 L700 135 M715 117 L730 135" />
+            <path d="M715 97 L695 105 L680 92 M715 97 L735 105 L750 92" />
+            <path d="M706 100 L724 100 L715 116 Z" />
+          </g>
+
+          {/* Right dancers */}
+          <g className="warli-person person-five">
+            <circle cx="815" cy="83" r="6" />
+            <path d="M815 90 V117 L800 135 M815 117 L830 135" />
+            <path d="M815 97 L795 105 L780 92 M815 97 L835 105 L850 92" />
+            <path d="M806 100 L824 100 L815 116 Z" />
+          </g>
+
+          {/* Right hut */}
+          <path d="M885 100 L930 65 L975 100 Z" />
+          <path d="M895 100 V145 H965 V100" />
+          <path d="M920 145 V120 H940 V145" />
+
+          {/* Right tree */}
+          <path d="M1035 145 V75 M1035 100 L1015 82 M1035 115 L1055 92" />
+          <path d="M1035 55 L1013 83 H1057 Z" />
+          <path d="M1035 40 L1017 64 H1053 Z" />
+
+          {/* Ground */}
+          <path d="M25 150 H1175" />
+
+          {/* Decorative tribal border */}
+          {Array.from({ length: 44 }, (_, i) => (
+            <path
+              key={`pattern-${i}`}
+              d={`M${35 + i * 26} 158 l8 8 l8 -8`}
+            />
+          ))}
+        </g>
+      </svg>
+    ))}
+  </div>
+</div>
+
+<style jsx>{`
+  .warli-loop {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+    color: #795033;
+    background: transparent;
+  }
+
+  .warli-loop-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: warli-loop-scroll 35s linear infinite;
+  }
+
+  .warli-loop-art {
+    display: block;
+    flex: 0 0 600px;
+    width: 600px;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .warli-person {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    animation: warli-dance 1.2s ease-in-out infinite alternate;
+  }
+
+  .person-two {
+    animation-delay: -0.3s;
+  }
+
+  .person-three {
+    animation-delay: -0.6s;
+  }
+
+  .person-four {
+    animation-delay: -0.4s;
+  }
+
+  .person-five {
+    animation-delay: -0.8s;
+  }
+
+  @keyframes warli-loop-scroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes warli-dance {
+    from {
+      rotate: -5deg;
+    }
+
+    to {
+      rotate: 5deg;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .warli-loop-track,
+    .warli-person {
+      animation: none;
+    }
+  }
+`}</style>
+      
 
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
       <section
