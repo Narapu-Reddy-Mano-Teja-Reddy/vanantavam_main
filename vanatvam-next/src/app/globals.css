@@ -3898,9 +3898,10 @@ article:hover .blog-card-img {
 
 .warli-loop-art {
   display: block;
-  flex: 0 0 1200px;
-  width: 1200px;
+  flex: 0 0 650px;
+  width: 650px;
   height: 100%;
+  overflow: visible;
 }
 
 .warli-person {
