@@ -1484,35 +1484,6 @@ export default function Home() {
           </div>
         </div>
 
-      @keyframes vana-marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.polaroid-marquee-track {
-  display: flex;
-  width: max-content;
-  will-change: transform;
-  animation: polaroid-marquee-scroll 45s linear infinite;
-}
-
-.polaroid-marquee-track:hover {
-  animation-play-state: paused;
-}
-
-@keyframes polaroid-marquee-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
       {/* FKCCI Award Recognition Section */}
       <section
         style={{
