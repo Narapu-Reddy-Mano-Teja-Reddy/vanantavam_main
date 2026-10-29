@@ -526,7 +526,6 @@ export default function Home() {
     ))}
   </div>
 </div>
-    </section>
       
 
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
