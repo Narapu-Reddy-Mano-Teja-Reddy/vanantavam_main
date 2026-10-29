@@ -1483,6 +1483,7 @@ export default function Home() {
             ))}
           </div>
         </div>
+          </section>
 
       {/* FKCCI Award Recognition Section */}
       <section
