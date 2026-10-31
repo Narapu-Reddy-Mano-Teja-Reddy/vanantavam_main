@@ -653,9 +653,9 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
                     { name: 'Brindavana', tag: 'Pavagada · 30 Acres', href: '/brindavana' },
-                    { name: 'Madhuvana', tag: 'Maddur · 18 Acres · Cauvery', href: '/madhuvana' },
+                    { name: 'Madhuvana', tag: 'Maddur · 18 Acres · Kaveri', href: '/madhuvana' },
                     { name: 'Anantavana', tag: 'Kabini · 35 Acres · Biodiversity', href: '/anantavana' },
-                    { name: 'Eeshavana', tag: 'Cauvery Riverfront Estate', href: '/eeshavana' },
+                    { name: 'Eeshavana', tag: 'Kaveri Riverfront Estate', href: '/eeshavana' },
                   ].map((proj) => (
                     <Link
                       key={proj.name}

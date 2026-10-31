@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "Nakshatra Vana Forest", "Navagraha Vana", "Natural Sustainable Farm Communities",
     "Farmland Investment Karnataka", "Biodiversity Restoration Karnataka", "Native Forest Restoration Karnataka",
     "Nature Communities Bangalore", "Weekend Farm Near Bangalore", "Farmhouse Plots Karnataka",
-    "Brindavana Pavagada", "Madhuvana Maddur", "Anantavana Kabini", "Eeshavana Cauvery Riverfront",
+    "Brindavana Pavagada", "Madhuvana Maddur", "Anantavana Kabini", "Eeshavana Kaveri Riverfront",
   ],
   authors: [{ name: "Vanatvam Private Limited" }],
   openGraph: {

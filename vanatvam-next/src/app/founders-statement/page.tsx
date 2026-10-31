@@ -219,11 +219,11 @@ const PROJECTS = [
     name: "EESHAVANA",
     logo: "/assets/images/Project-Logos/eeshavanaalogo.webp",
     location: "KOLLEGALA · CAUVERY RIVERFRONT",
-    desc: "A riverfront community along the sacred Cauvery, designed around the relationship between people, riparian ecology, and water.",
+    desc: "A riverfront community along the sacred Kaveri, designed around the relationship between people, riparian ecology, and water.",
     img: "/assets/project-images/Esahavana/EV%20Image.png",
-    badge: "Cauvery Riverfront",
+    badge: "Kaveri Riverfront",
     badgeBg: "#1B4965",
-    pills: ["Cauvery Frontage", "River Ecosystem"],
+    pills: ["Kaveri Frontage", "River Ecosystem"],
   },
 ];
 

@@ -3951,3 +3951,13 @@ article:hover .blog-card-img {
     animation: none;
   }
 }
+
+/* Kenyt AI & WhatsApp Widget Custom Size Scaling */
+#kenyt-bot-launcher img[src*="whatsapp"],
+.kenyt-whatsapp-btn,
+div[id*="kenyt"] img[src*="whatsapp"],
+div[class*="whatsapp"],
+div[id*="whatsapp"] {
+  transform: scale(1.35) !important;
+  transform-origin: center center !important;
+}

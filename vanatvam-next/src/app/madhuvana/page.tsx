@@ -704,7 +704,7 @@ export default function Madhuvana() {
                   </Reveal>
                   <Reveal delay={0.2}>
                     <p style={{ margin: 0 }}>
-                      Located off the 10-lane Bangalore and Mysore highway MadhuVana is just about 20 Km from Maddur and Mandya and is surrounded by River Cauvery and interlaced with Vishweshwaraiah Canals  MadhuVana is offered as quarter-acre farm plots with various trees and Herbal plants in each plot and we will also plant vegetables and fruit trees which will be grown using 100% Natural and Organic  methods. This offering is envisioned as a “ Natural, Sustainable Farm Community” meaning we are building a strong community that believes in a common goal and shares common views. This means that your neighbours are people who think and live like you! Come, be a part of this awesome community!
+                      Located off the 10-lane Bangalore and Mysore highway MadhuVana is just about 20 Km from Maddur and Mandya and is surrounded by River Kaveri and interlaced with Vishweshwaraiah Canals  MadhuVana is offered as quarter-acre farm plots with various trees and Herbal plants in each plot and we will also plant vegetables and fruit trees which will be grown using 100% Natural and Organic  methods. This offering is envisioned as a “ Natural, Sustainable Farm Community” meaning we are building a strong community that believes in a common goal and shares common views. This means that your neighbours are people who think and live like you! Come, be a part of this awesome community!
                     </p>
                   </Reveal>
                   <Reveal delay={0.3}>
@@ -891,7 +891,7 @@ export default function Madhuvana() {
                   num: "01 /",
                   title: "Excellent Locations",
                   subtitle: "Along the Bangalore–Mysore Corridor",
-                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
                   icon: MapPin,
                 },
                 {
@@ -1801,7 +1801,7 @@ export default function Madhuvana() {
                     icon: Mountain,
                   },
                   {
-                    name: "Cauvery River Access",
+                    name: "Kaveri River Access",
                     desc: "Scenic riverfront & water channels",
                     km: 5,
                     time: "~5 mins",
@@ -2387,8 +2387,8 @@ export default function Madhuvana() {
                     <option value="Anantavana (Kabini · 35 Acres)">
                       Anantavana (Kabini · 35 Acres)
                     </option>
-                    <option value="Eeshavana (Cauvery Riverfront)">
-                      Eeshavana (Cauvery Riverfront)
+                    <option value="Eeshavana (Kaveri Riverfront)">
+                      Eeshavana (Kaveri Riverfront)
                     </option>
                   </select>
                 </motion.div>

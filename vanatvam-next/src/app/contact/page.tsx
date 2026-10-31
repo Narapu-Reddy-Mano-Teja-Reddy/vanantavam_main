@@ -1018,8 +1018,8 @@ export default function Contact() {
                           <option value="Anantavana (Kabini · 35 Acres)">
                             Anantavana (Kabini · 35 Acres)
                           </option>
-                          <option value="Eeshavana (Cauvery Riverfront)">
-                            Eeshavana (Cauvery Riverfront)
+                          <option value="Eeshavana (Kaveri Riverfront)">
+                            Eeshavana (Kaveri Riverfront)
                           </option>
                         </select>
                       </div>

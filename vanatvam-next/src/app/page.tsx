@@ -124,7 +124,7 @@ const heroSlides = [
     id: "eeshavana",
     name: "EESHAVANA",
     
-    tagline: "A premium riverfront community on the sacred Cauvery.",
+    tagline: "A premium riverfront community on the sacred Kaveri.",
     img: "/assets/project-images/Esahavana/EV.png",
   },
   
@@ -828,7 +828,7 @@ export default function Home() {
           {
             num: "01 / Excellent Locations",
             title: "Along the Bangalore–Mysore Corridor",
-            desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+            desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
           },
           {
             num: "02 / Biodiversity by Design",
@@ -1360,13 +1360,24 @@ export default function Home() {
             padding: "20px 0",
           }}
         >
-          <div className="polaroid-marquee-track">
+          <div
+            className="polaroid-marquee-track"
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "nowrap",
+              width: "max-content",
+              willChange: "transform",
+            }}
+          >
             {[0, 1].map((rep) => (
               <div
                 key={rep}
                 className="polaroid-marquee-group"
                 style={{
                   display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "nowrap",
                   gap: "32px",
                   paddingRight: "32px",
                   flexShrink: 0,
@@ -1404,13 +1415,42 @@ export default function Home() {
                       }}
                     />
 
+                     
                   </motion.div>
                 ))}
               </div>
             ))}
           </div>
         </div>
-          </section>
+
+        <style jsx global>{`
+          @keyframes polaroid-marquee-scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(-50%);
+            }
+          }
+          .polaroid-marquee-track {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            width: max-content !important;
+            will-change: transform;
+            animation: polaroid-marquee-scroll 45s linear infinite;
+          }
+          .polaroid-marquee-track:hover {
+            animation-play-state: paused;
+          }
+          .polaroid-marquee-group {
+            display: flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            flex-shrink: 0 !important;
+          }
+        `}</style>
+      </section>
 
       {/* FKCCI Award Recognition Section */}
       <section
@@ -2232,8 +2272,8 @@ By bringing together ecological restoration, India’s cultural heritage, and th
                   <option value="Anantavana (Kabini · 35 Acres)">
                     Anantavana (Kabini · 35 Acres)
                   </option>
-                  <option value="Eeshavana (Cauvery Riverfront)">
-                    Eeshavana (Cauvery Riverfront)
+                  <option value="Eeshavana (Kaveri Riverfront)">
+                    Eeshavana (Kaveri Riverfront)
                   </option>
                 </select>
               </motion.div>

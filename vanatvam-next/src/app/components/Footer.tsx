@@ -126,7 +126,7 @@ export default function Footer() {
                 Anantavana (Kabini)
               </Link>
               <Link href="/eeshavana" className="footer-link">
-                Eeshavana (Cauvery)
+                Eeshavana (Kaveri)
               </Link>
             </div>
           </div>

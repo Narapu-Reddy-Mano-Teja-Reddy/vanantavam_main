@@ -67,12 +67,12 @@ export default function Projects() {
       name: 'EESHAVANA',
       logo: '/assets/images/Project-Logos/eeshavanaalogo.webp',
       location: 'KOLLEGALA - 10 Acres',
-      desc: 'Our premier riverfront community set along the banks of the sacred Cauvery river. Designed around the deep relationship between people, riparian ecology, and water.',
+      desc: 'Our premier riverfront community set along the banks of the sacred Kaveri river. Designed around the deep relationship between people, riparian ecology, and water.',
       img: '/assets/project-images/Esahavana/EV.png',
       brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
       
       badgeBg: '#1B4965',
-      pills: ['Cauvery Frontage', 'River Ecosystem']
+      pills: ['Kaveri Frontage', 'River Ecosystem']
     },
     
    

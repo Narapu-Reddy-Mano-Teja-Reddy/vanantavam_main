@@ -687,7 +687,7 @@ export default function Eeshavana() {
                      fontWeight: 600,
                    }}
                  >
-                   Kollegala · Cauvery River
+                   Kollegala · Kaveri River
                  </span>
                </motion.div>
              </div>
@@ -893,7 +893,7 @@ export default function Eeshavana() {
                   num: "01 /",
                   title: "Excellent Locations",
                   subtitle: "Along the Bangalore–Mysore Corridor",
-                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
                   icon: MapPin,
                 },
                 {
@@ -1052,7 +1052,7 @@ export default function Eeshavana() {
                     lineHeight: 1.75,
                   }}
                 >
-                  More room for shared moments, quiet pauses, and a closer connection with the Cauvery river.
+                  More room for shared moments, quiet pauses, and a closer connection with the Kaveri river.
                 </p>
               </Reveal>
             </div>
@@ -1068,7 +1068,7 @@ export default function Eeshavana() {
               {[
                 {
                   name: "Walk by the River",
-                  desc: "Tranquil riverfront walking pathways winding along the scenic banks of the Cauvery.",
+                  desc: "Tranquil riverfront walking pathways winding along the scenic banks of the Kaveri.",
                   image: "/assets/project-images/Esahavana/EV1.png",
                 },
                 {
@@ -1952,7 +1952,7 @@ export default function Eeshavana() {
                   </div>
                   <div>
                     <strong>Eeshavana Riverfront</strong>
-                    <span>Kollegala, Cauvery River Region, Karnataka</span>
+                    <span>Kollegala, Kaveri River Region, Karnataka</span>
                   </div>
                 </div>
               </div>
@@ -2181,7 +2181,7 @@ export default function Eeshavana() {
                     letterSpacing: "0.035em",
                   }}
                 >
-                  Cauvery Riverfront Farm Community
+                  Kaveri Riverfront Farm Community
                 </div>
               </div>
             </div>
@@ -2396,7 +2396,7 @@ export default function Eeshavana() {
                   id="cta-project"
                   name="project"
                   required
-                  defaultValue="Eeshavana (Cauvery Riverfront)"
+                  defaultValue="Eeshavana (Kaveri Riverfront)"
                   style={{
                     width: "100%",
                     minHeight: "52px",
@@ -2435,8 +2435,8 @@ export default function Eeshavana() {
                   <option value="Anantavana (Kabini · 35 Acres)">
                     Anantavana (Kabini · 35 Acres)
                   </option>
-                  <option value="Eeshavana (Cauvery Riverfront)">
-                    Eeshavana (Cauvery Riverfront)
+                  <option value="Eeshavana (Kaveri Riverfront)">
+                    Eeshavana (Kaveri Riverfront)
                   </option>
                 </select>
               </motion.div>

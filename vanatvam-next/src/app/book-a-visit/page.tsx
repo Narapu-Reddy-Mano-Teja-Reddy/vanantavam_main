@@ -73,7 +73,7 @@ export default function BookAVisit() {
                   <option value="brindavana">Brindavana (Pavagada · 30 Acres · Completed)</option>
                   <option value="madhuvana">Madhuvana (Maddur · 18 Acres · Water Forest)</option>
                   <option value="anantavana">Anantavana (Kabini · 35 Acres · Wildlife Corridor)</option>
-                  <option value="eeshavana">Eeshavana (Kollegala · Cauvery Riverfront)</option>
+                  <option value="eeshavana">Eeshavana (Kollegala · Kaveri Riverfront)</option>
                 </select>
               </div>
               <div className="form-group" style={{ marginBottom: '35px' }}>

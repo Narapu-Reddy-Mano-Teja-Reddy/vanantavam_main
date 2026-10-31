@@ -386,6 +386,7 @@ export default function Investment() {
                 src="/assets/images/Investment1.png"
                 alt="Market Volatility and Diversification Analytics"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 style={{ objectFit: 'cover' }}
               />
               <div
@@ -522,18 +523,17 @@ export default function Investment() {
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '300px',
+                  aspectRatio: '16 / 10',
                   overflow: 'hidden',
                   background: '#122217',
-                  padding: '12px',
-                  boxSizing: 'border-box',
                 }}
               >
                 <Image
                   src="/assets/images/Global Ripple Effects.png"
                   alt="Global Ripple Effects"
                   fill
-                  style={{ objectFit: 'contain', padding: '12px' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
 
@@ -588,25 +588,24 @@ export default function Investment() {
                 overflow: 'hidden',
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
                 display: 'flex',
-                flexDirection: "column",
+                flexDirection: 'column',
               }}
             >
               <div
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '300px',
+                  aspectRatio: '16 / 10',
                   overflow: 'hidden',
                   background: '#122217',
-                  padding: '12px',
-                  boxSizing: 'border-box',
                 }}
               >
                 <Image
-                  src="/assets/images/Benchmark.png"
+                  src="/assets/images/Global Asset Allocation Infographic.png"
                   alt="15–16% Benchmark Declines"
                   fill
-                  style={{ objectFit: 'contain', padding: '12px' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
 
@@ -664,25 +663,24 @@ export default function Investment() {
                 overflow: 'hidden',
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
                 display: 'flex',
-                flexDirection: "column",
+                flexDirection: 'column',
               }}
             >
               <div
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '300px',
+                  aspectRatio: '16 / 10',
                   overflow: 'hidden',
                   background: '#122217',
-                  padding: '0px',
-                  boxSizing: 'border-box',
                 }}
               >
                 <Image
-                  src="/assets/images/Market Divergence.png"
+                  src="/assets/images/Golden Hour Architectural Showcase.png"
                   alt="Divergent Paths Across Borders"
                   fill
-                  style={{ objectFit: 'contain', padding: '12px' }}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  style={{ objectFit: 'contain' }}
                 />
               </div>
 
@@ -839,6 +837,458 @@ export default function Investment() {
               EXPLORE OPPORTUNITIES
               <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>→</span>
             </a>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Dedicated Investment Structure Section */}
+      <section
+        style={{
+          padding: "clamp(80px, 10vh, 120px) 20px",
+          background: "linear-gradient(180deg, #F4F1EA 0%, #EBE6DC 100%)",
+          borderBottom: "1px solid rgba(18, 34, 23, 0.08)",
+        }}
+      >
+        <div
+          className="container"
+          style={{
+            maxWidth: "1200px",
+            margin: "0 auto",
+          }}
+        >
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            style={{ textAlign: "center", maxWidth: "840px", margin: "0 auto 60px" }}
+          >
+            <span
+              style={{
+                color: "var(--brand-earth-brown, #72351C)",
+                fontSize: "0.85rem",
+                fontWeight: 700,
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                display: "block",
+                marginBottom: "14px",
+              }}
+            >
+              Investment Framework
+            </span>
+
+            <h2
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.4rem, 4vw, 3.4rem)",
+                color: "var(--bg-dark-forest, #122217)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.02em",
+                marginBottom: "20px",
+              }}
+            >
+              Key Investment Terms &amp; Structure
+            </h2>
+
+            <p
+              style={{
+                fontSize: "1.12rem",
+                color: "#4B554D",
+                lineHeight: 1.8,
+                margin: 0,
+              }}
+            >
+              A structured, transparent capital deployment model backed by high-potential physical land assets, professional ecological master planning, and shared long-term capital growth.
+            </p>
+          </motion.div>
+
+          {/* 3 Metric Cards Grid */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: "32px",
+              marginBottom: "60px",
+            }}
+          >
+            {/* Metric 1 */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              whileHover={{ y: -6 }}
+              style={{
+                background: "#FFFFFF",
+                borderRadius: "24px",
+                padding: "40px 32px",
+                border: "1px solid rgba(18, 34, 23, 0.08)",
+                boxShadow: "0 14px 35px rgba(0, 0, 0, 0.04)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#72351C",
+                  marginBottom: "12px",
+                }}
+              >
+                Capital Requirement
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.5rem, 4vw, 3.2rem)",
+                  fontWeight: 700,
+                  color: "#122217",
+                  lineHeight: 1,
+                  marginBottom: "16px",
+                }}
+              >
+                ₹10 Lakh
+              </div>
+
+              <h3
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "1.25rem",
+                  color: "#122217",
+                  marginBottom: "12px",
+                  fontWeight: 600,
+                }}
+              >
+                Minimum Investment Threshold
+              </h3>
+
+              <p
+                style={{
+                  fontSize: "0.98rem",
+                  color: "#556056",
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}
+              >
+                An accessible entry point designed for discerning investors seeking tangible land ownership. Each unit represents direct fractional allocation in curated nature-first land parcels with full legal title clarity.
+              </p>
+            </motion.div>
+
+            {/* Metric 2 */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -6 }}
+              style={{
+                background: "#FFFFFF",
+                borderRadius: "24px",
+                padding: "40px 32px",
+                border: "1px solid rgba(198, 162, 101, 0.4)",
+                boxShadow: "0 18px 45px rgba(18, 34, 23, 0.08)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              {/* Highlight badge */}
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  background: "var(--accent-gold, #C6A265)",
+                  color: "#122217",
+                  fontSize: "0.72rem",
+                  fontWeight: 800,
+                  letterSpacing: "0.15em",
+                  padding: "6px 16px",
+                  borderRadius: "0 0 0 16px",
+                  textTransform: "uppercase",
+                }}
+              >
+                Target Yield
+              </div>
+
+              <div
+                style={{
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#987443",
+                  marginBottom: "12px",
+                }}
+              >
+                Expected Annualized Return
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.5rem, 4vw, 3.2rem)",
+                  fontWeight: 700,
+                  color: "#122217",
+                  lineHeight: 1,
+                  marginBottom: "16px",
+                }}
+              >
+                15–18% <span style={{ fontSize: "1.3rem", fontWeight: 400, color: "#687B63" }}>p.a.</span>
+              </div>
+
+              <h3
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "1.25rem",
+                  color: "#122217",
+                  marginBottom: "12px",
+                  fontWeight: 600,
+                }}
+              >
+                Indicative Return Range
+              </h3>
+
+              <p
+                style={{
+                  fontSize: "0.98rem",
+                  color: "#556056",
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}
+              >
+                Driven by strategic land value appreciation along high-growth eco-tourism corridors, sustainable agroforestry timber yields, and project development profit sharing upon project completion.
+              </p>
+            </motion.div>
+
+            {/* Metric 3 */}
+            <motion.div
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{
+                background: "#FFFFFF",
+                borderRadius: "24px",
+                padding: "40px 32px",
+                border: "1px solid rgba(18, 34, 23, 0.08)",
+                boxShadow: "0 14px 35px rgba(0, 0, 0, 0.04)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#2D6A4F",
+                  marginBottom: "12px",
+                }}
+              >
+                Horizon
+              </div>
+
+              <div
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.5rem, 4vw, 3.2rem)",
+                  fontWeight: 700,
+                  color: "#122217",
+                  lineHeight: 1,
+                  marginBottom: "16px",
+                }}
+              >
+                2–3 Years
+              </div>
+
+              <h3
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "1.25rem",
+                  color: "#122217",
+                  marginBottom: "12px",
+                  fontWeight: 600,
+                }}
+              >
+                Proposed Investment Tenure
+              </h3>
+
+              <p
+                style={{
+                  fontSize: "0.98rem",
+                  color: "#556056",
+                  lineHeight: 1.75,
+                  margin: 0,
+                }}
+              >
+                A disciplined medium-term investment window allowing sufficient time for land consolidation, infrastructure installation, native forestry establishment, and capital realization with optimal liquidity.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Detailed Structural Explanation Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            style={{
+              background: "#122217",
+              color: "#FFFFFF",
+              borderRadius: "28px",
+              padding: "clamp(36px, 5vw, 56px)",
+              boxShadow: "0 22px 60px rgba(18, 34, 23, 0.25)",
+              border: "1px solid rgba(198, 162, 101, 0.35)",
+            }}
+          >
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+                gap: "40px",
+                alignItems: "center",
+              }}
+            >
+              <div>
+                <span
+                  style={{
+                    color: "var(--accent-gold, #C6A265)",
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.2em",
+                    textTransform: "uppercase",
+                    display: "block",
+                    marginBottom: "12px",
+                  }}
+                >
+                  HOW IT WORKS
+                </span>
+
+                <h3
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "clamp(1.8rem, 3vw, 2.4rem)",
+                    color: "#FFFFFF",
+                    lineHeight: 1.25,
+                    marginBottom: "20px",
+                  }}
+                >
+                  Detailed Investment Explanation
+                </h3>
+
+                <p
+                  style={{
+                    fontSize: "1.05rem",
+                    color: "rgba(255, 255, 255, 0.85)",
+                    lineHeight: 1.8,
+                    fontWeight: 300,
+                    margin: 0,
+                  }}
+                >
+                  Vanatvam acquires strategic, ecologically rich land parcels near key corridors in Karnataka. By combining architect-led master planning, organic soil revitalization, and community infrastructure, the underlying land value appreciates significantly. Investors participate directly in this value creation and receive profit distributions upon project completion.
+                </p>
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "20px",
+                  borderLeft: "1px solid rgba(255, 255, 255, 0.15)",
+                  paddingLeft: "clamp(20px, 4vw, 40px)",
+                }}
+              >
+                <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                  <div
+                    style={{
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "50%",
+                      background: "rgba(198, 162, 101, 0.2)",
+                      border: "1px solid rgba(198, 162, 101, 0.5)",
+                      color: "var(--accent-gold, #C6A265)",
+                      display: "grid",
+                      placeItems: "center",
+                      fontWeight: 700,
+                      fontSize: "0.9rem",
+                      flexShrink: 0,
+                    }}
+                  >
+                    1
+                  </div>
+                  <div>
+                    <h4 style={{ color: "#FFF", margin: "0 0 4px", fontSize: "1.05rem", fontWeight: 600 }}>
+                      Asset-Backed Security
+                    </h4>
+                    <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.92rem", margin: 0, lineHeight: 1.6 }}>
+                      Your capital is directly backed by physical agricultural and eco-restoration land parcels with clear, unencumbered titles.
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                  <div
+                    style={{
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "50%",
+                      background: "rgba(198, 162, 101, 0.2)",
+                      border: "1px solid rgba(198, 162, 101, 0.5)",
+                      color: "var(--accent-gold, #C6A265)",
+                      display: "grid",
+                      placeItems: "center",
+                      fontWeight: 700,
+                      fontSize: "0.9rem",
+                      flexShrink: 0,
+                    }}
+                  >
+                    2
+                  </div>
+                  <div>
+                    <h4 style={{ color: "#FFF", margin: "0 0 4px", fontSize: "1.05rem", fontWeight: 600 }}>
+                      Turnkey Management
+                    </h4>
+                    <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.92rem", margin: 0, lineHeight: 1.6 }}>
+                      Vanatvam handles all on-ground operations including legal approvals, soil enrichment, water body creation, and ongoing estate upkeep.
+                    </p>
+                  </div>
+                </div>
+
+                <div style={{ display: "flex", gap: "16px", alignItems: "flex-start" }}>
+                  <div
+                    style={{
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "50%",
+                      background: "rgba(198, 162, 101, 0.2)",
+                      border: "1px solid rgba(198, 162, 101, 0.5)",
+                      color: "var(--accent-gold, #C6A265)",
+                      display: "grid",
+                      placeItems: "center",
+                      fontWeight: 700,
+                      fontSize: "0.9rem",
+                      flexShrink: 0,
+                    }}
+                  >
+                    3
+                  </div>
+                  <div>
+                    <h4 style={{ color: "#FFF", margin: "0 0 4px", fontSize: "1.05rem", fontWeight: 600 }}>
+                      Profit Distribution
+                    </h4>
+                    <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "0.92rem", margin: 0, lineHeight: 1.6 }}>
+                      At the end of the 2–3 year tenure, developed land proceeds and project returns are distributed among investors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>

@@ -1188,7 +1188,7 @@ export default function Anantavana() {
                 num: "01 /",
                 title: "Excellent Locations",
                 subtitle: "Along the Bangalore–Mysore Corridor",
-                desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Cauvery), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+                desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
                 icon: MapPin,
               },
               {
@@ -2696,8 +2696,8 @@ export default function Anantavana() {
                   <option value="Anantavana (Kabini · 35 Acres)">
                     Anantavana (Kabini · 35 Acres)
                   </option>
-                  <option value="Eeshavana (Cauvery Riverfront)">
-                    Eeshavana (Cauvery Riverfront)
+                  <option value="Eeshavana (Kaveri Riverfront)">
+                    Eeshavana (Kaveri Riverfront)
                   </option>
                 </select>
               </motion.div>
