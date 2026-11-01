@@ -39,7 +39,7 @@ export default function Investment() {
       >
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <Image
-            src="/assets/images/Investment.png"
+            src="/assets/images/Investment.webp"
             alt="Alternative Investment Opportunities with Vanatvam"
             fill
             priority
@@ -383,7 +383,7 @@ export default function Investment() {
               }}
             >
               <Image
-                src="/assets/images/Investment1.png"
+                src="/assets/images/Investment1.webp"
                 alt="Market Volatility and Diversification Analytics"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -529,7 +529,7 @@ export default function Investment() {
                 }}
               >
                 <Image
-                  src="/assets/images/Global Ripple Effects.png"
+                  src="/assets/images/Global Ripple Effects.webp"
                   alt="Global Ripple Effects"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -601,7 +601,7 @@ export default function Investment() {
                 }}
               >
                 <Image
-                  src="/assets/images/Global Asset Allocation Infographic.png"
+                  src="/assets/images/Global Asset Allocation Infographic.webp"
                   alt="15–16% Benchmark Declines"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -676,7 +676,7 @@ export default function Investment() {
                 }}
               >
                 <Image
-                  src="/assets/images/Golden Hour Architectural Showcase.png"
+                  src="/assets/images/Golden Hour Architectural Showcase.webp"
                   alt="Divergent Paths Across Borders"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

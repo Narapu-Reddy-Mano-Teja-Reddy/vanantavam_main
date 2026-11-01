@@ -195,7 +195,7 @@ export default function Contact() {
               }}
             >
               <img
-                src="/assets/project-images/Esahavana/EV River View 1.jpg"
+                src="/assets/project-images/Esahavana/EV River View 1.webp"
                 alt="Contact VanaTvam"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />

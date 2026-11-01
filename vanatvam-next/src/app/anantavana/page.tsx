@@ -409,7 +409,7 @@ function SpaceBand() {
     >
       <motion.div style={{ position: "absolute", inset: "-15% 0", y }}>
         <img
-          src="/assets/project-images/Ananthavana/hero_image_2.jpg"
+          src="/assets/project-images/Ananthavana/hero_image_2.webp"
           alt=""
           style={{ width: "100%", height: "100%", objectFit: "cover" }}
         />
@@ -505,44 +505,44 @@ const landscape: Pillar[] = [
 
 const amenities = [
   {
-    image: "/assets/project-images/Ananthavana/Enterance.jpeg",
+    image: "/assets/project-images/Ananthavana/Enterance.webp",
     name: "Enterance",
     desc: "Shaded spots for rest and quiet gatherings.",
   },
   {
-    image: "/assets/project-images/Ananthavana/Common.png",
+    image: "/assets/project-images/Ananthavana/Common.webp",
     name: "Community Cottage",
     desc: "Open areas to gather, unwind and connect.",
   },
   {
-    image: "/assets/project-images/Ananthavana/Tree-Lined.png",
+    image: "/assets/project-images/Ananthavana/Tree-Lined.webp",
     name: "Broad Internal Roads",
     desc: "Native landscapes along the way.",
   },
   {
-    image: "/assets/project-images/Ananthavana/NaturalPonds.png",
+    image: "/assets/project-images/Ananthavana/NaturalPonds.webp",
     name: "Natural Ponds",
     desc: "Water features and biodiversity spaces.",
   },
 
   {
-    image: "/assets/project-images/Ananthavana/hero_image.jpg",
+    image: "/assets/project-images/Ananthavana/hero_image.webp",
     name: "Heritage Farmhouse",
     desc: "Traditional cottages and mud houses.",
   },
   {
-    image: "/assets/project-images/Ananthavana/AV Tree House.png",
+    image: "/assets/project-images/Ananthavana/AV Tree House.webp",
     name: "Tree House",
     desc: "A raised retreat amidst nature.",
   },
   {
     image:
-      "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.png",
+      "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.webp",
     name: "Herbal Gardens",
     desc: "Inspired by ancient wisdom.",
   },
   {
-    image: "/assets/project-images/Ananthavana/FireCamp.png",
+    image: "/assets/project-images/Ananthavana/FireCamp.webp",
     name: "Fire Camp & Tents",
     desc: "Outdoor evenings under the open sky.",
   },
@@ -573,22 +573,22 @@ export default function Anantavana() {
 
   const galleryItems = [
     {
-      img: "/assets/project-images/Ananthavana/hero_image.jpg",
+      img: "/assets/project-images/Ananthavana/hero_image.webp",
       title: "Wildlife Corridor",
       desc: "Acting as a gentle buffer for the Bandipur and Nagarhole sanctuaries.",
     },
     {
-      img: "/assets/project-images/Ananthavana/AV Tree House.png",
+      img: "/assets/project-images/Ananthavana/AV Tree House.webp",
       title: "Tree House Retreats",
       desc: "Experience the magic of living amidst the canopy.",
     },
     {
-      img: "/assets/project-images/Ananthavana/hero_image_2.jpg",
+      img: "/assets/project-images/Ananthavana/hero_image_2.webp",
       title: "Native Biodiversity",
       desc: "Over 80% of the land is planted with rare & endangered tree species.",
     },
     {
-      img: "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.png",
+      img: "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.webp",
       title: "Low-Impact Design",
       desc: "Extremely low density footprints ensuring nature remains the dominant force.",
     },
@@ -651,7 +651,7 @@ export default function Anantavana() {
             }}
           >
             <img
-              src="/assets/project-images/Ananthavana/hero_image.jpg"
+              src="/assets/project-images/Ananthavana/hero_image.webp"
               alt="ANANTAVANA"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
@@ -995,7 +995,7 @@ export default function Anantavana() {
                 }}
               >
                 <motion.img
-                  src="/assets/project-images/Ananthavana/hero_image_2.jpg"
+                  src="/assets/project-images/Ananthavana/hero_image_2.webp"
                   alt="Native forest landscape at AnantaVana"
                   initial={{ scale: 1.3 }}
                   whileInView={{ scale: 1 }}

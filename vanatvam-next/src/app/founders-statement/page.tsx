@@ -39,15 +39,15 @@ const COLORS = {
 /*  image, so nothing looks broken while you swap them in.             */
 /* ------------------------------------------------------------------ */
 
-const BASE_IMG = "/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.png";
+const BASE_IMG = "/assets/project-images/Brindavana/Farmer%20Tending%20Lush%20Seedlings.webp";
 
 const IMAGES = {
   hero: BASE_IMG,
-  belief: "/assets/project-images/founder/founder1.jpeg",
-  work: "/assets/project-images/founder/founder2.jpeg",
-  roots: "/assets/project-images/founder/founder3.png",
-  community: "/assets/project-images/founder/founder4.png",
-  journey: "/assets/project-images/founder/founder5.png",
+  belief: "/assets/project-images/founder/founder1.webp",
+  work: "/assets/project-images/founder/founder2.webp",
+  roots: "/assets/project-images/founder/founder3.webp",
+  community: "/assets/project-images/founder/founder4.webp",
+  journey: "/assets/project-images/founder/founder5.webp",
   quoteBand: BASE_IMG,
   vision: BASE_IMG,
   projects: {
@@ -184,7 +184,7 @@ const PROJECTS = [
     logo: "/assets/images/Project-Logos/BrindaVana.webp",
     location: "PAVAGADA · 30 ACRES",
     desc: "Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.",
-    img: "/assets/project-images/Brindavana/Sunny%20Tropical%20Banana%20Orchard.png",
+    img: "/assets/project-images/Brindavana/Sunny%20Tropical%20Banana%20Orchard.webp",
     badge: "Completed",
     badgeBg: "var(--bg-dark-forest, #122217)",
     pills: ["Native Canopy", "Rain Catchments"],
@@ -196,7 +196,7 @@ const PROJECTS = [
     logo: "/assets/images/Project-Logos/Logo-MadhuVana.svg",
     location: "MADDUR",
     desc: "The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare and endangered tree species, with sacred groves like Nakshatra Vana and peaceful cottages.",
-    img: "/assets/project-images/Maduvana/hero.png",
+    img: "/assets/project-images/Maduvana/hero.webp",
     badge: "Water Forest",
     badgeBg: "var(--accent-gold, #C6A265)",
     pills: ["200+ Native Trees", "Sacred Groves"],
@@ -208,7 +208,7 @@ const PROJECTS = [
     logo: "/assets/images/Project-Logos/Anantavana.webp",
     location: "NEAR KABINI · 34 ACRES",
     desc: "Set in Kabini’s rich ecological belt, Anantavana brings together dense forests and thriving biodiversity, with farm parcels from 10,000 sq. ft.",
-    img: "/assets/project-images/Ananthavana/hero_image.jpg",
+    img: "/assets/project-images/Ananthavana/hero_image.webp",
     badge: "Wildlife Corridor",
     badgeBg: "#2D6A4F",
     pills: ["Bandipur Corridor", "Heritage Cottages"],
@@ -220,7 +220,7 @@ const PROJECTS = [
     logo: "/assets/images/Project-Logos/eeshavanaalogo.webp",
     location: "KOLLEGALA · CAUVERY RIVERFRONT",
     desc: "A riverfront community along the sacred Kaveri, designed around the relationship between people, riparian ecology, and water.",
-    img: "/assets/project-images/Esahavana/EV%20Image.png",
+    img: "/assets/project-images/Esahavana/EV%20Image.webp",
     badge: "Kaveri Riverfront",
     badgeBg: "#1B4965",
     pills: ["Kaveri Frontage", "River Ecosystem"],
