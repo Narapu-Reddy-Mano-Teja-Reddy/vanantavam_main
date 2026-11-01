@@ -618,7 +618,7 @@ export default function Madhuvana() {
                   }}
                 >
                   <motion.img
-                    src="/assets/project-images/Maduvana/0cb87566-31bb-4ed5-8e5d-f2e8e6ae3d6e.webp"
+                    src="/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp"
                     alt="A view of the MadhuVana landscape"
                     loading="lazy"
                     initial={reduce ? false : { scale: 1.2 }}

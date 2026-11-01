@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { Info } from 'lucide-react';
 import Navigation from '@/app/components/Navigation';
 import Footer from '@/app/components/Footer';
 
@@ -903,232 +904,164 @@ export default function Investment() {
             </p>
           </motion.div>
 
-          {/* 3 Metric Cards Grid */}
+          {/* 3 Metric Cards Grid (Matching Reference Image Style) */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-              gap: "32px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: "24px",
               marginBottom: "60px",
             }}
           >
-            {/* Metric 1 */}
+            {/* Card 1: Warm Beige Cream */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              whileHover={{ y: -6 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -4, boxShadow: "0 14px 30px rgba(0, 0, 0, 0.08)" }}
               style={{
-                background: "#FFFFFF",
-                borderRadius: "24px",
-                padding: "40px 32px",
-                border: "1px solid rgba(18, 34, 23, 0.08)",
-                boxShadow: "0 14px 35px rgba(0, 0, 0, 0.04)",
-                position: "relative",
-                overflow: "hidden",
+                background: "#F5EEDF",
+                borderRadius: "20px",
+                padding: "36px 30px 30px",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.03)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                minHeight: "170px",
+                transition: "all 0.3s ease",
               }}
             >
               <div
                 style={{
-                  fontSize: "0.8rem",
+                  fontFamily: "var(--font-sans, system-ui, sans-serif)",
+                  fontSize: "clamp(2.1rem, 3.8vw, 2.7rem)",
                   fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#72351C",
-                  marginBottom: "12px",
+                  color: "#2C3E35",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.1,
+                  marginBottom: "24px",
                 }}
               >
-                Capital Requirement
+                ~ ₹10 Lakh
               </div>
 
-              <div
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 4vw, 3.2rem)",
-                  fontWeight: 700,
-                  color: "#122217",
-                  lineHeight: 1,
-                  marginBottom: "16px",
-                }}
-              >
-                ₹10 Lakh
+              <div>
+                <div
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    color: "#526056",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                >
+                  <span>Minimum Investment Threshold</span>
+                  <Info size={15} style={{ opacity: 0.65, color: "#2C3E35" }} />
+                </div>
               </div>
-
-              <h3
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "1.25rem",
-                  color: "#122217",
-                  marginBottom: "12px",
-                  fontWeight: 600,
-                }}
-              >
-                Minimum Investment Threshold
-              </h3>
-
-              <p
-                style={{
-                  fontSize: "0.98rem",
-                  color: "#556056",
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}
-              >
-                An accessible entry point designed for discerning investors seeking tangible land ownership. Each unit represents direct fractional allocation in curated nature-first land parcels with full legal title clarity.
-              </p>
             </motion.div>
 
-            {/* Metric 2 */}
+            {/* Card 2: Crisp Off-White */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -6 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ y: -4, boxShadow: "0 14px 30px rgba(0, 0, 0, 0.08)" }}
               style={{
-                background: "#FFFFFF",
-                borderRadius: "24px",
-                padding: "40px 32px",
-                border: "1px solid rgba(198, 162, 101, 0.4)",
-                boxShadow: "0 18px 45px rgba(18, 34, 23, 0.08)",
-                position: "relative",
-                overflow: "hidden",
+                background: "#F8F9FA",
+                borderRadius: "20px",
+                padding: "36px 30px 30px",
+                border: "1px solid #E9ECEF",
+                boxShadow: "0 4px 16px rgba(0, 0, 0, 0.03)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                minHeight: "170px",
+                transition: "all 0.3s ease",
               }}
             >
-              {/* Highlight badge */}
               <div
                 style={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  background: "var(--accent-gold, #C6A265)",
-                  color: "#122217",
-                  fontSize: "0.72rem",
-                  fontWeight: 800,
-                  letterSpacing: "0.15em",
-                  padding: "6px 16px",
-                  borderRadius: "0 0 0 16px",
-                  textTransform: "uppercase",
-                }}
-              >
-                Target Yield
-              </div>
-
-              <div
-                style={{
-                  fontSize: "0.8rem",
+                  fontFamily: "var(--font-sans, system-ui, sans-serif)",
+                  fontSize: "clamp(2.1rem, 3.8vw, 2.7rem)",
                   fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#987443",
-                  marginBottom: "12px",
+                  color: "#2C3E35",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.1,
+                  marginBottom: "24px",
                 }}
               >
-                Expected Annualized Return
+                ~ 15–18%
               </div>
 
-              <div
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 4vw, 3.2rem)",
-                  fontWeight: 700,
-                  color: "#122217",
-                  lineHeight: 1,
-                  marginBottom: "16px",
-                }}
-              >
-                15–18% <span style={{ fontSize: "1.3rem", fontWeight: 400, color: "#687B63" }}>p.a.</span>
+              <div>
+                <div
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    color: "#526056",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                >
+                  <span>Indicative Return Range (p.a.)</span>
+                  <Info size={15} style={{ opacity: 0.65, color: "#2C3E35" }} />
+                </div>
               </div>
-
-              <h3
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "1.25rem",
-                  color: "#122217",
-                  marginBottom: "12px",
-                  fontWeight: 600,
-                }}
-              >
-                Indicative Return Range
-              </h3>
-
-              <p
-                style={{
-                  fontSize: "0.98rem",
-                  color: "#556056",
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}
-              >
-                Driven by strategic land value appreciation along high-growth eco-tourism corridors, sustainable agroforestry timber yields, and project development profit sharing upon project completion.
-              </p>
             </motion.div>
 
-            {/* Metric 3 */}
+            {/* Card 3: Mint / Sage Green */}
             <motion.div
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               style={{
-                background: "#FFFFFF",
-                borderRadius: "24px",
-                padding: "40px 32px",
-                border: "1px solid rgba(18, 34, 23, 0.08)",
-                boxShadow: "0 14px 35px rgba(0, 0, 0, 0.04)",
-                position: "relative",
-                overflow: "hidden",
+                background: "#73CBB2",
+                borderRadius: "20px",
+                padding: "36px 30px 30px",
+                boxShadow: "0 6px 20px rgba(115, 203, 178, 0.35)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                minHeight: "170px",
+                transition: "all 0.3s ease",
               }}
+              whileHover={{ y: -4, boxShadow: "0 14px 32px rgba(115, 203, 178, 0.5)" }}
             >
               <div
                 style={{
-                  fontSize: "0.8rem",
+                  fontFamily: "var(--font-sans, system-ui, sans-serif)",
+                  fontSize: "clamp(2.1rem, 3.8vw, 2.7rem)",
                   fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  color: "#2D6A4F",
-                  marginBottom: "12px",
+                  color: "#1B332B",
+                  letterSpacing: "-0.02em",
+                  lineHeight: 1.1,
+                  marginBottom: "24px",
                 }}
               >
-                Horizon
+                ~ 2–3 Years
               </div>
 
-              <div
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 4vw, 3.2rem)",
-                  fontWeight: 700,
-                  color: "#122217",
-                  lineHeight: 1,
-                  marginBottom: "16px",
-                }}
-              >
-                2–3 Years
+              <div>
+                <div
+                  style={{
+                    fontSize: "0.95rem",
+                    fontWeight: 500,
+                    color: "#1B332B",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                >
+                  <span>Proposed Investment Tenure</span>
+                  <Info size={15} style={{ opacity: 0.75, color: "#1B332B" }} />
+                </div>
               </div>
-
-              <h3
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "1.25rem",
-                  color: "#122217",
-                  marginBottom: "12px",
-                  fontWeight: 600,
-                }}
-              >
-                Proposed Investment Tenure
-              </h3>
-
-              <p
-                style={{
-                  fontSize: "0.98rem",
-                  color: "#556056",
-                  lineHeight: 1.75,
-                  margin: 0,
-                }}
-              >
-                A disciplined medium-term investment window allowing sufficient time for land consolidation, infrastructure installation, native forestry establishment, and capital realization with optimal liquidity.
-              </p>
             </motion.div>
           </div>
 

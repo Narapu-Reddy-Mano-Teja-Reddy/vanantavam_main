@@ -238,19 +238,7 @@ export default function Footer() {
               </div>
             </div>
 
-            <p
-              style={{
-                fontSize: "0.8rem",
-                color: "rgba(255,255,255,0.5)",
-                lineHeight: 1.6,
-              }}
-            >
-              Managed Farmland Bangalore
-              <br />
-              Sustainable Farmland Karnataka
-              <br />
-              Eco Friendly Farm Communities
-            </p>
+            
           </div>
         </motion.div>
 

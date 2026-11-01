@@ -3879,28 +3879,33 @@ article:hover .blog-card-img {
 /* Warli Tribal Art — Seamless Infinite Marquee */
 .warli-loop {
   width: 100%;
-  height: 77px;
+  height: 88px;
   overflow: hidden;
   position: relative;
-  background: #11120f;
-  color: #aaa99f;
-  border-top: 1px solid rgba(210, 210, 195, 0.25);
-  border-bottom: 1px solid rgba(210, 210, 195, 0.25);
+  background: #FAF7F2;
+  color: #923D22;
+  border-top: 2px solid #923D22;
+  border-bottom: 2px solid #923D22;
 }
 
 .warli-loop-track {
   display: flex;
   width: max-content;
   height: 100%;
-  animation: warli-loop-scroll 35s linear infinite;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  animation: warli-loop-scroll 32s linear infinite;
   will-change: transform;
 }
 
 .warli-loop-art {
   display: block;
-  flex: 0 0 1200px;
-  width: 1200px;
+  flex: 0 0 1000px;
+  width: 1000px;
   height: 100%;
+  margin: 0;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -3931,7 +3936,7 @@ article:hover .blog-card-img {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(-25%);
   }
 }
 

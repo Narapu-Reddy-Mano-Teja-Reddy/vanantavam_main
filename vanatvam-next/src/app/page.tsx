@@ -109,14 +109,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
       "Tranquil walking pathways winding through living bamboo clusters and bird-friendly flora.",
     img: "/assets/life/vanatvam4.webp",
   },
-  {
-    id: "community-harvest-2",
-    title: "Community Harvest",
-    caption: "Harvest Days",
-    subtitle:
-      "Families and children reconnecting directly with the earth, gathering fresh seasonal produce.",
-    img: "/assets/life/vanatvam4.webp",
-  },
+  
 ];
 
 const heroSlides = [
@@ -421,107 +414,88 @@ export default function Home() {
      {/* Continuous Infinite Warli Art Marquee */}
 <div className="warli-loop">
   <div className="warli-loop-track">
-    {[0, 1].map((repeat) => (
+    {[0, 1, 2, 3].map((repeat) => (
       <svg
         key={repeat}
         className="warli-loop-art"
-        viewBox="0 0 1200 180"
+        viewBox="0 0 1000 120"
+        preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >
-        <g
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          {/* Sun */}
-          <circle cx="600" cy="32" r="15" />
+        {/* Top Outer Border Line */}
+        <line x1="0" y1="5" x2="1000" y2="5" stroke="#923D22" strokeWidth="2.5" />
+        <line x1="0" y1="9" x2="1000" y2="9" stroke="#122217" strokeWidth="1" />
 
-          {Array.from({ length: 12 }, (_, i) => (
-            <path
-              key={`ray-${i}`}
-              d="M600 9 V4"
-              transform={`rotate(${i * 30} 600 32)`}
-            />
-          ))}
+        {/* Top Greek Key / Meander Pattern (Indigo Blue) */}
+        {Array.from({ length: 40 }, (_, i) => (
+          <path
+            key={`top-meander-${i}`}
+            d={`M${i * 25 + 3.5} 32 h18 v-18 h-12 v12 h6 v-6`}
+            fill="none"
+            stroke="#1B3B6F"
+            strokeWidth="2.2"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+          />
+        ))}
+        <line x1="0" y1="36" x2="1000" y2="36" stroke="#1B3B6F" strokeWidth="2" />
 
-          {/* Birds */}
-          <path d="M520 42 Q530 32 540 42 Q550 32 560 42" />
-          <path d="M650 42 Q660 32 670 42 Q680 32 690 42" />
+        {/* Center Hand-Holding Zig-Zag Chain Line */}
+        {Array.from({ length: 40 }, (_, i) => (
+          <path
+            key={`zigzag-${i}`}
+            d={`M${i * 25} 66 L${i * 25 + 6.25} 60 L${i * 25 + 12.5} 72 L${i * 25 + 18.75} 60 L${i * 25 + 25} 66`}
+            fill="none"
+            stroke="#923D22"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        ))}
 
-          {/* Left tree */}
-          <path d="M75 145 V75 M75 100 L55 82 M75 115 L95 92" />
-          <path d="M75 55 L53 83 H97 Z" />
-          <path d="M75 40 L57 64 H93 Z" />
+        {/* Center Repeating Warli Dancers */}
+        {Array.from({ length: 25 }, (_, i) => {
+          const cx = 20 + i * 40;
+          return (
+            <g key={`dancer-${i}`} className="warli-person">
+              {/* Head */}
+              <circle cx={cx} cy="50" r="5" fill="#923D22" />
+              {/* Body (Interlocking triangles) */}
+              <polygon
+                points={`${cx - 8},58 ${cx + 8},58 ${cx},76`}
+                fill="#923D22"
+              />
+              {/* Legs */}
+              <path
+                d={`M${cx} 76 L${cx - 6} 92 M${cx} 76 L${cx + 6} 92`}
+                stroke="#923D22"
+                strokeWidth="2.2"
+                strokeLinecap="round"
+              />
+            </g>
+          );
+        })}
 
-          {/* Left hut */}
-          <path d="M125 100 L170 65 L215 100 Z" />
-          <path d="M135 100 V145 H205 V100" />
-          <path d="M160 145 V120 H180 V145" />
+        {/* Bottom Greek Key / Meander Base Line */}
+        <line x1="0" y1="84" x2="1000" y2="84" stroke="#1B3B6F" strokeWidth="2" />
 
-          {/* Dancer 1 */}
-          <g className="warli-person person-one">
-            <circle cx="285" cy="83" r="6" />
-            <path d="M285 90 V117 L270 135 M285 117 L300 135" />
-            <path d="M285 97 L265 105 L250 92 M285 97 L305 105 L320 92" />
-            <path d="M276 100 L294 100 L285 116 Z" />
-          </g>
+        {/* Bottom Greek Key / Meander Pattern (Indigo Blue) */}
+        {Array.from({ length: 40 }, (_, i) => (
+          <path
+            key={`bot-meander-${i}`}
+            d={`M${i * 25 + 3.5} 88 h18 v18 h-12 v-12 h6 v6`}
+            fill="none"
+            stroke="#1B3B6F"
+            strokeWidth="2.2"
+            strokeLinecap="square"
+            strokeLinejoin="miter"
+          />
+        ))}
 
-          {/* Dancer 2 */}
-          <g className="warli-person person-two">
-            <circle cx="385" cy="83" r="6" />
-            <path d="M385 90 V117 L370 135 M385 117 L400 135" />
-            <path d="M385 97 L365 105 L350 92 M385 97 L405 105 L420 92" />
-            <path d="M376 100 L394 100 L385 116 Z" />
-          </g>
-
-          {/* Central dancer */}
-          <g className="warli-person person-three">
-            <circle cx="485" cy="83" r="6" />
-            <path d="M485 90 V117 L470 135 M485 117 L500 135" />
-            <path d="M485 97 L465 105 L450 92 M485 97 L505 105 L520 92" />
-            <path d="M476 100 L494 100 L485 116 Z" />
-          </g>
-
-          {/* Dancer 4 */}
-          <g className="warli-person person-four">
-            <circle cx="715" cy="83" r="6" />
-            <path d="M715 90 V117 L700 135 M715 117 L730 135" />
-            <path d="M715 97 L695 105 L680 92 M715 97 L735 105 L750 92" />
-            <path d="M706 100 L724 100 L715 116 Z" />
-          </g>
-
-          {/* Dancer 5 */}
-          <g className="warli-person person-five">
-            <circle cx="815" cy="83" r="6" />
-            <path d="M815 90 V117 L800 135 M815 117 L830 135" />
-            <path d="M815 97 L795 105 L780 92 M815 97 L835 105 L850 92" />
-            <path d="M806 100 L824 100 L815 116 Z" />
-          </g>
-
-          {/* Right hut */}
-          <path d="M885 100 L930 65 L975 100 Z" />
-          <path d="M895 100 V145 H965 V100" />
-          <path d="M920 145 V120 H940 V145" />
-
-          {/* Right tree */}
-          <path d="M1035 145 V75 M1035 100 L1015 82 M1035 115 L1055 92" />
-          <path d="M1035 55 L1013 83 H1057 Z" />
-          <path d="M1035 40 L1017 64 H1053 Z" />
-
-          {/* Ground */}
-          <path d="M25 150 H1175" />
-
-          {/* Repeating tribal border */}
-          {Array.from({ length: 44 }, (_, i) => (
-            <path
-              key={`pattern-${i}`}
-              d={`M${35 + i * 26} 158 l8 8 l8 -8`}
-            />
-          ))}
-        </g>
+        {/* Bottom Outer Border Line */}
+        <line x1="0" y1="111" x2="1000" y2="111" stroke="#122217" strokeWidth="1" />
+        <line x1="0" y1="115" x2="1000" y2="115" stroke="#923D22" strokeWidth="2.5" />
       </svg>
     ))}
   </div>
