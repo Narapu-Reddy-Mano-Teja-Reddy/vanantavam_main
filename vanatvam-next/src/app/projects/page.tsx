@@ -26,7 +26,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/BrindaVana.webp',
       location: 'PAVAGADA · 30 ACRES',
       desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
-      img: '/assets/project-images/Brindavana/brindavanaaa.png',
+      img: '/assets/project-images/Brindavana/brindavanaaa.webp',
       brochure: null,
        
       badgeBg: 'var(--bg-dark-forest)',
@@ -40,7 +40,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
       location: 'MADDUR - 17 Acres',
       desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
-      img: '/assets/project-images/Maduvana/hero.png',
+      img: '/assets/project-images/Maduvana/hero.webp',
       brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
        
       badgeBg: 'var(--accent-gold)',
@@ -54,7 +54,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/Anantavana.webp',
       location: 'NEAR KABINI · 34 ACRES',
       desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 10,000 sq. ft.',
-      img: '/assets/project-images/Ananthavana/hero_image.jpg',
+      img: '/assets/project-images/Ananthavana/hero_image.webp',
       brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
        
       badgeBg: '#2D6A4F',
@@ -68,7 +68,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/eeshavanaalogo.webp',
       location: 'KOLLEGALA - 10 Acres',
       desc: 'Our premier riverfront community set along the banks of the sacred Kaveri river. Designed around the deep relationship between people, riparian ecology, and water.',
-      img: '/assets/project-images/Esahavana/EV.png',
+      img: '/assets/project-images/Esahavana/EV.webp',
       brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
       
       badgeBg: '#1B4965',
@@ -96,7 +96,7 @@ export default function Projects() {
 
       <section className="hero" style={{ height: '70vh', minHeight: '500px', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
-          <img src="/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.png" alt="Projects Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+          <img src="/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.webp" alt="Projects Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(18, 34, 23, 0.4) 0%, rgba(18, 34, 23, 0.9) 100%)' }}></div>
         </div>
 

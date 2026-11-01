@@ -28,7 +28,7 @@ export default function Footer() {
         >
           <div style={{ maxWidth: "400px", marginBottom: "20px" }}>
             <img
-              src="/assets/images/Project-Logos/vanatvam.png"
+              src="/assets/images/Project-Logos/vanatvam.webp"
               alt="Vanatvam Logo"
               style={{
                 height: "80px",

@@ -38,7 +38,7 @@ export default function About() {
           style={{ position: "absolute", inset: 0, zIndex: 0 }}
         >
           <img
-            src="/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png"
+            src="/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.webp"
             alt="Vanatvam Vision"
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
@@ -199,7 +199,7 @@ export default function About() {
               <motion.img
                 whileHover={{ scale: 1.025 }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
-                src="/assets/images/ourstory1.png"
+                src="/assets/images/ourstory1.webp"
                 alt="A family walking through a green landscape at sunrise"
                 style={{
                   display: "block",
@@ -287,7 +287,7 @@ export default function About() {
                       }}
                     >
                       <img
-                        src="/assets/images/founder.png"
+                        src="/assets/images/founder.webp"
                         alt="Founder leadership and land care"
                         style={{ width: "100%", height: "100%", objectFit: "cover" }}
                       />
@@ -592,7 +592,7 @@ export default function About() {
               }}
             >
               <motion.img
-                src="/Event images/award.png"
+                src="/Event images/award.webp"
                 alt="Vanatvam's nature-led landscape and green surroundings"
                 whileHover={{ scale: 1.04 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}

@@ -287,47 +287,47 @@ const overview = [
 
 const amenities = [
   {
-    image: "/assets/project-images/Esahavana/EV%20Arial%20View%204.png",
+    image: "/assets/project-images/Esahavana/EV%20Arial%20View%204.webp",
     title: "Bio-pool",
     description:
       "A natural-style water feature is proposed as a shared gathering space.",
   },
   {
-    image: "/assets/project-images/Esahavana/EV%20Arial%20View%202.png",
+    image: "/assets/project-images/Esahavana/EV%20Arial%20View%202.webp",
     title: "Temple",
     description: "A place for quiet reflection within the community plan.",
   },
   {
-    image: "/assets/project-images/Esahavana/WAlking%20path.png",
+    image: "/assets/project-images/Esahavana/WAlking%20path.webp",
     title: "Garden and landscape",
     description:
       "Planned green spaces to soften the built environment and create places to pause.",
   },
   {
     image:
-      "/assets/project-images/Esahavana/ChatGPT%20Image%20Jul%2014,%202026,%2005_50_15%20PM%20(1).png",
+      "/assets/project-images/Esahavana/ChatGPT%20Image%20Jul%2014,%202026,%2005_50_15%20PM%20(1).webp",
     title: "Play area",
     description: "A shared outdoor space intended for children and families.",
   },
   {
-    image: "/assets/project-images/Esahavana/Amphithiater.png",
+    image: "/assets/project-images/Esahavana/Amphithiater.webp",
     title: "Amphitheatre",
     description: "A proposed venue for community gatherings and small events.",
   },
   {
-    image: "/assets/project-images/Esahavana/WAlking%20path.png",
+    image: "/assets/project-images/Esahavana/WAlking%20path.webp",
     title: "Riverside promenade",
     description:
       "A planned walking edge, subject to the applicable river buffer and approvals.",
   },
   {
-    image: "/assets/project-images/Esahavana/Dainind%20Deck.png",
+    image: "/assets/project-images/Esahavana/Dainind%20Deck.webp",
     title: "Riverside dining and sitting decks",
     description:
       "Conceptual places to gather outdoors, subject to permissions and final design.",
   },
   {
-    image: "/assets/project-images/Esahavana/EV%20Arial%20View%203.png",
+    image: "/assets/project-images/Esahavana/EV%20Arial%20View%203.webp",
     title: "Car parking and internal roads",
     description:
       "Circulation and parking are indicated in the concept master plan.",
@@ -343,19 +343,19 @@ const stats = [
 
 const galleryImages = [
   {
-    src: "/assets/project-images/Esahavana/EV River View 1.jpg",
+    src: "/assets/project-images/Esahavana/EV River View 1.webp",
     alt: "River landscape near Eeshavana",
   },
   {
-    src: "/assets/project-images/Esahavana/EV River View 2.jpg",
+    src: "/assets/project-images/Esahavana/EV River View 2.webp",
     alt: "River and green landscape",
   },
   {
-    src: "/assets/project-images/Esahavana/EV Arial View 1.png",
+    src: "/assets/project-images/Esahavana/EV Arial View 1.webp",
     alt: "Eeshavana riverfront concept visual",
   },
   {
-    src: "/assets/project-images/Esahavana/EV Arial View 4.png",
+    src: "/assets/project-images/Esahavana/EV Arial View 4.webp",
     alt: "Eeshavana riverfront aerial view",
   },
 ];
@@ -406,7 +406,7 @@ export default function Eeshavana() {
               }}
             >
               <img
-                src="/assets/project-images/Esahavana/EV River View 1.jpg"
+                src="/assets/project-images/Esahavana/EV River View 1.webp"
                 alt="EESHAVANA"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -634,7 +634,7 @@ export default function Eeshavana() {
                  }}
                >
                  <motion.img
-                   src="/assets/project-images/Esahavana/EV.png"
+                   src="/assets/project-images/Esahavana/EV.webp"
                    alt="A view of the Kaveri river landscape"
                    loading="lazy"
                    initial={reduce ? false : { scale: 1.2 }}
@@ -1069,22 +1069,22 @@ export default function Eeshavana() {
                 {
                   name: "Walk by the River",
                   desc: "Tranquil riverfront walking pathways winding along the scenic banks of the Kaveri.",
-                  image: "/assets/project-images/Esahavana/EV1.png",
+                  image: "/assets/project-images/Esahavana/EV1.webp",
                 },
                 {
                   name: "Bio Pool",
                   desc: "Natural chemical-free bio pool integrated with aquatic filtration flora.",
-                  image: "/assets/project-images/Esahavana/Biopool.png",
+                  image: "/assets/project-images/Esahavana/Biopool.webp",
                 },
                 {
                   name: "Amphitheatre",
                   desc: "Open-air eco amphitheatre designed for cultural gatherings and starlit evenings.",
-                  image: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.png",
+                  image: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.webp",
                 },
                 {
                   name: "Dining Deck",
                   desc: "Elevated open-breeze wooden dining deck overlooking the serene river landscape.",
-                  image: "/assets/project-images/Esahavana/EV.png",
+                  image: "/assets/project-images/Esahavana/EV.webp",
                 },
               ].map((amenity, index) => (
                 <motion.article
@@ -1426,7 +1426,7 @@ export default function Eeshavana() {
                   }}
                 >
                   <img
-                    src="/assets/project-images/Esahavana/masterplan.jpg"
+                    src="/assets/project-images/Esahavana/masterplan.webp"
                     alt="Eeshavana Concept Master Plan Layout"
                     style={{
                       width: "100%",

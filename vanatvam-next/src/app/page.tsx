@@ -42,7 +42,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Deepotsava",
     subtitle:
       "Hundreds of earthen lamps lovingly lit across pathways, courtyards, and sacred groves.",
-    img: "/Event%20images/DSC08963.JPG",
+    img: "/Event%20images/DSC08963.webp",
   },
   {
     id: "banana-orchard",
@@ -50,7 +50,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Banana Grove",
     subtitle:
       "Vibrant multi-canopy banana and fruit orchards nurtured through chemical-free living soil.",
-    img: "/assets/life/vanatvam3.png",
+    img: "/assets/life/vanatvam3.webp",
   },
   {
     id: "vasantotsava",
@@ -58,7 +58,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Vasantotsava",
     subtitle:
       "Joyous spring celebration with music, guided forest walks, and organic farm feasts.",
-    img: "/Event%20images/DSC08964%20(1).JPG",
+    img: "/Event%20images/DSC08964%20(1).webp",
   },
   {
     id: "brick-courtyard",
@@ -66,7 +66,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Brick Courtyard",
     subtitle:
       "Vernacular sustainable architecture embracing terracotta courtyards and open breeze pavilions.",
-    img: "/assets/life/vanatvam.png",
+    img: "/assets/life/vanatvam.webp",
   },
   {
     id: "nursery-saplings",
@@ -74,7 +74,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Native Nursery",
     subtitle:
       "Propagating indigenous forestry saplings to restore ancient biodiversity and sacred groves.",
-    img: "/assets/life/vanatvam1.png",
+    img: "/assets/life/vanatvam1.webp",
   },
   {
     id: "bonfire-nights",
@@ -82,7 +82,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Bonfire Nights",
     subtitle:
       "Stargazing, storytelling, and communal cooking around gentle twilight farm fires.",
-    img: "/Event%20images/DSC09025.JPG",
+    img: "/Event%20images/DSC09025.webp",
   },
   {
     id: "green-tunnel",
@@ -90,7 +90,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Canopy Trails",
     subtitle:
       "Tranquil walking pathways winding through living bamboo clusters and bird-friendly flora.",
-    img: "/assets/life/vanatvam2.png",
+    img: "/assets/life/vanatvam2.webp",
   },
   {
     id: "community-harvest",
@@ -98,7 +98,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Harvest Days",
     subtitle:
       "Families and children reconnecting directly with the earth, gathering fresh seasonal produce.",
-    img: "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.37.57%20PM%20(2)%20(1).jpeg",
+    img: "/Event%20images/WhatsApp%20Image%202024-04-02%20at%202.37.57%20PM%20(2)%20(1).webp",
   },
 
     {
@@ -107,7 +107,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Canopy Trails",
     subtitle:
       "Tranquil walking pathways winding through living bamboo clusters and bird-friendly flora.",
-    img: "/assets/life/vanatvam4.png",
+    img: "/assets/life/vanatvam4.webp",
   },
   {
     id: "community-harvest-2",
@@ -115,7 +115,7 @@ const lifeAtVanatvamPolaroids: PolaroidItem[] = [
     caption: "Harvest Days",
     subtitle:
       "Families and children reconnecting directly with the earth, gathering fresh seasonal produce.",
-    img: "/assets/life/vanatvam4.png",
+    img: "/assets/life/vanatvam4.webp",
   },
 ];
 
@@ -125,7 +125,7 @@ const heroSlides = [
     name: "EESHAVANA",
     
     tagline: "A premium riverfront community on the sacred Kaveri.",
-    img: "/assets/project-images/Esahavana/EV.png",
+    img: "/assets/project-images/Esahavana/EV.webp",
   },
   
   {
@@ -133,7 +133,7 @@ const heroSlides = [
     name: "ANANTAVANA",
      
     tagline: "Near Kabini— a biodiversity hotspot.",
-    img: "/assets/project-images/Ananthavana/hero_image.jpg",
+    img: "/assets/project-images/Ananthavana/hero_image.webp",
   },
   
   {
@@ -141,7 +141,7 @@ const heroSlides = [
     name: "MADHUVANA",
    
     tagline: "A dense water-forest ecosystem built around 250+ native trees.",
-    img: "/assets/project-images/Maduvana/hero.png",
+    img: "/assets/project-images/Maduvana/hero.webp",
   },
   
   {
@@ -150,7 +150,7 @@ const heroSlides = [
      
     tagline:
       "Our benchmark project — barren land reborn as a thriving forest ecosystem.",
-    img: "/assets/project-images/Brindavana/brindavanaaa.png",
+    img: "/assets/project-images/Brindavana/brindavanaaa.webp",
   },
 ];
 
@@ -582,7 +582,7 @@ export default function Home() {
                 }}
               >
                 <img
-                  src="/assets/project-images/Ananthavana/ChatGPT%20Image%20Aug%203,%202026,%2001_16_33%20PM%20(2).png"
+                  src="/assets/project-images/Ananthavana/ChatGPT%20Image%20Aug%203,%202026,%2001_16_33%20PM%20(2).webp"
                   alt="Ancient tall forest grove canopy"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -607,7 +607,7 @@ export default function Home() {
                 }}
               >
                 <img
-                  src="/assets/project-images/Maduvana/Rustic%20Tropical%20Garden%20Gateway.png"
+                  src="/assets/project-images/Maduvana/Rustic%20Tropical%20Garden%20Gateway.webp"
                   alt="Living landscape gateway"
                   style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 />
@@ -1149,28 +1149,28 @@ export default function Home() {
                   id: "anantavana",
                   name: "ANANTAVANA",
                   badge: "NEAR KABINI · 34 ACRES",
-                  img: "/assets/project-images/Ananthavana/hero_image.jpg",
+                  img: "/assets/project-images/Ananthavana/hero_image.webp",
                    
                 },
                 {
                   id: "eeshavana",
                   name: "EESHAVANA",
                   badge: "KOLLEGALA ·10 Acres",
-                  img: "/assets/project-images/Esahavana/EV.png",
+                  img: "/assets/project-images/Esahavana/EV.webp",
                    
                 },
                 {
                   id: "madhuvana",
                   name: "MADHUVANA",
                   badge: "MADDUR · 17 ACRES",
-                  img: "/assets/project-images/Maduvana/hero.png",
+                  img: "/assets/project-images/Maduvana/hero.webp",
                    
                 },
                 {
                   id: "brindavana",
                   name: "BRINDAVANA",
                   badge: "PAVAGADA · 30 ACRES",
-                  img: "/assets/project-images/Brindavana/brindavanaaa.png",
+                  img: "/assets/project-images/Brindavana/brindavanaaa.webp",
                    
                 },
                 
@@ -1637,7 +1637,7 @@ By bringing together ecological restoration, India’s cultural heritage, and th
                 }}
               >
                 <img
-                  src="/Event images/award.png"
+                  src="/Event images/award.webp"
                   alt="Vanatvam's natural forest landscape"
                   style={{
                     width: "100%",

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Vanatvam",
     images: [
       {
-        url: "/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.png",
+        url: "/assets/project-images/Brindavana/Sunny Tropical Banana Orchard.webp",
         width: 1200,
         height: 630,
         alt: "Vanatvam Nature Communities",
@@ -65,7 +65,7 @@ const structuredData = {
   "@type": "RealEstateAgent",
   name: "Vanatvam Private Limited",
   url: "https://www.vanatvam.com/",
-  logo: "https://www.vanatvam.com/assets/images/logos/vanatvam.png",
+  logo: "https://www.vanatvam.com/assets/images/logos/vanatvam.webp",
   description: "Vanatvam Private Limited is a Bengaluru-based company developing Natural Sustainable Farm Communities across Karnataka.",
   telephone: "+91-9999999999",
   email: "hello@vanatvam.com",

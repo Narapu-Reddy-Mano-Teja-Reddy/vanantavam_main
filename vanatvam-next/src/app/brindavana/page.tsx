@@ -277,19 +277,19 @@ function FloatingOrb({
 
 const galleryImages = [
   {
-    src: "/assets/project-images/Brindavana/Sunlit Garden Orchard with Cottage.png",
+    src: "/assets/project-images/Brindavana/Sunlit Garden Orchard with Cottage.webp",
     alt: "Sunlit Garden Orchard with Cottage at Brindavana",
   },
   {
-    src: "/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.png",
+    src: "/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.webp",
     alt: "Rainy Countryside Pond Reflections",
   },
   {
-    src: "/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.png",
+    src: "/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.webp",
     alt: "Tropical Garden Pathway Tunnel",
   },
   {
-    src: "/assets/project-images/Brindavana/Vibrant Tropical Garden Nursery.png",
+    src: "/assets/project-images/Brindavana/Vibrant Tropical Garden Nursery.webp",
     alt: "Vibrant Tropical Garden Nursery",
   },
 ];
@@ -340,7 +340,7 @@ export default function Brindavana() {
               }}
             >
               <img
-                src="/assets/project-images/Brindavana/Sunlit Garden Orchard with Cottage.png"
+                src="/assets/project-images/Brindavana/Sunlit Garden Orchard with Cottage.webp"
                 alt="BRINDAVANA"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
@@ -566,7 +566,7 @@ export default function Brindavana() {
                   }}
                 >
                   <motion.img
-                    src="/assets/project-images/Brindavana/Sunlit Tropical Garden with Yellow Macramé Swing.png"
+                    src="/assets/project-images/Brindavana/Sunlit Tropical Garden with Yellow Macramé Swing.webp"
                     alt="A view of Brindavana landscape"
                     loading="lazy"
                     initial={reduce ? false : { scale: 1.2 }}
