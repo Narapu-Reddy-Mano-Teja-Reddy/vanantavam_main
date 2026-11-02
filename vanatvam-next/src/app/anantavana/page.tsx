@@ -23,6 +23,7 @@ import {
   Sparkles,
   Trees,
   Waves,
+  Footprints,
 } from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
