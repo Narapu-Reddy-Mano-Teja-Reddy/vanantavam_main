@@ -875,7 +875,7 @@ export default function Brindavana() {
                   title: "Strategic Locations",
                   subtitle: "Strategic Connectivity. Promising Growth. Limitless Potential.",
                   desc: "Strategically positioned amid the industrial growth of Madakasira, the automobile hub of Penukonda, and the thriving commercial centre of Hindupur, Pavagada is emerging as a promising destination for the future..",
-                  icon: MapPinned,
+                  icon: MapPin,
                 },
                 {
                   num: "04 /",
