@@ -24,6 +24,9 @@ import {
   Trees,
   Waves,
   Footprints,
+  Sprout,
+ Flower2,
+ House,
 } from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
