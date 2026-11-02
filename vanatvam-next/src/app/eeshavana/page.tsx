@@ -915,7 +915,7 @@ export default function Eeshavana() {
                   title: "Aesthetically Designed Water Bodies",
                   subtitle: "Where water meets tranquillity",
                   desc: "Beautifully designed natural water bodies and eco-friendly bio pools create serene spaces for relaxation, recreation and a closer connection with nature.",
-                  icon: waves,
+                  icon: Waves,
                 },
               ].map((item, idx) => {
                 const Icon = item.icon;
