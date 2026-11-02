@@ -21,7 +21,11 @@ import {
   Trees,
   Users,
   Waves,
-} from "lucide-react";
+  Sprout,
+  Flower2,
+  House,
+} 
+  from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
 const TITLE = "MADHUVANA";
