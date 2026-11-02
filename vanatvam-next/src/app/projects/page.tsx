@@ -103,11 +103,11 @@ export default function Projects() {
         <div className="container relative" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
             <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.5rem, 7vw, 6.5rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-              <RevealText>Four Expressions of</RevealText><br/>
-              <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Nature.</RevealText>
+              <RevealText>  Explore our curated portfolio of</RevealText><br/>
+              <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}> Natural communities.</RevealText>
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', maxWidth: '600px', lineHeight: 1.6 }}>
-              Explore our curated portfolio of ecological communities, each designed to respect and enhance its unique natural context across Karnataka.
+             each designed to respect and enhance its unique natural context across Karnataka.
             </p>
           </motion.div>
         </div>
