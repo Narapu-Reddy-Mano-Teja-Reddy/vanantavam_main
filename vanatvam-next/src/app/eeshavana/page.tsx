@@ -7,7 +7,7 @@ import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import BrochureModal from "@/components/premium/BrochureModal";
-import { ArrowRight, ArrowUpRight, Droplets, Leaf, MapPin, Mountain, PawPrint, ShieldCheck, Ship, Sparkles, Trees, Users, Waves } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Droplets, Leaf, MapPin, Mountain, PawPrint, ShieldCheck, Ship, Sparkles, Trees, Users, Waves, Sprout } from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
 const TITLE = "EESHAVANA";
