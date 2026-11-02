@@ -887,34 +887,34 @@ export default function Madhuvana() {
               }}
             >
               {[
-                {
-                  num: "01 /",
-                  title: "Excellent Locations",
-                  subtitle: "Along the Bangalore–Mysore Corridor",
-                  desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
-                  icon: MapPin,
-                },
-                {
-                  num: "02 /",
-                  title: "Biodiversity by Design",
-                  subtitle: "We plant for the ecosystem, not just a crop",
-                  desc: "Featuring 200+ native, rare and endangered tree species gathered into sacred groves like Nakshatra, Navagraha and Saraswathi Vana. Naturalists have documented 50+ bird species on our chemical-free land against national decline trends (State of India's Birds, 2023).",
-                  icon: Trees,
-                },
-                {
-                  num: "03 /",
-                  title: "Natural and Organic",
-                  subtitle: "Grown naturally, no compromise",
-                  desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
-                  icon: Leaf,
-                },
-                {
-                  num: "04 /",
-                  title: "Integration Of Sacred Groves",
-                  subtitle: "Vedic forest science, woven into the land",
-                  desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose.",
-                  icon: Sparkles,
-                },
+            {
+  num: "01 /",
+  title: "Biodiversity by Design",
+  subtitle: "A thriving ecosystem rooted in native diversity",
+  desc: "Madhuvana is thoughtfully designed with diverse native trees and plant species to create a thriving ecosystem that nurtures birds, butterflies, bees and other wildlife.",
+  icon: Trees,
+},
+{
+  num: "02 /",
+  title: "Natural and Organic",
+  subtitle: "Sustainable farming in harmony with nature",
+  desc: "Experience sustainable farm living at Madhuvana through natural farming practices, chemical-free cultivation and a deep respect for the land and its natural cycles.",
+  icon: Sprout,
+},
+{
+  num: "03 /",
+  title: "Integration of Sacred Groves",
+  subtitle: "Ancient traditions woven into nature",
+  desc: "Inspired by ancient Indian traditions, Madhuvana integrates sacred gardens such as Nakshatra Vana and Navagraha Vana, celebrating our cultural heritage while enriching biodiversity.",
+  icon: Flower2,
+},
+{
+  num: "04 /",
+  title: "Features to Enrich Experience",
+  subtitle: "Thoughtfully designed spaces for a peaceful stay",
+  desc: "Enjoy a closer connection with nature at Madhuvana through thoughtfully designed spaces, including a charming gazebo, an Treehouse and comfortable cottages for a relaxing farm stay experience.",
+  icon: House,
+},
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
