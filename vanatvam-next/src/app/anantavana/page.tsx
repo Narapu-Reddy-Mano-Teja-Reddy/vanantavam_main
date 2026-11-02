@@ -1184,34 +1184,34 @@ export default function Anantavana() {
             }}
           >
             {[
-              {
-                num: "01 /",
-                title: "Excellent Locations",
-                subtitle: "Along the Bangalore–Mysore Corridor",
-                desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
-                icon: MapPin,
-              },
-              {
-                num: "02 /",
-                title: "Biodiversity by Design",
-                subtitle: "We plant for the ecosystem, not just a crop",
-                desc: "Featuring 200+ native, rare and endangered tree species gathered into sacred groves like Nakshatra, Navagraha and Saraswathi Vana. Naturalists have documented 50+ bird species on our chemical-free land against national decline trends (State of India's Birds, 2023).",
-                icon: Trees,
-              },
-              {
-                num: "03 /",
-                title: "Natural and Organic",
-                subtitle: "Grown naturally, no compromise",
-                desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
-                icon: Leaf,
-              },
-              {
-                num: "04 /",
-                title: "Integration Of Sacred Groves",
-                subtitle: "Vedic forest science, woven into the land",
-                desc: "Our communities are woven with conceptual Vanas — Nakshatra, Navagraha, Saraswathi and more — a tradition documented in the Vanyashastra Samhita, where each grove has a specific composition of trees and a specific purpose.",
-                icon: Sparkles,
-              },
+          {
+  num: "01 /",
+  title: "Excellent Location",
+  subtitle: "A unique farmland experience near Kabini",
+  desc: "Located near the beautiful Kabini backwaters, Anantavana offers a unique farmland ownership experience amidst one of Karnataka’s most renowned biodiversity-rich landscapes.",
+  icon: MapPinned,
+},
+{
+  num: "02 /",
+  title: "Biodiversity by Design",
+  subtitle: "A thriving habitat for nature and wildlife",
+  desc: "Discover thoughtfully developed green spaces featuring diverse native and indigenous tree species that nurture biodiversity and attract birds, bees and other wildlife.",
+  icon: Trees,
+},
+{
+  num: "03 /",
+  title: "Features to Enrich Experience",
+  subtitle: "Thoughtfully created spaces to unwind and explore",
+  desc: "Enjoy thoughtfully designed walking trails, Tree House and peaceful seating spaces, creating inviting outdoor experiences within Anantavana's biodiversity-rich landscape.",
+  icon: Footprints,
+},
+{
+  num: "04 /",
+  title: "Aesthetically Designed Water Bodies",
+  subtitle: "Water landscapes designed for nature and sustainability",
+  desc: "Beautifully designed ponds and agricultural water bodies that enhance the landscape while supporting rainwater harvesting, farm irrigation and efficient water management.",
+  icon: Waves,
+},
             ].map((item, idx) => {
               const Icon = item.icon;
               return (
