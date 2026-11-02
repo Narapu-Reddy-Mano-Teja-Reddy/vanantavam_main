@@ -1189,7 +1189,7 @@ export default function Anantavana() {
   title: "Excellent Location",
   subtitle: "A unique farmland experience near Kabini",
   desc: "Located near the beautiful Kabini backwaters, Anantavana offers a unique farmland ownership experience amidst one of Karnataka’s most renowned biodiversity-rich landscapes.",
-  icon: MapPinned,
+  icon: MapPin,
 },
 {
   num: "02 /",
