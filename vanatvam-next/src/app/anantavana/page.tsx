@@ -913,7 +913,7 @@ export default function Anantavana() {
             <div style={{ flex: "1.1 1 420px" }}>
               <Kicker>The AnantaVana</Kicker>
               <Words
-                text="Kabini – The land of spectacular landscapes and wildlife."
+                text="Kabini – The land of spectacular landscapes."
                 style={{
                   fontFamily: "var(--font-serif)",
                   fontSize: "clamp(1.2rem, 3.2vw, 3rem)",
