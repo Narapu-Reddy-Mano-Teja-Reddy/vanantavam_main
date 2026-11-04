@@ -1,7 +1,39 @@
 "use client";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Magnetic from "@/components/premium/Magnetic";
+
+/* 👉 Footer artwork (green hills / sunrise / hut / leaves) */
+const FOOTER_BG = "/assets/images/footer_bg.jpeg";
+
+type NavChild = { label: string; href: string };
+type NavItem = {
+  icon: string;
+  label: string;
+  href: string;
+  children?: NavChild[];
+};
+
+/* Pages shown in the Projects dropdown */
+const PROJECT_LINKS: NavChild[] = [
+  { label: "Brindavana", href: "/brindavana" },
+  { label: "Madhuvana", href: "/madhuvana" },
+  { label: "Anantavana", href: "/anantavana" },
+  { label: "Eeshavana", href: "/eeshavana" },
+];
+
+const NAV: NavItem[] = [
+  { icon: "fa-house", label: "Home", href: "/" },
+  { icon: "fa-seedling", label: "Our Philosophy", href: "/about" },
+  {
+    icon: "fa-layer-group",
+    label: "Projects",
+    href: "/projects",
+    children: PROJECT_LINKS,
+  },
+  { icon: "fa-chart-line", label: "Investment", href: "/investment" },
+  { icon: "fa-book-open", label: "Journal", href: "/journal" },
+];
 
 const SOCIALS = [
   {
@@ -27,115 +59,456 @@ const SOCIALS = [
 ];
 
 export default function Footer() {
-  return (
-    <footer
-      style={{
-        background: "var(--bg-dark-forest)",
-        color: "#FFF",
-        padding: "70px 0 32px",
-        borderTop: "1px solid rgba(255,255,255,0.1)",
-      }}
-    >
-      <div className="container">
-        {/* TOP: Logo + tagline */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <img
-            src="/assets/images/Project-Logos/vanatvam.webp"
-            alt="Vanatvam Logo"
-            style={{
-              height: "80px",
-              width: "auto",
-              maxWidth: "100%",
-              objectFit: "contain",
-              display: "block",
-              marginBottom: "16px",
-            }}
-          />
-          <div
-            style={{
-              fontSize: "0.85rem",
-              letterSpacing: "0.15em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.7)",
-            }}
-          >
-            Natural Farms · Nature Communities
-          </div>
-        </motion.div>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-        {/* MIDDLE: Social media links */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            gap: "28px",
-            margin: "40px 0 48px",
-          }}
-        >
-          {SOCIALS.map((s) => (
-            <Magnetic key={s.icon} strength={0.3}>
-              <a
-                href={s.url}
-                aria-label={s.label}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: "var(--accent-gold)",
-                  fontSize: "1.4rem",
-                  display: "inline-block",
-                  transition: "transform 0.3s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.1)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
-              >
-                <i className={`fa-brands ${s.icon}`}></i>
-              </a>
-            </Magnetic>
-          ))}
+  // close on outside click / Escape
+  useEffect(() => {
+    const onDown = (e: PointerEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, []);
+
+  // Touch screens (no hover): first tap opens the menu instead of navigating
+  const handleTriggerClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (window.matchMedia("(hover: none)").matches) {
+      e.preventDefault();
+      setMenuOpen((v) => !v);
+    }
+  };
+
+  return (
+    <footer className="vt-footer">
+      <div className="vt-footer__inner">
+        {/* ROW 1: logo | nav | socials */}
+        <div className="vt-footer__top">
+          <Link href="/" className="vt-footer__brand" aria-label="VanaTvam home">
+            <img
+              src="/assets/images/Project-Logos/vanatvam.webp"
+              alt="VanaTvam Logo"
+              className="vt-footer__logo"
+            />
+            <span className="vt-footer__tagline">
+              Sustainable Natural Communities
+            </span>
+          </Link>
+
+          <span className="vt-footer__divider vt-hide-md" aria-hidden="true" />
+
+          <nav className="vt-footer__nav" aria-label="Footer">
+            {NAV.map((item, i) => (
+              <div className="vt-footer__navitem" key={item.label}>
+                {i > 0 && (
+                  <span className="vt-footer__divider" aria-hidden="true" />
+                )}
+
+                {item.children ? (
+                  <div
+                    className="vt-footer__dropwrap"
+                    ref={menuRef}
+                    onMouseEnter={() => setMenuOpen(true)}
+                    onMouseLeave={() => setMenuOpen(false)}
+                  >
+                    <Link
+                      href={item.href}
+                      className="vt-footer__link"
+                      aria-haspopup="true"
+                      aria-expanded={menuOpen}
+                      onClick={handleTriggerClick}
+                      onFocus={() => setMenuOpen(true)}
+                    >
+                      <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+                      {item.label}
+                      <span
+                        className={`vt-footer__caret ${menuOpen ? "is-open" : ""}`}
+                        aria-hidden="true"
+                      />
+                    </Link>
+
+                    <div
+                      className={`vt-footer__menu ${menuOpen ? "is-open" : ""}`}
+                      role="menu"
+                    >
+                      <ul>
+                        {item.children.map((c) => (
+                          <li key={c.href} role="none">
+                            <Link
+                              href={c.href}
+                              role="menuitem"
+                              onClick={() => setMenuOpen(false)}
+                            >
+                              {c.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ) : (
+                  <Link href={item.href} className="vt-footer__link">
+                    <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            ))}
+          </nav>
+
+          <span className="vt-footer__divider vt-hide-md" aria-hidden="true" />
+
+          <div className="vt-footer__socials">
+            {SOCIALS.map((s) => (
+              <Magnetic key={s.icon} strength={0.3}>
+                <a
+                  href={s.url}
+                  aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vt-footer__social"
+                >
+                  <i className={`fa-brands ${s.icon}`} aria-hidden="true"></i>
+                </a>
+              </Magnetic>
+            ))}
+          </div>
         </div>
 
-        {/* BOTTOM: Privacy policy line */}
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "10px 24px",
-            paddingTop: "28px",
-            borderTop: "1px solid rgba(255,255,255,0.1)",
-            fontSize: "0.85rem",
-            color: "rgba(255,255,255,0.5)",
-            textAlign: "center",
-          }}
-        >
-          <Link href="/privacy-policy" className="footer-link-small">
-            Privacy Policy
-          </Link>
-          <Link href="/terms" className="footer-link-small">
-            Terms & Conditions
-          </Link>
-          <span>
+        {/* ROW 2: legal + copyright */}
+        <div className="vt-footer__bottom">
+          <div className="vt-footer__legal">
+            <Link href="/privacy-policy">Privacy Policy</Link>
+            <span
+              className="vt-footer__divider vt-footer__divider--sm"
+              aria-hidden="true"
+            />
+            <Link href="/terms">Terms &amp; Conditions</Link>
+          </div>
+          <p className="vt-footer__copy">
             &copy; {new Date().getFullYear()} VanaTvam Private Limited. CIN:
             U01100KA2022PTC159587
-          </span>
+          </p>
         </div>
       </div>
+
+      <style>{`
+        .vt-footer {
+          --gold: var(--accent-gold, #f2b705);
+          position: relative;
+          z-index: 5; /* footer + dropdown sit above page content */
+          color: #fff;
+          background-color: var(--bg-dark-forest, #0d2414);
+          background-image: url(${FOOTER_BG});
+          background-size: cover;
+          background-position: center bottom;
+          background-repeat: no-repeat;
+          min-height: 345px;
+          display: flex;
+          align-items: stretch;
+          /* no overflow:hidden – it would clip the upward dropdown */
+        }
+        /* soft fade so text stays readable over any artwork */
+        .vt-footer::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            to bottom,
+            rgba(8, 28, 14, 0.55) 0%,
+            rgba(8, 28, 14, 0) 55%,
+            rgba(8, 28, 14, 0.55) 100%
+          );
+          pointer-events: none;
+        }
+        .vt-footer__inner {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 0 24px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+
+        /* ---------- top row ---------- */
+        .vt-footer__top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          margin-top: 100px;
+        }
+        .vt-footer__brand {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 4px;
+          flex-shrink: 0;
+        }
+        .vt-footer__logo {
+          height: 64px;
+          width: auto;
+          max-width: 100%;
+          object-fit: contain;
+          display: block;
+        }
+        .vt-footer__tagline {
+          font-size: 0.68rem;
+          color: var(--gold);
+          letter-spacing: 0.02em;
+        }
+
+        .vt-footer__divider {
+          width: 1px;
+          height: 40px;
+          background: linear-gradient(
+            to bottom,
+            transparent,
+            var(--gold) 20%,
+            var(--gold) 80%,
+            transparent
+          );
+          opacity: 0.85;
+          flex-shrink: 0;
+        }
+        .vt-footer__divider--sm {
+          height: 16px;
+          background: rgba(255, 255, 255, 0.45);
+        }
+
+        .vt-footer__nav {
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .vt-footer__navitem {
+          display: flex;
+          align-items: center;
+        }
+        .vt-footer__navitem .vt-footer__divider {
+          height: 26px;
+          margin: 0 26px;
+        }
+        .vt-footer__link {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: #fff;
+          font-weight: 500;
+          font-size: 1rem;
+          white-space: nowrap;
+          transition: color 0.25s;
+        }
+        .vt-footer__link i {
+          color: var(--gold);
+          font-size: 1.1rem;
+        }
+        .vt-footer__link:hover,
+        .vt-footer__link:focus-visible {
+          color: var(--gold);
+        }
+
+        .vt-footer__socials {
+          display: flex;
+          gap: 14px;
+          flex-shrink: 0;
+        }
+        .vt-footer__social {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border: 1.5px solid var(--gold);
+          border-radius: 10px;
+          color: var(--gold);
+          font-size: 1rem;
+          transition: background 0.25s, color 0.25s, transform 0.25s;
+        }
+        .vt-footer__social:hover,
+        .vt-footer__social:focus-visible {
+          background: var(--gold);
+          color: #0d2414;
+          transform: scale(1.08);
+        }
+
+        /* ---------- bottom row ---------- */
+        .vt-footer__bottom {
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 24px;
+          padding: 22px 0 26px;
+          font-size: 0.92rem;
+          margin-top: 80px;
+        }
+        .vt-footer__bottom::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -24px;
+          right: -24px;
+          height: 1px;
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--gold) 25%,
+            var(--gold) 75%,
+            transparent
+          );
+          opacity: 0.7;
+        }
+        .vt-footer__legal {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+        }
+        .vt-footer__legal a {
+          color: #fff;
+          transition: color 0.25s;
+        }
+        .vt-footer__legal a:hover {
+          color: var(--gold);
+        }
+        .vt-footer__copy {
+          margin: 0;
+          flex: 1;
+          text-align: center;
+          color: #fff;
+        }
+
+        /* ---------- Projects dropdown (opens upward) ---------- */
+        .vt-footer__dropwrap {
+          position: relative;
+        }
+        .vt-footer__caret {
+          width: 7px;
+          height: 7px;
+          margin-left: 2px;
+          border-right: 1.5px solid var(--gold);
+          border-bottom: 1.5px solid var(--gold);
+          transform: translateY(2px) rotate(-135deg); /* points up */
+          transition: transform 0.25s;
+        }
+        .vt-footer__caret.is-open {
+          transform: translateY(-1px) rotate(45deg); /* points down */
+        }
+        .vt-footer__menu {
+          position: absolute;
+          left: 50%;
+          bottom: 100%;
+          padding-bottom: 16px; /* invisible bridge so hover isn't lost */
+          transform: translate(-50%, 8px);
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 0.22s, transform 0.22s, visibility 0.22s;
+          z-index: 20;
+        }
+        .vt-footer__menu.is-open {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(-50%, 0);
+        }
+        .vt-footer__menu ul {
+          position: relative;
+          list-style: none;
+          margin: 0;
+          padding: 8px;
+          min-width: 220px;
+          background: rgba(10, 32, 17, 0.98);
+          border: 1px solid var(--gold);
+          border-radius: 14px;
+          box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(8px);
+        }
+        .vt-footer__menu ul::after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          bottom: -7px;
+          width: 12px;
+          height: 12px;
+          background: rgba(10, 32, 17, 0.98);
+          border-right: 1px solid var(--gold);
+          border-bottom: 1px solid var(--gold);
+          transform: translateX(-50%) rotate(45deg);
+        }
+        .vt-footer__menu li a {
+          display: block;
+          padding: 10px 14px;
+          border-radius: 8px;
+          color: #fff;
+          font-size: 0.95rem;
+          white-space: nowrap;
+          transition: background 0.2s, color 0.2s;
+        }
+        .vt-footer__menu li a:hover,
+        .vt-footer__menu li a:focus-visible {
+          background: rgba(242, 183, 5, 0.14);
+          color: var(--gold);
+        }
+
+        /* ---------- responsive ---------- */
+        @media (max-width: 1100px) {
+          .vt-hide-md {
+            display: none;
+          }
+          .vt-footer__top {
+            flex-direction: column;
+            margin-top: 56px;
+            gap: 28px;
+          }
+          .vt-footer__navitem .vt-footer__divider {
+            margin: 0 16px;
+          }
+        }
+        @media (max-width: 640px) {
+          .vt-footer__menu ul {
+            min-width: min(260px, 80vw);
+          }
+          .vt-footer__menu li a {
+            padding: 14px 16px;
+          }
+          .vt-footer__nav {
+            gap: 14px 0;
+          }
+          .vt-footer__navitem .vt-footer__divider {
+            display: none;
+          }
+          .vt-footer__link {
+            margin: 0 14px;
+          }
+          .vt-footer__bottom {
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 40px;
+          }
+          .vt-footer__copy {
+            font-size: 0.8rem;
+          }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .vt-footer__social,
+          .vt-footer__link,
+          .vt-footer__menu,
+          .vt-footer__caret {
+            transition: none;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

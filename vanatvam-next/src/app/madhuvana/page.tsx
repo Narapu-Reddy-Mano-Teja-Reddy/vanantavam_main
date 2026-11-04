@@ -6,6 +6,7 @@ import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import BrochureModal from "@/components/premium/BrochureModal";
+import StickyMasterPlanGallery from "@/components/premium/StickyMasterPlanGallery";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -310,45 +311,6 @@ const galleryImages = [
   },
 ];
 
-const amenities = [
-  {
-    letter: "A",
-    name: "Entrance Arch",
-    img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp",
-  },
-  {
-    letter: "B",
-    name: "Sacred Groves",
-    img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp",
-  },
-  {
-    letter: "C",
-    name: "Gazebo",
-    img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.webp",
-  },
-  {
-    letter: "D",
-    name: "Eco friendly Cottage ",
-    img: "/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.webp",
-  },
-  {
-    letter: "E",
-    name: "Children's Pool",
-    img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp",
-  },
-  {
-    letter: "F",
-    name: "Tree House",
-    img: "/assets/project-images/Maduvana/MV Tree House.webp",
-  },
-  {
-    letter: "G",
-    name: "Pond",
-    img: "/assets/project-images/Maduvana/pond.webp",
-  },
- 
-];
-
 export default function Madhuvana() {
   const [isBrochureOpen, setIsBrochureOpen] = useState(false);
   const reduce = useReducedMotion() ?? false;
@@ -523,22 +485,22 @@ export default function Madhuvana() {
             />
 
             <motion.p
-            initial={from(20)}
-            animate={{ opacity: 1, y: 0 }}
-            transition={enter(2.1)}
-            style={{
-              fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)",
-              color: "rgba(255,255,255,0.94)",
-              maxWidth: "600px",
-              fontWeight: 300,
-              fontFamily: "var(--font-serif)",
-              fontStyle: "italic",
-              margin: 0,
-            }}
-          >
-            The Sweet Symphony of {" "}
-            <span style={{ color: "var(--accent-gold)" }}>Nature...</span>
-          </motion.p>
+              initial={from(20)}
+              animate={{ opacity: 1, y: 0 }}
+              transition={enter(2.1)}
+              style={{
+                fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)",
+                color: "rgba(255,255,255,0.94)",
+                maxWidth: "600px",
+                fontWeight: 300,
+                fontFamily: "var(--font-serif)",
+                fontStyle: "italic",
+                margin: 0,
+              }}
+            >
+              The Sweet Symphony of {" "}
+              <span style={{ color: "var(--accent-gold)" }}>Nature...</span>
+            </motion.p>
 
             <motion.div
               initial={from(18)}
@@ -708,7 +670,7 @@ export default function Madhuvana() {
                   </Reveal>
                   <Reveal delay={0.2}>
                     <p style={{ margin: 0 }}>
-                      Located off the 10-lane Bangalore and Mysore highway MadhuVana is just about 20 Km from Maddur and Mandya and is surrounded by River Kaveri and interlaced with Vishweshwaraiah Canals  MadhuVana is offered as quarter-acre farm plots with various trees and Herbal plants in each plot and we will also plant vegetables and fruit trees which will be grown using 100% Natural and Organic  methods. This offering is envisioned as a “ Natural, Sustainable Farm Community” meaning we are building a strong community that believes in a common goal and shares common views. This means that your neighbours are people who think and live like you! Come, be a part of this awesome community!
+                     Located off the 10-lane Bangalore and Mysore highway MadhuVana is just about 20 Km from Maddur and Mandya and is surrounded by River Kaveri and interlaced with Vishweshwaraiah Canals  MadhuVana is offered as quarter-acre farm plots with various trees and Herbal plants in each plot and we will also plant vegetables and fruit trees which will be grown using 100% Natural and Organic  methods. This offering is envisioned as a “ Natural, Sustainable Farm Community” meaning we are building a strong community that believes in a common goal and shares common views. This means that your neighbours are people who think and live like you! Come, be a part of this awesome community!
                     </p>
                   </Reveal>
                   <Reveal delay={0.3}>
@@ -1024,282 +986,172 @@ export default function Madhuvana() {
             </div>
           </div>
         </section>
-{/* ================= CONCEPT MASTER PLAN ================= */}
-<section
-  id="master-plan"
-  style={{
-    padding: "clamp(80px, 12vh, 140px) 0",
-    background: "#F4F1EA",
-    position: "relative",
-    overflow: "clip", // "hidden" would break position: sticky
-  }}
->
-  <div
-    className="container"
-    style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 2 }}
-  >
-    {/* CENTERED HEADING */}
-    <div style={{ textAlign: "center", marginBottom: "clamp(40px, 6vh, 64px)" }}>
-      <motion.span
-        initial={reduce ? false : { opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        style={{
-          color: "var(--accent-gold, #C6A265)",
-          fontSize: "0.8rem",
-          letterSpacing: "0.26em",
-          textTransform: "uppercase",
-          fontWeight: 700,
-          display: "block",
-          marginBottom: "14px",
-        }}
-      >
-        Master Plan
-      </motion.span>
 
-      <motion.h2
-        initial={reduce ? false : { opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        style={{
-          fontFamily: "var(--font-serif)",
-          fontSize: "clamp(2.2rem, 4vw, 3.4rem)",
-          color: FOREST,
-          lineHeight: 1.1,
-          letterSpacing: "-0.025em",
-          fontWeight: 600,
-          margin: "0 auto 18px",
-          textAlign: "center",
-        }}
-      >
-        Concept Layout
-        <br />
-        <span style={{ fontStyle: "italic", fontWeight: 400 }}>
-          & Master Plan
-        </span>
-      </motion.h2>
-
-      <motion.p
-        initial={reduce ? false : { opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        style={{
-          fontSize: "clamp(1rem, 1.1vw, 1.1rem)",
-          color: "var(--text-muted)",
-          lineHeight: 1.75,
-          maxWidth: "720px",
-          margin: "0 auto",
-        }}
-      >
-        TODO: Explore the __-acre master plan featuring farm parcels starting
-        from __ sq. ft., ... near ____.
-      </motion.p>
-    </div>
-
-    {/* MAIN GRID: Left = scrolling stacked cards, Right = sticky master plan */}
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
-        gap: "clamp(40px, 5vw, 80px)",
-        alignItems: "start", // required for sticky inside grid
-        position: "relative",
-      }}
-    >
-      {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "24px",
-          position: "relative",
-          paddingBottom: "40px",
-        }}
-      >
-        <div style={{ marginBottom: "6px" }}>
-          <span
-            style={{
-              color: "var(--accent-gold, #C6A265)",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              display: "block",
-              marginBottom: "6px",
-            }}
+        {/* ================= CONCEPT MASTER PLAN ================= */}
+        <section
+          id="master-plan"
+          style={{
+            padding: "clamp(80px, 12vh, 140px) 0",
+            background: "#F4F1EA",
+            position: "relative",
+            overflow: "clip", // "hidden" would break position: sticky
+          }}
+        >
+          <div
+            className="container"
+            style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 2 }}
           >
-            Master Plan Highlights
-          </span>
-          <h3
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "clamp(1.7rem, 2.6vw, 2.2rem)",
-              color: FOREST,
-              margin: 0,
-              fontWeight: 600,
-            }}
-          >
-            Sanctuary Amenities (A – H)
-          </h3>
-        </div>
-
-        {[
-          { id: "card-1", title: "TODO Amenity 1", img: "/assets/project-images/TODO/1.webp" },
-          { id: "card-2", title: "TODO Amenity 2", img: "/assets/project-images/TODO/2.webp" },
-          { id: "card-3", title: "TODO Amenity 3", img: "/assets/project-images/TODO/3.webp" },
-          { id: "card-4", title: "TODO Amenity 4", img: "/assets/project-images/TODO/4.webp" },
-          { id: "card-5", title: "TODO Amenity 5", img: "/assets/project-images/TODO/5.webp" },
-          { id: "card-6", title: "TODO Amenity 6", img: "/assets/project-images/TODO/6.webp" },
-          { id: "card-7", title: "TODO Amenity 7", img: "/assets/project-images/TODO/7.webp" },
-          { id: "card-8", title: "TODO Amenity 8", img: "/assets/project-images/TODO/8.webp" },
-        ].map((card, i) => (
-          <motion.div
-            key={card.id}
-            initial={reduce ? false : { opacity: 0, y: 40, scale: 0.97 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{
-              duration: 0.6,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.05 * i,
-            }}
-            style={{
-              position: "sticky",
-              top: `${140 + i * 22}px`, // each card stacks slightly lower
-              zIndex: i + 1,
-              height: "380px",
-              borderRadius: "24px",
-              overflow: "hidden",
-              boxShadow: "0 16px 45px rgba(18, 34, 23, 0.22)",
-              border: "1px solid rgba(255,255,255,0.18)",
-              background: "#122217",
-            }}
-          >
-            <img
-              src={card.img}
-              alt={card.title}
-              loading="lazy"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(to top, rgba(14,26,18,0.88) 0%, rgba(14,26,18,0.2) 60%, rgba(0,0,0,0) 100%)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-end",
-                padding: "32px",
-              }}
-            >
-              <span
+            {/* CENTERED HEADING */}
+            <div style={{ textAlign: "center", marginBottom: "clamp(40px, 6vh, 64px)" }}>
+              <motion.span
+                initial={reduce ? false : { opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
                 style={{
                   color: "var(--accent-gold, #C6A265)",
                   fontSize: "0.8rem",
-                  letterSpacing: "0.16em",
-                  fontWeight: 700,
+                  letterSpacing: "0.26em",
                   textTransform: "uppercase",
-                  marginBottom: "8px",
+                  fontWeight: 700,
+                  display: "block",
+                  marginBottom: "14px",
                 }}
               >
-                {String.fromCharCode(65 + i)} / {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3
+                Master Plan
+              </motion.span>
+
+              <motion.h2
+                initial={reduce ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 style={{
-                  color: "#FFFFFF",
                   fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(1.5rem, 2.4vw, 1.9rem)",
+                  fontSize: "clamp(2.2rem, 4vw, 3.4rem)",
+                  color: FOREST,
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.025em",
                   fontWeight: 600,
-                  lineHeight: 1.25,
-                  margin: 0,
-                  textShadow: "0 2px 12px rgba(0,0,0,0.5)",
+                  margin: "0 auto 18px",
+                  textAlign: "center",
                 }}
               >
-                {card.title}
-              </h3>
+                Concept Layout
+                <br />
+                <span style={{ fontStyle: "italic", fontWeight: 400 }}>
+                  & Master Plan
+                </span>
+              </motion.h2>
+
+              <motion.p
+                initial={reduce ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                style={{
+                  fontSize: "clamp(1rem, 1.1vw, 1.1rem)",
+                  color: "var(--eeshavana-muted, #687b63)",
+                  lineHeight: 1.75,
+                  maxWidth: "720px",
+                  margin: "0 auto",
+                }}
+              >
+                Explore the 17-acre master plan featuring farm parcels starting from
+                8,000+ sq. ft., water bodies, tree house, eco-cottages, and themed
+                sacred groves near Maddur.
+              </motion.p>
             </div>
-          </motion.div>
-        ))}
-      </div>
 
-      {/* RIGHT COLUMN: Sticky Master Plan Image */}
-      <motion.div
-        initial={reduce ? false : { opacity: 0, scale: 0.96 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={{ once: true, margin: "-60px" }}
-        transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
-        style={{
-          position: "sticky",
-          top: "120px",
-          borderRadius: "28px",
-          overflow: "hidden",
-          background: "#FFFFFF",
-          border: "1px solid rgba(18, 34, 23, 0.08)",
-          boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
-          padding: "16px",
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            background: "#E8ECE5",
-            borderRadius: "20px",
-            overflow: "hidden",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <img
-            src="/assets/project-images/TODO/master-plan.webp"
-            alt="TODO Concept Master Plan Layout"
-            style={{
-              width: "100%",
-              height: "auto",
-              maxHeight: "clamp(320px, 62vh, 620px)", // stays within the viewport so sticky works
-              objectFit: "contain",
-              display: "block",
-            }}
-          />
-        </div>
+            {/* MAIN GRID: Left = scrolling stacked cards, Right = sticky master plan */}
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+                gap: "clamp(40px, 5vw, 80px)",
+                alignItems: "start", // required for sticky inside grid
+                position: "relative",
+              }}
+            >
+              {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
+              <StickyMasterPlanGallery
+                eyebrow="Master Plan Highlights"
+                title="Sanctuary Amenities (A – H)"
+                items={[
+                  { id: "gateway", name: "Entrance", img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp" },
+                  { id: "pond", name: "Aesthetically Designed Pond", img: "/assets/project-images/Maduvana/pond.webp" },
+                  { id: "kitchen-dining", name: "Kitchen & Dining", img: "/assets/project-images/Maduvana/hero.webp" },
+                  { id: "tree-house", name: "Tree House Deck", img: "/assets/project-images/Maduvana/MV Tree House.webp" },
+                  { id: "event-space", name: "Event & Celebration Space", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
+                  { id: "cottages", name: "Eco Cottages", img: "/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.webp" },
+                  { id: "ashoka-vana", name: "Ashoka Vana with Pond", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
+                  { id: "vinayaka-vana", name: "Vinayaka & Shivapanchayatha Vana", img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.webp" },
+                ]}
+              />
 
-        <a
-          href="TODO-gallery-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-pill btn-pill-gold"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "10px",
-            marginTop: "18px",
-            backgroundColor: "var(--accent-gold)",
-            color: "#0d0d0d",
-            fontWeight: 600,
-            fontSize: "0.95rem",
-            width: "100%",
-            textDecoration: "none",
-          }}
-        >
-          Show More{" "}
-          <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-        </a>
-      </motion.div>
-    </div>
-  </div>
-</section>
+              {/* RIGHT COLUMN: Sticky Master Plan Image & Show More Button */}
+              <motion.div
+                initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 1, 0.5, 1] }}
+                style={{
+                  position: "sticky",
+                  top: "100px",
+                  width: "100%",
+                }}
+              >
+                <div
+                  style={{
+                    borderRadius: "20px",
+                    overflow: "hidden",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src="/assets/project-images/Maduvana/Master Plan.webp"
+                    alt="MadhuVana Concept Master Plan Layout"
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      maxHeight: "clamp(480px, 82vh, 850px)",
+                      objectFit: "contain",
+                      display: "block",
+                      borderRadius: "20px",
+                    }}
+                  />
+                </div>
 
-      {/* ================= NEARBY DESTINATIONS ================= */}
+                <a
+                  href="https://photos.app.goo.gl/opkz2Ff4q6uSDp4E6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-pill-gold"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "10px",
+                    marginTop: "18px",
+                    backgroundColor: "var(--accent-gold)",
+                    color: "#0d0d0d",
+                    fontWeight: 600,
+                    fontSize: "0.95rem",
+                    width: "100%",
+                    textDecoration: "none",
+                  }}
+                >
+                  Show More{" "}
+                  <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+                </a>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= NEARBY DESTINATIONS ================= */}
         <section
           style={{
             position: "relative",
@@ -2552,7 +2404,6 @@ export default function Madhuvana() {
           </div>
         </section>
         
-       
       </main>
 
       <BrochureModal
@@ -2569,7 +2420,7 @@ export default function Madhuvana() {
           --eeshavana-forest: #122217;
           --eeshavana-muted: #687b63;
           color: var(--text-dark);
-          overflow: hidden;
+          overflow: clip;
           background: #f9f8f6;
         }
 
@@ -2641,5 +2492,3 @@ export default function Madhuvana() {
     </>
   );
 }
-
-

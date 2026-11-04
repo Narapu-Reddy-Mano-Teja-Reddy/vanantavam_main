@@ -11,6 +11,7 @@ import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import AccordionGallery from "@/components/premium/AccordionGallery";
 import BrochureModal from "@/components/premium/BrochureModal";
+import StickyMasterPlanGallery from "@/components/premium/StickyMasterPlanGallery";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -1411,125 +1412,48 @@ export default function Anantavana() {
       }}
     >
       {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "24px",
-          position: "relative",
-          paddingBottom: "40px",
-        }}
-      >
-        <div style={{ marginBottom: "6px" }}>
-          <span
-            style={{
-              color: "var(--accent-gold, #C6A265)",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              display: "block",
-              marginBottom: "6px",
-            }}
-          >
-            Master Plan Highlights
-          </span>
-          <h3
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "clamp(1.7rem, 2.6vw, 2.2rem)",
-              color: FOREST,
-              margin: 0,
-              fontWeight: 600,
-            }}
-          >
-            Sanctuary Amenities (A – H)
-          </h3>
-        </div>
-
-        {[
-          { id: "entrance", name: "Entrance Gateway", img: "/assets/project-images/Ananthavana/Enterance.webp" },
-          { id: "cottage", name: "Community Cottage", img: "/assets/project-images/Ananthavana/Common.webp" },
-          { id: "mud-house", name: "Mud House & Farmhouse", img: "/assets/project-images/Ananthavana/hero_image_2.webp" },
-          { id: "roads", name: "Broad Internal Roads", img: "/assets/project-images/Ananthavana/Tree-Lined.webp" },
-          { id: "ponds", name: "Natural Ponds", img: "/assets/project-images/Ananthavana/NaturalPonds.webp" },
-          { id: "tree-house", name: "Tree House Deck", img: "/assets/project-images/Ananthavana/AV Tree House.webp" },
-          { id: "herbal", name: "Herbal & Healing Flora", img: "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.webp" },
-          { id: "fire-camp", name: "Fire Camp & Tents", img: "/assets/project-images/Ananthavana/FireCamp.webp" },
-        ].map((item, i) => (
-          <motion.div
-            key={item.id}
-            initial={reduce ? false : { opacity: 0, y: 40, scale: 0.97 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={{
-              duration: 0.6,
-              ease: [0.25, 1, 0.5, 1],
-              delay: 0.05 * i,
-            }}
-            style={{
-              position: "sticky",
-              top: `${140 + i * 22}px`, // each card stacks slightly lower
-              zIndex: i + 1,
-              height: "380px",
-              borderRadius: "24px",
-              overflow: "hidden",
-              boxShadow: "0 16px 45px rgba(18, 34, 23, 0.22)",
-              border: "1px solid rgba(255,255,255,0.18)",
-              background: "#122217",
-            }}
-          >
-            <img
-              src={item.img}
-              alt={item.name}
-              loading="lazy"
-              style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "linear-gradient(to top, rgba(14,26,18,0.88) 0%, rgba(14,26,18,0.2) 60%, rgba(0,0,0,0) 100%)",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "flex-end",
-                padding: "32px",
-              }}
-            >
-              <span
-                style={{
-                  color: "var(--accent-gold, #C6A265)",
-                  fontSize: "0.8rem",
-                  letterSpacing: "0.16em",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  marginBottom: "8px",
-                }}
-              >
-                {String.fromCharCode(65 + i)} / {String(i + 1).padStart(2, "0")}
-              </span>
-              <h3
-                style={{
-                  color: "#FFFFFF",
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-                  fontWeight: 600,
-                  margin: 0,
-                  textShadow: "0 2px 12px rgba(0,0,0,0.5)",
-                }}
-              >
-                {item.name}
-              </h3>
-            </div>
-          </motion.div>
-        ))}
-      </div>
+      <StickyMasterPlanGallery
+        eyebrow="Master Plan Highlights"
+        title="Sanctuary Amenities (A – H)"
+        items={[
+          {
+            id: "entrance",
+            code: "A / 01",
+            name: "Entrance Gateway",
+            img: "/assets/project-images/Ananthavana/Enterance.webp",
+          },
+          {
+            id: "herbal",
+            code: "B / 02",
+            name: "Herbal & Healing Flora",
+            img: "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.webp",
+          },
+          {
+            id: "cottage",
+            code: "C / 03",
+            name: "Community Cottage",
+            img: "/assets/project-images/Ananthavana/Common.webp",
+          },
+          {
+            id: "ponds",
+            code: "D / 04",
+            name: "Natural Ponds",
+            img: "/assets/project-images/Ananthavana/NaturalPonds.webp",
+          },
+          {
+            id: "tree-house",
+            code: "E / 05",
+            name: "Tree House Deck",
+            img: "/assets/project-images/Ananthavana/AV Tree House.webp",
+          },
+          {
+            id: "roads",
+            code: "F / 06",
+            name: "Broad Internal Roads",
+            img: "/assets/project-images/Ananthavana/Tree-Lined.webp",
+          },
+        ]}
+      />
 
       {/* RIGHT COLUMN: Sticky Master Plan Image */}
       <motion.div
@@ -1539,19 +1463,12 @@ export default function Anantavana() {
         transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
         style={{
           position: "sticky",
-          top: "120px",
-          borderRadius: "28px",
-          overflow: "hidden",
-          background: "#FFFFFF",
-          border: "1px solid rgba(18, 34, 23, 0.08)",
-          boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
-          padding: "16px",
+          top: "100px",
           width: "100%",
         }}
       >
         <div
           style={{
-            background: "#E8ECE5",
             borderRadius: "20px",
             overflow: "hidden",
             display: "flex",
@@ -1565,9 +1482,10 @@ export default function Anantavana() {
             style={{
               width: "100%",
               height: "auto",
-              maxHeight: "clamp(320px, 62vh, 620px)", // stays within the viewport so sticky works
+              maxHeight: "clamp(480px, 82vh, 850px)",
               objectFit: "contain",
               display: "block",
+              borderRadius: "20px",
             }}
           />
         </div>
@@ -1590,7 +1508,7 @@ export default function Anantavana() {
             width: "100%",
           }}
         >
-          View Full Google Photos Gallery{" "}
+          Show More{" "}
           <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
         </a>
       </motion.div>
