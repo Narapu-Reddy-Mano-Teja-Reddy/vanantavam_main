@@ -30,10 +30,7 @@ const NAV_ITEMS: NavItem[] = [
   { path: "/blog", label: "Journal", icon: BookOpen },
 ];
 
-const DRAWER_ITEMS = [
-  ...NAV_ITEMS.map((item) => ({ path: item.path, label: item.label })),
-  { path: "/contact", label: "Find your project" },
-];
+ 
 
 const EASE_PREMIUM: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -304,90 +301,8 @@ export default function Navigation() {
 
           {/* Right: Direct Action CTA Button */}
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <Magnetic strength={0.3}>
-              <motion.div
-                initial="rest"
-                animate="rest"
-                whileHover="hover"
-                whileTap={{ scale: 0.96 }}
-                style={{ display: "inline-flex" }}
-              >
-                <Link
-                  href="/contact"
-                  className="header-cta-btn"
-                  onClick={closeDrawer}
-                  style={{
-                    position: "relative",
-                    overflow: "hidden",
-                    background:
-                      "linear-gradient(135deg, #74351F 0%, #542211 100%)",
-                    color: "#FFFFFF",
-                    padding: scrolled ? "14px 28px" : "16px 32px",
-                    borderRadius: "36px",
-                    fontSize: scrolled ? "0.92rem" : "1.02rem",
-                    fontWeight: 700,
-                    letterSpacing: scrolled ? "0.06em" : "0em",
-                    textTransform: scrolled ? "uppercase" : "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    textDecoration: "none",
-                    boxShadow: "0 8px 22px rgba(116, 53, 31, 0.32)",
-                    border: "1px solid rgba(198, 162, 101, 0.4)",
-                    whiteSpace: "nowrap",
-                    transition: "all 0.3s ease",
-                  }}
-                >
-                  {/* Gold shine sweep on hover */}
-                  <motion.span
-                    aria-hidden="true"
-                    variants={shineVariants}
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      bottom: 0,
-                      left: 0,
-                      width: "60%",
-                      background:
-                        "linear-gradient(105deg, transparent 0%, rgba(198, 162, 101, 0.55) 50%, transparent 100%)",
-                      transform: "skewX(-18deg)",
-                      pointerEvents: "none",
-                    }}
-                  />
-
-                  {/* Soft gold glow ring on hover */}
-                  <motion.span
-                    aria-hidden="true"
-                    variants={glowVariants}
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      borderRadius: "34px",
-                      boxShadow:
-                        "inset 0 0 0 1px rgba(198, 162, 101, 0.85), 0 0 24px rgba(198, 162, 101, 0.35)",
-                      pointerEvents: "none",
-                    }}
-                  />
-
-                  <span style={{ position: "relative", zIndex: 1 }}>
-                    {scrolled ? "Find Your Project" : "Find your project"}
-                  </span>
-
-                  <motion.span
-                    variants={arrowVariants}
-                    style={{
-                      position: "relative",
-                      zIndex: 1,
-                      display: "inline-flex",
-                      alignItems: "center",
-                      color: "var(--accent-gold)",
-                    }}
-                  >
-                    <ArrowRight size={15} strokeWidth={2.5} />
-                  </motion.span>
-                </Link>
-              </motion.div>
-            </Magnetic>
+            
+            
 
             {/* Mobile Menu Toggle Button */}
             <div
@@ -459,33 +374,7 @@ export default function Navigation() {
                 width: "100%",
               }}
             >
-              {DRAWER_ITEMS.map((item, i) => (
-                <motion.div
-                  key={item.path}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + i * 0.05 }}
-                  whileTap={{ scale: 0.96 }}
-                >
-                  <Link
-                    href={item.path}
-                    onClick={closeDrawer}
-                    style={{
-                      fontSize: "1.7rem",
-                      color:
-                        pathname === item.path
-                          ? "var(--accent-gold)"
-                          : "#183023",
-                      textDecoration: "none",
-                      fontFamily: "var(--font-serif)",
-                      display: "block",
-                      textAlign: "center",
-                    }}
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
+               
             </nav>
 
             <motion.div

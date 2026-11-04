@@ -411,95 +411,7 @@ export default function Home() {
         </div>
       </section>
       
-     {/* Continuous Infinite Warli Art Marquee */}
-<div className="warli-loop">
-  <div className="warli-loop-track">
-    {[0, 1, 2, 3].map((repeat) => (
-      <svg
-        key={repeat}
-        className="warli-loop-art"
-        viewBox="0 0 1000 120"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        {/* Top Outer Border Line */}
-        <line x1="0" y1="5" x2="1000" y2="5" stroke="#923D22" strokeWidth="2.5" />
-        <line x1="0" y1="9" x2="1000" y2="9" stroke="#122217" strokeWidth="1" />
-
-        {/* Top Greek Key / Meander Pattern (Indigo Blue) */}
-        {Array.from({ length: 40 }, (_, i) => (
-          <path
-            key={`top-meander-${i}`}
-            d={`M${i * 25 + 3.5} 32 h18 v-18 h-12 v12 h6 v-6`}
-            fill="none"
-            stroke="#1B3B6F"
-            strokeWidth="2.2"
-            strokeLinecap="square"
-            strokeLinejoin="miter"
-          />
-        ))}
-        <line x1="0" y1="36" x2="1000" y2="36" stroke="#1B3B6F" strokeWidth="2" />
-
-        {/* Center Hand-Holding Zig-Zag Chain Line */}
-        {Array.from({ length: 40 }, (_, i) => (
-          <path
-            key={`zigzag-${i}`}
-            d={`M${i * 25} 66 L${i * 25 + 6.25} 60 L${i * 25 + 12.5} 72 L${i * 25 + 18.75} 60 L${i * 25 + 25} 66`}
-            fill="none"
-            stroke="#923D22"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        ))}
-
-        {/* Center Repeating Warli Dancers */}
-        {Array.from({ length: 25 }, (_, i) => {
-          const cx = 20 + i * 40;
-          return (
-            <g key={`dancer-${i}`} className="warli-person">
-              {/* Head */}
-              <circle cx={cx} cy="50" r="5" fill="#923D22" />
-              {/* Body (Interlocking triangles) */}
-              <polygon
-                points={`${cx - 8},58 ${cx + 8},58 ${cx},76`}
-                fill="#923D22"
-              />
-              {/* Legs */}
-              <path
-                d={`M${cx} 76 L${cx - 6} 92 M${cx} 76 L${cx + 6} 92`}
-                stroke="#923D22"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-              />
-            </g>
-          );
-        })}
-
-        {/* Bottom Greek Key / Meander Base Line */}
-        <line x1="0" y1="84" x2="1000" y2="84" stroke="#1B3B6F" strokeWidth="2" />
-
-        {/* Bottom Greek Key / Meander Pattern (Indigo Blue) */}
-        {Array.from({ length: 40 }, (_, i) => (
-          <path
-            key={`bot-meander-${i}`}
-            d={`M${i * 25 + 3.5} 88 h18 v18 h-12 v-12 h6 v6`}
-            fill="none"
-            stroke="#1B3B6F"
-            strokeWidth="2.2"
-            strokeLinecap="square"
-            strokeLinejoin="miter"
-          />
-        ))}
-
-        {/* Bottom Outer Border Line */}
-        <line x1="0" y1="111" x2="1000" y2="111" stroke="#122217" strokeWidth="1" />
-        <line x1="0" y1="115" x2="1000" y2="115" stroke="#923D22" strokeWidth="2.5" />
-      </svg>
-    ))}
-  </div>
-</div>
+      
       
 
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
@@ -693,7 +605,7 @@ export default function Home() {
                     gap: "8px",
                   }}
                 >
-                  Understand our approach <ArrowRight className="size-4" />
+                    our Philosophy <ArrowRight className="size-4" />
                 </Link>
               </Magnetic>
             </div>

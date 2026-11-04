@@ -380,6 +380,7 @@ export default function Eeshavana() {
             alignItems: "center",
             overflow: "hidden",
             background: FOREST,
+            fontFamily: "var(--font-serif)",
           }}
         >
           <motion.div
@@ -733,7 +734,7 @@ export default function Eeshavana() {
                <div className="eeshavana-pills" style={{ marginTop: "24px" }}>
                  {[
                    "Sacred Kaveri Riverfront",
-                   "Dhanagere, Kollegala",
+                   "close to shivanasamudra",
                    "Nature-First Architecture",
                  ].map((item, index) => (
                    <Reveal key={item} delay={0.12 + index * 0.06}>
@@ -900,7 +901,7 @@ export default function Eeshavana() {
                   num: "02 /",
                   title: "Biodiversity by Design",
                   subtitle: "We plant for the ecosystem, not just a crop",
-                  desc: "Experience thoughtfully designed green spaces, native trees and diverse plantations that nurture biodiversity and attract birds, bees and butterflies.",
+                  desc: "Thoughtfully nurtured native landscapes and river-friendly ecosystems that support aquatic life, attract birds and butterflies, and celebrate the rich biodiversity of the Kaveri riverfront.",
                   icon: Trees,
                 },
                 {
@@ -1022,177 +1023,6 @@ export default function Eeshavana() {
           </div>
         </section>
 
-        {/* ================= AMENITIES ================= */}
-        <section
-          id="amenities"
-          style={{ padding: "clamp(60px, 8vh, 100px) 0", background: "#FFFFFF" }}
-        >
-          <div className="container">
-            <div style={{ textAlign: "center", marginBottom: "50px" }}>
-              <Kicker center>Eeshavana Experiences</Kicker>
-              <Words
-                text="Designed for Slower, Holistic Living"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
-                  lineHeight: 1.15,
-                  color: FOREST,
-                  textAlign: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px",
-                }}
-              />
-              <Reveal delay={0.15}>
-                <p
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "var(--eeshavana-muted, #687b63)",
-                    maxWidth: "680px",
-                    margin: "0 auto",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  More room for shared moments, quiet pauses, and a closer connection with the Kaveri river.
-                </p>
-              </Reveal>
-            </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-                gap: "24px",
-              }}
-            >
-              {[
-                {
-                  name: "Walk by the River",
-                  desc: "Tranquil riverfront walking pathways winding along the scenic banks of the Kaveri.",
-                  image: "/assets/project-images/Esahavana/EV1.webp",
-                },
-                {
-                  name: "Bio Pool",
-                  desc: "Natural chemical-free bio pool integrated with aquatic filtration flora.",
-                  image: "/assets/project-images/Esahavana/Biopool.webp",
-                },
-                {
-                  name: "Amphitheatre",
-                  desc: "Open-air eco amphitheatre designed for cultural gatherings and starlit evenings.",
-                  image: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.webp",
-                },
-                {
-                  name: "Dining Deck",
-                  desc: "Elevated open-breeze wooden dining deck overlooking the serene river landscape.",
-                  image: "/assets/project-images/Esahavana/EV.webp",
-                },
-              ].map((amenity, index) => (
-                <motion.article
-                  key={amenity.name}
-                  initial={reduce ? false : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={
-                    reduce
-                      ? undefined
-                      : {
-                          y: -8,
-                          scale: 1.02,
-                          boxShadow: "0 22px 45px rgba(18,34,23,0.16)",
-                          transition: { duration: 0.3, ease: EASE },
-                        }
-                  }
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
-                    ease: EASE,
-                  }}
-                  style={{
-                    background: "#FFF",
-                    borderRadius: "24px",
-                    overflow: "hidden",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-                    border: "1px solid rgba(0,0,0,0.04)",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div
-                    style={{
-                      height: "200px",
-                      width: "100%",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <img
-                      src={amenity.image}
-                      alt={amenity.name}
-                      loading="lazy"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                  <div style={{ padding: "24px", flexGrow: 1 }}>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.35rem",
-                        color: FOREST,
-                        margin: "0 0 10px",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {amenity.name}
-                    </h3>
-                    <p
-                      style={{
-                        color: "var(--eeshavana-muted, #687b63)",
-                        fontSize: "0.95rem",
-                        lineHeight: 1.6,
-                        margin: 0,
-                      }}
-                    >
-                      {amenity.desc}
-                    </p>
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "44px",
-                }}
-              >
-                <a
-                  href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-gold"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    backgroundColor: "var(--accent-gold)",
-                    color: "#0d0d0d",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                    textDecoration: "none",
-                  }}
-                >
-                  Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-                </a>
-              </motion.div>
-          </div>
-        </section>
 
         {/* ================= CONCEPT MASTER PLAN ================= */}
         <section
@@ -1444,7 +1274,169 @@ export default function Eeshavana() {
         </section>
 
         
-        
+
+        {/* ================= AMENITIES ================= */}
+        <section
+          id="amenities"
+          style={{ padding: "clamp(60px, 8vh, 100px) 0", background: "#FFFFFF" }}
+        >
+          <div className="container">
+            <div style={{ textAlign: "center", marginBottom: "50px" }}>
+              <Kicker center>Eeshavana Experiences</Kicker>
+              <Words
+                text="Designed for Slower, Holistic Living"
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
+                  lineHeight: 1.15,
+                  color: FOREST,
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "0 auto 16px",
+                }}
+              />
+              <Reveal delay={0.15}>
+                <p
+                  style={{
+                    fontSize: "1.1rem",
+                    color: "var(--eeshavana-muted, #687b63)",
+                    maxWidth: "680px",
+                    margin: "0 auto",
+                    lineHeight: 1.75,
+                  }}
+                >
+                  More room for shared moments, quiet pauses, and a closer connection with the Kaveri river.
+                </p>
+              </Reveal>
+            </div>
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns:
+                  "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
+                gap: "24px",
+              }}
+            >
+              {[
+                {
+                  name: "Walk by the River",
+                   
+                  image: "/assets/project-images/Esahavana/EV1.webp",
+                },
+                {
+                  name: "Bio Pool",
+                  
+                  image: "/assets/project-images/Esahavana/Biopool.webp",
+                },
+                {
+                  name: "Amphitheatre",
+                   
+                  image: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.webp",
+                },
+                {
+                  name: "Dining Deck",
+                  
+                  image: "/assets/project-images/Esahavana/EV.webp",
+                },
+              ].map((amenity, index) => (
+                <motion.article
+                  key={amenity.name}
+                  initial={reduce ? false : { opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={
+                    reduce
+                      ? undefined
+                      : {
+                          y: -8,
+                          scale: 1.02,
+                          boxShadow: "0 22px 45px rgba(18,34,23,0.16)",
+                          transition: { duration: 0.3, ease: EASE },
+                        }
+                  }
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.08,
+                    ease: EASE,
+                  }}
+                  style={{
+                    background: "#FFF",
+                    borderRadius: "24px",
+                    overflow: "hidden",
+                    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+                    border: "1px solid rgba(0,0,0,0.04)",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
+                  <div
+                    style={{
+                      height: "200px",
+                      width: "100%",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <img
+                      src={amenity.image}
+                      alt={amenity.name}
+                      loading="lazy"
+                      style={{
+                        width: "100%",
+                        height: "100%",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+                  <div style={{ padding: "24px", flexGrow: 1 }}>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "1.35rem",
+                        color: FOREST,
+                        margin: "0 0 10px",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {amenity.name}
+                    </h3>
+                  
+                  </div>
+                </motion.article>
+              ))}
+            </div>
+             <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  marginTop: "44px",
+                }}
+              >
+                <a
+                  href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-pill btn-pill-gold"
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    backgroundColor: "var(--accent-gold)",
+                    color: "#0d0d0d",
+                    fontWeight: 600,
+                    fontSize: "1rem",
+                    textDecoration: "none",
+                  }}
+                >
+                  Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+                </a>
+              </motion.div>
+          </div>
+        </section>        
 
       {/* ================= NEARBY DESTINATIONS ================= */}
       <section
@@ -2720,30 +2712,7 @@ export default function Eeshavana() {
           </div>
         </div>
       </section>
-      <section style={{ padding: 'clamp(60px, 8vh, 90px) 0', background: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', color: 'var(--bg-dark-forest)' }}>Discover Other Projects</h3>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
-            {[
-              { id: 'brindavana', name: 'BRINDAVANA', loc: 'Pavagada', img: '/assets/images/Project-Logos/BrindaVana.webp' },
-              { id: 'madhuvana', name: 'MADHUVANA', loc: 'Maddur', img: '/assets/images/Project-Logos/Logo-MadhuVana.svg' },
-              { id: 'anantavana', name: 'ANANTAVANA', loc: 'Kabini', img: '/assets/images/Project-Logos/Anantavana.webp' }
-            ].map((p, i) => (
-              <Link key={p.id} href={`/${p.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  style={{ background: 'var(--bg-cream)', borderRadius: '24px', padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '200px', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'transform 0.3s' }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '20px', fontWeight: 600 }}>{p.loc}</span>
-                  <img src={p.img} alt={p.name} style={{ maxHeight: '60px', maxWidth: '180px', objectFit: 'contain' }} />
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+       
 
       </main>
 

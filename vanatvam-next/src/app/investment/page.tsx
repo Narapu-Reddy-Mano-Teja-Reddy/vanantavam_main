@@ -247,7 +247,7 @@ export default function Investment() {
                 marginBottom: '10px',
               }}
             >
-              &ldquo;
+              
             </span>
             <blockquote
               style={{
@@ -261,7 +261,7 @@ export default function Investment() {
                 maxWidth: '850px',
               }}
             >
-              In uncertain times, diversification is your most prudent move.
+             &ldquo; In uncertain times, diversification is your most prudent move.&ldquo;
             </blockquote>
             <p
               style={{
@@ -384,7 +384,7 @@ export default function Investment() {
               }}
             >
               <Image
-                src="/assets/images/Investment1.webp"
+                src="/assets/images/Global Asset Allocation Infographic.webp"
                 alt="Market Volatility and Diversification Analytics"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -450,282 +450,183 @@ export default function Investment() {
             margin: '0 auto',
           }}
         >
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            style={{ maxWidth: '820px', marginBottom: '50px' }}
-          >
-            <span
-              style={{
-                color: 'var(--accent-gold, #C6A265)',
-                fontSize: '0.85rem',
-                fontWeight: 700,
-                letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                display: 'block',
-                marginBottom: '12px',
-              }}
-            >
-              Global & Domestic Trends
-            </span>
-            <h2
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(2.2rem, 3.8vw, 3.2rem)',
-                color: 'var(--bg-dark-forest, #122217)',
-                lineHeight: 1.18,
-                letterSpacing: '-0.02em',
-                marginBottom: '20px',
-              }}
-            >
-              Market Volatility at Home and Abroad
-            </h2>
-            <p
-              style={{
-                fontSize: '1.12rem',
-                color: '#4B554D',
-                lineHeight: 1.8,
-                fontWeight: 400,
-              }}
-            >
-              Indian equity markets, led by the Sensex and Nifty, move with global cues, foreign
-              investment flows and domestic interest rates. When bond yields rise, equity valuations
-              often come under pressure, and investors look for steadier ground.
-            </p>
-          </motion.div>
-
-          {/* Context highlight cards */}
+          {/* Main Grid Layout: Left Sticky Header with Image, Right Overlapping Stacking Cards */}
           <div
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '30px',
-              marginBottom: '50px',
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 460px), 1fr))",
+              gap: "clamp(36px, 5vw, 80px)",
+              alignItems: "start",
+              position: "relative",
             }}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+            {/* LEFT COLUMN: Sticky Header + Complete Showcase Image */}
+            <div
               style={{
-                background: 'var(--bg-cream, #F9F8F6)',
-                borderRadius: '20px',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
+                position: "sticky",
+                top: "120px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "28px",
               }}
             >
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <span
+                  style={{
+                    color: "var(--accent-gold, #C6A265)",
+                    fontSize: "0.85rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.22em",
+                    textTransform: "uppercase",
+                    display: "block",
+                    marginBottom: "12px",
+                  }}
+                >
+                  Global &amp; Domestic Trends
+                </span>
+
+                <h2
+                  style={{
+                    fontFamily: "var(--font-serif)",
+                    fontSize: "clamp(1.7rem, 2.8vw, 2.2rem)",
+                    color: "var(--bg-dark-forest, #122217)",
+                    lineHeight: 1.2,
+                    letterSpacing: "-0.02em",
+                    marginBottom: "12px",
+                    fontWeight: 600,
+                  }}
+                >
+                  Market Volatility at Home and Abroad
+                </h2>
+              </motion.div>
+
+              {/* Complete Featured Image Frame */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.97 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, delay: 0.2 }}
                 style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '16 / 10',
-                  overflow: 'hidden',
-                  background: '#122217',
+                  position: "relative",
+                  width: "100%",
+                  height: "280px",
+                  borderRadius: "20px",
+                  overflow: "hidden",
+                  background: "#122217",
+                  boxShadow: "0 10px 28px rgba(18, 34, 23, 0.08)",
+                  border: "1px solid rgba(18, 34, 23, 0.08)",
                 }}
               >
                 <Image
                   src="/assets/images/Global Ripple Effects.webp"
-                  alt="Global Ripple Effects"
+                  alt="Market Volatility and Land Diversification"
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'contain' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  style={{ objectFit: "contain", padding: "8px" }}
                 />
-              </div>
+              </motion.div>
+            </div>
 
-              <div style={{ padding: '32px' }}>
-                <div
-                  style={{
-                    fontSize: '0.8rem',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    color: 'var(--brand-earth-brown, #72351C)',
-                    fontWeight: 700,
-                    marginBottom: '12px',
-                  }}
-                >
-                  Global Ripple Effects
-                </div>
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '1.45rem',
-                    color: '#122217',
-                    marginBottom: '14px',
-                    fontWeight: 600,
-                  }}
-                >
-                  Cross-Market Interconnectedness
-                </h3>
-                <p
-                  style={{
-                    fontSize: '1rem',
-                    color: '#556056',
-                    lineHeight: 1.75,
-                    margin: 0,
-                  }}
-                >
-                  Global markets add a further layer of uncertainty. Shifts in US interest rates, trade
-                  policy and geopolitical events have been sending ripples through every major market
-                  at once, which is why diversification across asset classes matters.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+            {/* RIGHT COLUMN: Overlapping Sticky Stacking Cards */}
+            <div
               style={{
-                background: 'var(--bg-cream, #F9F8F6)',
-                borderRadius: '20px',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
+                display: "flex",
+                flexDirection: "column",
+                marginTop: "120px",
+                gap: "24px",
+                position: "relative",
+                paddingBottom: "40px",
               }}
             >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '16 / 10',
-                  overflow: 'hidden',
-                  background: '#122217',
-                }}
-              >
-                <Image
-                  src="/assets/images/Global Asset Allocation Infographic.webp"
-                  alt="15–16% Benchmark Declines"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
+              {[
+                {
+                  num: " Global Ripple Effects",
+                  title: "Cross-Market Interconnectedness",
+                  desc: "Global markets add a further layer of uncertainty. Shifts in US interest rates, trade policy and geopolitical events have been sending ripples through every major market at once, which is why diversification across asset classes matters.",
+                  kickerColor: "var(--brand-earth-brown, #72351C)",
+                },
+                {
+                  num: " Early 2026 Downturn",
+                  title: "15–16% Benchmark Declines",
+                  desc: "The numbers since January 2026 show how sharp and divergent that volatility has been. After the US and Israeli strikes on Iran began in late February, both Indian and global markets fell hard: the Nifty 50 dropped from a January 5 record of 26,373 to a March 30 closing low of 22,331, and the Sensex fell from its December 2025 peak of 86,159 to a March 30 low near 71,948 — declines of roughly 15–16% (NSE/BSE data via Business Standard).",
+                  kickerColor: "#B33928",
+                },
+                {
+                  num: " Market Divergence",
+                  title: "Divergent Paths Across Borders",
+                  desc: "The Nasdaq Composite confirmed its own correction on March 26, down about 11% from its October 2025 record, as Iran war fears, a Meta Platforms selloff and doubts over AI spending weighed on US tech stocks. By October 1, the S&P 500 and Nasdaq recovered to new highs, up roughly 12% and over 15% YTD. Indian markets, by contrast, remained down ~14% to 16% from their peaks, pressured by rising US 10-year yields, a weaker rupee and foreign investor selling.",
+                  kickerColor: "#2D6A4F",
+                },
+              ].map((card, i) => (
+                <motion.div
+                  key={card.num}
+                  initial={{ opacity: 0, y: 40, scale: 0.97 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.25, 1, 0.5, 1],
+                    delay: 0.08 * i,
+                  }}
+                  style={{
+                    position: "sticky",
+                    top: `${140 + i * 24}px`,
+                    background: "#FFFFFF",
+                    border: "1px solid rgba(18, 34, 23, 0.08)",
+                    borderRadius: "20px",
+                    padding: "clamp(28px, 3.5vw, 40px)",
+                    boxShadow: "0 12px 36px rgba(18, 34, 23, 0.07)",
+                    display: "flex",
+                    flexDirection: "column",
+                    zIndex: i + 1,
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: "0.8rem",
+                      color: card.kickerColor,
+                      letterSpacing: "0.16em",
+                      textTransform: "uppercase",
+                      fontWeight: 700,
+                      display: "block",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    {card.num}
+                  </span>
 
-              <div style={{ padding: '32px' }}>
-                <div
-                  style={{
-                    fontSize: '0.8rem',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    color: '#B33928',
-                    fontWeight: 700,
-                    marginBottom: '12px',
-                  }}
-                >
-                  Early 2026 Downturn
-                </div>
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '1.45rem',
-                    color: '#122217',
-                    marginBottom: '14px',
-                    fontWeight: 600,
-                  }}
-                >
-                  15–16% Benchmark Declines
-                </h3>
-                <p
-                  style={{
-                    fontSize: '1rem',
-                    color: '#556056',
-                    lineHeight: 1.75,
-                    margin: 0,
-                  }}
-                >
-                  The numbers since January 2026 show how sharp and divergent that volatility has been.
-                  After the US and Israeli strikes on Iran began in late February, both Indian and global
-                  markets fell hard: the Nifty 50 dropped from a January 5 record of 26,373 to a March 30
-                  closing low of 22,331, and the Sensex fell from its December 2025 peak of 86,159 to a
-                  March 30 low near 71,948 — declines of roughly 15–16% (NSE/BSE data via Business
-                  Standard).
-                </p>
-              </div>
-            </motion.div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-serif)",
+                      fontSize: "clamp(1.35rem, 2vw, 1.65rem)",
+                      color: "var(--bg-dark-forest, #122217)",
+                      fontWeight: 600,
+                      lineHeight: 1.25,
+                      marginBottom: "14px",
+                    }}
+                  >
+                    {card.title}
+                  </h3>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              style={{
-                background: 'var(--bg-cream, #F9F8F6)',
-                borderRadius: '20px',
-                border: '1px solid rgba(0, 0, 0, 0.05)',
-                overflow: 'hidden',
-                boxShadow: '0 10px 30px rgba(0, 0, 0, 0.03)',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  position: 'relative',
-                  width: '100%',
-                  aspectRatio: '16 / 10',
-                  overflow: 'hidden',
-                  background: '#122217',
-                }}
-              >
-                <Image
-                  src="/assets/images/Golden Hour Architectural Showcase.webp"
-                  alt="Divergent Paths Across Borders"
-                  fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
-
-              <div style={{ padding: '32px' }}>
-                <div
-                  style={{
-                    fontSize: '0.8rem',
-                    letterSpacing: '0.15em',
-                    textTransform: 'uppercase',
-                    color: '#2D6A4F',
-                    fontWeight: 700,
-                    marginBottom: '12px',
-                  }}
-                >
-                  Market Divergence
-                </div>
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '1.45rem',
-                    color: '#122217',
-                    marginBottom: '14px',
-                    fontWeight: 600,
-                  }}
-                >
-                  Divergent Paths Across Borders
-                </h3>
-                <p
-                  style={{
-                    fontSize: '1rem',
-                    color: '#556056',
-                    lineHeight: 1.75,
-                    margin: 0,
-                  }}
-                >
-                  The Nasdaq Composite confirmed its own correction on March 26, down about 11% from its
-                  October 2025 record, as Iran war fears, a Meta Platforms selloff and doubts over AI
-                  spending weighed on US tech stocks. By October 1, the S&P 500 and Nasdaq recovered to new
-                  highs, up roughly 12% and over 15% YTD. Indian markets, by contrast, remained down ~14%
-                  to 16% from their peaks, pressured by rising US 10-year yields, a weaker rupee and foreign
-                  investor selling.
-                </p>
-              </div>
-            </motion.div>
+                  <p
+                    style={{
+                      fontSize: "1rem",
+                      color: "#5A685E",
+                      lineHeight: 1.7,
+                      margin: 0,
+                      fontWeight: 300,
+                    }}
+                  >
+                    {card.desc}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
 
           {/* Full Narrative Card with Nature-Led Development */}
@@ -739,6 +640,7 @@ export default function Investment() {
               color: '#FFFFFF',
               borderRadius: '24px',
               padding: 'clamp(40px, 6vw, 60px)',
+              marginTop: '60px',
               position: 'relative',
               overflow: 'hidden',
               boxShadow: '0 20px 50px rgba(18, 34, 23, 0.2)',

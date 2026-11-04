@@ -277,11 +277,11 @@ function FloatingOrb({
 
 const galleryImages = [
   {
-    src: "/assets/project-images/Brindavana/Sunlit Garden Orchard with Cottage.webp",
+    src: "/assets/project-images/Brindavana/image.png",
     alt: "Sunlit Garden Orchard with Cottage at Brindavana",
   },
   {
-    src: "/assets/project-images/Brindavana/Rainy Countryside Pond Reflections.webp",
+    src: "/assets/project-images/Brindavana/image1.png",
     alt: "Rainy Countryside Pond Reflections",
   },
   {
@@ -482,7 +482,7 @@ export default function Brindavana() {
             }}
           >
             Where roots run deep and 
-            <span style={{ color: "var(--accent-gold)" }}> nature thrives..</span>
+            <span style={{ color: "var(--accent-gold)" }}> Mature natural farm community ..</span>
           </motion.p>
             <motion.div
               initial={from(18)}
@@ -762,7 +762,7 @@ export default function Brindavana() {
                   label: "Native forest cover",
                 },
                 {
-                  value: "10,000+",
+                  value: "20,000+",
                   label: "Sq. ft. farm parcels",
                 },
                 {
@@ -2349,30 +2349,7 @@ export default function Brindavana() {
           </div>
         </section>
 
-        <section style={{ padding: 'clamp(60px, 8vh, 90px) 0', background: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', color: 'var(--bg-dark-forest)' }}>Discover Other Projects</h3>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
-            {[
-              { id: 'madhuvana', name: 'MADHUVANA', loc: 'Maddur', img: '/assets/images/Project-Logos/Logo-MadhuVana.svg' },
-              { id: 'anantavana', name: 'ANANTAVANA', loc: 'Kabini', img: '/assets/images/Project-Logos/Anantavana.webp' },
-              { id: 'eeshavana', name: 'EESHAVANA', loc: 'Kollegala', img: '/assets/images/Project-Logos/eeshavanaalogo.webp' }
-            ].map((p, i) => (
-              <Link key={p.id} href={`/${p.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  style={{ background: 'var(--bg-cream)', borderRadius: '24px', padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '200px', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'transform 0.3s' }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '20px', fontWeight: 600 }}>{p.loc}</span>
-                  <img src={p.img} alt={p.name} style={{ maxHeight: '60px', maxWidth: '180px', objectFit: 'contain' }} />
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+         
       </main>
 
       <BrochureModal

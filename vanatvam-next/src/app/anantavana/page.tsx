@@ -510,45 +510,45 @@ const landscape: Pillar[] = [
 const amenities = [
   {
     image: "/assets/project-images/Ananthavana/Enterance.webp",
-    name: "Enterance",
-    desc: "Shaded spots for rest and quiet gatherings.",
+    name: "Entrance",
+  
   },
   {
     image: "/assets/project-images/Ananthavana/Common.webp",
     name: "Community Cottage",
-    desc: "Open areas to gather, unwind and connect.",
+     
   },
   {
     image: "/assets/project-images/Ananthavana/Tree-Lined.webp",
     name: "Broad Internal Roads",
-    desc: "Native landscapes along the way.",
+     
   },
   {
     image: "/assets/project-images/Ananthavana/NaturalPonds.webp",
     name: "Natural Ponds",
-    desc: "Water features and biodiversity spaces.",
+     
   },
 
   {
     image: "/assets/project-images/Ananthavana/hero_image.webp",
     name: "Heritage Farmhouse",
-    desc: "Traditional cottages and mud houses.",
+     
   },
   {
     image: "/assets/project-images/Ananthavana/AV Tree House.webp",
     name: "Tree House",
-    desc: "A raised retreat amidst nature.",
+    
   },
   {
     image:
       "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.webp",
     name: "Herbal Gardens",
-    desc: "Inspired by ancient wisdom.",
+     
   },
   {
     image: "/assets/project-images/Ananthavana/FireCamp.webp",
     name: "Fire Camp & Tents",
-    desc: "Outdoor evenings under the open sky.",
+     
   },
 ];
 
@@ -1322,159 +1322,7 @@ export default function Anantavana() {
         </div>
       </section>
 
-      {/* ================= THOUGHTFUL SPACES ================= */}
-      <section
-        id="amenities"
-        style={{
-          padding: "clamp(60px, 8vh, 90px) 0",
-          background: "#FFFFFF",
-        }}
-      >
-        <div className="container">
-          <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <Kicker center>Space to live with nature</Kicker>
-            <Words
-              text="Thoughtful spaces. Natural living."
-              style={{
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
-                lineHeight: 1.15,
-                color: FOREST,
-                textAlign: "center",
-                justifyContent: "center",
-                margin: "0 auto",
-              }}
-            />
-            <Reveal delay={0.15}>
-              <p
-                style={{
-                  fontSize: "0.95rem",
-                  color: "var(--text-muted)",
-                  maxWidth: "600px",
-                  margin: "12px auto 0",
-                  lineHeight: 1.7,
-                }}
-              >
-                More room for shared moments, quiet pauses and a closer
-                connection with the land.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="anantavana-amenities-grid">
-            {amenities.map((amenity, index) => (
-              <motion.article
-                key={amenity.name}
-                className="anantavana-amenity-card"
-                initial={reduce ? false : { opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={
-                  reduce
-                    ? undefined
-                    : {
-                        y: -8,
-                        scale: 1.02,
-                        boxShadow: "0 22px 45px rgba(18,34,23,0.16)",
-                        transition: { duration: 0.3, ease: EASE },
-                      }
-                }
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.05,
-                  ease: EASE,
-                }}
-                style={{
-                  background: "#FFF",
-                  borderRadius: "24px",
-                  overflow: "hidden",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-                  border: "1px solid rgba(0,0,0,0.04)",
-                }}
-              >
-                <div
-                  style={{
-                    height: "180px",
-                    width: "100%",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    className="anantavana-amenity-image"
-                    src={amenity.image}
-                    alt={amenity.name}
-                    loading="lazy"
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-                    }}
-                  />
-                </div>
-                <div style={{ padding: "24px" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      marginBottom: "12px",
-                    }}
-                  >
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.35rem",
-                        color: FOREST,
-                        margin: 0,
-                      }}
-                    >
-                      {amenity.name}
-                    </h3>
-                  </div>
-                  <p
-                    style={{
-                      color: "var(--text-muted)",
-                      fontSize: "0.95rem",
-                      lineHeight: 1.6,
-                      margin: 0,
-                    }}
-                  >
-                    {amenity.desc}
-                  </p>
-                </div>
-              </motion.article>
-            ))}
-          </div>
-          <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "44px",
-              }}
-            >
-              <a
-                href="https://photos.app.goo.gl/dJaNg8zYHyjvxHnN6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-pill-gold"
-                              style={{
-                                display: "inline-flex",
-                                alignItems: "center",
-                                gap: "10px",
-                                backgroundColor: "var(--accent-gold)",
-                                color: "#0d0d0d",
-                                fontWeight: 600,
-                                fontSize:  "1rem",
-                              }}
-              >
-                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-              </a>
-            </motion.div>
-        </div>
-      </section>
+      
 
       {/* ================= CONCEPT MASTER PLAN ================= */}
       <section
@@ -1723,7 +1571,150 @@ export default function Anantavana() {
         </div>
       </section>
 
-      
+      {/* ================= THOUGHTFUL SPACES ================= */}
+      <section
+        id="amenities"
+        style={{
+          padding: "clamp(60px, 8vh, 90px) 0",
+          background: "#FFFFFF",
+        }}
+      >
+        <div className="container">
+          <div style={{ textAlign: "center", marginBottom: "60px" }}>
+            <Kicker center>Space to live with nature</Kicker>
+            <Words
+              text="Thoughtful spaces. Natural living."
+              style={{
+                fontFamily: "var(--font-serif)",
+                fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
+                lineHeight: 1.15,
+                color: FOREST,
+                textAlign: "center",
+                justifyContent: "center",
+                margin: "0 auto",
+              }}
+            />
+            <Reveal delay={0.15}>
+              <p
+                style={{
+                  fontSize: "0.95rem",
+                  color: "var(--text-muted)",
+                  maxWidth: "600px",
+                  margin: "12px auto 0",
+                  lineHeight: 1.7,
+                }}
+              >
+                More room for shared moments, quiet pauses and a closer
+                connection with the land.
+              </p>
+            </Reveal>
+          </div>
+
+          <div className="anantavana-amenities-grid">
+            {amenities.map((amenity, index) => (
+              <motion.article
+                key={amenity.name}
+                className="anantavana-amenity-card"
+                initial={reduce ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={
+                  reduce
+                    ? undefined
+                    : {
+                        y: -8,
+                        scale: 1.02,
+                        boxShadow: "0 22px 45px rgba(18,34,23,0.16)",
+                        transition: { duration: 0.3, ease: EASE },
+                      }
+                }
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.05,
+                  ease: EASE,
+                }}
+                style={{
+                  background: "#FFF",
+                  borderRadius: "24px",
+                  overflow: "hidden",
+                  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+                  border: "1px solid rgba(0,0,0,0.04)",
+                }}
+              >
+                <div
+                  style={{
+                    height: "180px",
+                    width: "100%",
+                    overflow: "hidden",
+                  }}
+                >
+                  <img
+                    className="anantavana-amenity-image"
+                    src={amenity.image}
+                    alt={amenity.name}
+                    loading="lazy"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+                <div style={{ padding: "24px" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-serif)",
+                        fontSize: "1.35rem",
+                        color: FOREST,
+                        margin: 0,
+                      }}
+                    >
+                      {amenity.name}
+                    </h3>
+                  </div>
+               
+                </div>
+              </motion.article>
+            ))}
+          </div>
+          <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "44px",
+              }}
+            >
+              <a
+                href="https://photos.app.goo.gl/dJaNg8zYHyjvxHnN6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-pill btn-pill-gold"
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "10px",
+                                backgroundColor: "var(--accent-gold)",
+                                color: "#0d0d0d",
+                                fontWeight: 600,
+                                fontSize:  "1rem",
+                              }}
+              >
+                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+              </a>
+            </motion.div>
+        </div>
+      </section>
 
       {/* ================= NEARBY DESTINATIONS ================= */}
       <section
@@ -2999,30 +2990,7 @@ export default function Anantavana() {
         </div>
       </section>
 
-    <section style={{ padding: 'clamp(60px, 8vh, 90px) 0', background: '#FFFFFF', borderTop: '1px solid var(--border-light)' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.8rem, 2.5vw, 2.5rem)', color: 'var(--bg-dark-forest)' }}>Discover Other Projects</h3>
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', maxWidth: '1000px', margin: '0 auto' }}>
-            {[
-              { id: 'brindavana', name: 'BRINDAVANA', loc: 'Pavagada', img: '/assets/images/Project-Logos/BrindaVana.webp' },
-              { id: 'madhuvana', name: 'MADHUVANA', loc: 'Maddur', img: '/assets/images/Project-Logos/Logo-MadhuVana.svg' },
-              { id: 'eeshavana', name: 'EESHAVANA', loc: 'Kollegala', img: '/assets/images/Project-Logos/eeshavanaalogo.webp' }
-            ].map((p, i) => (
-              <Link key={p.id} href={`/${p.id}`} style={{ textDecoration: 'none', display: 'block' }}>
-                <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                  style={{ background: 'var(--bg-cream)', borderRadius: '24px', padding: '30px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '200px', border: '1px solid rgba(0,0,0,0.02)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'transform 0.3s' }}
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: '20px', fontWeight: 600 }}>{p.loc}</span>
-                  <img src={p.img} alt={p.name} style={{ maxHeight: '60px', maxWidth: '180px', objectFit: 'contain' }} />
-                </motion.div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       <BrochureModal
         isOpen={isBrochureOpen}

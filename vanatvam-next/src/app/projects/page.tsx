@@ -30,7 +30,7 @@ export default function Projects() {
       brochure: null,
        
       badgeBg: 'var(--bg-dark-forest)',
-      pills: ['Native Canopy', 'Rain Catchments']
+       
     },
 
      {
@@ -44,7 +44,7 @@ export default function Projects() {
       brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
        
       badgeBg: 'var(--accent-gold)',
-      pills: ['200+ Native Trees', 'Sacred Groves']
+     
     },
      
     {
@@ -58,7 +58,7 @@ export default function Projects() {
       brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
        
       badgeBg: '#2D6A4F',
-      pills: ['Kabini', 'Heritage Cottages']
+       
     },
     
     {
@@ -72,7 +72,7 @@ export default function Projects() {
       brochure: '/assets/project-images/Eeshavana%20Brochure.pdf',
       
       badgeBg: '#1B4965',
-      pills: ['Kaveri Frontage', 'River Ecosystem']
+       
     },
     
    
@@ -102,12 +102,12 @@ export default function Projects() {
 
         <div className="container relative" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.5rem, 7vw, 6.5rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em' }}>
-              <RevealText>  Explore our curated portfolio of</RevealText><br/>
-              <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}> Natural communities.</RevealText>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.2rem, 6vw, 5.5rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em' }}>
+              <RevealText>Explore our</RevealText><br/>
+              <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Natural communities.</RevealText>
             </h1>
             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', maxWidth: '600px', lineHeight: 1.6 }}>
-             each designed to respect and enhance its unique natural context across Karnataka.
+             In Bangalore Mysore Chamarajanagar corridor. Where nature heritage and culture come together. 
             </p>
           </motion.div>
         </div>
@@ -157,13 +157,7 @@ export default function Projects() {
 
                     <p style={{ color: 'var(--text-muted)', lineHeight: 1.7, marginBottom: '25px', flex: 1 }}>{proj.desc}</p>
                     
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '30px' }}>
-                      {proj.pills.map((pill, i) => (
-                        <span key={i} style={{ display: 'inline-flex', alignItems: 'center', background: 'var(--bg-cream)', padding: '6px 12px', borderRadius: '6px', fontSize: '0.8rem', color: 'var(--text-dark)', border: '1px solid var(--border-light)', width: 'fit-content' }}>
-                          <i className="fa-solid fa-leaf" style={{ color: 'var(--accent-gold)', marginRight: '6px' }}></i>{pill}
-                        </span>
-                      ))}
-                    </div>
+                   
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       <Magnetic strength={0.15} style={{ display: 'block', width: '100%' }}>
