@@ -334,8 +334,7 @@ export default function Home() {
                   </Magnetic>
                   <Magnetic strength={0.4}>
                     <a
-                      href="#projects"
-                      onClick={scrollToProjects}
+                      href="/projects"
                       style={{
                         color: "#FFFFFF",
                         textDecoration: "none",

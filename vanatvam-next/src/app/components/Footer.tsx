@@ -3,271 +3,137 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Magnetic from "@/components/premium/Magnetic";
 
+const SOCIALS = [
+  {
+    icon: "fa-instagram",
+    label: "Instagram",
+    url: "https://www.instagram.com/vanatvamindia/",
+  },
+  {
+    icon: "fa-facebook-f",
+    label: "Facebook",
+    url: "https://www.facebook.com/vanatvamfarms",
+  },
+  {
+    icon: "fa-youtube",
+    label: "YouTube",
+    url: "https://www.youtube.com/@VanaTvam",
+  },
+  {
+    icon: "fa-linkedin-in",
+    label: "LinkedIn",
+    url: "https://www.linkedin.com/in/your_username/", // replace with your real page
+  },
+];
+
 export default function Footer() {
   return (
     <footer
       style={{
         background: "var(--bg-dark-forest)",
         color: "#FFF",
-        padding: "100px 0 40px",
+        padding: "70px 0 32px",
         borderTop: "1px solid rgba(255,255,255,0.1)",
       }}
     >
       <div className="container">
+        {/* TOP: Logo + tagline */}
         <motion.div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "60px",
-            marginBottom: "80px",
-          }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+          }}
         >
-          <div style={{ maxWidth: "400px", marginBottom: "20px" }}>
-            <img
-              src="/assets/images/Project-Logos/vanatvam.webp"
-              alt="Vanatvam Logo"
-              style={{
-                height: "80px",
-                width: "auto",
-                maxWidth: "100%",
-                objectFit: "contain",
-                display: "block",
-                marginBottom: "15px",
-              }}
-            />
-            <div
-              style={{
-                fontSize: "0.85rem",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.7)",
-                marginBottom: "20px",
-              }}
-            >
-              Natural Farms · Nature Communities
-            </div>
-            <p
-              style={{
-                fontSize: "0.95rem",
-                lineHeight: 1.7,
-                color: "rgba(255,255,255,0.6)",
-              }}
-            >
-             VanaTvam Private Limited is developing sustainable managed
-              farmlands, native forests, and ecological communities across
-              Karnataka.
-            </p>
-          </div>
-
-          <div>
-            <h4
-              style={{
-                fontSize: "1rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "#FFF",
-                marginBottom: "24px",
-                fontWeight: 600,
-              }}
-            >
-              Navigation
-            </h4>
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-            >
-              <Link href="/" className="footer-link">
-                Home
-              </Link>
-              <Link href="/about" className="footer-link">
-                Our Story
-              </Link>
-              <Link href="/projects" className="footer-link">
-                Projects Overview
-              </Link>
-              <Link href="/investment" className="footer-link">
-                Investment Guide
-              </Link>
-              <Link href="/blog" className="footer-link">
-                Journal
-              </Link>
-              <Link href="/contact" className="footer-link">
-                Contact Us
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h4
-              style={{
-                fontSize: "1rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "#FFF",
-                marginBottom: "24px",
-                fontWeight: 600,
-              }}
-            >
-              Our Communities
-            </h4>
-            <div
-              style={{ display: "flex", flexDirection: "column", gap: "16px" }}
-            >
-              <Link href="/brindavana" className="footer-link">
-                Brindavana (Pavagada)
-              </Link>
-              <Link href="/madhuvana" className="footer-link">
-                Madhuvana (Maddur)
-              </Link>
-              <Link href="/anantavana" className="footer-link">
-                Anantavana (Kabini)
-              </Link>
-              <Link href="/eeshavana" className="footer-link">
-                Eeshavana (Kaveri)
-              </Link>
-            </div>
-          </div>
-
-          <div>
-            <h4
-              style={{
-                fontSize: "1rem",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
-                color: "#FFF",
-                marginBottom: "24px",
-                fontWeight: 600,
-              }}
-            >
-              Connect
-            </h4>
-            <div style={{ display: "flex", gap: "20px", marginBottom: "30px" }}>
-              {[
-                {
-                  icon: "fa-instagram",
-                  label: "Instagram",
-                  url: "https://www.instagram.com/vanatvamindia/",
-                },
-                {
-                  icon: "fa-facebook-f",
-                  label: "Facebook",
-                  url: "https://www.facebook.com/vanatvamfarms",
-                },
-                {
-                  icon: "fa-youtube",
-                  label: "YouTube",
-                  url: "https://www.youtube.com/@VanaTvam",
-                },
-                {
-                  icon: "fa-linkedin-in",
-                  label: "LinkedIn",
-                  url: "https://www.linkedin.com/in/your_username/",
-                },
-              ].map((s) => (
-                <Magnetic key={s.icon} strength={0.3}>
-                  <a
-                    href={s.url}
-                    aria-label={s.label}
-                    style={{
-                      color: "var(--accent-gold)",
-                      fontSize: "1.4rem",
-                      transition: "transform 0.3s",
-                    }}
-                    onMouseEnter={(e) =>
-                      (e.currentTarget.style.transform = "scale(1.1)")
-                    }
-                    onMouseLeave={(e) =>
-                      (e.currentTarget.style.transform = "scale(1)")
-                    }
-                  >
-                    <i className={`fa-brands ${s.icon}`}></i>
-                  </a>
-                </Magnetic>
-              ))}
-            </div>
-
-            {/* Office Address & Direct Contact Info */}
-            <div
-              style={{
-                fontSize: "0.88rem",
-                color: "rgba(255,255,255,0.8)",
-                lineHeight: 1.7,
-                display: "flex",
-                flexDirection: "column",
-                gap: "12px",
-                marginBottom: "24px",
-              }}
-            >
-              <div style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
-                <i
-                  className="fa-solid fa-location-dot"
-                  style={{ color: "var(--accent-gold)", marginTop: "4px", flexShrink: 0 }}
-                />
-                <span>
-                  #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase (Behind Radhakrishna Hospital), Bangalore – 560085
-                </span>
-              </div>
-
-              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <i
-                  className="fa-solid fa-phone"
-                  style={{ color: "var(--accent-gold)", flexShrink: 0 }}
-                />
-                <a
-                  href="tel:+918047095111"
-                  style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-                >
-                  (080) 4709-5111
-                </a>
-              </div>
-
-              <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-                <i
-                  className="fa-solid fa-envelope"
-                  style={{ color: "var(--accent-gold)", flexShrink: 0 }}
-                />
-                <a
-                  href="mailto:info@vanatvam.com"
-                  style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}
-                >
-                  info@vanatvam.com
-                </a>
-              </div>
-            </div>
-
-            
+          <img
+            src="/assets/images/Project-Logos/vanatvam.webp"
+            alt="Vanatvam Logo"
+            style={{
+              height: "80px",
+              width: "auto",
+              maxWidth: "100%",
+              objectFit: "contain",
+              display: "block",
+              marginBottom: "16px",
+            }}
+          />
+          <div
+            style={{
+              fontSize: "0.85rem",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: "rgba(255,255,255,0.7)",
+            }}
+          >
+            Natural Farms · Nature Communities
           </div>
         </motion.div>
 
+        {/* MIDDLE: Social media links */}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "28px",
+            margin: "40px 0 48px",
+          }}
+        >
+          {SOCIALS.map((s) => (
+            <Magnetic key={s.icon} strength={0.3}>
+              <a
+                href={s.url}
+                aria-label={s.label}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "var(--accent-gold)",
+                  fontSize: "1.4rem",
+                  display: "inline-block",
+                  transition: "transform 0.3s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform = "scale(1.1)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.transform = "scale(1)")
+                }
+              >
+                <i className={`fa-brands ${s.icon}`}></i>
+              </a>
+            </Magnetic>
+          ))}
+        </div>
+
+        {/* BOTTOM: Privacy policy line */}
         <div
           style={{
             display: "flex",
             flexWrap: "wrap",
-            justifyContent: "space-between",
+            justifyContent: "center",
             alignItems: "center",
-            paddingTop: "40px",
+            gap: "10px 24px",
+            paddingTop: "28px",
             borderTop: "1px solid rgba(255,255,255,0.1)",
             fontSize: "0.85rem",
             color: "rgba(255,255,255,0.5)",
+            textAlign: "center",
           }}
         >
-          <div>
-            Rooted in nature. Built for generations. CIN: U01100KA2022PTC159587
-          </div>
-          <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
-            <Link href="/privacy-policy" className="footer-link-small">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="footer-link-small">
-              Terms & Conditions
-            </Link>
-            <span>
-              &copy; {new Date().getFullYear()} VanaTvam Private Limited.
-            </span>
-          </div>
+          <Link href="/privacy-policy" className="footer-link-small">
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className="footer-link-small">
+            Terms & Conditions
+          </Link>
+          <span>
+            &copy; {new Date().getFullYear()} VanaTvam Private Limited. CIN:
+            U01100KA2022PTC159587
+          </span>
         </div>
       </div>
     </footer>

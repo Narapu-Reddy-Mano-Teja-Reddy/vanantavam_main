@@ -1024,407 +1024,282 @@ export default function Madhuvana() {
             </div>
           </div>
         </section>
+{/* ================= CONCEPT MASTER PLAN ================= */}
+<section
+  id="master-plan"
+  style={{
+    padding: "clamp(80px, 12vh, 140px) 0",
+    background: "#F4F1EA",
+    position: "relative",
+    overflow: "clip", // "hidden" would break position: sticky
+  }}
+>
+  <div
+    className="container"
+    style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px", position: "relative", zIndex: 2 }}
+  >
+    {/* CENTERED HEADING */}
+    <div style={{ textAlign: "center", marginBottom: "clamp(40px, 6vh, 64px)" }}>
+      <motion.span
+        initial={reduce ? false : { opacity: 0, y: 15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        style={{
+          color: "var(--accent-gold, #C6A265)",
+          fontSize: "0.8rem",
+          letterSpacing: "0.26em",
+          textTransform: "uppercase",
+          fontWeight: 700,
+          display: "block",
+          marginBottom: "14px",
+        }}
+      >
+        Master Plan
+      </motion.span>
 
-        {/* ================= CONCEPT MASTER PLAN ================= */}
-        <section
-          id="master-plan"
+      <motion.h2
+        initial={reduce ? false : { opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        style={{
+          fontFamily: "var(--font-serif)",
+          fontSize: "clamp(2.2rem, 4vw, 3.4rem)",
+          color: FOREST,
+          lineHeight: 1.1,
+          letterSpacing: "-0.025em",
+          fontWeight: 600,
+          margin: "0 auto 18px",
+          textAlign: "center",
+        }}
+      >
+        Concept Layout
+        <br />
+        <span style={{ fontStyle: "italic", fontWeight: 400 }}>
+          & Master Plan
+        </span>
+      </motion.h2>
+
+      <motion.p
+        initial={reduce ? false : { opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        style={{
+          fontSize: "clamp(1rem, 1.1vw, 1.1rem)",
+          color: "var(--text-muted)",
+          lineHeight: 1.75,
+          maxWidth: "720px",
+          margin: "0 auto",
+        }}
+      >
+        TODO: Explore the __-acre master plan featuring farm parcels starting
+        from __ sq. ft., ... near ____.
+      </motion.p>
+    </div>
+
+    {/* MAIN GRID: Left = scrolling stacked cards, Right = sticky master plan */}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+        gap: "clamp(40px, 5vw, 80px)",
+        alignItems: "start", // required for sticky inside grid
+        position: "relative",
+      }}
+    >
+      {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "24px",
+          position: "relative",
+          paddingBottom: "40px",
+        }}
+      >
+        <div style={{ marginBottom: "6px" }}>
+          <span
+            style={{
+              color: "var(--accent-gold, #C6A265)",
+              fontSize: "0.8rem",
+              fontWeight: 700,
+              letterSpacing: "0.22em",
+              textTransform: "uppercase",
+              display: "block",
+              marginBottom: "6px",
+            }}
+          >
+            Master Plan Highlights
+          </span>
+          <h3
+            style={{
+              fontFamily: "var(--font-serif)",
+              fontSize: "clamp(1.7rem, 2.6vw, 2.2rem)",
+              color: FOREST,
+              margin: 0,
+              fontWeight: 600,
+            }}
+          >
+            Sanctuary Amenities (A – H)
+          </h3>
+        </div>
+
+        {[
+          { id: "card-1", title: "TODO Amenity 1", img: "/assets/project-images/TODO/1.webp" },
+          { id: "card-2", title: "TODO Amenity 2", img: "/assets/project-images/TODO/2.webp" },
+          { id: "card-3", title: "TODO Amenity 3", img: "/assets/project-images/TODO/3.webp" },
+          { id: "card-4", title: "TODO Amenity 4", img: "/assets/project-images/TODO/4.webp" },
+          { id: "card-5", title: "TODO Amenity 5", img: "/assets/project-images/TODO/5.webp" },
+          { id: "card-6", title: "TODO Amenity 6", img: "/assets/project-images/TODO/6.webp" },
+          { id: "card-7", title: "TODO Amenity 7", img: "/assets/project-images/TODO/7.webp" },
+          { id: "card-8", title: "TODO Amenity 8", img: "/assets/project-images/TODO/8.webp" },
+        ].map((card, i) => (
+          <motion.div
+            key={card.id}
+            initial={reduce ? false : { opacity: 0, y: 40, scale: 0.97 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 1, 0.5, 1],
+              delay: 0.05 * i,
+            }}
+            style={{
+              position: "sticky",
+              top: `${140 + i * 22}px`, // each card stacks slightly lower
+              zIndex: i + 1,
+              height: "380px",
+              borderRadius: "24px",
+              overflow: "hidden",
+              boxShadow: "0 16px 45px rgba(18, 34, 23, 0.22)",
+              border: "1px solid rgba(255,255,255,0.18)",
+              background: "#122217",
+            }}
+          >
+            <img
+              src={card.img}
+              alt={card.title}
+              loading="lazy"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                display: "block",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to top, rgba(14,26,18,0.88) 0%, rgba(14,26,18,0.2) 60%, rgba(0,0,0,0) 100%)",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "flex-end",
+                padding: "32px",
+              }}
+            >
+              <span
+                style={{
+                  color: "var(--accent-gold, #C6A265)",
+                  fontSize: "0.8rem",
+                  letterSpacing: "0.16em",
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  marginBottom: "8px",
+                }}
+              >
+                {String.fromCharCode(65 + i)} / {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3
+                style={{
+                  color: "#FFFFFF",
+                  fontFamily: "var(--font-serif)",
+                  fontSize: "clamp(1.5rem, 2.4vw, 1.9rem)",
+                  fontWeight: 600,
+                  lineHeight: 1.25,
+                  margin: 0,
+                  textShadow: "0 2px 12px rgba(0,0,0,0.5)",
+                }}
+              >
+                {card.title}
+              </h3>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* RIGHT COLUMN: Sticky Master Plan Image */}
+      <motion.div
+        initial={reduce ? false : { opacity: 0, scale: 0.96 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true, margin: "-60px" }}
+        transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
+        style={{
+          position: "sticky",
+          top: "120px",
+          borderRadius: "28px",
+          overflow: "hidden",
+          background: "#FFFFFF",
+          border: "1px solid rgba(18, 34, 23, 0.08)",
+          boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
+          padding: "16px",
+          width: "100%",
+        }}
+      >
+        <div
           style={{
-            padding: "clamp(60px, 8vh, 100px) 0",
-            background: "#F4F1EA",
-            position: "relative",
+            background: "#E8ECE5",
+            borderRadius: "20px",
             overflow: "hidden",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <div className="container" style={{ position: "relative", zIndex: 2 }}>
-            <div style={{ textAlign: "center", marginBottom: "50px" }}>
-              <Kicker center>Master Plan</Kicker>
-              <Words
-                text="Concept Layout & Master Plan"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
-                  lineHeight: 1.15,
-                  color: FOREST,
-                  textAlign: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px",
-                }}
-              />
-              <Reveal delay={0.15}>
-                <p
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "var(--eeshavana-muted, #687b63)",
-                    maxWidth: "720px",
-                    margin: "0 auto",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  Explore the 17-acre master plan featuring farm parcels starting from 8,000+ sq. ft., water bodies, tree house, eco-cottages, and themed sacred groves near Maddur.
-                </p>
-              </Reveal>
-            </div>
+          <img
+            src="/assets/project-images/TODO/master-plan.webp"
+            alt="TODO Concept Master Plan Layout"
+            style={{
+              width: "100%",
+              height: "auto",
+              maxHeight: "clamp(320px, 62vh, 620px)", // stays within the viewport so sticky works
+              objectFit: "contain",
+              display: "block",
+            }}
+          />
+        </div>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 480px), 1fr))",
-                gap: "clamp(30px, 5vw, 60px)",
-                alignItems: "center",
-              }}
-            >
-              {/* Left: Legend & Key Highlights */}
-              <motion.div
-                initial={reduce ? false : { opacity: 0, x: -25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, ease: EASE }}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {/* Plots Box */}
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(18, 34, 23, 0.08)",
-                    borderRadius: "24px",
-                    padding: "36px 40px",
-                    boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18px",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "48px",
-                        height: "48px",
-                        borderRadius: "50%",
-                        background: "#844329",
-                        color: "#FFFFFF",
-                        display: "grid",
-                        placeItems: "center",
-                        fontSize: "1.05rem",
-                        fontWeight: 700,
-                        flexShrink: 0,
-                      }}
-                    >
-                      1–28
-                    </span>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.85rem",
-                        fontWeight: 600,
-                        color: FOREST,
-                        margin: 0,
-                      }}
-                    >
-                      Farm Parcels
-                    </h3>
-                  </div>
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "#4A584E",
-                      fontSize: "1.2rem",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    Spacious farm spaces starting from 8,000+ sq. ft., arranged along natural topography and tree-lined internal avenues.
-                  </p>
-                </div>
-
-                {/* Amenities Legend Grid */}
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(18, 34, 23, 0.08)",
-                    borderRadius: "24px",
-                    padding: "36px 40px",
-                    boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: "1.85rem",
-                      fontWeight: 600,
-                      color: FOREST,
-                      margin: "0 0 24px",
-                    }}
-                  >
-                    Master Plan Key (A – H)
-                  </h3>
-
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns:
-                        "repeat(auto-fit, minmax(210px, 1fr))",
-                      gap: "18px 24px",
-                    }}
-                  >
-                    {[
-                      { code: "A", label: "Pond" },
-                      { code: "B", label: "Kitchen and Dining" },
-                      { code: "C", label: "Tree House" },
-                      { code: "D", label: "Event Space" },
-                      { code: "E", label: "Car Parking" },
-                      { code: "F", label: "Children's Pool" },
-                      { code: "G", label: "Play Area" },
-                      { code: "H", label: "Vinayaka Vana" },
-                       { code: "I", label: "Amphitheatre" },
-                      { code: "J", label: "Cottages" },
-                      { code: "K", label: "Ashoka Vana with Pond" },
-                      { code: "L", label: "Gazebo with Shivapanchayatha Vana" },
-                    ].map((item) => (
-                      <div
-                        key={item.code}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "14px",
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: "36px",
-                            height: "36px",
-                            borderRadius: "50%",
-                            background: "rgba(198, 162, 101, 0.22)",
-                            color: "#844329",
-                            fontSize: "0.95rem",
-                            fontWeight: 700,
-                            display: "grid",
-                            placeItems: "center",
-                            flexShrink: 0,
-                          }}
-                        >
-                          {item.code}
-                        </span>
-                        <span
-                          style={{
-                            fontSize: "1.2rem",
-                            color: "#2C3E31",
-                            fontWeight: 600,
-                          }}
-                        >
-                          {item.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Right: Master Plan Main Image */}
-              <motion.div
-                initial={reduce ? false : { opacity: 0, scale: 0.96 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
-                style={{
-                  position: "relative",
-                  borderRadius: "28px",
-                  overflow: "hidden",
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(18, 34, 23, 0.08)",
-                  boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
-                  padding: "16px",
-                  width: "100%",
-                  maxWidth: "520px",
-                  margin: "0 auto",
-                }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    background: "#E8ECE5",
-                    borderRadius: "20px",
-                    overflow: "hidden",
-                  }}
-                >
-                  <img
-                    src="/assets/project-images/Maduvana/Master Plan.webp"
-                    alt="MadhuVana Concept Master Plan Layout"
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      maxHeight: "580px",
-                      objectFit: "contain",
-                      display: "block",
-                      borderRadius: "20px",
-                    }}
-                  />
-                </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-        {/* ================= AMENITIES ================= */}
-        <section
-          id="amenities"
-          style={{ padding: "clamp(60px, 8vh, 90px) 0", background: "#FFFFFF" }}
+        <a
+          href="TODO-gallery-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-pill btn-pill-gold"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "10px",
+            marginTop: "18px",
+            backgroundColor: "var(--accent-gold)",
+            color: "#0d0d0d",
+            fontWeight: 600,
+            fontSize: "0.95rem",
+            width: "100%",
+            textDecoration: "none",
+          }}
         >
-          <div className="container">
-            <div style={{ textAlign: "center", marginBottom: "60px" }}>
-              <Kicker center>Master Plan Amenities</Kicker>
-              <Words
-                text="Designed for Slower, Holistic Living"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 3.5vw, 3rem)",
-                  color: FOREST,
-                  textAlign: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 12px",
-                }}
-              />
-              <Reveal delay={0.15}>
-                <p
-                  style={{
-                    fontSize: "1rem",
-                    color: "var(--eeshavana-muted, #687b63)",
-                    maxWidth: "640px",
-                    margin: "12px auto 0",
-                    lineHeight: 1.7,
-                  }}
-                >
-                  Explore the key community spaces and natural sanctuaries thoughtfully embedded within MadhuVana.
-                </p>
-              </Reveal>
-            </div>
+          Show More{" "}
+          <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+        </a>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-                gap: "24px",
-              }}
-            >
-              {amenities.map((a, i) => (
-                <motion.div
-                  key={a.letter}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.05 }}
-                  whileHover={{ y: -6 }}
-                  style={{
-                    background: "#FFF",
-                    borderRadius: "24px",
-                    overflow: "hidden",
-                    boxShadow: "0 10px 30px rgba(18, 34, 23, 0.06)",
-                    border: "1px solid rgba(18, 34, 23, 0.06)",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <div
-                    style={{
-                      height: "200px",
-                      width: "100%",
-                      position: "relative",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <img
-                      src={a.img}
-                      alt={a.name}
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "15px",
-                        left: "15px",
-                        background: FOREST,
-                        color: "#FFF",
-                        width: "36px",
-                        height: "36px",
-                        borderRadius: "50%",
-                        display: "grid",
-                        placeItems: "center",
-                        fontSize: "0.85rem",
-                        fontWeight: 700,
-                        boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-                      }}
-                    >
-                      {a.letter}
-                    </div>
-                  </div>
-                  <div style={{ padding: "24px", flexGrow: 1 }}>
-                    <h4
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.35rem",
-                        color: FOREST,
-                        margin: "0 0 10px",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {a.name}
-                    </h4>
-                     
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                marginTop: "44px",
-              }}
-            >
-              <a
-                href="https://photos.app.goo.gl/opkz2Ff4q6uSDp4E6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-pill btn-pill-gold"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  backgroundColor: "var(--accent-gold)",
-                  color: "#0d0d0d",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  textDecoration: "none",
-                }}
-              >
-                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-              </a>
-            </motion.div>
-          </div>
-        </section>
-
-        
-
-        {/* ================= NEARBY DESTINATIONS ================= */}
+      {/* ================= NEARBY DESTINATIONS ================= */}
         <section
           style={{
             position: "relative",

@@ -24,7 +24,7 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { path: "/", label: "Home", icon: Home },
-  { path: "/about", label: "Our Story", icon: Leaf },
+  { path: "/about", label: "Our Philosophy", icon: Leaf },
   { path: "/projects", label: "Projects", icon: Sprout },
   { path: "/investment", label: "Investment", icon: Coins },
   { path: "/blog", label: "Journal", icon: BookOpen },
@@ -73,14 +73,13 @@ export default function Navigation() {
       <header
         style={{
           position: "fixed",
-          top: scrolled ? "16px" : "0px",
+          top: "16px",
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 1000,
-          width: scrolled ? "min(94%, 1320px)" : "100%",
-          padding: scrolled ? "0" : "0 40px",
+          width: "min(94%, 1320px)",
+          padding: "0 10px",
           boxSizing: "border-box",
-          transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
         <div
@@ -92,7 +91,7 @@ export default function Navigation() {
             gap: "16px",
           }}
         >
-          {/* Left: Logo (Same logo image before and after scroll) */}
+          {/* Left: Logo */}
           <Link
             href="/"
             className="logo-group"
@@ -101,8 +100,7 @@ export default function Navigation() {
               display: "flex",
               alignItems: "center",
               textDecoration: "none",
-              height: scrolled ? "96px" : "125px",
-              transition: "height 0.4s ease",
+              height: "100px",
             }}
           >
             <motion.img
@@ -113,20 +111,17 @@ export default function Navigation() {
               transition={{ duration: 0.3, ease: EASE_PREMIUM }}
               whileHover={{ scale: 1.04 }}
               style={{
-                height: scrolled ? "108px" : "120px",
+                height: "115px",
                 width: "auto",
-                maxWidth: scrolled ? "240px" : "270px",
-                filter: scrolled
-                  ? "drop-shadow(0 2px 8px rgba(0,0,0,0.25))"
-                  : "drop-shadow(0 2px 12px rgba(0,0,0,0.4))",
+                maxWidth: "260px",
+                filter: "drop-shadow(0 2px 10px rgba(0,0,0,0.4))",
                 objectFit: "contain",
                 display: "block",
-                transition: "all 0.4s ease",
               }}
             />
           </Link>
 
-         {/* Center: Nav Menu Container */}
+          {/* Right: Floating Cream Capsule Nav Menu */}
           <motion.nav
             className="nav-menu"
             onMouseLeave={() => setHoveredPath(null)}
@@ -134,20 +129,16 @@ export default function Navigation() {
               position: "relative",
               display: "flex",
               alignItems: "center",
-              gap: scrolled ? "4px" : "32px",
-              background: scrolled
-                ? "rgba(240, 237, 226, 0.92)"
-                : "transparent",
-              padding: scrolled ? "5px 8px" : "0",
-              borderRadius: scrolled ? "40px" : "0px",
-              border: scrolled ? "1px solid rgba(198, 162, 101, 0.35)" : "none",
-              boxShadow: scrolled
-                ? "0 10px 30px rgba(18, 34, 23, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.8)"
-                : "none",
-              backdropFilter: scrolled ? "blur(18px)" : "none",
-              WebkitBackdropFilter: scrolled ? "blur(18px)" : "none",
-              height: scrolled ? "56px" : "auto",
-              transition: "all 0.4s ease",
+              gap: "6px",
+              background: "rgba(235, 231, 220, 0.96)",
+              padding: "5px 8px",
+              borderRadius: "50px",
+              border: "1px solid rgba(198, 162, 101, 0.35)",
+              boxShadow: "0 10px 30px rgba(18, 34, 23, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              height: "54px",
+              marginLeft: "auto",
             }}
           >
             {NAV_ITEMS.map((item) => {
@@ -156,15 +147,11 @@ export default function Navigation() {
               const isHovered = hoveredPath === item.path;
               const lit = isActive || isHovered;
 
-              const textColor = scrolled
-                ? isActive
-                  ? "#FFFFFF"
-                  : lit
-                  ? "#183023"
-                  : "#233B2C"
+              const textColor = isActive
+                ? "#FFFFFF"
                 : lit
-                ? "var(--accent-gold)"
-                : "#FFFFFF";
+                ? "#183023"
+                : "#233B2C";
 
               return (
                 <Link
@@ -180,18 +167,16 @@ export default function Navigation() {
                     alignItems: "center",
                     justifyContent: "center",
                     gap: "8px",
-                    padding: scrolled ? "8px 18px" : "12px 16px",
-                    fontSize: scrolled ? "0.92rem" : "1.08rem",
-                    fontWeight: isActive ? 600 : 500,
-                    letterSpacing: isHovered ? "0.02em" : "0em",
+                    padding: "8px 20px",
+                    fontSize: "0.95rem",
+                    fontWeight: isActive ? 700 : 500,
                     color: textColor,
                     textDecoration: "none",
-                    transition:
-                      "color 0.3s ease, letter-spacing 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
+                    transition: "color 0.3s ease",
                   }}
                 >
-                  {/* Active page pill (scrolled) */}
-                  {isActive && scrolled && (
+                  {/* Active page pill */}
+                  {isActive && (
                     <motion.span
                       layoutId="nav-active-pill"
                       aria-hidden="true"
@@ -204,8 +189,8 @@ export default function Navigation() {
                         position: "absolute",
                         inset: 0,
                         borderRadius: "26px",
-                        background: "#183023",
-                        boxShadow: "0 4px 14px rgba(24, 48, 35, 0.25)",
+                        background: "#122217",
+                        boxShadow: "0 4px 14px rgba(18, 34, 23, 0.25)",
                         zIndex: 0,
                       }}
                     />
@@ -227,15 +212,11 @@ export default function Navigation() {
                       style={{
                         position: "absolute",
                         inset: 0,
-                        borderRadius: scrolled ? "26px" : "999px",
-                        background: scrolled
-                          ? "rgba(198, 162, 101, 0.2)"
-                          : "rgba(255, 255, 255, 0.12)",
-                        boxShadow: scrolled
-                          ? "inset 0 0 0 1px rgba(198, 162, 101, 0.35)"
-                          : "inset 0 0 0 1px rgba(255, 255, 255, 0.22)",
-                        backdropFilter: scrolled ? "none" : "blur(6px)",
-                        WebkitBackdropFilter: scrolled ? "none" : "blur(6px)",
+                        borderRadius: "26px",
+                        background: "rgba(198, 162, 101, 0.2)",
+                        boxShadow: "inset 0 0 0 1px rgba(198, 162, 101, 0.35)",
+                        backdropFilter: "blur(6px)",
+                        WebkitBackdropFilter: "blur(6px)",
                         zIndex: 0,
                       }}
                     />
@@ -253,47 +234,20 @@ export default function Navigation() {
                       gap: "8px",
                     }}
                   >
-                    {scrolled && (
-                      <Icon
-                        size={16}
-                        strokeWidth={2}
-                        style={{
-                          color: isActive
-                            ? "#FFFFFF"
-                            : lit
-                            ? "#987443"
-                            : "#233B2C",
-                          transition: "color 0.3s ease",
-                        }}
-                      />
-                    )}
-                    <span>{item.label}</span>
-                  </motion.span>
-
-                  {/* Active Indicator Bar / Dot */}
-                  {isActive && !scrolled && (
-                    <motion.span
-                      layoutId="nav-active-dot"
-                      aria-hidden="true"
-                      transition={{
-                        type: "spring",
-                        stiffness: 380,
-                        damping: 30,
-                      }}
+                    <Icon
+                      size={16}
+                      strokeWidth={2}
                       style={{
-                        position: "absolute",
-                        bottom: "-2px",
-                        left: "50%",
-                        width: "5px",
-                        height: "5px",
-                        marginLeft: "-2.5px",
-                        borderRadius: "50%",
-                        background: "var(--accent-gold)",
-                        boxShadow: "0 0 10px var(--accent-gold)",
-                        zIndex: 1,
+                        color: isActive
+                          ? "#FFFFFF"
+                          : lit
+                          ? "#987443"
+                          : "#233B2C",
+                        transition: "color 0.3s ease",
                       }}
                     />
-                  )}
+                    <span>{item.label}</span>
+                  </motion.span>
                 </Link>
               );
             })}
