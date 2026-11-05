@@ -105,7 +105,7 @@ export default function Footer() {
           </Link>
 
           <span className="vt-footer__divider vt-hide-md" aria-hidden="true" />
-
+            <div className="vt-footer__nav-group">
           <nav className="vt-footer__nav" aria-label="Footer">
             {NAV.map((item, i) => (
               <div className="vt-footer__navitem" key={item.label}>
@@ -164,6 +164,21 @@ export default function Footer() {
               </div>
             ))}
           </nav>
+            
+{/* ADDRESS BELOW NAVIGATION */}
+<a
+  href="https://www.google.com/maps/search/?api=1&query=Anjanadri+Plaza+2nd+Floor+Girinagar+1st+Phase+Bengaluru+560085"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="vt-footer__nav-address"
+>
+  <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+  <span>
+    #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase,
+    (Behind Radhakrishna Hospital), Bengaluru – 560085
+  </span>
+</a>
+</div>
 
           <span className="vt-footer__divider vt-hide-md" aria-hidden="true" />
 
