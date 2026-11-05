@@ -426,7 +426,7 @@ export default function Investment() {
                     color: '#F9F8F6',
                   }}
                 >
-                  Equity market divergence and the historic resilience of real, tangible land assets.
+                  Markets fluctuate. Land endures.
                 </p>
               </div>
             </motion.div>

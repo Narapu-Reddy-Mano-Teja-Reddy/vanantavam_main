@@ -1163,7 +1163,6 @@ export default function Eeshavana() {
                       fontWeight: 600,
                       fontSize: "0.95rem",
                       width: "100%",
-                      justifyContent: "center",
                       textDecoration: "none",
                     }}
                   >
