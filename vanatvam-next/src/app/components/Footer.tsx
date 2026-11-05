@@ -54,7 +54,7 @@ const SOCIALS = [
   {
     icon: "fa-linkedin-in",
     label: "LinkedIn",
-    url: "https://www.linkedin.com/in/your_username/", // replace with your real page
+    url: "linkedin.com/company/vanatvam-farms/", 
   },
 ];
 
