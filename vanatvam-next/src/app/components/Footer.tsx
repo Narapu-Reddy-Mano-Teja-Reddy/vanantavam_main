@@ -54,7 +54,7 @@ const SOCIALS = [
   {
     icon: "fa-linkedin-in",
     label: "LinkedIn",
-    url: "linkedin.com/company/vanatvam-farms/", 
+    url: "linkedin.com/company/vanatvam-farms/",
   },
 ];
 
@@ -93,7 +93,11 @@ export default function Footer() {
       <div className="vt-footer__inner">
         {/* ROW 1: logo | nav + contact | socials */}
         <div className="vt-footer__top">
-          <Link href="/" className="vt-footer__brand" aria-label="VanaTvam home">
+          <Link
+            href="/"
+            className="vt-footer__brand"
+            aria-label="VanaTvam home"
+          >
             <img
               src="/assets/images/Project-Logos/vanatvam.webp"
               alt="VanaTvam Logo"
@@ -129,7 +133,10 @@ export default function Footer() {
                         onClick={handleTriggerClick}
                         onFocus={() => setMenuOpen(true)}
                       >
-                        <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+                        <i
+                          className={`fa-solid ${item.icon}`}
+                          aria-hidden="true"
+                        ></i>
                         {item.label}
                         <span
                           className={`vt-footer__caret ${menuOpen ? "is-open" : ""}`}
@@ -158,7 +165,10 @@ export default function Footer() {
                     </div>
                   ) : (
                     <Link href={item.href} className="vt-footer__link">
-                      <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+                      <i
+                        className={`fa-solid ${item.icon}`}
+                        aria-hidden="true"
+                      ></i>
                       {item.label}
                     </Link>
                   )}
@@ -169,23 +179,29 @@ export default function Footer() {
             {/* CONTACT: ADDRESS + PHONE + EMAIL */}
             <div className="vt-footer__contact">
               <a
-                href="https://www.google.com/maps/search/?api=1&query=Anjanadri+Plaza+2nd+Floor+Girinagar+1st+Phase+Bengaluru+560085"
+                href="https://share.google/ec2cCHbHzzQrqMV6I"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="vt-footer__contact-item vt-footer__contact-item--address"
               >
-                <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <span>
-                  #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase,
-                  (Behind Radhakrishna Hospital), Bengaluru – 560085
+                <span
+                  style={{
+                    display: "inline-flex",
+                    alignItems: "flex-start",
+                    gap: "2px",
+                  }}
+                >
+                  <i
+                    className="fa-solid fa-location-dot"
+                    aria-hidden="true"
+                  ></i>
+                  #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase, (Behind
+                  Radhakrishna Hospital), Bengaluru – 560085
                 </span>
               </a>
 
               <div className="vt-footer__contact-row">
-                <a
-                  href="tel:+918047095111"
-                  className="vt-footer__contact-item"
-                >
+                <a href="tel:+918047095111" className="vt-footer__contact-item">
                   <i className="fa-solid fa-phone" aria-hidden="true"></i>
                   <span>+91 (080) 4709-5111</span>
                 </a>

@@ -1078,14 +1078,14 @@ export default function Madhuvana() {
                 eyebrow="Master Plan Highlights"
                 title="Sanctuary Amenities (A – H)"
                 items={[
-                  { id: "gateway", name: "Entrance", img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp" },
-                  { id: "pond", name: "Aesthetically Designed Pond", img: "/assets/project-images/Maduvana/pond.webp" },
-                  { id: "kitchen-dining", name: "Kitchen & Dining", img: "/assets/project-images/Maduvana/hero.webp" },
+                  { id: "gateway", name: "Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
+                  { id: "cottages", name: "Cottages", img: "/assets/project-images/Maduvana/cottege.png" },
                   { id: "tree-house", name: "Tree House Deck", img: "/assets/project-images/Maduvana/MV Tree House.webp" },
-                  { id: "event-space", name: "Event & Celebration Space", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
-                  { id: "cottages", name: "Eco Cottages", img: "/assets/project-images/Maduvana/Sunlit Terracotta Cottage and Lush Garden.webp" },
-                  { id: "ashoka-vana", name: "Ashoka Vana with Pond", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
-                  { id: "vinayaka-vana", name: "Vinayaka & Shivapanchayatha Vana", img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.webp" },
+                  { id: "pond", name: "Pond", img: "/assets/project-images/Maduvana/pond.webp" },
+                  { id: "ashoka-vana", name: "childrens pond", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
+                  { id: "event-space", name: "Vinayaka vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
+                  // { id: "kitchen-dining", name: "Kitchen & Dining", img: "/assets/project-images/Maduvana/hero.webp" },
+                  // { id: "vinayaka-vana", name: "Vinayaka & Shivapanchayatha Vana", img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.webp" },
                 ]}
               />
 
