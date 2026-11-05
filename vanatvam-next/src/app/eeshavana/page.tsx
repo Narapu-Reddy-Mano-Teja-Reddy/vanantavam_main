@@ -7,6 +7,7 @@ import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
 import BrochureModal from "@/components/premium/BrochureModal";
+import StickyMasterPlanGallery from "@/components/premium/StickyMasterPlanGallery";
 import { ArrowRight, ArrowUpRight, Droplets, Leaf, MapPin, Mountain, PawPrint, ShieldCheck, Ship, Sparkles, Trees, Users, Waves, Sprout } from "lucide-react";
 
 const EASE = [0.2, 0.9, 0.2, 1] as const;
@@ -1031,7 +1032,7 @@ export default function Eeshavana() {
             padding: "clamp(60px, 8vh, 100px) 0",
             background: "#F4F1EA",
             position: "relative",
-            overflow: "hidden",
+            overflow: "clip",
           }}
         >
           <div className="container" style={{ position: "relative", zIndex: 2 }}>
@@ -1068,179 +1069,50 @@ export default function Eeshavana() {
               style={{
                 display: "grid",
                 gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 480px), 1fr))",
-                gap: "clamp(30px, 5vw, 60px)",
-                alignItems: "center",
+                  "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
+                gap: "clamp(36px, 5vw, 70px)",
+                alignItems: "start",
+                position: "relative",
               }}
             >
-              {/* Left: Legend & Key Highlights with Increased Text Size */}
-              <motion.div
-                initial={reduce ? false : { opacity: 0, x: -25 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, ease: EASE }}
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {/* Plots Box */}
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(18, 34, 23, 0.08)",
-                    borderRadius: "24px",
-                    padding: "36px 40px",
-                    boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
-                  }}
-                >
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "18px",
-                      marginBottom: "20px",
-                    }}
-                  >
-                    <span
-                      style={{
-                        width: "48px",
-                        height: "48px",
-                        borderRadius: "50%",
-                        background: "#844329",
-                        color: "#FFFFFF",
-                        display: "grid",
-                        placeItems: "center",
-                        fontSize: "1.05rem",
-                        fontWeight: 700,
-                        flexShrink: 0,
-                      }}
-                    >
-                      1–20
-                    </span>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.85rem",
-                        fontWeight: 600,
-                        color: FOREST,
-                        margin: 0,
-                      }}
-                    >
-                      Private Farm Plots
-                    </h3>
-                  </div>
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "#4A584E",
-                      fontSize: "1.2rem",
-                      lineHeight: 1.8,
-                    }}
-                  >
-                    Work in progress - 20 individually carved plots, each spanning 8,000+ sq. ft., thoughtfully arranged to preserve the natural topography and ensure privacy.
-                  </p>
-                </div>
+              {/* LEFT COLUMN: Overlapping Sticky Stacking Photo Cards */}
+              <StickyMasterPlanGallery
+                eyebrow="MASTER PLAN HIGHLIGHTS"
+                title="Sanctuary Amenities (A – D)"
+                items={[
+                  {
+                    id: "walk",
+                    name: "Walk by the River",
+                    img: "/assets/project-images/Esahavana/EV1.webp",
+                  },
+                  {
+                    id: "biopool",
+                    name: "Bio Pool",
+                    img: "/assets/project-images/Esahavana/Biopool.webp",
+                  },
+                  {
+                    id: "amphitheatre",
+                    name: "Amphitheatre",
+                    img: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.webp",
+                  },
+                  {
+                    id: "dining-deck",
+                    name: "Dining Deck",
+                    img: "/assets/project-images/Esahavana/EV.webp",
+                  },
+                ]}
+              />
 
-                {/* Amenities Legend Grid */}
-                <div
-                  style={{
-                    background: "#FFFFFF",
-                    border: "1px solid rgba(18, 34, 23, 0.08)",
-                    borderRadius: "24px",
-                    padding: "36px 40px",
-                    boxShadow: "0 12px 35px rgba(0, 0, 0, 0.035)",
-                  }}
-                >
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-serif)",
-                      fontSize: "1.85rem",
-                      fontWeight: 600,
-                      color: FOREST,
-                      margin: "0 0 24px",
-                    }}
-                  >
-                    Master Plan Key (A – J)
-                  </h3>
-
-                  <div
-                    style={{
-                      display: "grid",
-                      gridTemplateColumns:
-                        "repeat(auto-fit, minmax(210px, 1fr))",
-                      gap: "18px 24px",
-                    }}
-                  >
-                    {[
-                      { code: "A", label: "Parking Area" },
-                      { code: "B", label: "Play Area" },
-                      { code: "C", label: "Garden & Landscape" },
-                      { code: "D", label: "Central Lawn" },
-                      { code: "E", label: "Bio-pool Area" },
-                      { code: "F", label: "Amphitheatre" },
-                      { code: "G", label: "Riverside Promenade" },
-                      { code: "H", label: "Temple Place" },
-                      { code: "I", label: "Riverside Dining Deck" },
-                      { code: "J", label: "Internal Roads" },
-                    ].map((item) => (
-                      <div
-                        key={item.code}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "14px",
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: "36px",
-                            height: "36px",
-                            borderRadius: "50%",
-                            background: "rgba(198, 162, 101, 0.22)",
-                            color: "#844329",
-                            fontSize: "0.95rem",
-                            fontWeight: 700,
-                            display: "grid",
-                            placeItems: "center",
-                            flexShrink: 0,
-                          }}
-                        >
-                          {item.code}
-                        </span>
-                        <span
-                          style={{
-                            fontSize: "1.2rem",
-                            color: "#2C3E31",
-                            fontWeight: 600,
-                          }}
-                        >
-                          {item.label}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Right: Master Plan Main Image Only */}
+              {/* RIGHT COLUMN: Sticky Master Plan Main Image & Gallery Button */}
               <motion.div
                 initial={reduce ? false : { opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
                 style={{
-                  position: "relative",
-                  borderRadius: "28px",
-                  overflow: "hidden",
-                  background: "#FFFFFF",
-                  border: "1px solid rgba(18, 34, 23, 0.08)",
-                  boxShadow: "0 22px 55px rgba(18, 34, 23, 0.12)",
-                  padding: "16px",
+                  position: "sticky",
+                  top: "10px",
                   width: "100%",
-                  maxWidth: "520px",
-                  margin: "0 auto",
                 }}
               >
                 <div
@@ -1250,7 +1122,6 @@ export default function Eeshavana() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    background: "#E8ECE5",
                     borderRadius: "20px",
                     overflow: "hidden",
                   }}
@@ -1261,180 +1132,46 @@ export default function Eeshavana() {
                     style={{
                       width: "100%",
                       height: "auto",
-                      maxHeight: "580px",
+                      maxHeight: "clamp(480px, 82vh, 850px)",
                       objectFit: "contain",
                       display: "block",
                       borderRadius: "20px",
                     }}
                   />
                 </div>
-              </motion.div>
-            </div>
-          </div>
-        </section>
 
-        
-
-        {/* ================= AMENITIES ================= */}
-        <section
-          id="amenities"
-          style={{ padding: "clamp(60px, 8vh, 100px) 0", background: "#FFFFFF" }}
-        >
-          <div className="container">
-            <div style={{ textAlign: "center", marginBottom: "50px" }}>
-              <Kicker center>Eeshavana Experiences</Kicker>
-              <Words
-                text="Designed for Slower, Holistic Living"
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.2rem, 3.8vw, 3.4rem)",
-                  lineHeight: 1.15,
-                  color: FOREST,
-                  textAlign: "center",
-                  justifyContent: "center",
-                  margin: "0 auto 16px",
-                }}
-              />
-              <Reveal delay={0.15}>
-                <p
+                {/* Direct Gallery Link */}
+                <div
                   style={{
-                    fontSize: "1.1rem",
-                    color: "var(--eeshavana-muted, #687b63)",
-                    maxWidth: "680px",
-                    margin: "0 auto",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  More room for shared moments, quiet pauses, and a closer connection with the Kaveri river.
-                </p>
-              </Reveal>
-            </div>
-
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 260px), 1fr))",
-                gap: "24px",
-              }}
-            >
-              {[
-                {
-                  name: "Walk by the River",
-                   
-                  image: "/assets/project-images/Esahavana/EV1.webp",
-                },
-                {
-                  name: "Bio Pool",
-                  
-                  image: "/assets/project-images/Esahavana/Biopool.webp",
-                },
-                {
-                  name: "Amphitheatre",
-                   
-                  image: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.webp",
-                },
-                {
-                  name: "Dining Deck",
-                  
-                  image: "/assets/project-images/Esahavana/EV.webp",
-                },
-              ].map((amenity, index) => (
-                <motion.article
-                  key={amenity.name}
-                  initial={reduce ? false : { opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={
-                    reduce
-                      ? undefined
-                      : {
-                          y: -8,
-                          scale: 1.02,
-                          boxShadow: "0 22px 45px rgba(18,34,23,0.16)",
-                          transition: { duration: 0.3, ease: EASE },
-                        }
-                  }
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.08,
-                    ease: EASE,
-                  }}
-                  style={{
-                    background: "#FFF",
-                    borderRadius: "24px",
-                    overflow: "hidden",
-                    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-                    border: "1px solid rgba(0,0,0,0.04)",
                     display: "flex",
-                    flexDirection: "column",
+                    justifyContent: "center",
+                    marginTop: "20px",
                   }}
                 >
-                  <div
+                  <a
+                    href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-pill btn-pill-gold"
                     style={{
-                      height: "200px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: "10px",
+                      backgroundColor: "var(--accent-gold)",
+                      color: "#0d0d0d",
+                      fontWeight: 600,
+                      fontSize: "0.95rem",
                       width: "100%",
-                      overflow: "hidden",
+                      justifyContent: "center",
+                      textDecoration: "none",
                     }}
                   >
-                    <img
-                      src={amenity.image}
-                      alt={amenity.name}
-                      loading="lazy"
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "cover",
-                      }}
-                    />
-                  </div>
-                  <div style={{ padding: "24px", flexGrow: 1 }}>
-                    <h3
-                      style={{
-                        fontFamily: "var(--font-serif)",
-                        fontSize: "1.35rem",
-                        color: FOREST,
-                        margin: "0 0 10px",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {amenity.name}
-                    </h3>
-                  
-                  </div>
-                </motion.article>
-              ))}
-            </div>
-             <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  marginTop: "44px",
-                }}
-              >
-                <a
-                  href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-pill btn-pill-gold"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "10px",
-                    backgroundColor: "var(--accent-gold)",
-                    color: "#0d0d0d",
-                    fontWeight: 600,
-                    fontSize: "1rem",
-                    textDecoration: "none",
-                  }}
-                >
-                  Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-                </a>
+                    Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+                  </a>
+                </div>
               </motion.div>
+            </div>
           </div>
         </section>        
 
@@ -2730,7 +2467,7 @@ export default function Eeshavana() {
           --eeshavana-forest: #122217;
           --eeshavana-muted: #687b63;
           color: var(--text-dark);
-          overflow: hidden;
+          overflow: clip;
           background: #f9f8f6;
         }
 

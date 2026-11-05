@@ -126,7 +126,7 @@ const heroSlides = [
     name: "ANANTAVANA",
      
     tagline: "Near Kabini— a biodiversity hotspot.",
-    img: "/assets/project-images/Ananthavana/hero_image.webp",
+    img: "/assets/project-images/Ananthavana/hero_image_2.webp",
   },
   
   {
@@ -1034,7 +1034,7 @@ export default function Home() {
                   id: "anantavana",
                   name: "ANANTAVANA",
                   badge: "NEAR KABINI · 34 ACRES",
-                  img: "/assets/project-images/Ananthavana/hero_image.webp",
+                  img: "/assets/project-images/Ananthavana/hero_image_2.webp",
                    
                 },
                 {

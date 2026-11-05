@@ -54,7 +54,7 @@ export default function Projects() {
       logo: '/assets/images/Project-Logos/Anantavana.webp',
       location: 'NEAR KABINI · 34 ACRES',
       desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 10,000 sq. ft.',
-      img: '/assets/project-images/Ananthavana/hero_image.webp',
+      img: '/assets/project-images/Ananthavana/hero_image_2.webp',
       brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
        
       badgeBg: '#2D6A4F',
