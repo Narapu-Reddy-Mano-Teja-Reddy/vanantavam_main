@@ -91,7 +91,7 @@ export default function Footer() {
   return (
     <footer className="vt-footer">
       <div className="vt-footer__inner">
-        {/* ROW 1: logo | nav | socials */}
+        {/* ROW 1: logo | nav + contact | socials */}
         <div className="vt-footer__top">
           <Link href="/" className="vt-footer__brand" aria-label="VanaTvam home">
             <img
@@ -105,80 +105,106 @@ export default function Footer() {
           </Link>
 
           <span className="vt-footer__divider vt-hide-md" aria-hidden="true" />
-            <div className="vt-footer__nav-group">
-          <nav className="vt-footer__nav" aria-label="Footer">
-            {NAV.map((item, i) => (
-              <div className="vt-footer__navitem" key={item.label}>
-                {i > 0 && (
-                  <span className="vt-footer__divider" aria-hidden="true" />
-                )}
 
-                {item.children ? (
-                  <div
-                    className="vt-footer__dropwrap"
-                    ref={menuRef}
-                    onMouseEnter={() => setMenuOpen(true)}
-                    onMouseLeave={() => setMenuOpen(false)}
-                  >
-                    <Link
-                      href={item.href}
-                      className="vt-footer__link"
-                      aria-haspopup="true"
-                      aria-expanded={menuOpen}
-                      onClick={handleTriggerClick}
-                      onFocus={() => setMenuOpen(true)}
+          <div className="vt-footer__nav-group">
+            <nav className="vt-footer__nav" aria-label="Footer">
+              {NAV.map((item, i) => (
+                <div className="vt-footer__navitem" key={item.label}>
+                  {i > 0 && (
+                    <span className="vt-footer__divider" aria-hidden="true" />
+                  )}
+
+                  {item.children ? (
+                    <div
+                      className="vt-footer__dropwrap"
+                      ref={menuRef}
+                      onMouseEnter={() => setMenuOpen(true)}
+                      onMouseLeave={() => setMenuOpen(false)}
                     >
+                      <Link
+                        href={item.href}
+                        className="vt-footer__link"
+                        aria-haspopup="true"
+                        aria-expanded={menuOpen}
+                        onClick={handleTriggerClick}
+                        onFocus={() => setMenuOpen(true)}
+                      >
+                        <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
+                        {item.label}
+                        <span
+                          className={`vt-footer__caret ${menuOpen ? "is-open" : ""}`}
+                          aria-hidden="true"
+                        />
+                      </Link>
+
+                      <div
+                        className={`vt-footer__menu ${menuOpen ? "is-open" : ""}`}
+                        role="menu"
+                      >
+                        <ul>
+                          {item.children.map((c) => (
+                            <li key={c.href} role="none">
+                              <Link
+                                href={c.href}
+                                role="menuitem"
+                                onClick={() => setMenuOpen(false)}
+                              >
+                                {c.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : (
+                    <Link href={item.href} className="vt-footer__link">
                       <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
                       {item.label}
-                      <span
-                        className={`vt-footer__caret ${menuOpen ? "is-open" : ""}`}
-                        aria-hidden="true"
-                      />
                     </Link>
+                  )}
+                </div>
+              ))}
+            </nav>
 
-                    <div
-                      className={`vt-footer__menu ${menuOpen ? "is-open" : ""}`}
-                      role="menu"
-                    >
-                      <ul>
-                        {item.children.map((c) => (
-                          <li key={c.href} role="none">
-                            <Link
-                              href={c.href}
-                              role="menuitem"
-                              onClick={() => setMenuOpen(false)}
-                            >
-                              {c.label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                ) : (
-                  <Link href={item.href} className="vt-footer__link">
-                    <i className={`fa-solid ${item.icon}`} aria-hidden="true"></i>
-                    {item.label}
-                  </Link>
-                )}
+            {/* CONTACT: ADDRESS + PHONE + EMAIL */}
+            <div className="vt-footer__contact">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Anjanadri+Plaza+2nd+Floor+Girinagar+1st+Phase+Bengaluru+560085"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="vt-footer__contact-item vt-footer__contact-item--address"
+              >
+                <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+                <span>
+                  #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase,
+                  (Behind Radhakrishna Hospital), Bengaluru – 560085
+                </span>
+              </a>
+
+              <div className="vt-footer__contact-row">
+                <a
+                  href="tel:+918047095111"
+                  className="vt-footer__contact-item"
+                >
+                  <i className="fa-solid fa-phone" aria-hidden="true"></i>
+                  <span>+91 (080) 4709-5111</span>
+                </a>
+
+                <span
+                  className="vt-footer__divider vt-footer__divider--sm"
+                  aria-hidden="true"
+                />
+
+                <a
+                  href="mailto:info@vanatvam.com"
+                  className="vt-footer__contact-item"
+                >
+                  <i className="fa-solid fa-envelope" aria-hidden="true"></i>
+                  <span>info@vanatvam.com</span>
+                </a>
               </div>
-            ))}
-          </nav>
-            
-{/* ADDRESS BELOW NAVIGATION */}
-<a
-  href="https://www.google.com/maps/search/?api=1&query=Anjanadri+Plaza+2nd+Floor+Girinagar+1st+Phase+Bengaluru+560085"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="vt-footer__nav-address"
->
-  <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
-  <span>
-    #5, Anjanadri Plaza, 2nd Floor, Girinagar 1st Phase,
-    (Behind Radhakrishna Hospital), Bengaluru – 560085
-  </span>
-</a>
-</div>
+            </div>
+          </div>
 
           <span className="vt-footer__divider vt-hide-md" aria-hidden="true" />
 
@@ -220,7 +246,7 @@ export default function Footer() {
         .vt-footer {
           --gold: var(--accent-gold, #f2b705);
           position: relative;
-          z-index: 5; /* footer + dropdown sit above page content */
+          z-index: 5;
           color: #fff;
           background-color: var(--bg-dark-forest, #0d2414);
           background-image: url(${FOOTER_BG});
@@ -230,19 +256,20 @@ export default function Footer() {
           min-height: 345px;
           display: flex;
           align-items: stretch;
-          /* no overflow:hidden – it would clip the upward dropdown */
         }
-        /* soft fade so text stays readable over any artwork */
+        /* 30% dark layer (brightness taggistundi) + soft fade for readability */
         .vt-footer::before {
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(8, 28, 14, 0.55) 0%,
-            rgba(8, 28, 14, 0) 55%,
-            rgba(8, 28, 14, 0.55) 100%
-          );
+          background:
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            linear-gradient(
+              to bottom,
+              rgba(8, 28, 14, 0.55) 0%,
+              rgba(8, 28, 14, 0) 55%,
+              rgba(8, 28, 14, 0.55) 100%
+            );
           pointer-events: none;
         }
         .vt-footer__inner {
@@ -303,6 +330,13 @@ export default function Footer() {
           background: rgba(255, 255, 255, 0.45);
         }
 
+        /* nav + contact stacked */
+        .vt-footer__nav-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 22px;
+        }
         .vt-footer__nav {
           display: flex;
           align-items: center;
@@ -317,6 +351,8 @@ export default function Footer() {
           height: 26px;
           margin: 0 26px;
         }
+
+        /* ---------- nav links: WHITE icons + effects ---------- */
         .vt-footer__link {
           display: inline-flex;
           align-items: center;
@@ -325,17 +361,70 @@ export default function Footer() {
           font-weight: 500;
           font-size: 1rem;
           white-space: nowrap;
-          transition: color 0.25s;
+          transition: color 0.25s, transform 0.25s;
         }
         .vt-footer__link i {
-          color: var(--gold);
+          color: #fff;
           font-size: 1.1rem;
+          transition: transform 0.3s ease, color 0.25s, filter 0.25s;
         }
         .vt-footer__link:hover,
         .vt-footer__link:focus-visible {
           color: var(--gold);
+          transform: translateY(-2px);
+        }
+        .vt-footer__link:hover i,
+        .vt-footer__link:focus-visible i {
+          color: var(--gold);
+          transform: scale(1.25) rotate(-8deg);
+          filter: drop-shadow(0 0 6px rgba(242, 183, 5, 0.85));
         }
 
+        /* ---------- contact (address / phone / mail) ---------- */
+        .vt-footer__contact {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+        .vt-footer__contact-row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 8px 20px;
+        }
+        .vt-footer__contact-item {
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+          color: #fff;
+          font-size: 0.92rem;
+          transition: color 0.25s, transform 0.25s;
+        }
+        .vt-footer__contact-item--address {
+          max-width: 560px;
+          text-align: center;
+          line-height: 1.45;
+        }
+        .vt-footer__contact-item i {
+          color: #fff;
+          font-size: 1rem;
+          transition: transform 0.3s ease, color 0.25s, filter 0.25s;
+        }
+        .vt-footer__contact-item:hover,
+        .vt-footer__contact-item:focus-visible {
+          color: var(--gold);
+          transform: translateY(-2px);
+        }
+        .vt-footer__contact-item:hover i,
+        .vt-footer__contact-item:focus-visible i {
+          color: var(--gold);
+          transform: scale(1.25) rotate(-8deg);
+          filter: drop-shadow(0 0 6px rgba(242, 183, 5, 0.85));
+        }
+
+        /* ---------- socials: WHITE icons + effects ---------- */
         .vt-footer__socials {
           display: flex;
           gap: 14px;
@@ -345,19 +434,29 @@ export default function Footer() {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          width: 36px;
-          height: 36px;
-          border: 1.5px solid var(--gold);
+          width: 38px;
+          height: 38px;
+          border: 1.5px solid #fff;
           border-radius: 10px;
-          color: var(--gold);
+          color: #fff;
           font-size: 1rem;
-          transition: background 0.25s, color 0.25s, transform 0.25s;
+          transition: background 0.25s, color 0.25s, border-color 0.25s,
+            transform 0.25s, box-shadow 0.25s;
+        }
+        .vt-footer__social i {
+          transition: transform 0.3s ease;
         }
         .vt-footer__social:hover,
         .vt-footer__social:focus-visible {
           background: var(--gold);
+          border-color: var(--gold);
           color: #0d2414;
-          transform: scale(1.08);
+          transform: translateY(-4px) scale(1.08);
+          box-shadow: 0 8px 20px rgba(242, 183, 5, 0.45);
+        }
+        .vt-footer__social:hover i,
+        .vt-footer__social:focus-visible i {
+          transform: rotate(360deg);
         }
 
         /* ---------- bottom row ---------- */
@@ -413,19 +512,22 @@ export default function Footer() {
           width: 7px;
           height: 7px;
           margin-left: 2px;
-          border-right: 1.5px solid var(--gold);
-          border-bottom: 1.5px solid var(--gold);
-          transform: translateY(2px) rotate(-135deg); /* points up */
-          transition: transform 0.25s;
+          border-right: 1.5px solid #fff;
+          border-bottom: 1.5px solid #fff;
+          transform: translateY(2px) rotate(-135deg);
+          transition: transform 0.25s, border-color 0.25s;
+        }
+        .vt-footer__link:hover .vt-footer__caret {
+          border-color: var(--gold);
         }
         .vt-footer__caret.is-open {
-          transform: translateY(-1px) rotate(45deg); /* points down */
+          transform: translateY(-1px) rotate(45deg);
         }
         .vt-footer__menu {
           position: absolute;
           left: 50%;
           bottom: 100%;
-          padding-bottom: 16px; /* invisible bridge so hover isn't lost */
+          padding-bottom: 16px;
           transform: translate(-50%, 8px);
           opacity: 0;
           visibility: hidden;
@@ -468,12 +570,13 @@ export default function Footer() {
           color: #fff;
           font-size: 0.95rem;
           white-space: nowrap;
-          transition: background 0.2s, color 0.2s;
+          transition: background 0.2s, color 0.2s, padding-left 0.2s;
         }
         .vt-footer__menu li a:hover,
         .vt-footer__menu li a:focus-visible {
           background: rgba(242, 183, 5, 0.14);
           color: var(--gold);
+          padding-left: 20px;
         }
 
         /* ---------- responsive ---------- */
@@ -506,6 +609,13 @@ export default function Footer() {
           .vt-footer__link {
             margin: 0 14px;
           }
+          .vt-footer__contact-row {
+            flex-direction: column;
+            gap: 12px;
+          }
+          .vt-footer__contact-row .vt-footer__divider--sm {
+            display: none;
+          }
           .vt-footer__bottom {
             flex-direction: column;
             gap: 10px;
@@ -517,7 +627,11 @@ export default function Footer() {
         }
         @media (prefers-reduced-motion: reduce) {
           .vt-footer__social,
+          .vt-footer__social i,
           .vt-footer__link,
+          .vt-footer__link i,
+          .vt-footer__contact-item,
+          .vt-footer__contact-item i,
           .vt-footer__menu,
           .vt-footer__caret {
             transition: none;
