@@ -32,7 +32,7 @@ const NAV: NavItem[] = [
     children: PROJECT_LINKS,
   },
   { icon: "fa-chart-line", label: "Investment", href: "/investment" },
-  { icon: "fa-book-open", label: "Journal", href: "/journal" },
+  { icon: "fa-book-open", label: "Journal", href: "/blog" },
 ];
 
 const SOCIALS = [
