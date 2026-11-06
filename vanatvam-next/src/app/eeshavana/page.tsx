@@ -1078,7 +1078,7 @@ export default function Eeshavana() {
               {/* LEFT COLUMN: Overlapping Sticky Stacking Photo Cards */}
               <StickyMasterPlanGallery
                 eyebrow="MASTER PLAN HIGHLIGHTS"
-                title="Sanctuary Amenities (A – D)"
+                title="Common Amenities (A – D)"
                 items={[
                   {
                     id: "walk",
