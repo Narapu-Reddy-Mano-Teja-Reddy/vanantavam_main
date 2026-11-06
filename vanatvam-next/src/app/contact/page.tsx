@@ -261,7 +261,7 @@ export default function Contact() {
                 fontSize: "clamp(3rem, 8vw, 6rem)",
                 fontWeight: 300,
                 lineHeight: 0.98,
-                letterSpacing: "-0.03em",
+                letterSpacing: "-0.001em",
                 margin: "0 0 18px",
               }}
             >
