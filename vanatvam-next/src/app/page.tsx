@@ -1009,7 +1009,7 @@ export default function Home() {
                 <Magnetic strength={0.25}>
                   <Link
                     href="/projects"
-                    className="btn-pill btn-pill-dark"
+                    className="btn-pill btn-pill-gold"
                     style={{
                       display: "inline-flex",
                       alignItems: "center",
