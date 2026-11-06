@@ -1064,7 +1064,7 @@ export default function Madhuvana() {
               {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
               <StickyMasterPlanGallery
                 eyebrow="Master Plan Highlights"
-                title="Sanctuary Amenities (A – H)"
+                title="Common Amenities (A – H)"
                 items={[
                   { id: "gateway", name: "Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
                   { id: "cottages", name: "Cottages", img: "/assets/project-images/Maduvana/cottege.png" },
