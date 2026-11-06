@@ -125,7 +125,7 @@ const heroSlides = [
     id: "anantavana",
     name: "ANANTAVANA",
      
-    tagline: "Near Kabini— a biodiversity hotspot.",
+    tagline: "An Extensive Eco Conservation project to restore Bio Diversity.",
     img: "/assets/project-images/Ananthavana/hero_image_2.webp",
   },
   
@@ -142,7 +142,7 @@ const heroSlides = [
     name: "BRINDAVANA",
      
     tagline:
-      "Our benchmark project — barren land reborn as a thriving forest ecosystem.",
+      "Barren land in a semi arid zone transformed into a thriving ecosystem.",
     img: "/assets/project-images/Brindavana/brindavanaaa.webp",
   },
 ];
@@ -591,22 +591,22 @@ export default function Home() {
               </p>
 
 
-              <Magnetic strength={0.2}>
-                <Link
-                  href="/about"
-                  className="link-underline"
-                  style={{
-                    color: "var(--bg-dark-forest)",
-                    fontSize: "1.05rem",
-                    fontWeight: 700,
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                    Our Philosophy <ArrowRight className="size-4" />
-                </Link>
-              </Magnetic>
+        <Magnetic strength={0.25}>
+       <Link
+         href="/about"
+         className="btn-pill btn-pill-gold"
+         style={{
+         padding: "14px 32px",
+         fontSize: "1rem",
+         fontWeight: 700,
+         display: "inline-flex",
+         alignItems: "center",
+        gap: "8px",
+       }}
+       >
+         Our Philosophy <ArrowRight className="size-4" />
+  </Link>
+</Magnetic>
             </div>
           </div>
         </div>

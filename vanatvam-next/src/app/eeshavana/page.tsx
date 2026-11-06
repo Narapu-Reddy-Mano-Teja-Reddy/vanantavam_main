@@ -1078,7 +1078,7 @@ export default function Eeshavana() {
               {/* LEFT COLUMN: Overlapping Sticky Stacking Photo Cards */}
               <StickyMasterPlanGallery
                 eyebrow="MASTER PLAN HIGHLIGHTS"
-                title="Sanctuary Amenities (A – D)"
+                title="Common Amenities (A – D)"
                 items={[
                   {
                     id: "walk",
@@ -1103,7 +1103,8 @@ export default function Eeshavana() {
                 ]}
               />
 
-              {/* RIGHT COLUMN: Sticky Master Plan Main Image & Gallery Button */}
+              {
+              /* RIGHT COLUMN: Sticky Master Plan Main Image & Gallery Button */}
               <motion.div
                 initial={reduce ? false : { opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -1141,35 +1142,50 @@ export default function Eeshavana() {
                   />
                 </div>
 
-                {/* Direct Gallery Link */}
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: "20px",
-                  }}
-                >
-                  <a
-                    href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-pill btn-pill-gold"
-                    style={{
-                      display: "inline-flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: "10px",
-                      backgroundColor: "var(--accent-gold)",
-                      color: "#0d0d0d",
-                      fontWeight: 600,
-                      fontSize: "0.95rem",
-                      width: "100%",
-                      textDecoration: "none",
-                    }}
-                  >
-                    Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
-                  </a>
-                </div>
+              {/* Direct Gallery Link */}
+<div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "20px",
+    gap: "12px",
+  }}
+>
+  <p
+    style={{
+      textAlign: "center",
+      fontSize: "0.85rem",
+      fontWeight: 600,
+      color: "#8a7654",
+      margin: 0,
+      letterSpacing: "0.5px",
+    }}
+  >
+    Eeshavana Masterplan – Work in Progress
+  </p>
+
+  <a
+    href="https://photos.app.goo.gl/cQi23iTeCgKVP6co8"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-pill btn-pill-gold"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: "10px",
+      backgroundColor: "var(--accent-gold)",
+      color: "#0d0d0d",
+      fontWeight: 600,
+      fontSize: "0.95rem",
+      width: "100%",
+      textDecoration: "none",
+    }}
+  >
+    Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+  </a>
+</div>
               </motion.div>
             </div>
           </div>

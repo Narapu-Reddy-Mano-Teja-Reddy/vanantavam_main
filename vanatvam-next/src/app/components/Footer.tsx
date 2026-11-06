@@ -32,7 +32,7 @@ const NAV: NavItem[] = [
     children: PROJECT_LINKS,
   },
   { icon: "fa-chart-line", label: "Investment", href: "/investment" },
-  { icon: "fa-book-open", label: "Journal", href: "/journal" },
+  { icon: "fa-book-open", label: "Journal", href: "/blog" },
 ];
 
 const SOCIALS = [
@@ -54,7 +54,7 @@ const SOCIALS = [
   {
     icon: "fa-linkedin-in",
     label: "LinkedIn",
-    url: "linkedin.com/company/vanatvam-farms/",
+    url: "https://www.linkedin.com/company/vanatvam-farms/home/",
   },
 ];
 

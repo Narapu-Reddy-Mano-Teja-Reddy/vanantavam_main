@@ -1400,42 +1400,36 @@ export default function Anantavana() {
       {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
       <StickyMasterPlanGallery
         eyebrow="Master Plan Highlights"
-        title="Sanctuary Amenities (A – H)"
+        title="Common Amenities (A – F)"
         items={[
           {
             id: "entrance",
-            code: "A / 01",
-            name: "Entrance Gateway",
+            name: "A-Entrance Gateway",
             img: "/assets/project-images/Ananthavana/Enterance.webp",
           },
           {
             id: "herbal",
-            code: "B / 02",
-            name: "Herbal & Healing Flora",
+            name: "B-Herbal & Healing Flora",
             img: "/assets/project-images/Ananthavana/b242b80b-0580-4b54-8c15-02001d35bacf.webp",
           },
           {
             id: "cottage",
-            code: "C / 03",
-            name: "Community Cottage",
+            name: "C-Community Cottage",
             img: "/assets/project-images/Ananthavana/Common.webp",
           },
           {
             id: "ponds",
-            code: "D / 04",
-            name: "Natural Ponds",
+            name: "D-Natural Ponds",
             img: "/assets/project-images/Ananthavana/NaturalPonds.webp",
           },
           {
             id: "tree-house",
-            code: "E / 05",
-            name: "Tree House Deck",
+            name: "E-Tree House Deck",
             img: "/assets/project-images/Ananthavana/AV Tree House.webp",
           },
           {
             id: "roads",
-            code: "F / 06",
-            name: "Broad Internal Roads",
+            name: "F-Broad Internal Roads",
             img: "/assets/project-images/Ananthavana/Tree-Lined.webp",
           },
         ]}

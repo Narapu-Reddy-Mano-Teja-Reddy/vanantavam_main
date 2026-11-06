@@ -1064,14 +1064,14 @@ export default function Madhuvana() {
               {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
               <StickyMasterPlanGallery
                 eyebrow="Master Plan Highlights"
-                title="Sanctuary Amenities (A – H)"
+                title="Common Amenities (A – G)"
                 items={[
-                  { id: "gateway", name: "Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
-                  { id: "cottages", name: "Cottages", img: "/assets/project-images/Maduvana/cottege.png" },
-                  { id: "tree-house", name: "Tree House Deck", img: "/assets/project-images/Maduvana/MV Tree House.webp" },
-                  { id: "pond", name: "Pond", img: "/assets/project-images/Maduvana/pond.webp" },
-                  { id: "ashoka-vana", name: "childrens pond", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
-                  { id: "event-space", name: "Vinayaka vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
+                  { id: "ashoka-vana", name: "B-Childrens Pool", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
+                  { id: "event-space", name: "C-Vinayaka vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
+                  { id: "gateway", name: "D-Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
+                  { id: "tree-house", name: "E-Tree House Deck", img: "/assets/project-images/Maduvana/MV Tree House.webp" },
+                  { id: "cottages", name: "F-Cottage", img: "/assets/project-images/Maduvana/cottege.png" },
+                  { id: "pond", name: "G-Pond", img: "/assets/project-images/Maduvana/pond.webp" },
                   // { id: "kitchen-dining", name: "Kitchen & Dining", img: "/assets/project-images/Maduvana/hero.webp" },
                   // { id: "vinayaka-vana", name: "Vinayaka & Shivapanchayatha Vana", img: "/assets/project-images/Maduvana/a114d324-c066-402d-8ebe-32f8f8a65bc4.webp" },
                 ]}

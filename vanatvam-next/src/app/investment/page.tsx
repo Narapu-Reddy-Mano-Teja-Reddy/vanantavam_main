@@ -896,7 +896,7 @@ export default function Investment() {
                   marginBottom: "24px",
                 }}
               >
-                ~ 15–18%
+                ~ 15%
               </div>
 
               <div>
