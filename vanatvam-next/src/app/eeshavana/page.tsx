@@ -603,7 +603,7 @@ export default function Eeshavana() {
          style={{
            position: "relative",
            overflow: "hidden",
-           padding: "clamp(70px, 10vh, 120px) 0",
+           padding: "clamp(36px, 4.5vh, 56px) 0",
            background: "var(--bg-cream, #f9f8f6)",
          }}
        >
@@ -751,7 +751,7 @@ export default function Eeshavana() {
         {/* ================= THE LAND IN NUMBERS / STATS ================= */}
         <section
           style={{
-            padding: "clamp(52px, 7vh, 80px) 0",
+            padding: "clamp(28px, 3.5vh, 44px) 0",
             background: FOREST,
             position: "relative",
             overflow: "hidden",
@@ -781,8 +781,8 @@ export default function Eeshavana() {
               style={{
                 display: "grid",
                 gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 200px), 1fr))",
-                gap: "clamp(24px, 4vw, 48px)",
+                  "repeat(auto-fit, minmax(min(100%, 180px), 1fr))",
+                gap: "clamp(16px, 2.5vw, 24px)",
                 alignItems: "center",
                 textAlign: "center",
               }}
@@ -820,17 +820,17 @@ export default function Eeshavana() {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    padding: "12px 16px",
+                    padding: "6px 12px",
                   }}
                 >
                   <div
                     style={{
                       fontFamily: "var(--font-serif)",
-                      fontSize: "clamp(2.4rem, 4.2vw, 3.8rem)",
+                      fontSize: "clamp(2rem, 3.2vw, 2.8rem)",
                       fontWeight: 700,
                       color: GOLD,
                       lineHeight: 1.1,
-                      marginBottom: "8px",
+                      marginBottom: "4px",
                     }}
                   >
                     {s.value}
@@ -859,7 +859,7 @@ export default function Eeshavana() {
         <section
           id="our-approach"
           style={{
-            padding: "clamp(60px, 8vh, 100px) 0",
+            padding: "clamp(36px, 4.5vh, 56px) 0",
             background: "#FFFFFF",
             position: "relative",
           }}
@@ -1029,7 +1029,7 @@ export default function Eeshavana() {
         <section
           id="master-plan"
           style={{
-            padding: "clamp(60px, 8vh, 100px) 0",
+            padding: "clamp(36px, 4.5vh, 56px) 0",
             background: "#F4F1EA",
             position: "relative",
             overflow: "clip",
@@ -1069,8 +1069,8 @@ export default function Eeshavana() {
               style={{
                 display: "grid",
                 gridTemplateColumns:
-                  "repeat(auto-fit, minmax(min(100%, 420px), 1fr))",
-                gap: "clamp(36px, 5vw, 70px)",
+                  "repeat(auto-fit, minmax(min(100%, 400px), 1fr))",
+                gap: "clamp(28px, 4vw, 60px)",
                 alignItems: "start",
                 position: "relative",
               }}
@@ -1111,7 +1111,7 @@ export default function Eeshavana() {
                 transition={{ duration: 0.8, delay: 0.15, ease: EASE }}
                 style={{
                   position: "sticky",
-                  top: "10px",
+                  top: "90px",
                   width: "100%",
                 }}
               >
@@ -1132,10 +1132,11 @@ export default function Eeshavana() {
                     style={{
                       width: "100%",
                       height: "auto",
-                      maxHeight: "clamp(480px, 82vh, 850px)",
+                      maxHeight: "clamp(550px, 88vh, 960px)",
                       objectFit: "contain",
                       display: "block",
                       borderRadius: "20px",
+                      boxShadow: "0 20px 50px rgba(18, 34, 23, 0.15)",
                     }}
                   />
                 </div>
@@ -1179,7 +1180,7 @@ export default function Eeshavana() {
         style={{
           position: "relative",
           isolation: "isolate",
-          padding: "clamp(72px, 10vh, 120px) 0",
+          padding: "clamp(36px, 4.5vh, 56px) 0",
           background: "linear-gradient(180deg, #FBF9F5 0%, #F4F1E8 100%)",
           overflow: "hidden",
         }}
@@ -1696,7 +1697,7 @@ export default function Eeshavana() {
           position: "relative",
           isolation: "isolate",
           overflow: "hidden",
-          padding: "clamp(60px, 8vw, 110px) 20px",
+          padding: "clamp(36px, 4.5vw, 60px) 20px",
           width: "100%",
           boxSizing: "border-box",
           background: "#FFFFFF",
@@ -2224,7 +2225,7 @@ export default function Eeshavana() {
           position: "relative",
           isolation: "isolate",
           overflow: "hidden",
-          padding: "clamp(40px, 5vw, 80px) 10px",
+          padding: "clamp(28px, 3.5vw, 44px) 10px",
           width: "100%",
           boxSizing: "border-box",
           background: "#FFFFFF",

@@ -416,7 +416,7 @@ export default function Home() {
       {/* Section 5: More than land. A way to belong. & Ancient Wisdom */}
       <section
         style={{
-          padding: "clamp(90px, 12vh, 130px) 0",
+          padding: "clamp(44px, 6vh, 68px) 0",
           background: "var(--bg-cream)",
           position: "relative",
           overflow: "hidden",
@@ -604,7 +604,7 @@ export default function Home() {
                     gap: "8px",
                   }}
                 >
-                    our Philosophy <ArrowRight className="size-4" />
+                    Our Philosophy <ArrowRight className="size-4" />
                 </Link>
               </Magnetic>
             </div>
@@ -615,7 +615,7 @@ export default function Home() {
      {/* Section 6: Not just a farmland developer. A landscape-led approach. */}
 <section
   style={{
-    padding: "clamp(100px, 14vh, 160px) 0",
+    padding: "clamp(48px, 6.5vh, 72px) 0",
     background: "#F5F2EB",
     position: "relative",
   }}
@@ -813,7 +813,7 @@ export default function Home() {
       {/* Impact in Numbers */}
       <section
         style={{
-          padding: "clamp(70px, 9vh, 100px) 0",
+          padding: "clamp(36px, 4.5vh, 52px) 0",
           background: "var(--bg-dark-forest)",
           borderTop: "1px solid var(--border-dark)",
           borderBottom: "1px solid var(--border-dark)",
@@ -826,8 +826,8 @@ export default function Home() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-              gap: "50px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+              gap: "clamp(20px, 3vw, 32px)",
               textAlign: "center",
             }}
           >
@@ -855,10 +855,10 @@ export default function Home() {
                 <div
                   style={{
                     fontFamily: "var(--font-serif)",
-                    fontSize: "clamp(3rem, 5vw, 4.2rem)",
+                    fontSize: "clamp(2.4rem, 3.8vw, 3.4rem)",
                     color: "var(--accent-gold)",
                     lineHeight: 1,
-                    marginBottom: "16px",
+                    marginBottom: "8px",
                     fontWeight: 600,
                   }}
                 >
@@ -867,12 +867,12 @@ export default function Home() {
                 <p
                   style={{
                     color: "rgba(255,255,255,0.75)",
-                    fontSize: "0.98rem",
-                    letterSpacing: "0.04em",
-                    maxWidth: "260px",
+                    fontSize: "0.92rem",
+                    letterSpacing: "0.03em",
+                    maxWidth: "240px",
                     margin: "0 auto",
                     fontWeight: 300,
-                    lineHeight: 1.5,
+                    lineHeight: 1.4,
                   }}
                 >
                   {stat.label}
@@ -893,7 +893,7 @@ export default function Home() {
         className="projects-section projects-sticky-section"
         id="projects"
         style={{
-          padding: "clamp(100px, 14vh, 160px) 0",
+          padding: "clamp(48px, 6.5vh, 72px) 0",
           background: "var(--bg-cream)",
           position: "relative",
           overflow: "visible",
@@ -1340,7 +1340,7 @@ export default function Home() {
       {/* FKCCI Award Recognition Section */}
       <section
         style={{
-          padding: "clamp(90px, 12vh, 120px) 0",
+          padding: "clamp(44px, 6vh, 68px) 0",
           background: "#F7F5F0",
           position: "relative",
           overflow: "hidden",
@@ -1537,7 +1537,7 @@ By bringing together ecological restoration, India’s cultural heritage, and th
 
       <section
         style={{
-          padding: "clamp(80px, 10vh, 120px) 0",
+          padding: "clamp(40px, 5vh, 60px) 0",
           background: "#122217",
           color: "#FFF",
         }}
@@ -1688,7 +1688,7 @@ By bringing together ecological restoration, India’s cultural heritage, and th
           position: "relative",
           isolation: "isolate",
           overflow: "hidden",
-          padding: "clamp(60px, 8vw, 110px) 20px",
+          padding: "clamp(36px, 4.5vw, 60px) 20px",
           width: "100%",
           boxSizing: "border-box",
           background: "#FFFFFF",

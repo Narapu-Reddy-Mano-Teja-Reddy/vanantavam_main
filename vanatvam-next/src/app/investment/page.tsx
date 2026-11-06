@@ -748,7 +748,7 @@ export default function Investment() {
       <section
         style={{
           padding: "clamp(80px, 10vh, 120px) 20px",
-          background: "linear-gradient(180deg, #F4F1EA 0%, #EBE6DC 100%)",
+          background: "#F5F2EB",
           borderBottom: "1px solid rgba(18, 34, 23, 0.08)",
         }}
       >
@@ -787,7 +787,7 @@ export default function Investment() {
                 fontSize: "clamp(2.4rem, 4vw, 3.4rem)",
                 color: "var(--bg-dark-forest, #122217)",
                 lineHeight: 1.15,
-                letterSpacing: "-0.02em",
+                letterSpacing: "-0.001em",
                 marginBottom: "20px",
               }}
             >
