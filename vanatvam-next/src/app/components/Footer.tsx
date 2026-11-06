@@ -54,7 +54,7 @@ const SOCIALS = [
   {
     icon: "fa-linkedin-in",
     label: "LinkedIn",
-    url: "linkedin.com/company/vanatvam-farms/",
+    url: "https://www.linkedin.com/company/vanatvam-farms/home/",
   },
 ];
 
