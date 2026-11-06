@@ -125,7 +125,7 @@ const heroSlides = [
     id: "anantavana",
     name: "ANANTAVANA",
      
-    tagline: "Near Kabini— a biodiversity hotspot.",
+    tagline: "An Extensive Eco Conservation project to restore Bio Diversity.",
     img: "/assets/project-images/Ananthavana/hero_image_2.webp",
   },
   
@@ -142,7 +142,7 @@ const heroSlides = [
     name: "BRINDAVANA",
      
     tagline:
-      "Our benchmark project — barren land reborn as a thriving forest ecosystem.",
+      "Barren land in a semi arid zone transformed into a thriving ecosystem.",
     img: "/assets/project-images/Brindavana/brindavanaaa.webp",
   },
 ];
