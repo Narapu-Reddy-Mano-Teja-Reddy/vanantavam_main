@@ -1400,7 +1400,7 @@ export default function Anantavana() {
       {/* LEFT COLUMN: Overlapping Scrolling Amenity Photo Cards */}
       <StickyMasterPlanGallery
         eyebrow="Master Plan Highlights"
-        title="Common Amenities (A – H)"
+        title="Common Amenities (A – F)"
         items={[
           {
             id: "entrance",
