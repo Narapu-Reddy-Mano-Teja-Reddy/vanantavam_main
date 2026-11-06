@@ -905,7 +905,7 @@ export default function Contact() {
                   number: "04",
                   question: "Are legal documents and title reports available during the visit?",
                   answer:
-                    "Yes, legal title documents, mother deeds, RTC records, and survey sketches are available for verification at our head office or during your visit.",
+                    "Yes, legal title documents, mother deeds, RTC records, and survey sketches are available for verification at our head office.",
                 },
               ].map((faq, idx) => (
                 <motion.details
