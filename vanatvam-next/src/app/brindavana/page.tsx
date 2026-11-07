@@ -2179,35 +2179,35 @@ export default function Brindavana() {
                     </>
                   ),
                 },
-                {
-                  number: "02",
-                  question: "What is Brindavana by Vanatvam?",
-                  answer:
-                    "Brindavana is a 30-acre sustainable natural farmland community developed by Vanatvam in Pavagada, Karnataka. It is an ongoing journey of transforming challenging agricultural land into a thriving natural ecosystem through agroforestry, soil improvement, responsible water management and biodiversity-focused planting.More than just managed farmland, Brindavana represents a commitment to nurturing the land and creating a meaningful connection between people, nature and traditional farming practices.",
-                },
-                {
-                  number: "03",
-                  question:
-                    "What makes Brindavana a unique managed farmland project in Karnataka?",
-                  answer: (
-                    <>
-                      Brindavana stands apart because of its journey of ecological restoration. Located in the challenging, semi-arid landscape of Pavagada, the project has required years of learning, experimentation and perseverance to establish tree cover and improve the land.Vanatvam follows a nature-conscious approach that respects local soil conditions, water availability and climate. Brindavana demonstrates that sustainable farming and ecological restoration are built through patience, knowledge and consistent care.
-                    </>
-                  ),
-                },
-                {
-                  number: "04",
-                  question: "How does Vanatvam develop farmland in challenging conditions?",
-                  answer:
-                    "Vanatvam follows an adaptive approach to sustainable farmland development. At Brindavana, the team has undertaken repeated planting efforts, studied local soil and water conditions, and refined its methods based on experience.The focus is on improving soil health, supporting beneficial microbial activity, selecting suitable vegetation and adopting responsible water-management practices. The objective is long-term ecological improvement rather than quick or artificial greening.",
-                },
-                {
-                  number: "05",
-                  question:
-                    "Does Brindavana follow organic and natural farming practices?",
-                  answer:
-                    "Yes. Brindavana follows natural and organic farming principles, with an emphasis on minimising harmful synthetic fertilisers and chemical inputs. The approach focuses on soil health, biodiversity, responsible resource use and creating a healthier environment for plants and other living organisms.",
-                },
+               {
+  number: "02",
+  question: "What is Brindavana by Vanatvam?",
+  answer:
+    "Brindavana is a 30-acre sustainable natural farmland community developed by Vanatvam in Pavagada, Karnataka. It is an ongoing journey of transforming challenging agricultural land into a thriving natural ecosystem through agroforestry, soil improvement, responsible water management and biodiversity-focused planting.\n\nMore than just managed farmland, Brindavana represents a commitment to nurturing the land and creating a meaningful connection between people, nature and traditional farming practices.",
+},
+{
+  number: "03",
+  question: "What makes Brindavana a unique managed farmland project in Karnataka?",
+  answer: (
+    <>
+      Brindavana stands apart because of its journey of ecological restoration. Located in the challenging, semi-arid landscape of Pavagada, the project has required years of learning, experimentation and perseverance to establish tree cover and improve the land.
+      {"\n\n"}
+      Vanatvam follows a nature-conscious approach that respects local soil conditions, water availability and climate. Brindavana demonstrates that sustainable farming and ecological restoration are built through patience, knowledge and consistent care.
+    </>
+  ),
+},
+{
+  number: "04",
+  question: "How does Vanatvam develop farmland in challenging conditions?",
+  answer:
+    "Vanatvam follows an adaptive approach to sustainable farmland development. At Brindavana, the team has undertaken repeated planting efforts, studied local soil and water conditions, and refined its methods based on experience.\n\nThe focus is on improving soil health, supporting beneficial microbial activity, selecting suitable vegetation and adopting responsible water-management practices. The objective is long-term ecological improvement rather than quick or artificial greening.",
+},
+{
+  number: "06",
+  question: "Does Brindavana follow organic and natural farming practices?",
+  answer:
+    "Yes. Brindavana follows natural and organic farming principles without the use of synthetic chemical fertilisers or chemical pesticides. Our approach focuses on nurturing soil health, conserving water, promoting biodiversity and maintaining a healthy ecological balance. We believe in working with nature to create a thriving environment where trees, plants, birds, insects and other living organisms can flourish together.",
+},
                 
               ].map((faq, index) => (
                 <motion.details
