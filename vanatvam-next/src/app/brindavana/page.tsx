@@ -307,6 +307,8 @@ export default function Brindavana() {
       <main className="brindavana-page">
         {/* ================= HERO ================= */}
         <section
+          className="hero"
+          id="hero"
           style={{
             height: "100vh",
             position: "relative",
@@ -316,214 +318,157 @@ export default function Brindavana() {
             background: FOREST,
           }}
         >
-          <motion.div
+          <div className="hero-bg-wrapper" style={{ position: "absolute", inset: 0 }}>
+            <motion.img
+              src="/assets/project-images/Brindavana/brindavanaaa.webp"
+              alt="BRINDAVANA"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.08 }}
+              transition={{ duration: 6.5, ease: "linear" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+          <div
+            className="hero-overlay"
             style={{
               position: "absolute",
               inset: 0,
-              zIndex: 0,
-              top: "-15%",
-              height: "130%",
+              background:
+                "linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.45) 100%)",
             }}
-          >
-            <motion.div
-              style={{ position: "absolute", inset: 0 }}
-              animate={
-                reduce
-                  ? undefined
-                  : { scale: [1, 1.18], x: ["0%", "-1.3%"], y: ["0%", "1%"] }
-              }
-              transition={{
-                duration: 28,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            >
-              <img
-                src="/assets/project-images/Brindavana/Sunlit Garden Orchard with Cottage.webp"
-                alt="BRINDAVANA"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </motion.div>
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "radial-gradient(ellipse at 50% 47%, rgba(18,34,23,0.5) 0%, rgba(18,34,23,0.75) 55%, rgba(18,34,23,0.9) 100%), linear-gradient(180deg, rgba(18,34,23,0.4) 0%, rgba(18,34,23,0.9) 100%)",
-              }}
-            />
-          </motion.div>
-
-          <Fireflies still={reduce} />
+          />
 
           <div
             className="container relative"
             style={{
-              zIndex: 2,
-              textAlign: "center",
+              zIndex: 10,
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              padding: "24px 20px",
-              width: "100%",
+              justifyContent: "center",
+              height: "100%",
+              paddingTop: "80px",
             }}
           >
-            <motion.span
-              initial={
-                reduce ? false : { opacity: 0, y: 30, filter: "blur(8px)" }
-              }
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-                textShadow: reduce
-                  ? "0 0 0 rgba(220,235,194,0)"
-                  : [
-                      "0 0 0 rgba(220,235,194,0)",
-                      "0 0 15px rgba(220,235,194,0.55)",
-                    ],
+            <motion.div
+              className="hero-content"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 },
+                },
               }}
-              transition={
-                reduce
-                  ? { duration: 0 }
-                  : {
-                      duration: 0.9,
-                      delay: 0.2,
-                      ease: EASE,
-                      textShadow: {
-                        duration: 2.5,
-                        delay: 1.2,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        ease: "easeInOut",
-                      },
-                    }
-              }
-              style={{
-                display: "inline-block",
-                padding: "6px 16px",
-                background: "rgba(255,255,255,0.15)",
-                backdropFilter: "blur(10px)",
-                color: "#FFF",
-                borderRadius: "30px",
-                fontSize: "clamp(0.7rem, 1.3vw, 0.85rem)",
-                letterSpacing: "0.12em",
-                marginBottom: "24px",
-              }}
+              style={{ maxWidth: "800px" }}
             >
-              A 30-Acre Sacred Farmland · Pavagada
-            </motion.span>
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  display: "inline-block",
+                  border: "1px solid rgba(255,255,255,0.4)",
+                  padding: "6px 16px",
+                  borderRadius: "30px",
+                  fontSize: "1.3rem",
+                  fontWeight: 900,
+                  letterSpacing: "0.15em",
+                  color: "#FFF",
+                  textTransform: "uppercase",
+                  marginBottom: "24px",
+                }}
+              >
+                Nature-First Farm Communities
+              </motion.span>
 
-            <h1
-              aria-label={TITLE}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                perspective: 700,
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(3.5rem, 11vw, 8rem)",
-                fontWeight: 300,
-                lineHeight: 0.95,
-                letterSpacing: "-0.04em",
-                margin: 0,
-              }}
-            >
-              {Array.from(TITLE).map((ch, i) => (
-                <motion.span
-                  key={i}
-                  aria-hidden="true"
-                  initial={reduce ? false : { opacity: 0, y: 80, rotateX: -70 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  transition={enter(0.5 + i * 0.09, 0.85)}
+              <motion.h1
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 700,
+                  fontSize: "clamp(3rem, 6.0vw, 5.8rem)",
+                  lineHeight: 1.05,
+                  color: "#FFFFFF",
+                  marginBottom: "20px",
+                  letterSpacing: "0.04em",
+                  textShadow: "0 4px 24px rgba(0,0,0,0.65)",
+                }}
+              >
+                BRINDAVANA
+              </motion.h1>
+
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  fontSize: "1.3rem",
+                  color: "#FFFFFF",
+                  textShadow: "0 2px 12px rgba(0,0,0,0.7)",
+                  lineHeight: 1.6,
+                  maxWidth: "640px",
+                  marginBottom: "36px",
+                  fontWeight: 400,
+                }}
+              >
+                Barren land in a semi arid zone transformed into a thriving ecosystem.
+              </motion.p>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  display: "flex",
+                  gap: "28px",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsBrochureOpen(true)}
+                  className="btn-pill btn-pill-gold"
                   style={{
-                    display: "inline-block",
-                    transformOrigin: "bottom center",
-                    background:
-                      "linear-gradient(180deg, #fff 8%, #d6e7ca 100%)",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    whiteSpace: "pre",
+                    padding: "16px 36px",
+                    fontSize: "1.1rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.02em",
+                    boxShadow: "0 8px 30px rgba(198, 162, 101, 0.4)",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    backgroundColor: "var(--accent-gold)",
+                    color: "#0d0d0d",
                   }}
                 >
-                  {ch === " " ? "\u00a0" : ch}
-                </motion.span>
-              ))}
-            </h1>
-
-            <motion.div
-              aria-hidden="true"
-              initial={reduce ? false : { scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={enter(1.85, 0.85)}
-              style={{
-                width: "min(320px, 56vw)",
-                height: 1,
-                margin: "24px 0 20px",
-                transformOrigin: "center",
-                background:
-                  "linear-gradient(90deg, transparent, rgba(223,230,190,0.95), rgba(198,162,101,0.85), transparent)",
-              }}
-            />
-
-            <motion.p
-            initial={from(20)}
-            animate={{ opacity: 1, y: 0 }}
-            transition={enter(2.1)}
-            style={{
-              fontSize: "clamp(1rem, 3vw, 2rem)",
-              color: "rgba(255,255,255,0.94)",
-              maxWidth: "600px",
-              fontWeight: 300,
-              fontFamily: "var(--font-serif)",
-              fontStyle: "italic",
-              margin: 0,
-            }}
-          >
-            Where roots run deep and 
-            <span style={{ color: "var(--accent-gold)" }}> Mature natural farm community ..</span>
-          </motion.p>
-            <motion.div
-              initial={from(18)}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(2.4)}
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "14px",
-                marginTop: "24px",
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setIsBrochureOpen(true)}
-                className="btn-pill btn-pill-gold"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  backgroundColor: "var(--accent-gold)",
-                  color: "#0d0d0d",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                Download brochure <span aria-hidden="true">↓</span>
-              </button>
-              <Link
-                className="btn-pill btn-pill-outline"
-                href="/contact"
-                style={{
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Plan a site visit
-              </Link>
+                  Download brochure <span aria-hidden="true">↓</span>
+                </button>
+                <Link
+                  href="/contact"
+                  style={{
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    fontSize: "1.1rem",
+                    fontWeight: 600,
+                    borderBottom: "2px solid rgba(255,255,255,0.7)",
+                    paddingBottom: "4px",
+                    transition: "border-color 0.3s",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Plan a site visit
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -1096,7 +1041,8 @@ export default function Brindavana() {
                   textDecoration: "none",
                 }}
               >
-                Show More <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
+                Brindavana Gallery{" "}
+                <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
               </a>
             </motion.div>
           </div>
@@ -2090,7 +2036,7 @@ export default function Brindavana() {
                   gap: "10px",
                   border: "none",
                   borderRadius: "10px",
-                  background: "linear-gradient(135deg, #844329, #67301D)",
+                  background: "var(--accent-gold)",
                   color: "#FFFFFF",
                   fontFamily: "inherit",
                   fontSize: "0.98rem",
@@ -2235,33 +2181,34 @@ export default function Brindavana() {
                 },
                 {
                   number: "02",
-                  question: "What is the total area and parcel size at Brindavana?",
+                  question: "What is Brindavana by Vanatvam?",
                   answer:
-                    "Brindavana spans 30 acres of sustainable, natural farmland, with individual farm parcels starting from 10,000+ sq. ft.",
+                    "Brindavana is a 30-acre sustainable natural farmland community developed by Vanatvam in Pavagada, Karnataka. It is an ongoing journey of transforming challenging agricultural land into a thriving natural ecosystem through agroforestry, soil improvement, responsible water management and biodiversity-focused planting.More than just managed farmland, Brindavana represents a commitment to nurturing the land and creating a meaningful connection between people, nature and traditional farming practices.",
                 },
                 {
                   number: "03",
                   question:
-                    "What makes Brindavana unique?",
+                    "What makes Brindavana a unique managed farmland project in Karnataka?",
                   answer: (
                     <>
-                      Brindavana features over <strong>85% native forest cover</strong>, organic agroforestry, eco-cottages, trekking trails, and the sacred <strong>Nakshatra Vana</strong> grove with 27 trees associated with lunar constellations.
+                      Brindavana stands apart because of its journey of ecological restoration. Located in the challenging, semi-arid landscape of Pavagada, the project has required years of learning, experimentation and perseverance to establish tree cover and improve the land.Vanatvam follows a nature-conscious approach that respects local soil conditions, water availability and climate. Brindavana demonstrates that sustainable farming and ecological restoration are built through patience, knowledge and consistent care.
                     </>
                   ),
                 },
                 {
                   number: "04",
-                  question: "What amenities are planned at Brindavana?",
+                  question: "How does Vanatvam develop farmland in challenging conditions?",
                   answer:
-                    "Amenities include eco-cottages, a central clubhouse, pickleball court, nature trekking pathways, rainwater harvesting ponds, and botanical nurseries.",
+                    "Vanatvam follows an adaptive approach to sustainable farmland development. At Brindavana, the team has undertaken repeated planting efforts, studied local soil and water conditions, and refined its methods based on experience.The focus is on improving soil health, supporting beneficial microbial activity, selecting suitable vegetation and adopting responsible water-management practices. The objective is long-term ecological improvement rather than quick or artificial greening.",
                 },
                 {
                   number: "05",
                   question:
-                    "How can I book a site visit to Brindavana?",
+                    "Does Brindavana follow organic and natural farming practices?",
                   answer:
-                    "Contact our team via the enquiry form above or call 080 47095111 to schedule a guided site inspection with the VanaTvam team.",
+                    "Yes. Brindavana follows natural and organic farming principles, with an emphasis on minimising harmful synthetic fertilisers and chemical inputs. The approach focuses on soil health, biodiversity, responsible resource use and creating a healthier environment for plants and other living organisms.",
                 },
+                
               ].map((faq, index) => (
                 <motion.details
                   key={index}

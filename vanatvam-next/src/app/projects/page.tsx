@@ -94,19 +94,19 @@ export default function Projects() {
     <>
       <Navigation />
 
-      <section className="hero" style={{ height: '70vh', minHeight: '500px', position: 'relative' }}>
+      <section className="hero" style={{ height: '100vh', minHeight: '600px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
           <img src="/assets/project-images/Brindavana/Tropical Garden Pathway Tunnel.webp" alt="Projects Background" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(18, 34, 23, 0.4) 0%, rgba(18, 34, 23, 0.9) 100%)' }}></div>
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(18, 34, 23, 0.35) 0%, rgba(18, 34, 23, 0.8) 100%)' }}></div>
         </div>
 
-        <div className="container relative" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
+        <div className="container relative" style={{ zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', paddingTop: '80px' }}>
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: 'easeOut' }}>
-            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.2rem, 6vw, 5.5rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(3.5rem, 6.5vw, 6rem)', color: '#FFF', lineHeight: 0.95, marginBottom: '24px', letterSpacing: '-0.02em', textShadow: '0 4px 24px rgba(0,0,0,0.5)' }}>
               <RevealText>Explore our</RevealText><br/>
               <RevealText delay={0.1} style={{ fontStyle: 'italic', color: 'var(--accent-gold)' }}>Natural communities.</RevealText>
             </h1>
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.2rem', maxWidth: '600px', lineHeight: 1.6 }}>
+            <p style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.3rem', maxWidth: '640px', lineHeight: 1.6, textShadow: '0 2px 12px rgba(0,0,0,0.6)' }}>
              In Bangalore Mysore Chamarajanagar corridor. Where nature heritage and culture come together. 
             </p>
           </motion.div>

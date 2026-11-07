@@ -324,6 +324,8 @@ export default function Madhuvana() {
       <main className="madhuvana-page">
         {/* ================= HERO ================= */}
         <section
+          className="hero"
+          id="hero"
           style={{
             height: "100vh",
             position: "relative",
@@ -333,215 +335,157 @@ export default function Madhuvana() {
             background: FOREST,
           }}
         >
-          <motion.div
+          <div className="hero-bg-wrapper" style={{ position: "absolute", inset: 0 }}>
+            <motion.img
+              src="/assets/project-images/Maduvana/hero.webp"
+              alt="MADHUVANA"
+              initial={{ scale: 1 }}
+              animate={{ scale: 1.08 }}
+              transition={{ duration: 6.5, ease: "linear" }}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+          <div
+            className="hero-overlay"
             style={{
               position: "absolute",
               inset: 0,
-              zIndex: 0,
-              top: "-15%",
-              height: "130%",
+              background:
+                "linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.45) 100%)",
             }}
-          >
-            <motion.div
-              style={{ position: "absolute", inset: 0 }}
-              animate={
-                reduce
-                  ? undefined
-                  : { scale: [1, 1.18], x: ["0%", "-1.3%"], y: ["0%", "1%"] }
-              }
-              transition={{
-                duration: 28,
-                ease: "easeInOut",
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            >
-              <img
-                src="/assets/project-images/Maduvana/hero.webp"
-                alt="MADHUVANA"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
-            </motion.div>
-            <div
-              style={{
-                position: "absolute",
-                inset: 0,
-                background:
-                  "radial-gradient(ellipse at 50% 47%, rgba(18,34,23,0.5) 0%, rgba(18,34,23,0.75) 55%, rgba(18,34,23,0.9) 100%), linear-gradient(180deg, rgba(18,34,23,0.4) 0%, rgba(18,34,23,0.9) 100%)",
-              }}
-            />
-          </motion.div>
-
-          <Fireflies still={reduce} />
+          />
 
           <div
             className="container relative"
             style={{
-              zIndex: 2,
-              textAlign: "center",
+              zIndex: 10,
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              padding: "24px 20px",
-              width: "100%",
+              justifyContent: "center",
+              height: "100%",
+              paddingTop: "80px",
             }}
           >
-            <motion.span
-              initial={
-                reduce ? false : { opacity: 0, y: 30, filter: "blur(8px)" }
-              }
-              animate={{
-                opacity: 1,
-                y: 0,
-                filter: "blur(0px)",
-                textShadow: reduce
-                  ? "0 0 0 rgba(220,235,194,0)"
-                  : [
-                      "0 0 0 rgba(220,235,194,0)",
-                      "0 0 15px rgba(220,235,194,0.55)",
-                    ],
+            <motion.div
+              className="hero-content"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: { staggerChildren: 0.2 },
+                },
               }}
-              transition={
-                reduce
-                  ? { duration: 0 }
-                  : {
-                      duration: 0.9,
-                      delay: 0.2,
-                      ease: EASE,
-                      textShadow: {
-                        duration: 2.5,
-                        delay: 1.2,
-                        repeat: Infinity,
-                        repeatType: "reverse",
-                        ease: "easeInOut",
-                      },
-                    }
-              }
-              style={{
-                display: "inline-block",
-                padding: "6px 16px",
-                background: "rgba(255,255,255,0.15)",
-                backdropFilter: "blur(10px)",
-                color: "#FFF",
-                borderRadius: "30px",
-                fontSize: "clamp(0.7rem, 1.3vw, 0.85rem)",
-                letterSpacing: "0.12em",
-                marginBottom: "24px",
-              }}
+              style={{ maxWidth: "800px" }}
             >
-              A natural farm community · Maddur
-            </motion.span>
+              <motion.span
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  display: "inline-block",
+                  border: "1px solid rgba(255,255,255,0.4)",
+                  padding: "6px 16px",
+                  borderRadius: "30px",
+                  fontSize: "1.3rem",
+                  fontWeight: 900,
+                  letterSpacing: "0.15em",
+                  color: "#FFF",
+                  textTransform: "uppercase",
+                  marginBottom: "24px",
+                }}
+              >
+                Nature-First Farm Communities
+              </motion.span>
 
-            <h1
-              aria-label={TITLE}
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                perspective: 700,
-                fontFamily: "var(--font-serif)",
-                fontSize: "clamp(3.5rem, 11vw, 8rem)",
-                fontWeight: 300,
-                lineHeight: 0.95,
-                letterSpacing: "-0.04em",
-                margin: 0,
-              }}
-            >
-              {Array.from(TITLE).map((ch, i) => (
-                <motion.span
-                  key={i}
-                  aria-hidden="true"
-                  initial={reduce ? false : { opacity: 0, y: 80, rotateX: -70 }}
-                  animate={{ opacity: 1, y: 0, rotateX: 0 }}
-                  transition={enter(0.5 + i * 0.09, 0.85)}
+              <motion.h1
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  fontFamily: "var(--font-serif)",
+                  fontWeight: 700,
+                  fontSize: "clamp(3rem, 6.0vw, 5.8rem)",
+                  lineHeight: 1.05,
+                  color: "#FFFFFF",
+                  marginBottom: "20px",
+                  letterSpacing: "0.04em",
+                  textShadow: "0 4px 24px rgba(0,0,0,0.65)",
+                }}
+              >
+                MADHUVANA
+              </motion.h1>
+
+              <motion.p
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  fontSize: "1.3rem",
+                  color: "#FFFFFF",
+                  textShadow: "0 2px 12px rgba(0,0,0,0.7)",
+                  lineHeight: 1.6,
+                  maxWidth: "640px",
+                  marginBottom: "36px",
+                  fontWeight: 400,
+                }}
+              >
+                A dense water-forest ecosystem built around 250+ native trees.
+              </motion.p>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 30 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+                }}
+                style={{
+                  display: "flex",
+                  gap: "28px",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setIsBrochureOpen(true)}
+                  className="btn-pill btn-pill-gold"
                   style={{
-                    display: "inline-block",
-                    transformOrigin: "bottom center",
-                    background:
-                      "linear-gradient(180deg, #fff 8%, #d6e7ca 100%)",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    whiteSpace: "pre",
+                    padding: "16px 36px",
+                    fontSize: "1.1rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.02em",
+                    boxShadow: "0 8px 30px rgba(198, 162, 101, 0.4)",
+                    border: "none",
+                    cursor: "pointer",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "10px",
+                    backgroundColor: "var(--accent-gold)",
+                    color: "#0d0d0d",
                   }}
                 >
-                  {ch === " " ? "\u00a0" : ch}
-                </motion.span>
-              ))}
-            </h1>
-
-            <motion.div
-              aria-hidden="true"
-              initial={reduce ? false : { scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={enter(1.85, 0.85)}
-              style={{
-                width: "min(320px, 56vw)",
-                height: 1,
-                margin: "24px 0 20px",
-                transformOrigin: "center",
-                background:
-                  "linear-gradient(90deg, transparent, rgba(223,230,190,0.95), rgba(198,162,101,0.85), transparent)",
-              }}
-            />
-
-            <motion.p
-              initial={from(20)}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(2.1)}
-              style={{
-                fontSize: "clamp(1.5rem, 3.5vw, 2.5rem)",
-                color: "rgba(255,255,255,0.94)",
-                maxWidth: "600px",
-                fontWeight: 300,
-                fontFamily: "var(--font-serif)",
-                fontStyle: "italic",
-                margin: 0,
-              }}
-            >
-              The Sweet Symphony of {" "}
-              <span style={{ color: "var(--accent-gold)" }}>Nature...</span>
-            </motion.p>
-
-            <motion.div
-              initial={from(18)}
-              animate={{ opacity: 1, y: 0 }}
-              transition={enter(2.4)}
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "14px",
-                marginTop: "24px",
-              }}
-            >
-              <button
-                type="button"
-                onClick={() => setIsBrochureOpen(true)}
-                className="btn-pill btn-pill-gold"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  backgroundColor: "var(--accent-gold)",
-                  color: "#0d0d0d",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  border: "none",
-                  cursor: "pointer",
-                }}
-              >
-                Download brochure <span aria-hidden="true">↓</span>
-              </button>
-              <Link
-                className="btn-pill btn-pill-outline"
-                href="/contact"
-                style={{
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                }}
-              >
-                Plan a site visit
-              </Link>
+                  Download brochure <span aria-hidden="true">↓</span>
+                </button>
+                <Link
+                  href="/contact"
+                  style={{
+                    color: "#FFFFFF",
+                    textDecoration: "none",
+                    fontSize: "1.1rem",
+                    fontWeight: 600,
+                    borderBottom: "2px solid rgba(255,255,255,0.7)",
+                    paddingBottom: "4px",
+                    transition: "border-color 0.3s",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.5)",
+                  }}
+                >
+                  Plan a site visit
+                </Link>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -1066,6 +1010,7 @@ export default function Madhuvana() {
                 eyebrow="Master Plan Highlights"
                 title="Common Amenities (A – G)"
                 items={[
+                  { id: "kitchen-dining", name: "A-Entrance", img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp" },
                   { id: "ashoka-vana", name: "B-Childrens Pool", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
                   { id: "event-space", name: "C-Vinayaka vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
                   { id: "gateway", name: "D-Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
@@ -1133,7 +1078,7 @@ export default function Madhuvana() {
                     textDecoration: "none",
                   }}
                 >
-                  Show More{" "}
+                  Madhuvana Gallery{" "}
                   <ArrowUpRight size={18} strokeWidth={2} aria-hidden="true" />
                 </a>
               </motion.div>
@@ -2135,7 +2080,7 @@ export default function Madhuvana() {
                   gap: "10px",
                   border: "none",
                   borderRadius: "10px",
-                  background: "linear-gradient(135deg, #844329, #67301D)",
+                  background: "var(--accent-gold)",
                   color: "#FFFFFF",
                   fontFamily: "inherit",
                   fontSize: "0.98rem",

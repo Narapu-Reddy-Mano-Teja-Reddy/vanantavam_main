@@ -2184,7 +2184,7 @@ By bringing together ecological restoration, India’s cultural heritage, and th
                 gap: "10px",
                 border: "none",
                 borderRadius: "10px",
-                background: "linear-gradient(135deg, #844329, #67301D)",
+                background: "var(--accent-gold)",
                 color: "#FFFFFF",
                 fontFamily: "inherit",
                 fontSize: "0.98rem",

@@ -159,7 +159,7 @@ export default function Investment() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '10px',
-                backgroundColor: 'var(--brand-earth-brown, #72351C)',
+                backgroundColor: 'var(--accent-gold)',
                 color: '#FFFFFF',
                 padding: '16px 36px',
                 borderRadius: '999px',
@@ -172,11 +172,11 @@ export default function Investment() {
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.backgroundColor = '#8B4224';
+                e.currentTarget.style.backgroundColor = 'var(--accent-gold)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.backgroundColor = 'var(--brand-earth-brown, #72351C)';
+                e.currentTarget.style.backgroundColor = 'var(--accent-gold)';
               }}
             >
               REQUEST A DISCUSSION
@@ -823,7 +823,7 @@ export default function Investment() {
               transition={{ duration: 0.5 }}
               whileHover={{ y: -4, boxShadow: "0 14px 30px rgba(0, 0, 0, 0.08)" }}
               style={{
-                background: "#F5EEDF",
+                background: "linear-gradient(135deg, #122217 0%, #1A2E20 100%)",
                 borderRadius: "20px",
                 padding: "36px 30px 30px",
                 boxShadow: "0 4px 16px rgba(0, 0, 0, 0.03)",
@@ -839,7 +839,7 @@ export default function Investment() {
                   fontFamily: "var(--font-sans, system-ui, sans-serif)",
                   fontSize: "clamp(2.1rem, 3.8vw, 2.7rem)",
                   fontWeight: 700,
-                  color: "#2C3E35",
+                  color: "white",
                   letterSpacing: "-0.02em",
                   lineHeight: 1.1,
                   marginBottom: "24px",
@@ -853,14 +853,14 @@ export default function Investment() {
                   style={{
                     fontSize: "0.95rem",
                     fontWeight: 500,
-                    color: "#526056",
+                    color: "white",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "6px",
                   }}
                 >
                   <span>Minimum Investment Threshold</span>
-                  <Info size={15} style={{ opacity: 0.65, color: "#2C3E35" }} />
+                  <Info size={15} style={{ opacity: 0.65, color: "var(--accent-gold)" }} />
                 </div>
               </div>
             </motion.div>
@@ -873,7 +873,7 @@ export default function Investment() {
               transition={{ duration: 0.5, delay: 0.1 }}
               whileHover={{ y: -4, boxShadow: "0 14px 30px rgba(0, 0, 0, 0.08)" }}
               style={{
-                background: "#F8F9FA",
+                background: "linear-gradient(135deg, #122217 0%, #1A2E20 100%)",
                 borderRadius: "20px",
                 padding: "36px 30px 30px",
                 border: "1px solid #E9ECEF",
@@ -890,7 +890,7 @@ export default function Investment() {
                   fontFamily: "var(--font-sans, system-ui, sans-serif)",
                   fontSize: "clamp(2.1rem, 3.8vw, 2.7rem)",
                   fontWeight: 700,
-                  color: "#2C3E35",
+                  color: "white",
                   letterSpacing: "-0.02em",
                   lineHeight: 1.1,
                   marginBottom: "24px",
@@ -904,14 +904,14 @@ export default function Investment() {
                   style={{
                     fontSize: "0.95rem",
                     fontWeight: 500,
-                    color: "#526056",
+                    color: "white",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "6px",
                   }}
                 >
                   <span>Indicative Return Range (p.a.)</span>
-                  <Info size={15} style={{ opacity: 0.65, color: "#2C3E35" }} />
+                  <Info size={15} style={{ opacity: 0.65, color: "var(--accent-gold)" }} />
                 </div>
               </div>
             </motion.div>
@@ -923,7 +923,7 @@ export default function Investment() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               style={{
-                background: "#73CBB2",
+                background: "linear-gradient(135deg, #122217 0%, #1A2E20 100%)",
                 borderRadius: "20px",
                 padding: "36px 30px 30px",
                 boxShadow: "0 6px 20px rgba(115, 203, 178, 0.35)",
@@ -940,7 +940,7 @@ export default function Investment() {
                   fontFamily: "var(--font-sans, system-ui, sans-serif)",
                   fontSize: "clamp(2.1rem, 3.8vw, 2.7rem)",
                   fontWeight: 700,
-                  color: "#1B332B",
+                  color: "white",
                   letterSpacing: "-0.02em",
                   lineHeight: 1.1,
                   marginBottom: "24px",
@@ -954,14 +954,14 @@ export default function Investment() {
                   style={{
                     fontSize: "0.95rem",
                     fontWeight: 500,
-                    color: "#1B332B",
+                    color: "white",
                     display: "inline-flex",
                     alignItems: "center",
                     gap: "6px",
                   }}
                 >
                   <span>Proposed Investment Tenure</span>
-                  <Info size={15} style={{ opacity: 0.75, color: "#1B332B" }} />
+                  <Info size={15} style={{ opacity: 0.75, color: "var(--accent-gold)" }} />
                 </div>
               </div>
             </motion.div>
@@ -1505,7 +1505,7 @@ export default function Investment() {
                         gap: '10px',
                         border: 'none',
                         borderRadius: '12px',
-                        background: 'linear-gradient(135deg, #72351C 0%, #8B4224 100%)',
+                        background: 'var(--accent-gold)',
                         color: '#FFFFFF',
                         fontFamily: 'inherit',
                         fontSize: '0.98rem',

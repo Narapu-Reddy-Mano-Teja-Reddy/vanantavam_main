@@ -433,7 +433,7 @@ export default function BrochureModal({
                       gap: "10px",
                       border: "none",
                       borderRadius: "10px",
-                      background: "linear-gradient(135deg, #844329, #67301D)",
+                      background: "var(--accent-gold, #B38B4D)",
                       color: "#FFFFFF",
                       fontFamily: "inherit",
                       fontSize: "0.96rem",

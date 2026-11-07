@@ -425,65 +425,7 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                   borderTop: '1px solid rgba(40, 44, 39, 0.08)',
                 }}
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    gap: '18px',
-                    background: 'var(--bg-cream, #F9F8F6)',
-                    padding: '24px 28px',
-                    borderRadius: '16px',
-                    border: '1px solid rgba(40, 44, 39, 0.05)',
-                  }}
-                >
-                  <div
-                    style={{
-                      width: '48px',
-                      height: '48px',
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--bg-dark-forest, #122217)',
-                      color: 'var(--accent-gold, #C6A265)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontFamily: 'var(--font-serif)',
-                      fontWeight: 700,
-                      fontSize: '1.1rem',
-                      flexShrink: 0,
-                    }}
-                  >
-                    V
-                  </div>
-                  <div>
-                    <span
-                      style={{
-                        display: 'block',
-                        fontSize: '0.74rem',
-                        color: 'var(--text-muted, #687B63)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.12em',
-                        fontWeight: 700,
-                        marginBottom: '4px',
-                      }}
-                    >
-                      WRITTEN BY
-                    </span>
-                    <h3
-                      style={{
-                        fontFamily: 'var(--font-serif)',
-                        fontSize: '1.35rem',
-                        color: 'var(--bg-dark-forest, #122217)',
-                        margin: '0 0 6px',
-                      }}
-                    >
-                      {blog.author}
-                    </h3>
-                    <p style={{ fontSize: '0.94rem', color: '#556056', lineHeight: 1.6, margin: 0 }}>
-                      Part of the Vanatvam research and ecological team dedicated to agro-ecological
-                      restoration, biodiversity by design, and Vedic forest science.
-                    </p>
-                  </div>
-                </div>
+                 
 
                 {/* Back Link */}
                 <div

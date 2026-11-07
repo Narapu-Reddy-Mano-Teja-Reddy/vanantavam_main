@@ -1,18 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { Variants, Transition } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Magnetic from "@/components/premium/Magnetic";
 import {
   Home,
   Leaf,
   Sprout,
   Coins,
   BookOpen,
-  ArrowRight,
   type LucideIcon,
 } from "lucide-react";
 
@@ -30,52 +27,80 @@ const NAV_ITEMS: NavItem[] = [
   { path: "/blog", label: "Journal", icon: BookOpen },
 ];
 
- 
-
 const EASE_PREMIUM: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
-const shineVariants: Variants = {
-  rest: { x: "-130%" },
-  hover: { x: "130%", transition: { duration: 0.8, ease: EASE_PREMIUM } },
-};
-
-const glowVariants: Variants = {
-  rest: { opacity: 0 },
-  hover: { opacity: 1, transition: { duration: 0.3 } },
-};
-
-const arrowVariants: Variants = {
-  rest: { x: 0 },
-  hover: { x: 5, transition: { type: "spring", stiffness: 500, damping: 18 } },
-};
+// Minimum scroll distance (px) before the header reacts, avoids flicker
+const SCROLL_THRESHOLD = 8;
+// Header is always visible when the page is within this distance of the top
+const TOP_ZONE = 80;
 
 export default function Navigation() {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [hidden, setHidden] = useState<boolean>(false);
   const [hoveredPath, setHoveredPath] = useState<string | null>(null);
+  const lastScrollY = useRef<number>(0);
   const pathname = usePathname();
 
   useEffect(() => {
+    lastScrollY.current = window.scrollY;
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      const currentY = window.scrollY;
+      const delta = currentY - lastScrollY.current;
+
+      setScrolled(currentY > 30);
+
+      if (currentY < TOP_ZONE) {
+        // Always show near the top
+        setHidden(false);
+      } else if (delta > SCROLL_THRESHOLD) {
+        // Scrolling down -> hide
+        setHidden(true);
+      } else if (delta < -SCROLL_THRESHOLD) {
+        // Scrolling up -> show
+        setHidden(false);
+      }
+
+      // Only update the reference once movement passes the threshold,
+      // otherwise slow scrolling would never register
+      if (Math.abs(delta) > SCROLL_THRESHOLD || currentY < TOP_ZONE) {
+        lastScrollY.current = currentY;
+      }
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll while the mobile drawer is open
+  useEffect(() => {
+    document.body.style.overflow = isDrawerOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isDrawerOpen]);
+
+  // Close the drawer whenever the route changes
+  useEffect(() => {
+    setIsDrawerOpen(false);
+  }, [pathname]);
+
   const closeDrawer = () => setIsDrawerOpen(false);
+
+  const barColor = scrolled || isDrawerOpen ? "#183023" : "#FFFFFF";
 
   return (
     <>
-      <header
+      <motion.header
+        animate={{ y: hidden && !isDrawerOpen ? -140 : 0 }}
+        transition={{ duration: 0.35, ease: EASE_PREMIUM }}
         style={{
           position: "fixed",
           top: "16px",
           left: "50%",
-          transform: "translateX(-50%)",
+          x: "-50%",
           zIndex: 1000,
           width: "min(94%, 1320px)",
           padding: "0 10px",
@@ -121,7 +146,7 @@ export default function Navigation() {
             />
           </Link>
 
-          {/* Right: Floating Cream Capsule Nav Menu */}
+          {/* Right: Floating cream capsule nav */}
           <motion.nav
             className="nav-menu"
             onMouseLeave={() => setHoveredPath(null)}
@@ -134,7 +159,8 @@ export default function Navigation() {
               padding: "5px 8px",
               borderRadius: "50px",
               border: "1px solid rgba(198, 162, 101, 0.35)",
-              boxShadow: "0 10px 30px rgba(18, 34, 23, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9)",
+              boxShadow:
+                "0 10px 30px rgba(18, 34, 23, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9)",
               backdropFilter: "blur(20px)",
               WebkitBackdropFilter: "blur(20px)",
               height: "54px",
@@ -222,7 +248,7 @@ export default function Navigation() {
                     />
                   )}
 
-                  {/* Icon & Label */}
+                  {/* Icon & label */}
                   <motion.span
                     animate={{ y: isHovered ? -1 : 0 }}
                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
@@ -253,20 +279,24 @@ export default function Navigation() {
             })}
           </motion.nav>
 
-          {/* Right: Direct Action CTA Button */}
+          {/* Mobile menu toggle */}
           <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            
-            
-
-            {/* Mobile Menu Toggle Button */}
             <div
               className={`menu-toggle-btn ${isDrawerOpen ? "open" : ""}`}
-              onClick={() => setIsDrawerOpen(!isDrawerOpen)}
+              onClick={() => setIsDrawerOpen((open) => !open)}
               aria-label="Toggle navigation menu"
+              aria-expanded={isDrawerOpen}
               role="button"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  setIsDrawerOpen((open) => !open);
+                }
+              }}
               style={{
                 cursor: "pointer",
-                display: "none",
+                display: "none", // shown via CSS media query on mobile
                 flexDirection: "column",
                 gap: "5px",
                 padding: "8px",
@@ -277,30 +307,49 @@ export default function Navigation() {
                   display: "block",
                   width: "24px",
                   height: "2px",
-                  backgroundColor:
-                    scrolled || isDrawerOpen ? "#183023" : "#FFFFFF",
+                  backgroundColor: barColor,
                   transition: "background-color 0.3s ease",
                 }}
-              ></span>
+              />
               <span
                 style={{
                   display: "block",
                   width: "24px",
                   height: "2px",
-                  backgroundColor:
-                    scrolled || isDrawerOpen ? "#183023" : "#FFFFFF",
+                  backgroundColor: barColor,
                   transition: "background-color 0.3s ease",
                 }}
-              ></span>
+              />
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
-      {/* Drawer Menu */}
+      {/* Backdrop overlay */}
       <AnimatePresence>
         {isDrawerOpen && (
           <motion.div
+            key="backdrop"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeDrawer}
+            style={{
+              position: "fixed",
+              inset: 0,
+              background: "rgba(0,0,0,0.5)",
+              zIndex: 998,
+              backdropFilter: "blur(3px)",
+            }}
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Drawer menu */}
+      <AnimatePresence>
+        {isDrawerOpen && (
+          <motion.div
+            key="drawer"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -317,6 +366,8 @@ export default function Navigation() {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
+              boxSizing: "border-box",
+              overflowY: "auto",
             }}
           >
             <nav
@@ -328,7 +379,35 @@ export default function Navigation() {
                 width: "100%",
               }}
             >
-               
+              {NAV_ITEMS.map((item, i) => {
+                const Icon = item.icon;
+                const isActive = pathname === item.path;
+                return (
+                  <motion.div
+                    key={item.path}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 + i * 0.05, duration: 0.3 }}
+                  >
+                    <Link
+                      href={item.path}
+                      onClick={closeDrawer}
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "12px",
+                        fontSize: "1.4rem",
+                        fontWeight: isActive ? 700 : 500,
+                        color: isActive ? "#987443" : "#183023",
+                        textDecoration: "none",
+                      }}
+                    >
+                      <Icon size={22} strokeWidth={2} />
+                      {item.label}
+                    </Link>
+                  </motion.div>
+                );
+              })}
             </nav>
 
             <motion.div
@@ -399,25 +478,6 @@ export default function Navigation() {
               </a>
             </motion.div>
           </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Backdrop overlay */}
-      <AnimatePresence>
-        {isDrawerOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={closeDrawer}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(0,0,0,0.5)",
-              zIndex: 998,
-              backdropFilter: "blur(3px)",
-            }}
-          />
         )}
       </AnimatePresence>
     </>

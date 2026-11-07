@@ -292,9 +292,9 @@ export default function Footer() {
           position: relative;
           z-index: 1;
           width: 100%;
-          max-width: 1280px;
+          max-width: 1520px;
           margin: 0 auto;
-          padding: 0 24px;
+          padding: 0 40px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
@@ -305,8 +305,8 @@ export default function Footer() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          gap: 20px;
-          margin-top: 100px;
+          gap: 32px;
+          margin-top: 90px;
         }
         .vt-footer__brand {
           display: flex;

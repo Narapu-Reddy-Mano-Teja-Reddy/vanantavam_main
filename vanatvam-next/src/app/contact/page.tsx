@@ -340,7 +340,7 @@ export default function Contact() {
                 alignItems: "start",
               }}
             >
-              {/* Left Column: Office Details & Live Google Map */}
+             {/* Left Column: Office Details & Live Google Map */}
               <motion.div
                 initial={reduce ? false : { opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -408,6 +408,33 @@ export default function Contact() {
                       borderTop: "1px solid #DCE4DE",
                     }}
                   >
+                    {/* Phone Number */}
+                    <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                      <Phone size={22} style={{ color: GOLD, flexShrink: 0 }} />
+                      <div>
+                        <strong style={{ display: "block", color: FOREST, fontSize: "0.95rem", marginBottom: "2px" }}>
+                          Phone Number
+                        </strong>
+                        <a href="tel:+918047095111" style={{ color: "#5A685E", fontSize: "0.92rem", textDecoration: "none" }}>
+                          +91 80 4709 5111
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Email Address */}
+                    <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                      <Mail size={22} style={{ color: GOLD, flexShrink: 0 }} />
+                      <div>
+                        <strong style={{ display: "block", color: FOREST, fontSize: "0.95rem", marginBottom: "2px" }}>
+                          Email Address
+                        </strong>
+                        <a href="mailto:info@vanatvam.com" style={{ color: "#5A685E", fontSize: "0.92rem", textDecoration: "none" }}>
+                          info@vanatvam.com
+                        </a>
+                      </div>
+                    </div>
+
+                    {/* Office Address */}
                     <div style={{ display: "flex", gap: "14px", alignItems: "flex-start" }}>
                       <MapPin size={22} style={{ color: GOLD, flexShrink: 0, marginTop: "2px" }} />
                       <div>
@@ -420,6 +447,7 @@ export default function Contact() {
                       </div>
                     </div>
 
+                    {/* Working Hours */}
                     <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
                       <Clock size={22} style={{ color: GOLD, flexShrink: 0 }} />
                       <div>
@@ -815,7 +843,7 @@ export default function Contact() {
                           gap: "10px",
                           border: "none",
                           borderRadius: "10px",
-                          background: "linear-gradient(135deg, #844329, #67301D)",
+                          background: "var(--accent-gold)",
                           color: "#FFFFFF",
                           fontSize: "0.98rem",
                           fontWeight: 700,
