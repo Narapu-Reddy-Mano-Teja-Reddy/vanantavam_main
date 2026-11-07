@@ -104,7 +104,7 @@ export default function Footer() {
               className="vt-footer__logo"
             />
             <span className="vt-footer__tagline">
-              Sustainable Natural Communities
+              
             </span>
           </Link>
 
