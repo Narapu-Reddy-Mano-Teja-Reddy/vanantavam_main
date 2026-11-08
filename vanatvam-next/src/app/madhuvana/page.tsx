@@ -1012,7 +1012,7 @@ export default function Madhuvana() {
                 items={[
                   { id: "kitchen-dining", name: "A-Entrance", img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp" },
                   { id: "ashoka-vana", name: "B-Childrens Pool", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
-                  { id: "event-space", name: "C-Vinayaka vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
+                  { id: "event-space", name: "C-Vinayaka Vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
                   { id: "gateway", name: "D-Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
                   { id: "tree-house", name: "E-Tree House Deck", img: "/assets/project-images/Maduvana/MV Tree House.webp" },
                   { id: "cottages", name: "F-Cottage", img: "/assets/project-images/Maduvana/cottege.png" },
