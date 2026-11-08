@@ -1012,7 +1012,7 @@ export default function Madhuvana() {
                 items={[
                   { id: "kitchen-dining", name: "A-Entrance", img: "/assets/project-images/Maduvana/Rustic Tropical Garden Gateway.webp" },
                   { id: "ashoka-vana", name: "B-Childrens Pool", img: "/assets/project-images/Maduvana/Tropical Garden Pond Oasis.webp" },
-                  { id: "event-space", name: "C-Vinayaka vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
+                  { id: "event-space", name: "C-Vinayaka Vana", img: "/assets/project-images/Maduvana/Aerial Spiral Garden in Bloom.webp" },
                   { id: "gateway", name: "D-Gazebo", img: "/assets/project-images/Maduvana/gazebo.jpeg" },
                   { id: "tree-house", name: "E-Tree House Deck", img: "/assets/project-images/Maduvana/MV Tree House.webp" },
                   { id: "cottages", name: "F-Cottage", img: "/assets/project-images/Maduvana/cottege.png" },
@@ -2202,10 +2202,10 @@ export default function Madhuvana() {
               {[
                 {
                   number: "01",
-                  question: "Where can I find farm plots near Maddur, Karnataka?",
+                  question: "Where is MadhuVana located?",
                   answer: (
                     <>
-                      MadhuVana is a natural farm community near Maddur, Karnataka, developed around farm spaces, trees, themed groves, and shared nature-inspired spaces.
+                 V.Ballekere, Karnataka 571419  
                       <br />
                       <a
                         href="https://maps.google.com/?q=Maddur,Karnataka"
@@ -2224,34 +2224,39 @@ export default function Madhuvana() {
                   ),
                 },
                 {
-                  number: "02",
-                  question: "How far is MadhuVana from Bengaluru and Mysore?",
-                  answer:
-                    "Approximate distances provided by the project team are 80 km from Bengaluru (~1.5 hrs) and 60 km from Mysore (~1 hr), located conveniently off the Bangalore-Mysore Highway near Maddur.",
-                },
-                {
-                  number: "03",
-                  question:
-                    "What is the total area and minimum farm space size at MadhuVana?",
-                  answer: (
-                    <>
-                      The MadhuVana project spans <strong>17 acres</strong> of natural farm community, with individual farm parcels starting from <strong>8,000+ sq. ft.</strong>
-                    </>
-                  ),
-                },
-                {
-                  number: "04",
-                  question: "What amenities and sacred vanas are planned at MadhuVana?",
-                  answer:
-                    "MadhuVana features rainwater harvesting ponds, eco-friendly mud houses, heritage cottages, an elevated tree house, a botanical theme park, and themed sacred groves including Vinayaka Vana, Shiva Panchayatana Vana, Nakshatra Vana, Saraswathi Vana, and Ashoka Vana.",
-                },
-                {
-                  number: "05",
-                  question:
-                    "What should I check before buying farmland in Karnataka?",
-                  answer:
-                    "We advise asking for latest title documents, encumbrance certificates, revenue records, survey maps, access rights, and land classification. Have an independent Karnataka property legal advisor verify all documents before purchasing.",
-                },
+  number: "02",
+  question: "What is MadhuVana by Vanatvam?",
+  answer:
+    "MadhuVana is a 17-acre managed natural farmland community developed by Vanatvam. Envisioned as a sustainable farm community, it brings together organic farming, native trees, biodiversity, herbal gardens and thoughtfully designed common spaces. It offers individuals and families an opportunity to own farmland and reconnect with nature.",
+},
+{
+  number: "03",
+  question: "How far is MadhuVana from Bangalore and Mysore?",
+  answer: (
+    <>
+      MadhuVana enjoys convenient road connectivity along the Bengaluru–Mysuru corridor.
+      {"\n\n"}
+      Approximate distances from the project are:
+      <ul>
+        <li>Bengaluru: 80 km</li>
+        <li>Mysuru: 60 km</li>
+      </ul>
+      These approximate distances make MadhuVana an accessible farmland destination for weekend visits and nature getaways from both Bengaluru and Mysuru.
+    </>
+  ),
+},
+{
+  number: "04",
+  question: "What makes MadhuVana a unique managed farmland community in Karnataka?",
+  answer:
+    "MadhuVana goes beyond conventional farmland development by bringing together agriculture, biodiversity and community living. Spread across 17 acres, the project is envisioned with over 200 native and rare tree varieties, sacred groves, herbal gardens, water bodies and nature-inspired common spaces. The focus is on creating a living ecosystem that supports birds, butterflies, bees and other wildlife while allowing farm owners to experience the joys of nurturing their own land.",
+},
+{
+  number: "05",
+  question: "Is MadhuVana suitable for weekend farmhouse living near Bangalore?",
+  answer:
+    "Yes. MadhuVana is envisioned as a natural farm community near Maddur, Karnataka, offering an ideal setting for families looking to spend quality time away from the bustle of city life. Surrounded by green landscapes, fruit-bearing trees and thoughtfully planned natural spaces, it offers an opportunity to reconnect with nature, enjoy outdoor activities and experience the joys of farm living. With convenient connectivity to Bengaluru and Mysuru, MadhuVana makes a wonderful choice for those seeking a peaceful weekend retreat and a closer connection with the land.",
+},
               ].map((faq, index) => (
                 <motion.details
                   key={index}

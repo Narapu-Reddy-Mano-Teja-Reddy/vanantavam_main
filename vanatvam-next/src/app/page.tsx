@@ -142,7 +142,7 @@ const heroSlides = [
     name: "BRINDAVANA",
      
     tagline:
-      "Barren land in a semi arid zone transformed into a thriving ecosystem.",
+      "• Barren semi-arid land turned into a thriving ecosystem.",
     img: "/assets/project-images/Brindavana/brindavanaaa.webp",
   },
 ];
