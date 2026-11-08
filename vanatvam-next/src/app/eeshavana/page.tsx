@@ -1040,8 +1040,8 @@ export default function Eeshavana() {
                     img: "/assets/project-images/Esahavana/Sunlit Riverside Amphitheatre Retreat.webp",
                   },
                   {
-                    id: "Eeshavana temple",
-                    name: "Eeshavana temple",
+                    id: "Outdoor Mandir",
+                    name: "Outdoor Mandir",
                     img: "/assets/project-images/Esahavana/Golden-Hour Ganesha Shrine in Tropical Garden.png",
                   },
                 ]}
