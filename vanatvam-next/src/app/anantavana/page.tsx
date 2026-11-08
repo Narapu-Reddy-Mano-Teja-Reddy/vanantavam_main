@@ -1382,7 +1382,7 @@ export default function Anantavana() {
           }}
         >
           <img
-            src="/assets/project-images/Ananthavana/ananthavanamasterplan.webp"
+            src="/assets/images/C (1).webp"
             alt="AnantaVana Concept Master Plan Layout"
             style={{
               width: "100%",
