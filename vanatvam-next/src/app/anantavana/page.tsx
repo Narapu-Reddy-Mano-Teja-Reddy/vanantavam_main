@@ -2357,7 +2357,7 @@ export default function Anantavana() {
                   id="cta-project"
                   name="project"
                   required
-                  defaultValue="Anantavana (Kabini · 35 Acres)"
+                  defaultValue="Anantavana (Kabini · 34 Acres)"
                   style={{
                     width: "100%",
                     minHeight: "52px",
@@ -2390,11 +2390,11 @@ export default function Anantavana() {
                   <option value="Brindavana (Pavagada · 30 Acres)">
                     Brindavana (Pavagada · 30 Acres)
                   </option>
-                  <option value="Madhuvana (Maddur · 18 Acres)">
-                    Madhuvana (Maddur · 18 Acres)
+                  <option value="Madhuvana (Maddur · 17 Acres)">
+                    Madhuvana (Maddur · 17 Acres)
                   </option>
-                  <option value="Anantavana (Kabini · 35 Acres)">
-                    Anantavana (Kabini · 35 Acres)
+                  <option value="Anantavana (Kabini · 34 Acres)">
+                    Anantavana (Kabini · 34 Acres)
                   </option>
                   <option value="Eeshavana (Kaveri Riverfront)">
                     Eeshavana (Kaveri Riverfront)

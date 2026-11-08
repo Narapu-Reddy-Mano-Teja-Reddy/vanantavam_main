@@ -403,10 +403,10 @@ export default function BrochureModal({
                       }}
                     >
                       <option value="AnantaVana">
-                        Anantavana (Kabini · 35 Acres)
+                        Anantavana (Kabini · 34 Acres)
                       </option>
                       <option value="MadhuVana">
-                        Madhuvana (Maddur · 18 Acres)
+                        Madhuvana (Maddur · 17 Acres)
                       </option>
                       <option value="Brindavana">
                         Brindavana (Pavagada · 30 Acres)

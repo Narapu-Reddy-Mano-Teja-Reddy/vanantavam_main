@@ -417,7 +417,7 @@ export default function Brindavana() {
                   fontWeight: 400,
                 }}
               >
-                Barren land in a semi arid zone transformed into a thriving ecosystem.
+                Barren semi-arid land turned into a thriving ecosystem.
               </motion.p>
 
               <motion.div
@@ -1501,7 +1501,7 @@ export default function Brindavana() {
 
                 <a
                   className="av-nearby-map-link"
-                  href="https://maps.google.com/?q=Pavagada,Karnataka"
+                  href="https://maps.app.goo.gl/dGPn2iiYP4Ty8Mue6?g_st=ac"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -2003,11 +2003,11 @@ export default function Brindavana() {
                     <option value="Brindavana (Pavagada · 30 Acres)">
                       Brindavana (Pavagada · 30 Acres)
                     </option>
-                    <option value="Madhuvana (Maddur · 18 Acres)">
-                      Madhuvana (Maddur · 18 Acres)
+                    <option value="Madhuvana (Maddur · 17 Acres)">
+                      Madhuvana (Maddur · 17 Acres)
                     </option>
-                    <option value="Anantavana (Kabini · 35 Acres)">
-                      Anantavana (Kabini · 35 Acres)
+                    <option value="Anantavana (Kabini · 34 Acres)">
+                      Anantavana (Kabini · 34 Acres)
                     </option>
                     <option value="Eeshavana (Kaveri Riverfront)">
                       Eeshavana (Kaveri Riverfront)
@@ -2164,7 +2164,7 @@ export default function Brindavana() {
                       Krishnapura, Pavagada Taluk, Karnataka
                       <br />
                       <a
-                        href="https://maps.google.com/?q=Pavagada,Karnataka"
+                        href="https://maps.app.goo.gl/dGPn2iiYP4Ty8Mue6?g_st=ac"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

@@ -142,7 +142,7 @@ const heroSlides = [
     name: "BRINDAVANA",
      
     tagline:
-      "• Barren semi-arid land turned into a thriving ecosystem.",
+      "Barren semi-arid land turned into a thriving ecosystem.",
     img: "/assets/project-images/Brindavana/brindavanaaa.webp",
   },
 ];
@@ -2151,11 +2151,11 @@ By bringing together ecological restoration, India’s cultural heritage, and th
                   <option value="Brindavana (Pavagada · 30 Acres)">
                     Brindavana (Pavagada · 30 Acres)
                   </option>
-                  <option value="Madhuvana (Maddur · 18 Acres)">
-                    Madhuvana (Maddur · 18 Acres)
+                  <option value="Madhuvana (Maddur · 17 Acres)">
+                    Madhuvana (Maddur · 17 Acres)
                   </option>
-                  <option value="Anantavana (Kabini · 35 Acres)">
-                    Anantavana (Kabini · 35 Acres)
+                  <option value="Anantavana (Kabini · 34 Acres)">
+                    Anantavana (Kabini · 34 Acres)
                   </option>
                   <option value="Eeshavana (Kaveri Riverfront)">
                     Eeshavana (Kaveri Riverfront)

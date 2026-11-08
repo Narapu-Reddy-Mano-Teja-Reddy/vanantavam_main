@@ -1537,7 +1537,7 @@ export default function Madhuvana() {
 
                 <iframe
                   title="Google Maps showing MadhuVana near Maddur"
-                  src="https://www.google.com/maps?q=12.5852,77.0425&z=12&output=embed"
+                  src="https://www.google.com/maps?q=12.66328,76.937561&z=14&output=embed"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   allowFullScreen
@@ -1545,7 +1545,7 @@ export default function Madhuvana() {
 
                 <a
                   className="av-nearby-map-link"
-                  href="https://maps.google.com/?q=Maddur,Karnataka"
+                  href="https://maps.app.goo.gl/uxk3NytTybnHp9bs8"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -2014,7 +2014,7 @@ export default function Madhuvana() {
                     id="cta-project"
                     name="project"
                     required
-                    defaultValue="Madhuvana (Maddur · 18 Acres)"
+                    defaultValue="Madhuvana (Maddur · 17 Acres)"
                     style={{
                       width: "100%",
                       minHeight: "52px",
@@ -2047,11 +2047,11 @@ export default function Madhuvana() {
                     <option value="Brindavana (Pavagada · 30 Acres)">
                       Brindavana (Pavagada · 30 Acres)
                     </option>
-                    <option value="Madhuvana (Maddur · 18 Acres)">
-                      Madhuvana (Maddur · 18 Acres)
+                    <option value="Madhuvana (Maddur · 17 Acres)">
+                      Madhuvana (Maddur · 17 Acres)
                     </option>
-                    <option value="Anantavana (Kabini · 35 Acres)">
-                      Anantavana (Kabini · 35 Acres)
+                    <option value="Anantavana (Kabini · 34 Acres)">
+                      Anantavana (Kabini · 34 Acres)
                     </option>
                     <option value="Eeshavana (Kaveri Riverfront)">
                       Eeshavana (Kaveri Riverfront)
@@ -2208,7 +2208,7 @@ export default function Madhuvana() {
                  V.Ballekere, Karnataka 571419  
                       <br />
                       <a
-                        href="https://maps.google.com/?q=Maddur,Karnataka"
+                        href="https://maps.app.goo.gl/uxk3NytTybnHp9bs8"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{

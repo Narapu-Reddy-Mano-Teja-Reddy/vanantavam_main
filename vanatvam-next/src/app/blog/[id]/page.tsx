@@ -391,18 +391,28 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                         style={{
                           position: 'relative',
                           width: '100%',
-                          height: '380px',
                           borderRadius: '16px',
                           overflow: 'hidden',
                           margin: '36px 0',
                           boxShadow: '0 8px 24px rgba(0, 0, 0, 0.06)',
+                          backgroundColor: '#F3F0E8',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          padding: '16px',
                         }}
                       >
-                        <Image
+                        <img
                           src={block.src}
                           alt={block.alt || 'Vanatvam blog visual'}
-                          fill
-                          style={{ objectFit: 'cover' }}
+                          style={{
+                            width: '100%',
+                            height: 'auto',
+                            maxHeight: '650px',
+                            objectFit: 'contain',
+                            display: 'block',
+                            borderRadius: '12px',
+                          }}
                         />
                       </div>
                     );
@@ -595,8 +605,8 @@ export default async function BlogPost({ params }: { params: Promise<{ id: strin
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
                   {[
                     { name: 'Brindavana', tag: 'Pavagada · 30 Acres', href: '/brindavana' },
-                    { name: 'Madhuvana', tag: 'Maddur · 18 Acres · Kaveri', href: '/madhuvana' },
-                    { name: 'Anantavana', tag: 'Kabini · 35 Acres · Biodiversity', href: '/anantavana' },
+                    { name: 'Madhuvana', tag: 'Maddur · 17 Acres · Kaveri', href: '/madhuvana' },
+                    { name: 'Anantavana', tag: 'Kabini · 34 Acres · Biodiversity', href: '/anantavana' },
                     { name: 'Eeshavana', tag: 'Kaveri Riverfront Estate', href: '/eeshavana' },
                   ].map((proj) => (
                     <Link
