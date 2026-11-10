@@ -609,7 +609,7 @@ export default function Madhuvana() {
                 >
                   <Reveal delay={0.1}>
                     <p style={{ margin: 0 }}>
-                     MadhuVana is a joint offering from VanaTvam and Indus Herbs who have extensive experience in designing and developing eco-landscaping, afforestation, and themed herbal gardens. MadhuVana is spread across 17 acres and when completed, will have over 5000 Trees and plants, Ponds, Gazebos, Walk Ways, perimeter fencing, and 24/7 Security. The project will also have a common area with Cottages/Rooms with Kitchenette, Landscaped garden, Car Parking, and a Dining area among others.
+                     MadhuVana is a joint offering from VanaTvam and Indus Herbs who were chosen to develop Madhuvana as Indus Herbs have extensive experience in designing and developing eco-landscaping, afforestation, and themed herbal gardens. MadhuVana is spread across 17 acres and has over 5000 Trees and plants, Ponds, Gazebos, Walk Ways, perimeter fencing. The project has a common area with Cottages with Kitchenette, Landscaped garden, Car Parking, and a Dining area among others. We offer complementary stays are our eco friendly cottages for the community owners to experience the beauty of nature while they decide to build their own farm houses.
                     </p>
                   </Reveal>
                   <Reveal delay={0.2}>
@@ -1455,15 +1455,15 @@ export default function Madhuvana() {
                   {
                     name: "Bangalore-Mysore Highway",
                     desc: "Direct expressway connectivity",
-                    km: 12,
-                    time: "~10 mins",
+                    km: 17,
+                    time: "~20 mins",
                     icon: Compass,
                   },
                   {
-                    name: "Maddur Town",
+                    name: "Besagarahalli  Town",
                     desc: "Daily necessities & market town",
-                    km: 4,
-                    time: "~5 mins",
+                    km: 6,
+                    time: "~10 mins",
                     icon: Mountain,
                   },
                   {
@@ -2255,7 +2255,7 @@ export default function Madhuvana() {
   number: "05",
   question: "Is MadhuVana suitable for weekend farmhouse living near Bangalore?",
   answer:
-    "Yes. MadhuVana is envisioned as a natural farm community near Maddur, Karnataka, offering an ideal setting for families looking to spend quality time away from the bustle of city life. Surrounded by green landscapes, fruit-bearing trees and thoughtfully planned natural spaces, it offers an opportunity to reconnect with nature, enjoy outdoor activities and experience the joys of farm living. With convenient connectivity to Bengaluru and Mysuru, MadhuVana makes a wonderful choice for those seeking a peaceful weekend retreat and a closer connection with the land.",
+    "Yes. MadhuVana is envisioned as a natural farm community near Maddur, Karnataka, offering an ideal setting for families looking to spend quality time away from the bustle of city life. Surrounded by green landscapes, fruit-bearing trees and thoughtfully planned natural spaces, it offers an opportunity to reconnect with nature, enjoy outdoor activities and experience the joys of farm living With convenient connectivity to Bengaluru and Mysuru, MadhuVana makes a wonderful choice for those seeking a peaceful weekend retreat and a closer connection with the land. We offer complementary stays in eco friendly cottages for the community owners to experience Madhuvana.",
 },
               ].map((faq, index) => (
                 <motion.details
