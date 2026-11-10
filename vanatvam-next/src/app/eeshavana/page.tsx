@@ -2299,16 +2299,19 @@ export default function Eeshavana() {
                 answer:
                   "Eeshavana is a premium riverfront farm community by Vanatvam, set along the banks of the Kaveri River near Kollegala. It is envisioned as a low-density retreat that brings together private farm plots, planned common spaces, bio-pool, and direct Kaveri frontage for those seeking a quiet escape in nature.",
               },
-              {
-                number: "03",
-                question:
-                  "What are the available plot sizes at Eeshavana?",
-                answer: (
-                  <>
-  Plot sizes at Ishavana start from <strong>8,000+ sq. ft.</strong>, with 12 exclusive farm plots in the master plan arranged to preserve privacy and natural landscape views.
-</>
-                ),
-              },
+          
+{
+  number: "03",
+  question: "What are the available plot sizes at Eeshavana?",
+  answer: (
+    <span>
+      Plot sizes at Ishavana start from{" "}
+      <strong>8,000+ sq. ft.</strong>, with 12 exclusive farm plots in the
+      master plan arranged to preserve privacy and natural landscape views.
+    </span>
+  ),
+},
+
               {
                 number: "04",
                 question: "What amenities are planned in Eeshavana?",
