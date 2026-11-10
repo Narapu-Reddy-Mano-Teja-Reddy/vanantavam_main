@@ -633,7 +633,7 @@ export default function Eeshavana() {
                      fontWeight: 600,
                    }}
                  >
-                   Kollegala · Kaveri River
+                   Shivanasamudhra · Kaveri River
                  </span>
                </motion.div>
              </div>
@@ -737,8 +737,8 @@ export default function Eeshavana() {
                   label: "Community area",
                 },
                 {
-                  value: "20",
-                  label: "Plots in the concept plan",
+                  value: "Only 35 Plots ",
+                  label: "Low Density Community Living.",
                 },
                 {
                   value: "8,000+",
