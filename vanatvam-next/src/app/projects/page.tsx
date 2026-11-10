@@ -25,7 +25,7 @@ export default function Projects() {
       name: 'BRINDAVANA',
       logo: '/assets/images/Project-Logos/BrindaVana.webp',
       location: 'PAVAGADA · 30 ACRES',
-      desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
+      desc: 'Our first project demonstrating ecological restoration. What began as largely barren land has evolved into a thriving green ecosystem with over 3000+ mature trees.',
       img: '/assets/project-images/Brindavana/brindavanaaa.webp',
       brochure: null,
        
@@ -39,7 +39,7 @@ export default function Projects() {
       name: 'MADHUVANA',
       logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
       location: 'MADDUR - 17 Acres',
-      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
+      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Vinayaka Vana, Shivapanchayatana Vana, Nakshatra Vana and cozy cottages designed for peaceful living. Experience Madhuvana where we offer complementary stays for our community owners.',
       img: '/assets/project-images/Maduvana/hero.webp',
       brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
        
