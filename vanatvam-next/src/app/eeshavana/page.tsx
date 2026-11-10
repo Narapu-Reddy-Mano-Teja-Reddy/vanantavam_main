@@ -837,9 +837,9 @@ export default function Eeshavana() {
               {[
                 {
                   num: "01 /",
-                  title: "Excellent Locations",
-                  subtitle: "Along the Bangalore–Mysore Corridor",
-                  desc: "Discover premium riverside farmland plots near the Kaver River, surrounded by the natural beauty and tranquillity of Karnataka..",
+                  title: "Strategic  Locations",
+                  subtitle: "Along the Bangalore–Mysore-Chamarajnagar Corridor",
+                  desc: "Discover premium riverside farmland plots by the Kaver River, surrounded by the natural beauty and tranquillity of Karnataka..",
                   icon: MapPin,
                 },
                 {
@@ -1004,8 +1004,7 @@ export default function Eeshavana() {
                     lineHeight: 1.75,
                   }}
                 >
-                  Explore the 20 planned private plots along with shared community spaces, bio-pool, riverside promenade, and internal road network directly facing the Kaveri River.
-                </p>
+                  Explore the 12 river side plots along with shared community spaces, bio-pool, riverside promenade, and internal road beside the Kaveri River.
               </Reveal>
             </div>
 
@@ -1808,7 +1807,7 @@ export default function Eeshavana() {
                   fontWeight: 400,
                 }}
               >
-                Eeshavana.
+                Ishavana.
               </span>
               <br />A place to belong.
             </h2>
@@ -1822,8 +1821,7 @@ export default function Eeshavana() {
                 margin: "0 0 36px",
               }}
             >
-              Discover 20 planned riverfront farm plots along the serene Kaveri River near Kollegala. Build your retreat surrounded by native greenery, riverside walkways, bio-pool, and a conscious community. Schedule a site visit or connect with our team to learn more.
-            </p>
+           Discover 12 exclusive riverfront farm plots along the serene Kaveri River near Kollegala. Build your retreat surrounded by native greenery, riverside walkways, bio-pool, and a conscious community. Schedule a site visit or connect with our team to learn more.            </p>
 
             {/* Decorative signature */}
             <div
@@ -2307,15 +2305,15 @@ export default function Eeshavana() {
                   "What are the available plot sizes at Eeshavana?",
                 answer: (
                   <>
-                    Plot sizes at Eeshavana start from <strong>8,000+ sq. ft.</strong>, with 20 individually carved plots in the concept plan arranged to preserve privacy and natural landscape views.
-                  </>
+  Plot sizes at Ishavana start from <strong>8,000+ sq. ft.</strong>, with 12 exclusive farm plots in the master plan arranged to preserve privacy and natural landscape views.
+</>
                 ),
               },
               {
                 number: "04",
                 question: "What amenities are planned in Eeshavana?",
                 answer:
-                  "Proposed amenities include a natural bio-pool, temple, gardens and landscape, children's play area, amphitheatre, riverside promenade, riverside dining and sitting decks, car parking, and internal roads.",
+                  "Proposed amenities include a natural bio-pool, temple, gardens and landscape, Goushala, Yoga / Meditation deck, children's play area, amphitheatre, riverside dining spaces, car parking, and internal roads.",
               },
               {
                 number: "05",
