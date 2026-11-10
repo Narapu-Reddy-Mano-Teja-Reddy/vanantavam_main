@@ -546,9 +546,8 @@ export default function Home() {
                   display: "block",
                   marginBottom: "18px",
                 }}
-
-<span>
-  WHO WE ARE
+>
+WHO WE ARE
 </span>
 
 <h2
@@ -841,7 +840,7 @@ export default function Home() {
                 suffix: "+",
                 label: "Acres Under Active Regeneration",
               },
-              { value: 100, suffix: "+", label: "Families In Our Community" },
+              { value: 100, suffix: "+", label: "Families In Our Communities" },
               { value: 250, suffix: "+", label: "Native Tree Varieties" },
             ].map((stat, i) => (
               <motion.div
