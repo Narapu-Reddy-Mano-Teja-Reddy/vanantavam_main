@@ -409,7 +409,7 @@ export default function About() {
                         marginBottom: "32px",
                       }}
                     >
-                      Vaishnavi Achar carried that same discipline into Brindavana. She managed the project on the ground, in the arid terrain of Pavagada, while Deepak stayed in his corporate role. Years of planting, learning, and adjusting taught her what it actually takes to grow something in difficult land — patience measured in seasons, not quarters.
+                     Deepak Kasturi's Sister In Law Vaishnavi Achar carried that same discipline into Brindavana. She managed the project on the ground, in the arid terrain of Pavagada, while Deepak stayed in his corporate role. Years of planting, learning, and adjusting taught her what it actually takes to grow something in difficult land — patience measured in seasons, not quarters.
                     </p>
                     <p
                                     style={{

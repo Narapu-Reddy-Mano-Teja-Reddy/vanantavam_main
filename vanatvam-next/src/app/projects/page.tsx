@@ -25,7 +25,7 @@ export default function Projects() {
       name: 'BRINDAVANA',
       logo: '/assets/images/Project-Logos/BrindaVana.webp',
       location: 'PAVAGADA · 30 ACRES',
-      desc: 'Our benchmark project demonstrating ecological restoration. What began as largely barren land is evolving into a thriving green ecosystem with deep water harvesting and native tree canopy.',
+      desc: 'Our first project demonstrating ecological restoration. What began as largely barren land has evolved into a thriving green ecosystem with over 3000+ mature trees.',
       img: '/assets/project-images/Brindavana/brindavanaaa.webp',
       brochure: null,
        
@@ -39,7 +39,7 @@ export default function Projects() {
       name: 'MADHUVANA',
       logo: '/assets/images/Project-Logos/Logo-MadhuVana.svg',
       location: 'MADDUR - 17 Acres',
-      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Nakshatra Vana and cozy cottages designed for peaceful living.',
+      desc: 'The Sweet Symphony of Nature. A pristine water-forest ecosystem built around 200+ rare & endangered tree species. Features sacred groves like Vinayaka Vana, Shivapanchayatana Vana, Nakshatra Vana and cozy cottages designed for peaceful living. Experience Madhuvana where we offer complementary stays for our community owners.',
       img: '/assets/project-images/Maduvana/hero.webp',
       brochure: '/assets/project-images/MadhuVana%20Brochure.pdf',
        
@@ -53,7 +53,7 @@ export default function Projects() {
       name: 'ANANTAVANA',
       logo: '/assets/images/Project-Logos/Anantavana.webp',
       location: 'NEAR KABINI · 34 ACRES',
-      desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 10,000 sq. ft.',
+      desc: 'Where the Forest Leads. Set in Kabini’s rich ecological belt. With dense forests and thriving biodiversity, Anantavana invites you to step into nature. Farm parcels from 12,000 sq. ft.',
       img: '/assets/project-images/Ananthavana/hero_image_2.webp',
       brochure: '/assets/project-images/AnantaVana%20Brochure.pdf',
        

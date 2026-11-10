@@ -546,49 +546,47 @@ export default function Home() {
                   display: "block",
                   marginBottom: "18px",
                 }}
-              >
-                WHO WE ARE
-              </span>
-              <h2
-                style={{
-                  fontFamily: "var(--font-serif)",
-                  fontSize: "clamp(2.5rem, 4.5vw, 3.8rem)",
-                  color: "var(--bg-dark-forest)",
-                  lineHeight: 1.12,
-                  marginBottom: "24px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: 600,
-                }}
-              >
-                More than land.
-                <br />A way to{" "}
-                <span style={{ fontStyle: "italic", fontWeight: 400 }}>
-                  belong.
-                </span>
-              </h2>
+>
+WHO WE ARE
+</span>
 
-              <p
-                style={{
-                  fontSize: "1.15rem",
-                  color: "#333D35",
-                  lineHeight: 1.8,
-                  marginBottom: "16px",
-                  fontWeight: 400,
-                }}
-              >
-                Four organic, biodiversity-led farm communities across Karnataka — built on six commitments most farmland developers skip.
-              </p>
+<h2
+  style={{
+    fontFamily: "var(--font-serif)",
+    fontSize: "clamp(2.5rem, 4.5vw, 3.8rem)",
+    color: "var(--bg-dark-forest)",
+    lineHeight: 1.12,
+    marginBottom: "24px",
+    letterSpacing: "-0.02em",
+    fontWeight: 600,
+  }}
+>
+  More than land.
+  <br />
+  A way to belong.
+</h2>
 
-              <p
-                style={{
-                  fontSize: "1.05rem",
-                  color: "#556358",
-                  lineHeight: 1.8,
-                  marginBottom: "24px",
-                }}
-              >
-                Vana means forest, Tvam means you — the forest isn't separate from us, we're part of it. Vanatvam was born during the pandemic, out of realising how far we'd drifted from that balance. We create Natural Sustainable Farm Communities across Karnataka: organic, biodiverse, and built to be lived in, not just owned.
-              </p>
+<p
+  style={{
+    fontSize: "1.05rem",
+    color: "#556358",
+    lineHeight: 1.8,
+    marginBottom: "16px",
+  }}
+>
+  Vana means forest, Tvam means you — the forest isn't separate from us, we're part of it. Vanatvam was born during the pandemic, out of realising how far we'd drifted from that balance. We create Natural Sustainable Farm Communities across Karnataka: organic, biodiverse, and built to be lived in, not just owned.
+</p>
+
+<p
+  style={{
+    fontSize: "1.05rem",
+    color: "#556358",
+    lineHeight: 1.8,
+    marginBottom: "24px",
+  }}
+>
+  Our biodiversity-led farm communities are located natural resource rich Bangalore Mysore-Chamarajanagar corridor along the Kaveri river belt in Karnataka. Our projects follow six core principles while evolving our projects which most farmland developers skip.
+</p>
 
 
         <Magnetic strength={0.25}>
@@ -695,7 +693,7 @@ export default function Home() {
             margin: 0,
           }}
         >
-          Every decision on every piece of land we touch comes back to six foundational principles — ensuring that as the landscape matures, experiences take root and people become true stewards of the place.
+          Every decision on every piece of land we touch comes back to six core  principles — ensuring that as the landscape matures, experiences take root and people become true stewards of the place.
         </motion.p>
       </div>
 
@@ -711,9 +709,9 @@ export default function Home() {
       >
         {[
           {
-            num: "01 / Excellent Locations",
+            num: "01 / Strategic Locations",
             title: "Along the Bangalore–Mysore Corridor",
-            desc: "Located amidst stunning natural settings in MadhuVana (Maddur, on the Kaveri), AnantaVana (near Kabini), Eeshavana (on the Kaveri, Kollegala), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
+            desc: "Located amidst stunning natural settings in MadhuVana (Near Maddur), AnantaVana (Near Kabini), Eeshavana (Near Shivanasamudhra on the bank of River Kaveri), and BrindaVana (where it all began). Places worth visiting, not just owning, selected only after rigorous due diligence.",
           },
           {
             num: "02 / Biodiversity by Design",
@@ -723,7 +721,7 @@ export default function Home() {
           {
             num: "03 / Natural and Organic",
             title: "Grown naturally, no compromise",
-            desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline the company is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
+            desc: "Everything we grow is organic, full stop — not a certification to chase, but the discipline Vanatvam is built on. We stay on the land season after season, adapting to local soil and climate rather than planting once and walking away.",
           },
           {
             num: "04 / Integration Of Sacred Groves",
@@ -842,7 +840,7 @@ export default function Home() {
                 suffix: "+",
                 label: "Acres Under Active Regeneration",
               },
-              { value: 100, suffix: "+", label: "Families In Our Community" },
+              { value: 100, suffix: "+", label: "Families In Our Communities" },
               { value: 250, suffix: "+", label: "Native Tree Varieties" },
             ].map((stat, i) => (
               <motion.div
