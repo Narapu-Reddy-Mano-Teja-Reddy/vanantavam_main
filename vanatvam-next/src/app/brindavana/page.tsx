@@ -492,15 +492,22 @@ export default function Brindavana() {
           />
           <div
             className="container"
-            style={{ position: "relative", zIndex: 2 }}
+            style={{
+              position: "relative",
+              zIndex: 2,
+              maxWidth: "1480px",
+              paddingLeft: "16px",
+              paddingRight: "16px",
+              width: "100%",
+            }}
           >
-            <div className="eeshavana-idea">
-              <div style={{ position: "relative", width: "100%", maxWidth: "520px" }}>
+            <div className="eeshavana-idea" style={{ gap: "clamp(16px, 2.5vw, 32px)", width: "100%" }}>
+              <div style={{ position: "relative", width: "100%", maxWidth: "100%" }}>
                 <motion.div
-                  initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
-                  whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-                  viewport={{ once: true, margin: "-80px" }}
-                  transition={{ duration: 1.2, ease: EASE }}
+                  initial={reduce ? false : { opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, ease: EASE }}
                   style={{
                     borderRadius: "28px",
                     overflow: "hidden",
@@ -510,14 +517,10 @@ export default function Brindavana() {
                     position: "relative",
                   }}
                 >
-                  <motion.img
+                  <img
                     src="/assets/project-images/Brindavana/Sunlit Tropical Garden with Yellow Macramé Swing.webp"
                     alt="A view of Brindavana landscape"
                     loading="lazy"
-                    initial={reduce ? false : { scale: 1.2 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.8, ease: EASE }}
                     style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
                   />
                   <span className="eeshavana-image-caption">
@@ -1501,7 +1504,7 @@ export default function Brindavana() {
 
                 <a
                   className="av-nearby-map-link"
-                  href="https://maps.app.goo.gl/dGPn2iiYP4Ty8Mue6?g_st=ac"
+                  href="https://maps.app.goo.gl/YgfMVxp9gAxqbcvZ7"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -2164,7 +2167,7 @@ export default function Brindavana() {
                       Krishnapura, Pavagada Taluk, Karnataka
                       <br />
                       <a
-                        href="https://maps.app.goo.gl/dGPn2iiYP4Ty8Mue6?g_st=ac"
+                        href="https://maps.app.goo.gl/YgfMVxp9gAxqbcvZ7"
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -2319,9 +2322,15 @@ export default function Brindavana() {
 
         .eeshavana-idea {
           display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+          grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
           align-items: center;
-          gap: clamp(40px, 7vw, 100px);
+          gap: clamp(20px, 3.5vw, 40px);
+          width: 100%;
+        }
+
+        .eeshavana-idea-copy {
+          width: 100%;
+          max-width: 100%;
         }
 
         .eeshavana-idea-image-wrap {

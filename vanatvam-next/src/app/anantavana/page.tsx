@@ -910,7 +910,7 @@ export default function Anantavana() {
                 }}
               >
                 <motion.img
-                  src="/assets/project-images/Ananthavana/hero_image_2.webp"
+                  src="/assets/project-images/Ananthavana/Golden Treehouse Garden Retreat (1).png"
                   alt="Native forest landscape at AnantaVana"
                   initial={{ scale: 1.3 }}
                   whileInView={{ scale: 1 }}
