@@ -994,18 +994,19 @@ export default function Eeshavana() {
                   margin: "0 auto 16px",
                 }}
               />
-              <Reveal delay={0.15}>
-                <p
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "var(--eeshavana-muted, #687b63)",
-                    maxWidth: "720px",
-                    margin: "0 auto",
-                    lineHeight: 1.75,
-                  }}
-                >
-                  Explore the 12 river side plots along with shared community spaces, bio-pool, riverside promenade, and internal road beside the Kaveri River.
-              </Reveal>
+             <Reveal delay={0.15}>
+  <p
+    style={{
+      fontSize: "1.1rem",
+      color: "var(--eeshavana-muted, #687b63)",
+      maxWidth: "720px",
+      margin: "0 auto",
+      lineHeight: 1.75,
+    }}
+  >
+    Explore the 12 river side plots along with shared community spaces, bio-pool, riverside promenade, and internal road beside the Kaveri River.
+  </p>
+</Reveal>
             </div>
 
             <div
