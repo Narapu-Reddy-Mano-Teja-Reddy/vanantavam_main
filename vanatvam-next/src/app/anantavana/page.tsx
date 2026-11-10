@@ -864,7 +864,7 @@ export default function Anantavana() {
                 </Reveal>
                 <Reveal delay={0.2}>
                   <p style={{ margin: 0 }}>
-                    AnantaVana is a sustainable natural re-forestation project in Kabini for nature lovers. Here, VanaTvam in association with Indus Herbs is creating a niche community of land owners who understand, appreciate, and consciously participate in sustaining the unique biosphere of Kabini. This limited edition one acre plot of land is a personal nature retreat that one can plug into to recharge the body and spirit! 
+                    AnantaVana is a sustainable natural re-forestation project in Kabini for nature lovers. Here, VanaTvam in association with Indus Herbs has developed a niche community of land owners who understand, appreciate, and consciously participate in sustaining the unique biosphere of Kabini. This limited edition project is a personal nature retreat that one can plug into to recharge the body and spirit! 
                   </p>
                 </Reveal>
                 <Reveal delay={0.3}>
@@ -1101,7 +1101,7 @@ export default function Anantavana() {
             {[
           {
   num: "01 /",
-  title: "Excellent Location",
+  title: "Strategic  Location",
   subtitle: "A unique farmland experience near Kabini",
   desc: "Located near the beautiful Kabini backwaters, Anantavana offers a unique farmland ownership experience amidst one of Karnataka’s most renowned biodiversity-rich landscapes.",
   icon: MapPin,
@@ -2599,14 +2599,14 @@ export default function Anantavana() {
                 number: "05",
                 question: "What amenities are planned at AnantaVana?",
                 answer:
-                  "The project brief highlights over 20% of land reserved for common spaces, tree-lined roads and native landscapes, natural ponds and biodiversity spaces, pergolas, heritage cottages and mud houses, a tree house, herbal gardens inspired by ancient wisdom, and fire-camp and outdoor tent spaces. Confirm final specifications and implementation status with Vanatvam.",
+                  "The project brief highlights over 20% of land reserved for common spaces, tree-lined roads and native landscapes, natural ponds and biodiversity spaces, pergolas, heritage cottages and mud houses, a tree house, herbal gardens inspired by ancient wisdom, and fire-camp and outdoor tent spaces.",
               },
               {
                 number: "06",
                 question:
                   "Will I earn guaranteed income from my AnantaVana plot?",
                 answer:
-                  "No income should be assumed unless it is supported by a specific, legally reviewed agreement. Agricultural output depends on crop selection, weather, water, management and market prices. Consider the land for its ownership and nature-oriented experience rather than assuming assured returns.",
+                  "Anantavana is in Eco Sensitive zone (ESZ) and governed by the ESZ norms. No commercial activity is permitted within the ESZ. Consider the land for its ownership and nature-oriented experience rather than assuming assured returns.",
               },
             ].map((faq, index) => (
               <motion.details
