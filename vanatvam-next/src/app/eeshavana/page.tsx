@@ -466,7 +466,7 @@ export default function Eeshavana() {
                   textShadow: "0 4px 24px rgba(0,0,0,0.65)",
                 }}
               >
-                EESHAVANA
+                ISHAVANA 
               </motion.h1>
 
               <motion.p
